@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
   # VERB PATH TO: CONTROLLER#ACTION
-  get "/", to: "pages#home"
+  root          to: "pages#home"
+  get "/about", to: "pages#about"
 end
