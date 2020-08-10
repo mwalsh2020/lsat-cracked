@@ -1,5 +1,14 @@
 $primary: #a51c30 !default;
+$font-size-base: 1.125rem !default;
+
 @import "bootstrap";
+
+/* Bootstrap customs */
+.container {
+  &.container-compact {
+    max-width: (1140px) / 2;
+  }
+}
 
 /* Components */
 @import "components/banner";
