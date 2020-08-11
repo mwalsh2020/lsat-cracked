@@ -1,0 +1,36 @@
+<div class="bg-primary py-4 mb-5">
+  <div class="container container-compact">
+    <h2 class="text-white">Coaching</h2>
+  </div>
+</div>
+
+<div class="container container-compact mb-5">
+  <%= simple_form_for :coaching_contact do |f| %>
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :target_law_school, label: "Target Law School", required: false %>
+    <%= f.input :target_lsat_score, label: "Target LSAT Score", required: false %>
+    <%= f.input :message, as: :text, required: false %>
+    <%= f.button :submit, "Send Coaching Request", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<div class="bg-primary py-4 mb-5">
+  <div class="container container-compact">
+    <h2 class="text-white">My Coaching Philosophy</h2>
+  </div>
+</div>
+<div class="container container-compact">
+  <p>You will go far beyond simply explaining why the right answer is right and why the wrong answers are wrong. You will learn to break problems down to their constituent elements to identify exactly where your thinking went off-track. This will enable you to generalize the lesson learned at the appropriate level of analysis so that you can apply it to future problems that share the same underlying template or skill set. This will result in the fastest possible LSAT score increase, sharper reasoning in your 1L exams, and clearer thinking in your legal career.</p>
+  <p>Unlike virtually any other LSAT course or tutor, I’ve gone through the entire “legal pipeline” that many of my students aspire to:</p>
+  <ol>
+    <li>Raise their LSAT score nearly 20 points (161 to 179);</li>
+    <li>Graduate from an excellent law school (Harvard Law, with honors);</li>
+    <li>Land their dream legal job (Gibson Dunn & Crutcher);</li>
+    <li>Rebrand themselves as problem-solver and leader who just happens to have a law degree (working at a highly selective VC-backed tech company); and</li>
+    <li>Start a location-independent company that lets them do what they love.</li>
+  </ol>
+  <p>I know the struggle before the LSAT, the journey through it, and the various paths that come after it. I’m able to contextualize the LSAT, its importance, and how the skills you learn now will give you an edge in law school and in your future career.</p>
+</div>
+
+
