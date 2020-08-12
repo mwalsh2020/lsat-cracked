@@ -1,5 +1,7 @@
 class CoachingRequestsController < ApplicationController
-  def new; end
+  def new
+    @coaching_request = CoachingRequest.new
+  end
 
   def create
     WebMailer.with(coaching_request_params).coaching.deliver_now
