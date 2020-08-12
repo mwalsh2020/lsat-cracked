@@ -1,15 +1,18 @@
+// Bootstrap variables
 $primary: #a51c30 !default;
 $font-size-base: 1.125rem !default;
 
+// External libraries
 @import "bootstrap";
+@import "actiontext";
 
-/* Bootstrap customs */
+// Bootstrap customs
 .container {
   &.container-compact {
     max-width: (1140px) / 2;
   }
 }
 
-/* Components */
+// Components
 @import "components/alert-notice";
 @import "components/banner";

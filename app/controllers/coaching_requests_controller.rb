@@ -5,7 +5,7 @@ class CoachingRequestsController < ApplicationController
     WebMailer.with(coaching_request_params).coaching.deliver_now
 
     flash[:notice] = "Mail sent successfully!"
-    redirect_to coaching_path
+    redirect_to new_coaching_request_path
   end
 
   private
