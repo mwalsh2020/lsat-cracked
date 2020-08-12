@@ -4,5 +4,10 @@ Rails.application.routes.draw do
   get  "/testimonials", to: "pages#testimonials"
 
   resources :coaching_requests, only: [:new, :create]
-  resources :chapters
+
+  resources :chapters do
+    resources :sections, only: [:new, :create]
+  end
+
+  resources :sections, only: [:edit, :update]
 end

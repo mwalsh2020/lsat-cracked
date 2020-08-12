@@ -1,0 +1,13 @@
+<h1>Editing <%= @section.title %> for <%= @section.chapter.title %></h1>
+
+<%= simple_form_for @section do |f| %>
+  <%= f.input :title %>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.rich_text_area :content %>
+  </div>
+
+  <%= f.button :submit, class: "btn btn-primary" %>
+
+<% end %>
