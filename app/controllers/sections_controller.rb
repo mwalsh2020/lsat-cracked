@@ -30,6 +30,10 @@ class SectionsController < ApplicationController
     end
   end
 
+  def show
+    @section = Section.find(params[:id])
+  end
+
   private
 
   def section_params

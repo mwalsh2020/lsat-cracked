@@ -1,0 +1,14 @@
+<h1>LSAT Cracked Course</h1>
+
+<ul>
+  <% @chapters.each do |chapter| %>
+    <li>
+      <h2><%= chapter.title %></h2>
+      <ul>
+        <% chapter.sections.each do |section| %>
+          <li><%= link_to section.title, section_path(section) %></li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>

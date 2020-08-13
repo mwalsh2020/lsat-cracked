@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     resources :sections, only: [:new, :create]
   end
 
-  resources :sections, only: [:edit, :update]
+  resources :sections, only: [:edit, :update, :show]
+
+  resource :course, only: :show
 end
