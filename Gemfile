@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 # Back-end Dependencies
 gem 'devise'
+gem "pundit"
 
 # Front-end Dependencies
 gem "bootstrap", "~> 4.5.2"

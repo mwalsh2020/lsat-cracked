@@ -1,5 +1,4 @@
 class SectionsController < ApplicationController
-
   def new
     @chapter = Chapter.find(params[:chapter_id])
     @section = Section.new

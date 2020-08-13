@@ -1,5 +1,6 @@
 class CoachingRequestsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new, :create]
+  before_action :skip_authorization, only: [:new, :create]
 
   def new; end
 
