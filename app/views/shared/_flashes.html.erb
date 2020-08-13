@@ -1,5 +1,10 @@
-<% if flash[:notice] %>
+<% if notice %>
   <div class="alert alert-notice alert-success" role="alert">
-    <%= flash[:notice] %>
+    <%= notice %>
+  </div>
+<% end %>
+<% if alert %>
+  <div class="alert alert-notice alert-danger" role="alert">
+    <%= alert %>
   </div>
 <% end %>
