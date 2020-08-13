@@ -18,6 +18,11 @@
     <div class="col-9">
       <h1><%= @section.chapter.title %></h1>
       <h2><%= @section.title %></h2>
+
+      <% if @section.video? %>
+        <%= render "video", section: @section %>
+      <% end %>
+
       <%= @section.content %>
     </div>
   </div>
