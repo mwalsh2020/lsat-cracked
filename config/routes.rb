@@ -10,7 +10,13 @@ Rails.application.routes.draw do
     resources :sections, only: [:new, :create]
   end
 
-  resources :sections, only: [:edit, :update, :show]
+  #                           admin  admin
+  resources :sections, only: [:edit, :update]
 
   resource :course, only: :show
+
+  namespace :course do
+    resources :sections, only: :show
+    # /course/sections/1
+  end
 end

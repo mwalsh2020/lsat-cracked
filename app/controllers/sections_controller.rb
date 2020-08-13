@@ -33,11 +33,6 @@ class SectionsController < ApplicationController
     end
   end
 
-  def show
-    @section = Section.find(params[:id])
-    authorize @section
-  end
-
   private
 
   def section_params
