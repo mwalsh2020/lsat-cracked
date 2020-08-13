@@ -17,6 +17,20 @@
         <li class="nav-item">
           <%= link_to "Coaching", new_coaching_request_path, class: "nav-link" %>
         </li>
+
+        <li class="nav-item">
+          <%= link_to "Learn", course_path, class: "btn btn-outline-primary" %>
+        </li>
+
+        <% if current_user.present? %>
+          <li class="nav-item">
+            <%= link_to "Sign out", destroy_user_session_path, class: "nav-link", method: :delete %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
