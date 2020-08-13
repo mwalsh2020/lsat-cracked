@@ -19,10 +19,14 @@
         </li>
 
         <li class="nav-item">
-          <%= link_to "Learn", course_path, class: "btn btn-outline-primary" %>
+          <%= link_to "Learn", course_path, class: "btn btn-outline-primary mr-3" %>
         </li>
-
         <% if current_user.present? %>
+          <% if current_user.admin? %>
+            <li class="nav-item">
+              <%= link_to "Admin", chapters_path, class: "btn btn-outline-primary mr-3" %>
+            </li>
+          <% end %>
           <li class="nav-item">
             <%= link_to "Sign out", destroy_user_session_path, class: "nav-link", method: :delete %>
           </li>

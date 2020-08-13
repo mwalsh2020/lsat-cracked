@@ -2,6 +2,7 @@ class SectionsController < ApplicationController
   def new
     @chapter = Chapter.find(params[:chapter_id])
     @section = Section.new
+    authorize @section
   end
 
   def create
@@ -9,6 +10,8 @@ class SectionsController < ApplicationController
 
     @section = Section.new(section_params)
     @section.chapter = @chapter
+
+    authorize @section
     if @section.save
       redirect_to @chapter
     else
@@ -18,6 +21,7 @@ class SectionsController < ApplicationController
 
   def edit
     @section = Section.find(params[:id])
+    authorize @section
   end
 
   def update
@@ -31,6 +35,7 @@ class SectionsController < ApplicationController
 
   def show
     @section = Section.find(params[:id])
+    authorize @section
   end
 
   private
