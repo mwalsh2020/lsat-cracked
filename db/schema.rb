@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2020_08_13_175152) do
     t.bigint "chapter_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "video_url"
+    t.string "youtube_video_id"
     t.index ["chapter_id"], name: "index_sections_on_chapter_id"
   end
 

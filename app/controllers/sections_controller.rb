@@ -26,6 +26,7 @@ class SectionsController < ApplicationController
 
   def update
     @section = Section.find(params[:id])
+    authorize @section
     if @section.update(section_params)
       redirect_to @section.chapter
     else
@@ -36,6 +37,6 @@ class SectionsController < ApplicationController
   private
 
   def section_params
-    params.require(:section).permit(:title, :content)
+    params.require(:section).permit(:title, :content, :youtube_video_id)
   end
 end
