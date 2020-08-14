@@ -1,0 +1,46 @@
+# Sections Start
+- title: "Section 1"
+  questions:
+    # Question Start
+    - prompt: "The LSAT is impossible to improve on"
+      explanation: "With hard work you can improve 20 or more points."
+      answers:
+        # Answer start
+        - content: "False"
+          correct: true
+        # Answer start
+        - content: "True"
+          correct: false
+    # Question Start
+    - prompt: "The right mindset for the LSAT is "curious skeptic""
+      explanation: "You want to be a curious learner but very skeptical about certain things that you read."
+      answers:
+        # Answer start
+        - content: "True"
+          correct: true
+        # Answer start
+        - content: "False"
+          correct: false
+# Sections Start
+- title: "Section 2"
+  questions:
+    # Question Start
+    - prompt: "The LSAT is easy"
+      explanation: "The LSAT is hard for almost everyone when they first start."
+      answers:
+        # Answer start
+        - content: "False"
+          correct: true
+        # Answer start
+        - content: "True"
+          correct: false
+    # Question Start
+    - prompt: "You should expect to spend at least 200 hours studying for this test."
+      explanation: "But the return on investment is massive."
+      answers:
+        # Answer start
+        - content: "True"
+          correct: true
+        # Answer start
+        - content: "False"
+          correct: false
