@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end
 
     resources :sections, only: [:edit, :update] do
-      resources :questions, only: [:new, :create]
+      resources :questions, only: [:new, :create, :index]
     end
   end
 

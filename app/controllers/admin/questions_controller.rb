@@ -18,6 +18,11 @@ class Admin::QuestionsController < ApplicationController
     end
   end
 
+  def index
+    @section  = Section.find(params[:section_id])
+    @questions = policy_scope(@section.questions)
+  end
+
   private
 
   def question_params
