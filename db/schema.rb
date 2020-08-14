@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_13_175152) do
+ActiveRecord::Schema.define(version: 2020_08_14_145714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,13 @@ ActiveRecord::Schema.define(version: 2020_08_13_175152) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.bigint "section_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["section_id"], name: "index_questions_on_section_id"
+  end
+
   create_table "sections", force: :cascade do |t|
     t.string "title"
     t.bigint "chapter_id", null: false
@@ -75,5 +82,6 @@ ActiveRecord::Schema.define(version: 2020_08_13_175152) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "questions", "sections"
   add_foreign_key "sections", "chapters"
 end

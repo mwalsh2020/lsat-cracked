@@ -16,6 +16,5 @@ Rails.application.routes.draw do
   namespace :course do
     root to: "dashboards#show"
     resources :sections, only: :show
-    # /course/sections/1
   end
 end
