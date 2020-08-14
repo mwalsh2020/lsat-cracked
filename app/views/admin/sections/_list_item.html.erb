@@ -1,0 +1,10 @@
+<li>
+  <%= section.title %>
+  <%= link_to "Edit", edit_admin_section_path(section), class: "text-muted" %>
+  <ol class="mb-3">
+    <% section.questions.each do |question| %>
+      <li><%= question.content %></li>
+    <% end %>
+    <li><%= link_to "Add question", new_admin_section_question_path(section), class: "btn btn-sm btn-outline-primary" %></li>
+  </ol>
+</li>
