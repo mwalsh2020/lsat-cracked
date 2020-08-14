@@ -1,4 +1,4 @@
-class ChaptersController < ApplicationController
+class Admin::ChaptersController < ApplicationController
   def new
     @chapter = Chapter.new
     authorize @chapter
@@ -8,7 +8,7 @@ class ChaptersController < ApplicationController
     @chapter = Chapter.new(chapter_params)
     authorize @chapter
     if @chapter.save
-      redirect_to chapters_path
+      redirect_to admin_chapters_path
     else
       render :new
     end
@@ -32,7 +32,7 @@ class ChaptersController < ApplicationController
     @chapter = Chapter.find(params[:id])
     authorize @chapter
     if @chapter.update(chapter_params)
-      redirect_to chapter_path(@chapter.id)
+      redirect_to admin_chapter_path(@chapter.id)
     else
       render :edit
     end
@@ -43,7 +43,7 @@ class ChaptersController < ApplicationController
     authorize @chapter
 
     @chapter.destroy
-    redirect_to chapters_path
+    redirect_to admin_chapters_path
   end
 
   private

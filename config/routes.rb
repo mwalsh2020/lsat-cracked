@@ -3,15 +3,15 @@ Rails.application.routes.draw do
   root                  to: "pages#home"
   get  "/about",        to: "pages#about"
   get  "/testimonials", to: "pages#testimonials"
-
   resources :coaching_requests, only: [:new, :create]
 
-  resources :chapters do
-    resources :sections, only: [:new, :create]
-  end
+  namespace :admin do
+    resources :chapters do
+      resources :sections, only: [:new, :create]
+    end
 
-  #                           admin  admin
-  resources :sections, only: [:edit, :update]
+    resources :sections, only: [:edit, :update]
+  end
 
   namespace :course do
     root to: "dashboards#show"

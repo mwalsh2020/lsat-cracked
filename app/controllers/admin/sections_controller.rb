@@ -1,4 +1,4 @@
-class SectionsController < ApplicationController
+class Admin::SectionsController < ApplicationController
   def new
     @chapter = Chapter.find(params[:chapter_id])
     @section = Section.new
@@ -13,7 +13,7 @@ class SectionsController < ApplicationController
 
     authorize @section
     if @section.save
-      redirect_to @chapter
+      redirect_to [:admin, @chapter]
     else
       render :new
     end
@@ -28,7 +28,7 @@ class SectionsController < ApplicationController
     @section = Section.find(params[:id])
     authorize @section
     if @section.update(section_params)
-      redirect_to @section.chapter
+      redirect_to [:admin, @section.chapter]
     else
       render :edit
     end
