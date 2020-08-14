@@ -3,7 +3,7 @@
   <ul>
     <% question.answers.each do |answer| %>
       <li>
-        <%= answer.correctness_display %>
+        <%= answer.correct? ? "✅" : "🟥" %>
         <%= answer.content %>
       </li>
     <% end %>
