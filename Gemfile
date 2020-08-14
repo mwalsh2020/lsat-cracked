@@ -33,7 +33,6 @@ gem 'devise'
 gem "pundit"
 
 # Front-end Dependencies
-gem "bootstrap", "~> 4.5.2"
 gem 'simple_form'
 
 # Mailing
