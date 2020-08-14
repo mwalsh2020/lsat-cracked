@@ -1,0 +1,19 @@
+<div class="list-group-item style-none">
+  <div class="d-flex justify-content-between">
+    <h5><%= chapter.title %></h5>
+
+    <div class="btn-group" role="group" aria-label="Chapter actions">
+      <%= link_to "Edit", edit_admin_chapter_path(chapter), class: "btn btn-sm btn-secondary" %>
+      <%= link_to "Delete", admin_chapter_path(chapter), method: :delete, 'data-confirm': "Are you sure?", class: "btn btn-sm btn-danger" %>
+    </div>
+  </div>
+  <ul class="list-unstyled pl-3">
+    <% chapter.sections.each do |section| %>
+      <li>
+        <%= section.title %>
+        <%= link_to "Edit", edit_admin_section_path(section), class: "text-muted" %>
+      </li>
+    <% end %>
+    <li><%= link_to "Add section", new_admin_chapter_section_path(chapter), class: "btn btn-primary btn-sm" %></li>
+  </ul>
+</div>

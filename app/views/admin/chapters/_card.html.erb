@@ -1,9 +1,0 @@
-<div class="list-group-item d-flex justify-content-between">
-  <h5><%= chapter.title %></h5>
-
-
-  <div class="btn-group" role="group" aria-label="Chapter actions">
-    <%= link_to "Edit", edit_admin_chapter_path(chapter.id) , class: "btn btn-sm btn-secondary" %>
-    <%= link_to "Delete", admin_chapter_path(chapter.id), method: :delete, 'data-confirm': "Are you sure?", class: "btn btn-sm btn-danger" %>
-  </div>
-</div>

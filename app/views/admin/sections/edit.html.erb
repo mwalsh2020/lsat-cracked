@@ -1,5 +1,7 @@
-<h1>Editing <%= @section.title %> for <%= @section.chapter.title %></h1>
+<div class="container pt-5">
+  <h1>Editing <%= @section.title %> for <%= @section.chapter.title %></h1>
 
-<%= simple_form_for [:admin, @section] do |form| %>
-  <%= render "fields", form: form %>
-<% end %>
+  <%= simple_form_for [:admin, @section] do |form| %>
+    <%= render "fields", form: form %>
+  <% end %>
+</div>
