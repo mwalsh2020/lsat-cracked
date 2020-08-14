@@ -3,6 +3,7 @@ class ChapterPolicy < ApplicationPolicy
     user.admin?
   end
 
+  # TODO: update this, makes no sense
   def show?
     user.admin?
   end

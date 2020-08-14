@@ -27,6 +27,23 @@
 
       <div class="course-content"><%= @section.content %></div>
     </div>
+    <div class="shadow-sm course-page">
+      <h2>Quiz</h2>
+      <ol class="p-0">
+        <% @section.questions.each do |question| %>
+          <li class="mb-5">
+            <%= question.content %>
+            <hr>
+            <div class="list-group">
+              <% question.answers.each do |answer| %>
+                <a href="#" class="list-group-item list-group-item-action"><%= answer.content %></a>
+              <% end %>
+            </div>
+            <hr>
+          </li>
+        <% end %>
+      </ol>
+    </div>
   </div>
   </div>
 </div>

@@ -1,0 +1,12 @@
+<li>
+  <%= question.content %>
+  <ul>
+    <% question.answers.each do |answer| %>
+      <li>
+        <%= answer.correct? ? "✅" : "🟥" %>
+        <%= answer.content %>
+      </li>
+    <% end %>
+    <li><%= link_to "Add answer", new_admin_question_answer_path(question) %></li>
+  </ul>
+</li>

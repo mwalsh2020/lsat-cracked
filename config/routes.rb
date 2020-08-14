@@ -10,12 +10,18 @@ Rails.application.routes.draw do
       resources :sections, only: [:new, :create]
     end
 
-    resources :sections, only: [:edit, :update]
+    resources :sections, only: [:edit, :update] do
+      resources :questions, only: [:new, :create, :index]
+    end
+
+    resources :questions, only: [] do
+      resources :answers, only: [:new, :create]
+    end
+
   end
 
   namespace :course do
     root to: "dashboards#show"
     resources :sections, only: :show
-    # /course/sections/1
   end
 end

@@ -1,6 +1,6 @@
-class CoursePolicy < ApplicationPolicy
-  def show?
-    true
+class AnswerPolicy < ApplicationPolicy
+  def create?
+    user.admin?
   end
 
   class Scope < Scope
