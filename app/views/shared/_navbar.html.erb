@@ -1,12 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="<%= container ? "container" : "d-flex" %>">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "logo.png", height: 40, alt: "LSAT Cracked Logo" %>
+      <%= image_tag "logo.png", height: 60, alt: "LSAT Cracked Logo" %>
     <% end %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
           <%= link_to "About", about_path, class: "nav-link" %>
