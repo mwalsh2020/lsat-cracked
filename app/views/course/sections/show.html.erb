@@ -29,6 +29,9 @@
     </div>
     <div class="shadow-sm course-page">
       <h2>Quiz</h2>
+      <%= render "quiz_sessions/show", quiz_session: @quiz_session %>
+
+
       <ol class="p-0">
         <% @section.questions.each do |question| %>
           <li class="mb-5">
