@@ -1,9 +1,12 @@
 <li>
   <%= question.content %>
   <ul>
-    <li>A</li>
-    <li>B</li>
-    <li>C</li>
-    <li>D</li>
+    <% question.answers.each do |answer| %>
+      <li>
+        <%= answer.correctness_display %>
+        <%= answer.content %>
+      </li>
+    <% end %>
+    <li><%= link_to "Add answer", new_admin_question_answer_path(question) %></li>
   </ul>
 </li>

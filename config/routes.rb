@@ -13,6 +13,11 @@ Rails.application.routes.draw do
     resources :sections, only: [:edit, :update] do
       resources :questions, only: [:new, :create, :index]
     end
+
+    resources :questions, only: [] do
+      resources :answers, only: [:new, :create]
+    end
+
   end
 
   namespace :course do
