@@ -1,0 +1,18 @@
+# Section
+title: "Basic Math"
+questions:
+  - prompt: "What is 2+2?"
+    explanation: "Because xx + xx is xxxx"
+    answers:
+      - content: "4"
+        correct: true
+      - content: "1"
+        correct: false
+
+  - prompt: "What is my name?"
+    explanation: "...."
+    answers:
+      - content: "Caio"
+        correct: true
+      - content: "Matt"
+        correct: false
