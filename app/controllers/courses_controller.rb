@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
   def show
     authorize :course
-    @chapters = Chapter.all
+    @section = Section.first
+    redirect_to course_section_path(@section)
   end
 end

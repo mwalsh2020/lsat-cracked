@@ -1,31 +1,29 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-3 border-right">
-      <ul>
-        <% @chapters.each do |chapter| %>
-          <li>
-            <h2><%= chapter.title %></h2>
-            <ul>
-              <% chapter.sections.each do |section| %>
-                <li><%= link_to section.title, course_section_path(section) %></li>
-              <% end %>
-            </ul>
-          </li>
-        <% end %>
-      </ul>
-
-    </div>
-    <div class="col-9">
-      <h1><%= @section.chapter.title %></h1>
-      <h2><%= @section.title %></h2>
+<div class="course-layout">
+  <div class="course-sidebar">
+    <ul>
+      <% @chapters.each do |chapter| %>
+        <li>
+          <h2><%= chapter.title %></h2>
+          <ul>
+            <% chapter.sections.each do |section| %>
+              <li><%= link_to section.title, course_section_path(section) %></li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="course-container">
+    <div class="shadow-sm course-page">
+      <h6><%= @section.chapter.title %></h6>
+      <h1 class="mb-3"><%= @section.title %></h1>
 
       <% if @section.video? %>
-        <%= render "video", section: @section %>
+        <div class="mb-3"><%= render "video", section: @section %></div>
       <% end %>
 
-      <%= @section.content %>
+      <div class="course-content"><%= @section.content %></div>
     </div>
   </div>
+  </div>
 </div>
-
-
