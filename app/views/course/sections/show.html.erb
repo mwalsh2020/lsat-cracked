@@ -29,23 +29,7 @@
     </div>
     <div class="shadow-sm course-page">
       <h2>Quiz</h2>
-      <%= render "quiz_sessions/show", quiz_session: @quiz_session %>
-
-
-      <ol class="p-0">
-        <% @section.questions.each do |question| %>
-          <li class="mb-5">
-            <%= question.content %>
-            <hr>
-            <div class="list-group">
-              <% question.answers.each do |answer| %>
-                <a href="#" class="list-group-item list-group-item-action"><%= answer.content %></a>
-              <% end %>
-            </div>
-            <hr>
-          </li>
-        <% end %>
-      </ol>
+      <%= render "quiz_sessions/form", quiz_session: @quiz_session %>
     </div>
   </div>
   </div>

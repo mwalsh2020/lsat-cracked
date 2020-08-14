@@ -1,0 +1,11 @@
+<ol class="p-0">
+  <%= simple_form_for [:course, quiz_session] do |f| %>
+    <%= f.simple_fields_for :quiz_questions do |fqq| %>
+      <li class="mb-5">
+        <%= fqq.object.question.content %>
+        <%= fqq.association :answer, collection: fqq.object.possible_answers, as: :radio_buttons %>
+      </li>
+    <% end %>
+  <% end %>
+</ol>
+
