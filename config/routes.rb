@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :coaching_requests, only: [:new, :create]
 
   namespace :admin do
-    resources :chapters do
+    resources :chapters, except: :show do
       resources :sections, only: [:new, :create]
     end
 

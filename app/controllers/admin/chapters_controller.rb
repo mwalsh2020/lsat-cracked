@@ -18,11 +18,6 @@ class Admin::ChaptersController < ApplicationController
     @chapters = policy_scope(Chapter)
   end
 
-  def show
-    @chapter = Chapter.find(params[:id])
-    authorize @chapter
-  end
-
   def edit
     @chapter = Chapter.find(params[:id])
     authorize @chapter
@@ -32,7 +27,7 @@ class Admin::ChaptersController < ApplicationController
     @chapter = Chapter.find(params[:id])
     authorize @chapter
     if @chapter.update(chapter_params)
-      redirect_to admin_chapter_path(@chapter.id)
+      redirect_to admin_chapters_path
     else
       render :edit
     end
