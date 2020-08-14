@@ -27,6 +27,14 @@
 
       <div class="course-content"><%= @section.content %></div>
     </div>
+    <div class="shadow-sm course-page">
+      <h2>Quiz</h2>
+      <ul>
+        <% @section.questions.each do |question| %>
+          <li><%= question.content %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
   </div>
 </div>
