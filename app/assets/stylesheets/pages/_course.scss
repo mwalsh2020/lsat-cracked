@@ -27,6 +27,12 @@ $course-font-size: 1.25rem;
   padding: 1.5rem 2rem;
   border-right: 1px solid darken($light-gray, 5%);
 
+  li.active {
+    list-style: disclosure-closed;
+    color: $primary;
+    font-weight: bold;
+  }
+
   > ul {
     position: sticky;
     top: 1.5rem;

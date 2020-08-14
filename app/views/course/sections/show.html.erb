@@ -7,7 +7,9 @@
           <h2><%= chapter.title %></h2>
           <ul>
             <% chapter.sections.each do |section| %>
-              <li><%= link_to section.title, course_section_path(section) %></li>
+              <li class="<%= current_page?(course_section_path(section)) ? "active" : "" %>">
+                <%= link_to_unless_current section.title, course_section_path(section) %>
+              </li>
             <% end %>
           </ul>
         </li>

@@ -13,9 +13,8 @@ Rails.application.routes.draw do
   #                           admin  admin
   resources :sections, only: [:edit, :update]
 
-  resource :course, only: :show
-
   namespace :course do
+    root to: "dashboards#show"
     resources :sections, only: :show
     # /course/sections/1
   end
