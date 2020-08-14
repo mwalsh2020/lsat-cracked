@@ -1,14 +1,19 @@
-$page-width: (1140px) * 0.875;
+$course-page-width: (1140px) * 0.875;
+$course-font-size: 1.25rem;
+
+.course-content {
+  font-size: $course-font-size;
+}
 
 .course-layout {
   display: flex;
-  background-color: lighten(lightgray, 15%);
+  background-color: $light-gray;
 }
 
 .course-container {
   padding-top: 3rem;
-  width: $page-width;
-  max-width: $page-width;
+  width: $course-page-width;
+  max-width: $course-page-width;
   margin: 0 auto;
 }
 
@@ -19,12 +24,12 @@ $page-width: (1140px) * 0.875;
 }
 
 .course-sidebar {
-  padding: 3rem 2rem;
-  border-right: 1px solid #eee;
+  padding: 1.5rem 2rem;
+  border-right: 1px solid darken($light-gray, 5%);
 
   > ul {
     position: sticky;
-    top: 3rem;
+    top: 1.5rem;
   }
 
   ul {
@@ -33,11 +38,11 @@ $page-width: (1140px) * 0.875;
     margin-bottom: 1rem;
   }
 
+  h1 {
+    font-size: 1.25rem;
+  }
+
   h2 {
     font-size: 1.5rem;
   }
-}
-
-.course-content {
-  font-size: 20px;
 }
