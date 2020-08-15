@@ -1,8 +1,14 @@
-<div class="card-body">
-  <% if quiz_question.correct? %>
-    <h4>Good job!</h4>
-  <% else %>
-    <h4>Not quite right</h4>
-  <% end %>
-  <p>Explanation here</p>
+<div id="collapse-<%= quiz_question.id %>"
+  class="collapse <%= quiz_question.correct? ? "" : "show" %>"
+  aria-labelledby="heading-<%= quiz_question.id %>"
+  data-parent="#quiz-report-accordion">
+
+  <div class="card-body">
+    <% if quiz_question.correct? %>
+      <h4>Good job!</h4>
+    <% else %>
+      <h4>Not quite right</h4>
+    <% end %>
+    <p>Explanation here</p>
+  </div>
 </div>

@@ -1,7 +1,4 @@
 <div class="card">
   <%= render "course/quiz_questions/card_header", quiz_question: quiz_question %>
-
-  <div id="collapse-<%= quiz_question.id %>" class="collapse show" aria-labelledby="heading-<%= quiz_question.id %>" data-parent="#quiz-report-accordion">
-    <%= render "course/quiz_questions/card_body", quiz_question: quiz_question %>
-  </div>
+  <%= render "course/quiz_questions/card_body", quiz_question: quiz_question %>
 </div>
