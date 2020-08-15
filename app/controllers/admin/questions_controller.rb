@@ -12,15 +12,39 @@ class Admin::QuestionsController < ApplicationController
     authorize @question
 
     if @question.save
-      redirect_to admin_chapters_path
+      redirect_to [:admin, @question.section, :questions]
     else
       render :new
+    end
+  end
+
+  def edit
+    @question = Question.find(params[:id])
+    authorize @question
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    authorize @question
+
+    if @question.update(question_params)
+      redirect_to [:admin, @question.section, :questions]
+    else
+      render :edit
     end
   end
 
   def index
     @section  = Section.find(params[:section_id])
     @questions = policy_scope(@section.questions)
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    authorize @question
+
+    @question.destroy
+    redirect_to [:admin, @question.section, :questions]
   end
 
   private

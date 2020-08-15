@@ -1,4 +1,10 @@
 <li>
   <%= link_to section.title, admin_section_questions_path(section) %>
-  <%= link_to "Edit", edit_admin_section_path(section), class: "text-muted" %>
+  <small>
+    (
+    <%= link_to "Edit", edit_admin_section_path(section), class: "text-muted" %>
+    |
+    <%= link_to "Remove", admin_section_path(section), method: :delete, class: "text-danger" %>
+    )
+  </small>
 </li>
