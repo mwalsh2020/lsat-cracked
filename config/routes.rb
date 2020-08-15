@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       resources :sections, only: [:new, :create]
     end
 
-    resources :sections, only: [:edit, :update] do
+    resources :sections, only: [:edit, :update, :destroy] do
       resources :questions, only: [:new, :create, :index]
     end
 

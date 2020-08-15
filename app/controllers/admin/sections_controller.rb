@@ -13,7 +13,7 @@ class Admin::SectionsController < ApplicationController
 
     authorize @section
     if @section.save
-      redirect_to [:admin, @chapter]
+      redirect_to [:admin, :chapters]
     else
       render :new
     end
@@ -32,6 +32,14 @@ class Admin::SectionsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @section = Section.find(params[:id])
+    authorize @section
+    @section.destroy
+
+    redirect_to [:admin, :chapters]
   end
 
   private
