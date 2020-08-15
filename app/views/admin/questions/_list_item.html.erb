@@ -1,5 +1,13 @@
 <li>
   <%= question.content %>
+  <small>
+    (
+    <%= link_to "Edit", edit_admin_question_path(question), class: "text-muted" %>
+    |
+    <%= link_to "Remove", admin_question_path(question), method: :delete, class: "text-danger" %>
+    )
+  </small>
+
   <ul>
     <% question.answers.each do |answer| %>
       <li>

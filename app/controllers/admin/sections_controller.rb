@@ -28,7 +28,7 @@ class Admin::SectionsController < ApplicationController
     @section = Section.find(params[:id])
     authorize @section
     if @section.update(section_params)
-      redirect_to [:admin, @section.chapter]
+      redirect_to [:admin, :chapters]
     else
       render :edit
     end

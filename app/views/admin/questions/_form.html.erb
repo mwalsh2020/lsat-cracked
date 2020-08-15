@@ -1,0 +1,4 @@
+<%= simple_form_for [:admin, section, question] do |f| %>
+  <%= f.rich_text_area :content %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
