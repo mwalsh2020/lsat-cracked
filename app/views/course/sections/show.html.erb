@@ -1,37 +1,17 @@
-<div class="course-layout">
-  <div class="course-sidebar">
-    <h1>Course content</h1>
-    <ul>
-      <% @chapters.each do |chapter| %>
-        <li>
-          <h2><%= chapter.title %></h2>
-          <ul>
-            <% chapter.sections.each do |section| %>
-              <li class="<%= current_page?(course_section_path(section)) ? "active" : "" %>">
-                <%= link_to_unless_current section.title, course_section_path(section) %>
-              </li>
-            <% end %>
-          </ul>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-  <div class="course-container">
-    <div class="shadow-sm course-page">
-      <h6><%= @section.chapter.title %></h6>
-      <h1 class="mb-3"><%= @section.title %></h1>
+<div class="shadow-sm course-page">
+  <h6><%= @section.chapter.title %></h6>
+  <h1 class="mb-3"><%= @section.title %></h1>
 
-      <% if @section.video? %>
-        <div class="mb-3"><%= render "video", section: @section %></div>
-      <% end %>
+  <% if @section.video? %>
+    <div class="mb-3"><%= render "video", section: @section %></div>
+  <% end %>
 
-      <div class="course-content"><%= @section.content %></div>
-    </div>
-    <div class="shadow-sm course-page">
-      <h2>Quiz</h2>
-      <hr>
-      <%= render "course/quiz_sessions/form", quiz_session: @quiz_session %>
-    </div>
-  </div>
-  </div>
+  <div class="course-content"><%= @section.content %></div>
 </div>
+<% if @quiz_session.present? %>
+  <div class="shadow-sm course-page">
+    <h2>Quiz</h2>
+    <hr>
+    <%= render "course/quiz_sessions/form", quiz_session: @quiz_session %>
+  </div>
+<% end %>

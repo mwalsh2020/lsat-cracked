@@ -8,4 +8,8 @@ class Section < ApplicationRecord
   def video?
     youtube_video_id.present?
   end
+
+  def quiz?
+    questions.any?
+  end
 end

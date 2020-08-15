@@ -1,10 +1,7 @@
-class Course::SectionsController < ApplicationController
-  layout "course"
-
+class Course::SectionsController < Course::ApplicationController
   def show
-    @chapters = Chapter.all
     @section = Section.find(params[:id])
-    @quiz_session = build_or_find_quiz_session
+    @quiz_session = build_or_find_quiz_session if @section.quiz?
 
     authorize @section
   end

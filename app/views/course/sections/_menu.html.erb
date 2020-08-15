@@ -1,0 +1,16 @@
+<ul>
+  <% sections.each do |section| %>
+    <% if current_page?(course_section_path(section)) %>
+      <li class="active">
+        <%= section.title %>
+        <% if section.quiz? %>
+          <div class="actions"><%= link_to  "Quiz Reports", "#", class: "font-weight-normal" %></div>
+        <% end %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to section.title, course_section_path(section) %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>

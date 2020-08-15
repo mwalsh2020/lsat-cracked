@@ -1,4 +1,4 @@
-class Course::QuizSessionsController < ApplicationController
+class Course::QuizSessionsController < Course::ApplicationController
   def update
     @quiz_session = QuizSession.find(params[:id])
     authorize @quiz_session
