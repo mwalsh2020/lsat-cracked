@@ -12,6 +12,15 @@
   <body>
     <%= render "shared/navbar", container: false %>
     <%= render "shared/flashes" %>
-    <%= yield %>
+    <%# TODO: Rename or use different classes, as course-layout is the proper name for this sidebar %>
+    <div class="course-layout">
+      <div class="course-sidebar">
+        <h1>Admin panel</h1>
+        <ul class="unstyled">
+          <li><%= link_to_unless_current "Course editor", [:admin, :chapters] %></li>
+        </ul>
+      </div>
+      <div class="course-container"><%= yield %></div>
+    </div> 
   </body>
 </html>
