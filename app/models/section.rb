@@ -3,8 +3,4 @@ class Section < ApplicationRecord
 
   belongs_to :chapter
   has_many :questions
-
-  def video?
-    youtube_video_id.present?
-  end
 end

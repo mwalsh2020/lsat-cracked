@@ -45,6 +45,6 @@ class Admin::SectionsController < ApplicationController
   private
 
   def section_params
-    params.require(:section).permit(:title, :content, :youtube_video_id)
+    params.require(:section).permit(:title, :content)
   end
 end
