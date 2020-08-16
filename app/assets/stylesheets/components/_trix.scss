@@ -1,6 +1,10 @@
 @import "trix/dist/trix";
 
 .trix-content {
+  .attachment--content {
+    width: 100%;
+  }
+
   .attachment-gallery {
     > action-text-attachment,
     > .attachment {
