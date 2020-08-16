@@ -6,6 +6,6 @@ require("channels")
 require("@rails/actiontext")
 require("bootstrap")
 
-import { initTrix } from "../component/init_trix"
+import { initTrix } from "../components/init_trix"
 
 initTrix()
