@@ -24,4 +24,8 @@ Rails.application.routes.draw do
     root to: "dashboards#show"
     resources :sections, only: :show
   end
+
+  namespace :attachment do
+    resources :youtube_videos, only: :show
+  end
 end
