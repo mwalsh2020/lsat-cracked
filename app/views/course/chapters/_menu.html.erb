@@ -1,0 +1,8 @@
+<ul>
+  <% chapters.each do |chapter| %>
+    <li>
+      <h2><%= chapter.title %></h2>
+      <%= render "course/sections/menu", sections: chapter.sections %>
+    </li>
+  <% end %>
+</ul>
