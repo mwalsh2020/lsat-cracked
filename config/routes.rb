@@ -27,4 +27,8 @@ Rails.application.routes.draw do
       get :report, on: :member
     end
   end
+
+  namespace :attachment do
+    resources :youtube_videos, only: :show
+  end
 end

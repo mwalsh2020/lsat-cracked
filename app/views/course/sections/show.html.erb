@@ -1,11 +1,6 @@
 <div class="shadow-sm course-page">
   <h6><%= @section.chapter.title %></h6>
   <h1 class="mb-3"><%= @section.title %></h1>
-
-  <% if @section.video? %>
-    <div class="mb-3"><%= render "video", section: @section %></div>
-  <% end %>
-
   <div class="course-content"><%= @section.content %></div>
 </div>
 <% if @quiz_session.present? %>
