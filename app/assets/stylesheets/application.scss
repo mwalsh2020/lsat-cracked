@@ -1,15 +1,11 @@
-$primary: #a51c30 !default;
-$font-size-base: 1.125rem !default;
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
 
-@import "bootstrap";
+// External libraries
+@import "bootstrap/scss/bootstrap";
 
-/* Bootstrap customs */
-.container {
-  &.container-compact {
-    max-width: (1140px) / 2;
-  }
-}
-
-/* Components */
-@import "components/alert-notice";
-@import "components/banner";
+// Pages and components
+@import "components/index";
+@import "pages/index";

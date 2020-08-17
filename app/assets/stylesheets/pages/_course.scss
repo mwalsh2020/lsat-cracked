@@ -1,0 +1,55 @@
+$course-page-width: (1140px) * 0.875;
+$course-font-size: 1.25rem;
+
+.course-content {
+  font-size: $course-font-size;
+}
+
+.course-layout {
+  display: flex;
+  background-color: $light-gray;
+}
+
+.course-container {
+  padding-top: 3rem;
+  width: $course-page-width;
+  max-width: $course-page-width;
+  margin: 0 auto;
+}
+
+.course-page {
+  padding: 4rem 5rem;
+  border-radius: 4px;
+  background-color: #fff;
+  margin-bottom: 1rem;
+}
+
+.course-sidebar {
+  padding: 1.5rem 2rem;
+  border-right: 1px solid darken($light-gray, 5%);
+
+  li.active {
+    list-style: disclosure-closed;
+    color: $primary;
+    font-weight: bold;
+  }
+
+  > ul {
+    position: sticky;
+    top: 1.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}

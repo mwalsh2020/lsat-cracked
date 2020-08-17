@@ -1,0 +1,7 @@
+<%= form.input :title %>
+<%= form.input :youtube_video_id, label: "Youtube Video ID" %>
+<div class="field">
+  <%= form.label :content %>
+  <%= form.rich_text_area :content %>
+</div>
+<%= form.button :submit, class: "btn btn-primary" %>
