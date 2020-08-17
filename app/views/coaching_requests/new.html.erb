@@ -2,17 +2,10 @@
   <h2 class="text-center text-white">Coaching</h2>
 </div>
 
-<div class="container mb-5">
-  <div class="row justify-content-center">
+<div class="container">
+  <div class="row justify-content-center mb-5">
     <div class="col-12 col-md-8 col-lg-6">
-      <%= simple_form_for :coaching_contact, url: coaching_requests_path do |f| %>
-        <%= f.input :name %>
-        <%= f.input :email %>
-        <%= f.input :target_law_school, label: "Target Law School", required: false %>
-        <%= f.input :target_lsat_score, label: "Target LSAT Score", required: false %>
-        <%= f.input :message, as: :text, required: false %>
-        <%= f.button :submit, "Send Coaching Request", class: "btn btn-primary" %>
-      <% end %>
+      <%= render "form", coaching_request: @coaching_request %>
     </div>
   </div>
 </div>
