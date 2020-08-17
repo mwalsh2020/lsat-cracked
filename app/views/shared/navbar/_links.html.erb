@@ -1,0 +1,18 @@
+<%= link_to "Learn", course_root_path, class: "btn btn-outline-primary mr-3" %>
+
+<%# TODO: change to policy for seeing admin panel %>
+<% if current_user.admin? %>
+  <%= link_to "Admin", admin_chapters_path, class: "btn btn-outline-primary mr-3" %>
+<% end %>
+
+<% if home_links.present? %>
+  <%= link_to "About", about_path, class: "btn btn-link" %>
+  <%= link_to "Testimonials", testimonials_path, class: "btn btn-link" %>
+  <%= link_to "Coaching", new_coaching_request_path, class: "btn btn-link" %>  
+<% end %>
+
+<% if current_user.present? %>
+  <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-link text-muted", method: :delete %>
+<% else %>
+  <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
+<% end %>
