@@ -7,15 +7,18 @@ class CoachingRequestsController < ApplicationController
   end
 
   def create
-    WebMailer.with(coaching_request_params).coaching.deliver_now
-
-    flash[:notice] = "Mail sent successfully!"
-    redirect_to new_coaching_request_path
+    @coaching_request = CoachingRequest.new(coaching_request_params)
+    if @coaching_request.submit
+      flash[:notice] = "Mail sent successfully!"
+      redirect_to new_coaching_request_path
+    else
+      render :new
+    end
   end
 
   private
 
   def coaching_request_params
-    params.required(:coaching_contact).permit(:name, :email, :target_law_school, :target_lsat_score, :message)
+    params.required(:coaching_request).permit(:name, :email, :target_law_school, :target_lsat_score, :message)
   end
 end

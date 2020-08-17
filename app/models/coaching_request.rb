@@ -5,4 +5,13 @@ class CoachingRequest
 
   validates :name, :email, presence: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+
+  def initialize(params = {})
+    @params = params
+    super
+  end
+
+  def submit
+    WebMailer.with(@params).coaching.deliver_now if valid?
+  end
 end
