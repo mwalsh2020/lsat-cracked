@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'dashboards/show'
+  end
   devise_for :users
   root                  to: "pages#home"
   get  "/about",        to: "pages#about"
@@ -6,6 +9,7 @@ Rails.application.routes.draw do
   resources :coaching_requests, only: [:new, :create]
 
   namespace :admin do
+    root to: "dashboards#show"
     resources :chapters, except: :show do
       resources :sections, only: [:new, :create]
     end

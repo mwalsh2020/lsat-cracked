@@ -2,7 +2,7 @@
 
 <%# TODO: change to policy for seeing admin panel %>
 <% if current_user.admin? %>
-  <%= link_to "Admin", admin_chapters_path, class: "btn btn-outline-primary mr-3" %>
+  <%= link_to "Admin", admin_root_path, class: "btn btn-outline-primary mr-3" %>
 <% end %>
 
 <% if home_links.present? %>
