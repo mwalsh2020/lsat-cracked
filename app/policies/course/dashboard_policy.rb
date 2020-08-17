@@ -1,4 +1,4 @@
-class CoursePolicy < ApplicationPolicy
+class Course::DashboardPolicy < ApplicationPolicy
   def show?
     true
   end
