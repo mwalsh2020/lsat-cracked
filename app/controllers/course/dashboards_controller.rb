@@ -1,4 +1,4 @@
-class Course::DashboardsController < ApplicationController
+class Course::DashboardsController < Course::ApplicationController
   def show
     authorize :course
     @section = Section.first

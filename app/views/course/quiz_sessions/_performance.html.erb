@@ -1,0 +1,4 @@
+Overall Result:
+<span class="badge <%= quiz_session.good_correct_ratio? ? "badge-success" : "badge-danger" %>">
+  <%= quiz_session.correct_answers_ratio * 100 %>%
+</span>

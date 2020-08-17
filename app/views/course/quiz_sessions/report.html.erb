@@ -1,0 +1,10 @@
+<%= link_to  "Back to #{@quiz_session.section.title}", course_section_path(@quiz_session.section) %>
+<div class="container">
+  <h1>Quiz Report</h1>
+  <%= render "performance", quiz_session: @quiz_session %>
+  <div class="accordion" id="quiz-report-accordion">
+    <% @quiz_session.quiz_questions.each do |quiz_question| %>
+      <%= render "course/quiz_questions/card", quiz_question: quiz_question %>
+    <% end %>
+  </div>
+</div>

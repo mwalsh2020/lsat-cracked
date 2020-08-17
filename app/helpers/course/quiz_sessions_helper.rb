@@ -1,0 +1,2 @@
+module Course::QuizSessionsHelper
+end
