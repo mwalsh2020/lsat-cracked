@@ -1,4 +1,4 @@
-class Admin::SectionsController < ApplicationController
+class Admin::SectionsController < Admin::ApplicationController
   def new
     @chapter = Chapter.find(params[:chapter_id])
     @section = Section.new

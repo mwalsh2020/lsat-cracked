@@ -1,4 +1,4 @@
-class Admin::ChaptersController < ApplicationController
+class Admin::ChaptersController < Admin::ApplicationController
   def new
     @chapter = Chapter.new
     authorize @chapter

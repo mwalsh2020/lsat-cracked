@@ -1,4 +1,4 @@
-class Admin::QuestionsController < ApplicationController
+class Admin::QuestionsController < Admin::ApplicationController
   def new
     @section  = Section.find(params[:section_id])
     @question = Question.new
