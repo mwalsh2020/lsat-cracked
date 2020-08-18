@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    get 'dashboards/show'
-  end
   devise_for :users
   root                  to: "pages#home"
   get  "/about",        to: "pages#about"
@@ -21,7 +18,6 @@ Rails.application.routes.draw do
     resources :questions, only: [:edit, :update, :destroy] do
       resources :answers, only: [:new, :create]
     end
-
   end
 
   namespace :course do

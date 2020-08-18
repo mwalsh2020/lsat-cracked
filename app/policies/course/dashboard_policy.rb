@@ -1,6 +1,6 @@
 class Course::DashboardPolicy < ApplicationPolicy
   def show?
-    true
+    user.admin? || user.paying?
   end
 
   class Scope < Scope
