@@ -1,6 +1,6 @@
 class SectionPolicy < ApplicationPolicy
   def show?
-    true
+    user.admin? || user.paying?
   end
 
   def create?
