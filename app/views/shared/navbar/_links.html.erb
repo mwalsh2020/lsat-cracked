@@ -1,4 +1,7 @@
-<%= link_to "Learn", course_root_path, class: "btn btn-outline-primary mr-3" %>
+
+<% if current_user.present? || User.devise_modules.include?(:registrations) %>
+  <%= link_to "Learn", course_root_path, class: "btn btn-outline-primary mr-3" %>
+<% end %>
 
 <%# TODO: Update to avoid safe navigation %>
 <% if current_user&.admin? %>
@@ -11,8 +14,10 @@
   <%= link_to "Coaching", new_coaching_request_path, class: "btn btn-link" %>  
 <% end %>
 
-<% if current_user&.present? %>
+<% if current_user.present? %>
   <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-link text-muted", method: :delete %>
 <% else %>
-  <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
+  <% if User.devise_modules.include?(:registrations) %>
+    <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
+  <% end %>
 <% end %>
