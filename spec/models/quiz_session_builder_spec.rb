@@ -9,7 +9,7 @@ RSpec.describe QuizSessionBuilder, type: :model do
   it { expect(quiz_session_builder).to respond_to(:section=) }
 
   describe "#build" do
-    context "user has a pending quiz for given section" do
+    context "user has NO PENDING quiz for given section" do
       before do
         allow(user).to receive(:pending_quiz).with(section) { nil }
       end
@@ -23,7 +23,7 @@ RSpec.describe QuizSessionBuilder, type: :model do
       end
     end
 
-    context "user has a pending quiz for given section" do
+    context "user has A PENDING quiz for given section" do
       let(:quiz_session) { QuizSession.new }
 
       before do
