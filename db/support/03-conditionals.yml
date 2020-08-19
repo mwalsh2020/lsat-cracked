@@ -1,0 +1,24 @@
+# Sections Start
+# Sections Start
+- title: "Basic Math"
+  questions:
+    # Question Start
+    - prompt: "What is 2+2?"
+      explanation: "Because xx + xx is xxxx"
+      answers:
+        # Answer start
+        - content: "4"
+          correct: true
+        # Answer start
+        - content: "1"
+          correct: false
+    # Question Start
+    - prompt: "What is my name?"
+      explanation: "...."
+      answers:
+        # Answer start
+        - content: "Caio"
+          correct: true
+        # Answer start
+        - content: "Matt"
+          correct: false
