@@ -2,8 +2,8 @@ class Section < ApplicationRecord
   has_rich_text :content
 
   belongs_to :chapter
-  has_many :questions
-  has_many :quiz_sessions
+  has_many :questions, dependent: :destroy
+  has_many :quiz_sessions, dependent: :destroy
 
   def quiz?
     questions.any?
