@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_233730) do
+ActiveRecord::Schema.define(version: 2020_08_19_234003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,13 @@ ActiveRecord::Schema.define(version: 2020_08_19_233730) do
     t.index ["section_id"], name: "index_questions_on_section_id"
   end
 
+  create_table "quiz_question_answers", force: :cascade do |t|
+    t.bigint "answer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["answer_id"], name: "index_quiz_question_answers_on_answer_id"
+  end
+
   create_table "quiz_questions", force: :cascade do |t|
     t.bigint "question_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -111,6 +118,7 @@ ActiveRecord::Schema.define(version: 2020_08_19_233730) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "questions"
   add_foreign_key "questions", "sections"
+  add_foreign_key "quiz_question_answers", "answers"
   add_foreign_key "quiz_questions", "questions"
   add_foreign_key "quiz_questions", "quizzes"
   add_foreign_key "quizzes", "sections"
