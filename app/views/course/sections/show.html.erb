@@ -3,12 +3,12 @@
   <h1 class="mb-3"><%= @section.title %></h1>
   <div class="course-content"><%= @section.content %></div>
 </div>
-<% if @quiz_session.present? %>
+<% if @quiz.present? %>
   <div class="shadow-sm course-page" id="quiz">
     <% if current_user.answered_quiz?(@section) %>
-      <%= render "course/quiz_sessions/report", quiz_session: @quiz_session %>
+      <%= render "course/quizzes/report", quiz: @quiz %>
     <% else %>
-      <%= render "course/quiz_sessions/form", quiz_session: @quiz_session %>
+      <%= render "course/quizzes/form", quiz: @quiz %>
     <% end %>
   </div>
 <% end %>

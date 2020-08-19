@@ -1,7 +1,7 @@
 <h2>Quiz</h2>
 <hr>
 <ol class="p-0">
-  <%= simple_form_for [:course, quiz_session], html: { class: "quiz-answer" } do |f| %>
+  <%= simple_form_for [:course, quiz], html: { class: "quiz-answer" } do |f| %>
     <%= f.simple_fields_for :quiz_questions do |fqq| %>
       <li>
         <%= fqq.object.question.prompt %>

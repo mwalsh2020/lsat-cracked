@@ -1,5 +1,5 @@
 class QuizQuestion < ApplicationRecord
-  belongs_to :quiz_session
+  belongs_to :quiz
   belongs_to :question
   belongs_to :answer, optional: true
 
@@ -7,7 +7,7 @@ class QuizQuestion < ApplicationRecord
 
   scope :correctly_answered, -> { joins(:answer).where(answers: { correct: true }) }
 
-  validate :answered, if: :quiz_session_complete?
+  validate :answered, if: :quiz_complete?
 
   def correct?
     answer&.correct?
@@ -19,7 +19,7 @@ class QuizQuestion < ApplicationRecord
 
   private
 
-  def quiz_session_complete?
-    quiz_session.complete?
+  def quiz_complete?
+    quiz.complete?
   end
 end
