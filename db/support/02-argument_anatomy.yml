@@ -1,0 +1,384 @@
+# Section
+title: "Basic Argument Anatomy & Recognition"
+questions:
+  - prompt: "Every logical reasoning stimulus you read will either be an argument or statements."
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: true
+      - answer: "False"
+        correct: false
+
+  - prompt: "The definition of a conclusion: a claim for which one or more other claims are offered in support."
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: true
+      - answer: "False"
+        correct: false
+
+  - prompt: "The definition of a premise: a claim made that supports the argument's conclusion."
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: true
+      - answer: "False"
+        correct: false
+
+  - prompt: "If there is a conclusion, it's an argument. If there's no conclusion, it's not an argument (it's a set of facts)"
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: true
+      - answer: "False"
+        correct: false
+
+    - prompt: "When something sounds opinionated, you know it has to be a conclusion."
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: false
+      - answer: "False"
+        correct: true
+
+    - prompt: "Arguments always contain a structural indicator (e.g. 'Therefore')."
+    explanation: "
+    answer_choices:
+      - answer: "True"
+        correct: false
+      - answer: "False"
+        correct: true
+
+    - prompt: "An argument requires a minimum of one premise and one conclusion."
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: true
+      - answer: "False"
+        correct: false
+
+    - prompt: "The very act of attempting to justify or support a claim is what turns that claim into a conclusion."
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: true
+      - answer: "False"
+        correct: false
+
+# non-true-false questions
+
+    - prompt: "The house across the street is blue, has five windows, and has a large front lawn."
+    explanation: Three facts are presented, but none of these claims are supported by any other claim.
+    answer_choices:
+      - answer: "Set of facts"
+        correct: true
+      - answer: "Argument"
+        correct: false
+
+    - prompt: "The house across the street is blue, has five windows, and has a large front lawn. Therefore, it is a good house."
+    explanation: This is an argument. The claim "it is a good house" is the conclusion, as is supported by the three claims in the prior sentence.
+    answer_choices:
+      - answer: "Set of facts"
+        correct: false
+      - answer: "Argument"
+        correct: true
+
+    - prompt: "Wallabies walk quickly. Walking quickly saves time. Some wallabies make their dwelling in New Zealand."
+    explanation: "This is merely a collection of three facts about wallabies. No conclusion is drawn."
+    answer_choices:
+      - answer: "Set of facts"
+        correct: true
+      - answer: "Argument"
+        correct: false
+
+    - prompt: "Wallabies walk quickly. Walking quickly saves time. So, wallabies do at least one activity that saves time."
+    explanation: The last sentence is the conclusion. It is supported by the two claims in the first sentence.
+    answer_choices:
+      - answer: "Set of facts"
+        correct: false
+      - answer: "Argument"
+        correct: True
+
+    - prompt: ""
+    explanation:
+    answer_choices:
+      - answer: "Set of facts"
+        correct: true
+      - answer: "Argument"
+        correct: false
+
+    - prompt: ""
+    explanation:
+    answer_choices:
+      - answer: "Set of facts"
+        correct: true
+      - answer: "Argument"
+        correct: false
+
+    - prompt: ""
+    explanation:
+    answer_choices:
+      - answer: "Set of facts"
+        correct: true
+      - answer: "Argument"
+        correct: false
+#section end
+
+# Section
+title: "Argument Components"
+questions:
+  - prompt: "Everything in an argument is either a conclusion or a premise."
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: false
+      - answer: "False"
+        correct: true
+
+  - prompt: "When the argument contains only a structural indicator for a premise, you can work backwards to figure out the conclusion"
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: true
+      - answer: "False"
+        correct: false
+
+  - prompt: "When something sounds opinionated, you know it has to be a conclusion"
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: false
+      - answer: "False"
+        correct: true
+
+  - prompt: "A conclusion is occasionally a bald assertion lacking any support"
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: false
+      - answer: "False"
+        correct: true
+
+  - prompt: "When you admit something that's bad for your argument, that's called a premise",
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: false
+      - answer: "False"
+        correct: true
+
+  - prompt: "A "
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: false
+      - answer: "False"
+        correct: true
+
+
+# non-true-false questions
+
+  - prompt: "What argument component is introduced by the following: {premise_indicator}?"
+
+#TODO: please convert all of these into their own question, and mix them up with the questions below, so it doesn't give all of the same questions in a row.
+
+    variables:
+      premise_indicator:
+        - After all
+        - As indicated by
+        - Because
+        - Due to
+        - For
+        - For example
+        - For the reason that
+        - Furthermore
+        - Given that
+        - May be inferred from
+        - Owing to
+        - Since
+        - This can be seen from
+        - We know this by
+        - Seeing that
+    explanation: {premise_indicator} reliably introduces a premise, which will support the conclusion of the argument.
+    answer_choices:
+      - answer: "premise"
+        correct: true
+      - answer: "conclusion"
+        correct: false
+      - answer: "concession"
+        correct: false
+      - answer: "another position"
+        correct: false
+
+  - prompt: "What argument component is introduced by the following: {conclusion_indicator}?"
+
+#TODO: please convert all of these into their own question, and mix them up with the questions below, so it doesn't give all of the same questions in a row.
+
+    variables:
+      conclusion_indicator:
+        - As a result
+        - Accordingly
+        - Clearly
+        - Therefore
+        - Consequently
+        - We may conclude that
+        - This implies that
+        - For this reason
+        - Hence
+        - This shows that
+        - So
+        - Thus
+        - We may infer that
+    explanation: {conclusion_indicator} reliably introduces a conclusion, which will be supported by one or more premises.
+    answer_choices:
+      - answer: "premise"
+        correct: false
+      - answer: "conclusion"
+        correct: true
+      - answer: "concession"
+        correct: false
+      - answer: "another position"
+        correct: false
+
+
+  - prompt: "What argument component is introduced by the following: {conclusion_indicator}?"
+
+#TODO: please convert all of these into their own question, and mix them up with the questions below, so it doesn't give all of the same questions in a row.
+
+    variables:
+      concession_indicator:
+        - Admittedly
+        - Despite
+        - In spite of
+        - Although
+        - Even though
+        - While it's true that
+    explanation: {concession_indicator} reliably introduces a concession. Think of a time where you admitted a key fact to someone you were debating, but nonetheless argued that your point of view was correct. The admitted fact is a concession, not a premise, as it does not support your conclusion.
+    answer_choices:
+      - answer: "premise"
+        correct: false
+      - answer: "conclusion"
+        correct: false
+      - answer: "concession"
+        correct: true
+      - answer: "another position"
+        correct: false
+
+  - prompt: "What argument component is introduced by the following: {another_position_indicator}?"
+
+#TODO: please convert all of these into their own question, and mix them up with the questions below, so it doesn't give all of the same questions in a row.
+
+    variables:
+      another_position_indicator:
+        - It is sometimes said that
+        - Some researchers claim
+        - Some scientists have hypothesized
+        - Some people think that
+        - The conventional explanation is that
+    explanation: {another_position_indicator} reliably introduces someone else's position, to which our argument will usually respond critically.
+    answer_choices:
+      - answer: "premise"
+        correct: false
+      - answer: "conclusion"
+        correct: false
+      - answer: "concession"
+        correct: false
+      - answer: "another position"
+        correct: true
+
+#section end
+
+# Section
+title: "Advanced Conclusions"
+questions:
+  - prompt: "A conclusion may actually support another claim in the argument."
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: true
+      - answer: "False"
+        correct: false
+
+  - prompt: "When the argument responds to another position, the response is usually the argument's main conclusion."
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: true
+      - answer: "False"
+        correct: false
+
+  - prompt: "When the argument rejects an opposing position, you will usually need to do some amount of synthesis to articulate the argument's conclusion."
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: true
+      - answer: "False"
+        correct: false
+
+  - prompt: "When you see the word 'should' or 'ought', you know you're looking at the conclusion",
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: true
+      - answer: "False"
+        correct: false
+
+  - prompt: "Arguments lacking structural indicators generally fall into predictable categories of conclusions that you can learn"
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: true
+      - answer: "False"
+        correct: false
+
+  - prompt: "Certain key verbs like 'establish' may indicate a conclusion in certain settings (e.g. studies, surveys)."
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: true
+      - answer: "False"
+        correct: false
+
+  - prompt: "When someone makes a prediction about the future, they usually don't try to support it"
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: false
+      - answer: "False"
+        correct: true
+
+  - prompt: "When the argument responds to another position, the response is usually in agreement",
+    explanation:
+    answer_choices:
+      - answer: "True"
+        correct: false
+      - answer: "False"
+        correct: true
+
+# non-true-false questions
+
+    - prompt: "Mike should not have stolen from Issac. Mike was not in mortal peril nor did Mike have fewer assets than Issac." Identify the conclusion.
+      explanation: The prescriptive claim that Mike should not have stolen is the conclusion, and the argument attempts to support that moral claim by providing two descriptive facts about Mike and his situation.
+      answer_choices:
+        - answer: "Mike was not in mortal peril"
+          correct: false
+        - answer: "Mike did not have more assets than Issac"
+          correct: false
+        - answer: "Mike should not have stolen from Issac"
+          correct: true
+
+    - prompt: "Recent studies establish that most people are willing to skydive. In these studies, 70% of people told the researcher they were willing to skydive." Identify the conclusion.
+      explanation: The key verb is “establish.” That is a very strong verb. It’s short for “establishes as a fact.” That’s saying that the studies (which are a premise of the argument) conclusively prove the conclusion (which is the latter part of the sentence). Other strong verbs that could have been used here (non-exhaustive): shows, proves, indicates, suggests, supports, etc. All of these provide connective tissue between the observable fact (premise) and the claim being made (conclusion).
+      answer_choices:
+        - answer: "Most people are willing to skydive"
+          correct: true
+        - answer: "In these studies"
+          correct: false
+        - answer: "70% of people told the researcher they were willing to skydive"
+          correct: false
+
+
+
+
+
+#section end
