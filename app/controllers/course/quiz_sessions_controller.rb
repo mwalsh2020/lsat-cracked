@@ -1,10 +1,12 @@
 class Course::QuizSessionsController < Course::ApplicationController
   def update
-    @quiz_session = QuizSession.find(params[:id])
+    @quiz_session = QuizSession.includes(:quiz_questions).find(params[:id])
+    @section = @quiz_session.section
     authorize @quiz_session
 
-    if @quiz_session.update(quiz_session_params.merge(complete: true))
-      redirect_to course_section_path(@quiz_session.section, anchor: "quiz")
+    @quiz_session.complete = true
+    if @quiz_session.update(quiz_session_params)
+      redirect_to course_section_path(@section, anchor: "quiz")
     else
       render "course/sections/show"
     end

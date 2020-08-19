@@ -8,6 +8,7 @@ class QuizSession < ApplicationRecord
   accepts_nested_attributes_for :quiz_questions
 
   validates :questions, presence: true
+  validate :fully_answered, if: :complete?
 
   scope :complete, -> { where(complete: true) }
   scope :pending, -> { where.not(complete: true) }
@@ -22,5 +23,17 @@ class QuizSession < ApplicationRecord
 
   def good_correct_ratio?
     correct_answers_ratio > 0.8
+  end
+
+  private
+
+  def fully_answered
+    errors.add(:quiz_questions, "must") unless questions_answered?
+  end
+
+  def questions_answered?
+    quiz_questions.all? do |quiz_question|
+      quiz_question.valid?
+    end
   end
 end

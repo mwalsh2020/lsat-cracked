@@ -7,7 +7,19 @@ class QuizQuestion < ApplicationRecord
 
   scope :correctly_answered, -> { joins(:answer).where(answers: { correct: true }) }
 
+  validate :answered, if: :quiz_session_complete?
+
   def correct?
     answer&.correct?
+  end
+
+  def answered
+    errors.add(:answer, "must") if answer.blank?
+  end
+
+  private
+
+  def quiz_session_complete?
+    quiz_session.complete?
   end
 end
