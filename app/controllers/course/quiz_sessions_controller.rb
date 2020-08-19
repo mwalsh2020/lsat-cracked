@@ -10,11 +10,6 @@ class Course::QuizSessionsController < Course::ApplicationController
     end
   end
 
-  def report
-    @quiz_session = QuizSession.find(params[:id])
-    authorize @quiz_session
-  end
-
   private
 
   def quiz_session_params
