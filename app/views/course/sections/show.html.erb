@@ -4,7 +4,7 @@
   <div class="course-content"><%= @section.content %></div>
 </div>
 <% if @quiz_session.present? %>
-  <div class="shadow-sm course-page">
+  <div class="shadow-sm course-page" id="quiz">
     <% if current_user.answered_quiz?(@section) %>
       <%= render "course/quiz_sessions/report", quiz_session: @quiz_session %>
     <% else %>

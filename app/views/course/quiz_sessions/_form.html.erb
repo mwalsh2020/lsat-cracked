@@ -4,7 +4,7 @@
   <%= simple_form_for [:course, quiz_session] do |f| %>
     <%= f.simple_fields_for :quiz_questions do |fqq| %>
       <li>
-        <%= fqq.object.question.content %>
+        <%= fqq.object.question.prompt %>
         <div class="list-group pt-4">
           <%= fqq.association :answer,
               collection: fqq.object.possible_answers,

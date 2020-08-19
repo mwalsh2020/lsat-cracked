@@ -5,7 +5,7 @@
   aria-controls="collapse-<%= quiz_question.id %>">
 
   <div class="btn btn-light bg-transparent border-0">
-    <%= quiz_question.question.content.to_plain_text.truncate(64) %>
+    <%= quiz_question.question.prompt.to_plain_text.truncate(64) %>
   </div>
   <% if quiz_question.correct? %>
     <span class="badge badge-success">Correct</span>
