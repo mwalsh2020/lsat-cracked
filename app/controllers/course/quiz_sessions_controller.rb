@@ -4,7 +4,7 @@ class Course::QuizSessionsController < Course::ApplicationController
     authorize @quiz_session
 
     if @quiz_session.update(quiz_session_params.merge(complete: true))
-      redirect_to report_course_quiz_session_path(@quiz_session)
+      redirect_to course_section_path(@quiz_session.section, anchor: "quiz")
     else
       render "course/sections/show"
     end
