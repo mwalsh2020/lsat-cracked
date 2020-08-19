@@ -32,8 +32,7 @@ class QuizSession < ApplicationRecord
   end
 
   def questions_answered?
-    quiz_questions.all? do |quiz_question|
-      quiz_question.valid?
-    end
+    quiz_questions.each(&:valid?)
+    quiz_questions.all?(&:valid?)
   end
 end
