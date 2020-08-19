@@ -5,15 +5,8 @@ RSpec.describe QuizSessionBuilder, type: :model do
   let(:section)              { Section.new }
   let(:user)                 { User.new }
 
-  it "implements #user=" do
-    expect(quiz_session_builder).to receive(:user=).with(user)
-    quiz_session_builder.user = user
-  end
-
-  it "implements #section=" do
-    expect(quiz_session_builder).to receive(:section=).with(section)
-    quiz_session_builder.section = section
-  end
+  it { expect(quiz_session_builder).to respond_to(:user=) }
+  it { expect(quiz_session_builder).to respond_to(:section=) }
 
   describe "#build" do
     context "user has a pending quiz for given section" do
