@@ -5,8 +5,10 @@
 </div>
 <% if @quiz_session.present? %>
   <div class="shadow-sm course-page">
-    <h2>Quiz</h2>
-    <hr>
-    <%= render "course/quiz_sessions/form", quiz_session: @quiz_session %>
+    <% if current_user.answered_quiz?(@section) %>
+      <%= render "course/quiz_sessions/report", quiz_session: @quiz_session %>
+    <% else %>
+      <%= render "course/quiz_sessions/form", quiz_session: @quiz_session %>
+    <% end %>
   </div>
 <% end %>
