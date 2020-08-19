@@ -14,7 +14,7 @@ class QuizQuestion < ApplicationRecord
   end
 
   def answered
-    errors.add(:answer, "must") if answer.blank?
+    errors.add(:answer, "is needed in order to proceeed") if answer.blank?
   end
 
   private

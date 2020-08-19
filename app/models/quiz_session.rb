@@ -28,7 +28,7 @@ class QuizSession < ApplicationRecord
   private
 
   def fully_answered
-    errors.add(:quiz_questions, "must") unless questions_answered?
+    errors.add(:quiz_questions, "must be fully answered to proceed") unless questions_answered?
   end
 
   def questions_answered?
