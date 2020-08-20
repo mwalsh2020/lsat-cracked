@@ -1,5 +1,13 @@
 @import "trix/dist/trix";
 
+trix-toolbar {
+  position: sticky;
+  top: 0;
+  background-color: $light-gray;
+  border-bottom: 1px solid #ddd;
+  padding-top: 0.5rem
+}
+
 .trix-content {
   .attachment--content {
     width: 100%;
