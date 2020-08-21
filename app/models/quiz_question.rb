@@ -12,6 +12,11 @@ class QuizQuestion < ApplicationRecord
   end
 
   def answered?
-    answer.present?
+    if answer.present?
+      true
+    else
+      errors.add(:answer, "to proceed")
+      false
+    end
   end
 end

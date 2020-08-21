@@ -22,7 +22,7 @@ class Quiz::Session
   end
 
   def valid?
-    @quiz_questions.all?(&:answered?)
+    @quiz_questions.map(&:answered?).all?
   end
 
   def correct_answers_ratio
