@@ -5,16 +5,22 @@ trix-toolbar {
   top: 0;
   background-color: $light-gray;
   border-bottom: 1px solid #ddd;
-  padding-top: 0.5rem
+  padding-top: 0.5rem;
+
+  .trix-button--icon-heading-1::before {
+    background-image: asset-url("trix_icons/heading1.png") !important;
+  }
+  
+  .trix-button--icon-heading-2::before {
+    background-image: asset-url("trix_icons/heading2.png");
+  }
+  
+  .trix-button--icon-code::before {
+    background-image: asset-url("trix_icons/diagram.png");
+    background-size: 50%;
+  }
 }
 
-.trix-button--icon-heading-1::before {
-  background-image: asset-url("trix_icons/heading1.png") !important;
-}
-
-.trix-button--icon-heading-2::before {
-  background-image: asset-url("trix_icons/heading2.png");
-}
 
 .trix-content {
   h1 {
