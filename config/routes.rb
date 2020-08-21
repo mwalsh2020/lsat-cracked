@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     root to: "dashboards#show"
     resources :sections, only: :show
     resources :quizzes, only: [] do
-      resources :sessions, only: :create
+      resources :sessions, only: :create, controller: "quiz/sessions"
     end
   end
 

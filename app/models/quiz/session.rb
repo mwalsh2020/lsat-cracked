@@ -29,4 +29,10 @@ class Quiz::Session
   def good_correct_ratio?
     correct_answers_ratio > 0.8
   end
+
+  def save
+    return false unless valid?
+
+    binding.pry
+  end
 end
