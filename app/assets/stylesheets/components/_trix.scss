@@ -17,6 +17,16 @@ trix-toolbar {
 }
 
 .trix-content {
+  h1 {
+    font-size: $h4-font-size;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: $h5-font-size;
+    margin: 0;
+  }
+
   .attachment--content {
     width: 100%;
   }
