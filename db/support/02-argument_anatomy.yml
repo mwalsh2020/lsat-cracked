@@ -97,30 +97,6 @@
         - content: "Argument"
           correct: True
 
-    - prompt: ""
-      explanation:
-      answers:
-        - content: "Set of facts"
-          correct: true
-        - content: "Argument"
-          correct: false
-
-    - prompt: ""
-      explanation:
-      answers:
-        - content: "Set of facts"
-          correct: true
-        - content: "Argument"
-          correct: false
-
-    - prompt: ""
-      explanation:
-      answers:
-        - content: "Set of facts"
-          correct: true
-        - content: "Argument"
-          correct: false
-
 - title: "Argument Components"
   questions:
     - prompt: "Everything in an argument is either a conclusion or a premise."
