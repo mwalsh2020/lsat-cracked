@@ -8,7 +8,25 @@ trix-toolbar {
   padding-top: 0.5rem
 }
 
+.trix-button--icon-heading-1::before {
+  background-image: asset-url("trix_icons/heading1.png") !important;
+}
+
+.trix-button--icon-heading-2::before {
+  background-image: asset-url("trix_icons/heading2.png");
+}
+
 .trix-content {
+  h1 {
+    font-size: $h4-font-size;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: $h5-font-size;
+    margin: 0;
+  }
+
   .attachment--content {
     width: 100%;
   }
