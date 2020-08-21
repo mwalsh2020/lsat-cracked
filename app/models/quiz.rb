@@ -12,6 +12,10 @@ class Quiz < ApplicationRecord
   scope :complete, -> { where(complete: true) }
   scope :pending, -> { where.not(complete: true) }
 
+  def session
+    Quiz::Session.new(self)
+  end
+
   def correct_answers_ratio
     correct_answers_count.fdiv(quiz_questions.count)
   end

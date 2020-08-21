@@ -23,7 +23,9 @@ Rails.application.routes.draw do
   namespace :course do
     root to: "dashboards#show"
     resources :sections, only: :show
-    resources :quizzes, only: :update
+    resources :quizzes, only: [] do
+      resources :sessions, only: :create
+    end
   end
 
   namespace :attachment do

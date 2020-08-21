@@ -8,10 +8,10 @@ class QuizQuestion < ApplicationRecord
   scope :correctly_answered, -> { joins(:answer).where(answers: { correct: true }) }
 
   def correct?
-    answer&.correct?
+    answered? && correct?
   end
 
-  def answered
-    errors.add(:answer, "is needed in order to proceeed") if answer.blank?
+  def answered?
+    answer.present?
   end
 end
