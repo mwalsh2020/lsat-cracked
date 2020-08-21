@@ -8,7 +8,7 @@ class QuizQuestion < ApplicationRecord
   scope :correctly_answered, -> { joins(:answer).where(answers: { correct: true }) }
 
   def correct?
-    answered? && correct?
+    answer&.correct?
   end
 
   def answered?

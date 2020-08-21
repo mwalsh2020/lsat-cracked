@@ -2,28 +2,35 @@
 class Quiz::Session
   include ActiveModel::Model
 
-  attr_reader :quiz
-  delegate :quiz_questions, :user, to: :quiz
+  attr_accessor :quiz
+  attr_reader :quiz_questions
 
-  def initialize(quiz)
-    @quiz = quiz
+  delegate :user, :complete?, to: :quiz
+
+  def initialize(params)
+    @quiz_questions = params[:quiz].quiz_questions
+    super(params)
     model_name.instance_eval { @route_key = "sessions" }
   end
 
   def quiz_questions_attributes=(values)
-    
+    @quiz_questions = values.map do |_key, quiz_question_params|
+      quiz_question = QuizQuestion.find(quiz_question_params[:id])
+      quiz_question.assign_attributes(quiz_question_params)
+      quiz_question
+    end
   end
 
   def valid?
-    quiz_questions.all?(&:answered?)
+    @quiz_questions.all?(&:answered?)
   end
 
   def correct_answers_ratio
-    correct_answers_count.fdiv(quiz_questions.count)
+    correct_answers_count.fdiv(@quiz_questions.count)
   end
 
   def correct_answers_count
-    quiz_questions.correctly_answered.count
+    @quiz_questions.correctly_answered.count
   end
 
   def good_correct_ratio?
@@ -33,6 +40,8 @@ class Quiz::Session
   def save
     return false unless valid?
 
-    binding.pry
+    @quiz_questions.all?(&:save!)
+    quiz.update(complete: true)
+    true
   end
 end

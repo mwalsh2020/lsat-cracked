@@ -13,6 +13,6 @@ class Quiz < ApplicationRecord
   scope :pending, -> { where.not(complete: true) }
 
   def session
-    Quiz::Session.new(self)
+    Quiz::Session.new(quiz: self)
   end
 end
