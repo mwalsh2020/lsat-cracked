@@ -4,7 +4,7 @@ namespace :import do
     Chapter.destroy_all
     User.destroy_all
 
-    User.create!(email: "user@user.com", password: "123456", paying: true)
+    User.create!(email: "user@user.com", password: "123456", paying: true, admin: true)
 
     yaml_file_paths = Dir.glob("db/support/*.yml")
 
