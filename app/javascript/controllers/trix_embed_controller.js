@@ -1,5 +1,6 @@
 import Rails from "@rails/ujs"
 import Trix from "trix"
+window.trix = Trix
 
 class TrixEmbedController {
   constructor(element) {
@@ -14,6 +15,25 @@ class TrixEmbedController {
     
     this.reset()
     this.installEventHandlers()
+    this.addHeading2Button()
+  }
+
+  addHeading2Button() {
+    Trix.config.blockAttributes.heading2 = {
+      tagName: "h2",
+      terminal: true,
+      breakOnReturn: true,
+      group: false
+    }
+    const embedBtn = document.createElement("button");
+
+    embedBtn.dataset.trixAttribute = "heading2"
+    embedBtn.title = "Heading 2"
+    // embedBtn.setAttribute("tabindex", "-1")
+    embedBtn.innerHTML = "heading 2"
+    embedBtn.type = "button"
+    embedBtn.classList.add("trix-button", "trix-button--icon", "trix-button--icon-heading-2")
+    event.target.toolbarElement.querySelector(".trix-button-group.trix-button-group--block-tools button").insertAdjacentElement("afterend", embedBtn)
   }
 
   installEventHandlers() {

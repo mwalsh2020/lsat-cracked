@@ -50,6 +50,6 @@ class Admin::QuestionsController < Admin::ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:content)
+    params.require(:question).permit(:content, :explanation)
   end
 end
