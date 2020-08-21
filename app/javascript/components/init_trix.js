@@ -23,27 +23,6 @@ const initTrix = () => {
   document.addEventListener("trix-initialize", (event) => {
     insertBtnSnippet(event.target);
     new TrixEmbedController(event.target);
-
-
-
-    const embedBtn = document.createElement("button");
-    embedBtn.innerHTML = "youtube";
-    embedBtn.type = "button";
-    embedBtn.classList.add("trix-button");
-    embedBtn.classList.add("trix-button--icon");
-    embedBtn.classList.add("trix-button--icon-heading-2");
-    embedBtn.addEventListener("click", (event) => {
-      const youtubeUrl = window.prompt("Please put a youtube link");
-      const results = youtubeUrl.match(/.*youtube\.com\/watch\?v=(.*)/);
-      if (!results){
-        return;
-      }
-      const embedUrl = `https://www.youtube.com/embed/${results[1]}`;
-  
-      const attachment = new Trix.Attachment({content: `<iframe width="560" height="315" src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`});
-      document.querySelector("trix-editor").editor.insertAttachment(attachment);
-    });
-    event.target.toolbarElement.querySelector(".trix-button-group.trix-button-group--block-tools button").insertAdjacentElement("afterend", embedBtn);
   })
 }
 
