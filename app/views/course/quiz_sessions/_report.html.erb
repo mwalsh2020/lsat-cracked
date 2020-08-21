@@ -1,9 +1,9 @@
 <h2>Quiz Report</h2>
 <p>Here are the results of the last quiz you took.</p>
 <hr>
-<%= render "course/quizzes/performance", quiz: quiz %>
+<%= render "course/quiz_sessions/performance", quiz_session: quiz_session %>
 <div class="accordion" id="quiz-report-accordion">
-  <% quiz.quiz_questions.each do |quiz_question| %>
+  <% quiz_session.quiz_questions.each do |quiz_question| %>
     <%= render "course/quiz_questions/card", quiz_question: quiz_question %>
   <% end %>
 </div>

@@ -6,7 +6,7 @@
 <% if @quiz_session.present? %>
   <div class="shadow-sm course-page" id="quiz">
     <% if current_user.answered_quiz?(@section) %>
-      <%= render "course/quizzes/report", quiz: @quiz %>
+      <%= render "course/quiz_sessions/report", quiz_session: @quiz_session %>
     <% else %>
       <%= render "course/quiz_sessions/form", quiz_session: @quiz_session %>
     <% end %>
