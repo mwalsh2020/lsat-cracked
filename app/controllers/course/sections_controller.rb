@@ -9,7 +9,6 @@ class Course::SectionsController < Course::ApplicationController
   private
 
   def build_or_find_quiz
-    # TODO: move user filtering to a policy scope
     quiz = policy_scope(Quiz).find_or_initialize_by(section: @section)
     quiz.update!(questions: @section.questions) unless quiz.persisted?
     quiz
