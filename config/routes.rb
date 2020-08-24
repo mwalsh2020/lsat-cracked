@@ -19,7 +19,7 @@ Rails.application.routes.draw do
       resources :answers, only: [:new, :create]
     end
 
-    resources :users, only: :index
+    resources :users, only: [:index, :edit, :update]
   end
 
   namespace :course do
