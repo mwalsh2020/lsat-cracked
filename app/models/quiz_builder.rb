@@ -6,6 +6,10 @@ class QuizBuilder
     @section = params[:section]
   end
 
+  def new_quiz
+    Quiz.new(user: user, section: section, questions: @section.questions)
+  end
+
   def build
     user.last_quiz_for(section) || new_quiz
   end
@@ -14,11 +18,5 @@ class QuizBuilder
     quiz = build
     quiz.save
     quiz
-  end
-
-  private
-
-  def new_quiz
-    Quiz.new(user: user, section: section, questions: @section.questions)
   end
 end
