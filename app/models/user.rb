@@ -8,4 +8,8 @@ class User < ApplicationRecord
   def last_quiz_for(section)
     quizzes.order(created_at: :desc).find_by(user: self, section: section)
   end
+
+  def name
+    email
+  end
 end
