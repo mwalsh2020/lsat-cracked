@@ -1,0 +1,6 @@
+<% if user.admin? %>
+  <span class="badge badge-warning">Admin</span>
+<% end %>
+<% if user.paying? %>
+  <span class="badge badge-success">Paying</span>
+<% end %>

@@ -16,9 +16,7 @@
     <div class="course-layout">
       <div class="course-sidebar">
         <h1>Admin panel</h1>
-        <ul class="unstyled">
-          <li><%= link_to_unless_current "Course editor", [:admin, :chapters] %></li>
-        </ul>
+        <%= render  "admin/shared/menu" %>
       </div>
       <div class="course-container"><%= yield %></div>
     </div> 
