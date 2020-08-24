@@ -25,6 +25,10 @@ class Quiz::Session
     @quiz_questions.map(&:answered?).all?
   end
 
+  def present?
+    @quiz_questions.any?
+  end
+
   def correct_answers_ratio
     correct_answers_count.fdiv(@quiz_questions.count)
   end
