@@ -1,7 +1,9 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :recoverable, :rememberable, :validatable
 
-  def answered_quiz?(section)
-    QuizSession.complete.exists?(user: self, section: section)
+  has_many :quizzes, dependent: :destroy
+
+  def last_quiz_for(section)
+    quizzes.order(created_at: :desc).find_by(user: self, section: section)
   end
 end

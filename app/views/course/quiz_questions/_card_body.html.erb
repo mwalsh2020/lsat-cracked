@@ -8,6 +8,7 @@
     <% else %>
       <h4>Not quite right</h4>
     <% end %>
-    <p>Explanation here</p>
+    <h5>You picked: <%= quiz_question.answer.content %></h5>
+    <p><%= quiz_question.question.explanation %></p>
   </div>
 </div>

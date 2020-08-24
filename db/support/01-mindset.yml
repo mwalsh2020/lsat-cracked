@@ -12,7 +12,7 @@
         - content: "True"
           correct: false
     # Question Start
-    - prompt: "The right mindset for the LSAT is "curious skeptic""
+    - prompt: The right mindset for the LSAT is "curious skeptic"
       explanation: "You want to be a curious learner but very skeptical about certain things that you read."
       answers:
         # Answer start

@@ -1,4 +1,4 @@
-class QuizSessionPolicy < ApplicationPolicy
+class QuizPolicy < ApplicationPolicy
   def update?
     record.user = user
   end

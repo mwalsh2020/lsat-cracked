@@ -1,5 +1,5 @@
 class QuizQuestion < ApplicationRecord
-  belongs_to :quiz_session
+  belongs_to :quiz
   belongs_to :question
   belongs_to :answer, optional: true
 
@@ -9,5 +9,14 @@ class QuizQuestion < ApplicationRecord
 
   def correct?
     answer&.correct?
+  end
+
+  def answered?
+    if answer.present?
+      true
+    else
+      errors.add(:answer, "to proceed")
+      false
+    end
   end
 end

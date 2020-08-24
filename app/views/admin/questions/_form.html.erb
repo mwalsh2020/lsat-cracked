@@ -1,4 +1,7 @@
 <%= simple_form_for [:admin, section, question] do |f| %>
-  <%= f.rich_text_area :content %>
+  <%= f.label :prompt %>
+  <%= f.rich_text_area :prompt %>
+  <%= f.label :explanation %>
+  <%= f.rich_text_area :explanation %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
