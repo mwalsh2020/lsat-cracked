@@ -3,11 +3,7 @@ class User < ApplicationRecord
 
   has_many :quizzes, dependent: :destroy
 
-  def pending_quiz(section)
-    quizzes.pending.find_by(user: self, section: section)
-  end
-
-  def answered_quiz?(section)
-    quizzes.complete.exists?(user: self, section: section)
+  def last_quiz_for(section)
+    quizzes.order(created_at: :desc).find_by(user: self, section: section)
   end
 end

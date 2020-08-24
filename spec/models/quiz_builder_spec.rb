@@ -9,17 +9,21 @@ RSpec.describe QuizBuilder, type: :model do
   it { expect(quiz_builder).to respond_to(:section=) }
 
   describe "#build" do
-    context "user has NO PENDING quiz for given section" do
+    context "user has NO quiz for given section" do
       before do
-        allow(user).to receive(:pending_quiz).with(section) { nil }
-      end
-
-      it "returns a new quiz session" do
+        allow(user).to receive(:last_quiz_for).with(section) { nil }
         quiz_builder.user = user
         quiz_builder.section = section
+      end
 
+      it "returns a new quiz" do
         expect(quiz_builder.build).to be_a(Quiz)
         expect(quiz_builder.build).to_not be_persisted
+      end
+
+      it "returns a quiz with questions" do
+        section.questions = [Question.new]
+        expect(quiz_builder.build.questions).to be_any
       end
     end
 
@@ -27,7 +31,7 @@ RSpec.describe QuizBuilder, type: :model do
       let(:quiz) { Quiz.new }
 
       before do
-        allow(user).to receive(:pending_quiz).with(section) { quiz }
+        allow(user).to receive(:last_quiz_for).with(section) { quiz }
       end
 
       it "returns pending quiz session" do
