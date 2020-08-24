@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     resources :questions, only: [:edit, :update, :destroy] do
       resources :answers, only: [:new, :create]
     end
+
+    resources :users, only: :index
   end
 
   namespace :course do
