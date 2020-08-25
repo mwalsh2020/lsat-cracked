@@ -11,6 +11,10 @@ class User::Guest
     true
   end
 
+  def paying?
+    false
+  end
+
   def registerable?
     User.new.registerable?
   end
