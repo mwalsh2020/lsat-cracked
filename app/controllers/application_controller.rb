@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
   def skip_pundit?
     devise_controller?
   end
+
+  def current_user
+    super || User::Guest.new
+  end
 end

@@ -12,4 +12,8 @@ class User < ApplicationRecord
   def name
     email
   end
+
+  def guest?
+    false
+  end
 end

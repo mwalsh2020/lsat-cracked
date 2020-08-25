@@ -1,10 +1,10 @@
 
-<% if current_user.present? || User.devise_modules.include?(:registrations) %>
+<% if policy([:course, :dashboard]).show? %>
   <%= link_to "Learn", course_root_path, class: "btn btn-outline-primary mr-3" %>
 <% end %>
 
 <%# TODO: Update to avoid safe navigation %>
-<% if current_user&.admin? %>
+<% if policy([:admin, :dashboard]).show? %>
   <%= link_to "Admin", admin_root_path, class: "btn btn-outline-primary mr-3" %>
 <% end %>
 
@@ -17,7 +17,7 @@
 <% if current_user.present? %>
   <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-link text-muted", method: :delete %>
 <% else %>
-  <% if User.devise_modules.include?(:registrations) %>
+  <% if current_user.registerable? %>
     <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
   <% end %>
 <% end %>
