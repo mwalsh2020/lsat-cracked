@@ -1,10 +1,10 @@
 
-<% if current_user.present? || User.devise_modules.include?(:registrations) %>
+<% if current_user.guest? || current_user.registrable? %>
   <%= link_to "Learn", course_root_path, class: "btn btn-outline-primary mr-3" %>
 <% end %>
 
 <%# TODO: Update to avoid safe navigation %>
-<% if current_user&.admin? %>
+<% if current_user.admin? %>
   <%= link_to "Admin", admin_root_path, class: "btn btn-outline-primary mr-3" %>
 <% end %>
 
