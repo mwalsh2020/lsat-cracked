@@ -30,7 +30,7 @@ class Quiz::Session
   end
 
   def correct_answers_ratio
-    correct_answers_count.fdiv(@quiz_questions.count)
+    correct_answers_count.fdiv(@quiz_questions.count).ceil(2)
   end
 
   def correct_answers_count
