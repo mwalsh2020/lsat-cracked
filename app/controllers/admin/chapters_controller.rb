@@ -44,6 +44,6 @@ class Admin::ChaptersController < Admin::ApplicationController
   private
 
   def chapter_params
-    params.require(:chapter).permit(:title)
+    params.require(:chapter).permit(:title, :position)
   end
 end

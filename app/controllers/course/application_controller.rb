@@ -5,6 +5,6 @@ class Course::ApplicationController < ApplicationController
   private
 
   def set_chapters
-    @chapters = Chapter.order(position: :asc)
+    @chapters = policy_scope(Chapter)
   end
 end

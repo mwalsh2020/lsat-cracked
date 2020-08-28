@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: "dashboards#show"
-    resources :chapters, except: :show do
+    resources :chapters, only: [:index, :new, :create, :edit, :update, :destroy] do
       resources :sections, only: [:new, :create]
     end
 
