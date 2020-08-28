@@ -5,21 +5,28 @@ ruby "2.7.1"
 
 gem "rails", "~> 6.0.3", ">= 6.0.3.2"
 
-gem "jbuilder", "~> 2.7"
+# System
 gem "pg"
 gem "puma", "~> 4.1"
-gem "sass-rails", ">= 6"
-gem "turbolinks", "~> 5"
-gem "webpacker", "~> 4.0"
-
 gem "bootsnap", ">= 1.4.2", require: false
 
+# Support
+gem "money-rails"
+
+# Security
 gem "devise"
 gem "pundit"
 
+# Front-end
 gem "simple_form"
+gem "turbolinks", "~> 5"
+gem "webpacker", "~> 4.0"
+gem "jbuilder", "~> 2.7"
+gem "sass-rails", ">= 6"
 
+# External services
 gem "postmark-rails"
+gem "stripe"
 
 group :development, :test do
   gem "pry-byebug"
