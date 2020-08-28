@@ -1,0 +1,19 @@
+<%= simple_form_for [:admin, chapter, section] do |f| %>
+  <%= f.input :title %>
+
+  <%= f.input :position, label: "Position in chapter" %>
+  <fieldset class="bg-light p-3 mb-3">
+    <legend class="h6">Positions overview in <%= section.chapter.title %>:</legend>
+    <ol>
+      <% @section.chapter.sections.each do |section| %>
+        <li><%= section.title %></li>
+      <% end %>
+    </ol>
+  </fieldset>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.rich_text_area :content %>
+  </div>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>

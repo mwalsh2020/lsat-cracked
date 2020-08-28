@@ -1,5 +1,6 @@
 class Admin::ChaptersController < Admin::ApplicationController
   def new
+    @chapters = policy_scope(Chapter)
     @chapter = Chapter.new
     authorize @chapter
   end
@@ -19,6 +20,7 @@ class Admin::ChaptersController < Admin::ApplicationController
   end
 
   def edit
+    @chapters = policy_scope(Chapter)
     @chapter = Chapter.find(params[:id])
     authorize @chapter
   end
@@ -44,6 +46,6 @@ class Admin::ChaptersController < Admin::ApplicationController
   private
 
   def chapter_params
-    params.require(:chapter).permit(:title)
+    params.require(:chapter).permit(:title, :position)
   end
 end

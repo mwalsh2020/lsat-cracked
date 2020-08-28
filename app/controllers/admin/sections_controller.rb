@@ -1,7 +1,7 @@
 class Admin::SectionsController < Admin::ApplicationController
   def new
     @chapter = Chapter.find(params[:chapter_id])
-    @section = Section.new
+    @section = Section.new(chapter: @chapter)
     authorize @section
   end
 
@@ -45,6 +45,6 @@ class Admin::SectionsController < Admin::ApplicationController
   private
 
   def section_params
-    params.require(:section).permit(:title, :content)
+    params.require(:section).permit(:title, :content, :position)
   end
 end

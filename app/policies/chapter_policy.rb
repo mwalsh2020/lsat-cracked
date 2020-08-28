@@ -18,7 +18,7 @@ class ChapterPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      scope.all
+      scope.order(position: :asc)
     end
   end
 end
