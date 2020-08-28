@@ -1,7 +1,4 @@
 <div class="container pt-5">
   <h1>New section for <%= @chapter.title %></h1>
-
-  <%= simple_form_for [:admin, @chapter, @section] do |form| %>
-    <%= render "fields", form: form %>
-  <% end %>
+  <%= render "form", chapter: @chapter, section: @section %>
 </div>
