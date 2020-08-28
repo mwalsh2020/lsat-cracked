@@ -5,6 +5,6 @@ class Course::ApplicationController < ApplicationController
   private
 
   def set_chapters
-    @chapters = Chapter.all
+    @chapters = Chapter.order(position: :asc)
   end
 end
