@@ -19,8 +19,6 @@ gem "pundit"
 
 gem "simple_form"
 
-gem "sendgrid-ruby"
-
 group :development, :test do
   gem "pry-byebug"
   gem "rspec-rails", "~> 4.0.1"
