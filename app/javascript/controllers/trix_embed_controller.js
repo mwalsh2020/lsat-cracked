@@ -2,6 +2,13 @@ import Rails from "@rails/ujs"
 import Trix from "trix"
 window.trix = Trix
 
+Trix.config.blockAttributes.heading2 = {
+  tagName: "h2",
+  terminal: true,
+  breakOnReturn: true,
+  group: false
+}
+
 class TrixEmbedController {
   constructor(element) {
     this.pattern = /^https:\/\/([^\.]+\.)?youtube\.com\/watch\?v=(.*)/
@@ -15,21 +22,14 @@ class TrixEmbedController {
     
     this.reset()
     this.installEventHandlers()
-    this.addHeading2Button()
+    this.addHeading2ButtonToToolbar()
   }
 
-  addHeading2Button() {
-    Trix.config.blockAttributes.heading2 = {
-      tagName: "h2",
-      terminal: true,
-      breakOnReturn: true,
-      group: false
-    }
+  addHeading2ButtonToToolbar() {
     const embedBtn = document.createElement("button");
 
     embedBtn.dataset.trixAttribute = "heading2"
     embedBtn.title = "Heading 2"
-    // embedBtn.setAttribute("tabindex", "-1")
     embedBtn.innerHTML = "heading 2"
     embedBtn.type = "button"
     embedBtn.classList.add("trix-button", "trix-button--icon", "trix-button--icon-heading-2")
