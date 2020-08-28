@@ -19,7 +19,7 @@ gem "pundit"
 
 gem "simple_form"
 
-gem "sendgrid-ruby"
+gem "postmark-rails"
 
 group :development, :test do
   gem "pry-byebug"
