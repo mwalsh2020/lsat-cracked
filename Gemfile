@@ -19,6 +19,8 @@ gem "pundit"
 
 gem "simple_form"
 
+gem "postmark-rails"
+
 group :development, :test do
   gem "pry-byebug"
   gem "rspec-rails", "~> 4.0.1"
