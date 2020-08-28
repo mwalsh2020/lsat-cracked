@@ -26,6 +26,7 @@ gem "sass-rails", ">= 6"
 
 # External services
 gem "postmark-rails"
+gem "stripe"
 
 group :development, :test do
   gem "pry-byebug"
