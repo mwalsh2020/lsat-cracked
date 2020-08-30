@@ -1,9 +1,12 @@
-<div class="banner" style="background-image: url(<%= image_path("banner.jpg") %>)">
-  <div class="container">
-    <h1>Master the LSAT,<br>Unlock Your Future Career</h1>
-    <p>World-class instruction, taught to you in a 1-on-1 custom format</p>
-
-    <%= link_to "Apply now", new_coaching_request_path, class: "btn btn-lg btn-primary" %>
-    <%= link_to "Know more", about_path, class: "btn btn-lg btn-light" %>
+<div class="banner">
+  <div class="banner-text">
+    <div class="banner-text-main">
+      <h1>Master the LSAT,<br>Unlock Your Future Career</h1>
+      <p>World-class instruction, taught to you in a 1-on-1 custom format</p>
+    </div>
+  </div>
+  <div class="banner-logo">
+    <div class="banner-logo-main"><%= render "shared/logo" %></div>
+    <div class="banner-shadow"><%= render "shared/logo" %></div>
   </div>
 </div>
