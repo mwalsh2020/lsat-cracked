@@ -48,7 +48,7 @@ $line-color: $primary;
   background-size: cover;
   background-position: center;
   background-color: $primary;
-  background-image: radial-gradient($primary, darken($primary, 10%));
+  background-image: radial-gradient($primary, darken($primary, 13%));
   height: calc(100vh - 1rem);
 
   h1 {
