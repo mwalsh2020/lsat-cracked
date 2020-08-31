@@ -45,11 +45,12 @@ $line-color: $primary;
 }
 
 .banner {
+  position: relative;
   background-size: cover;
   background-position: center;
   background-color: $primary;
   background-image: radial-gradient($primary, darken($primary, 13%));
-  height: calc(100vh - 1rem);
+  height: calc(100vh - 5rem);
 
   h1 {
     margin: 0;
@@ -73,12 +74,17 @@ $line-color: $primary;
   padding: 0 15vw;
   align-items: center;
 
+  h1 {
+    font-size: 2.5rem;
+  }
+
   .banner-line {
     position: absolute;
-    top: 0;
+    top: -1.125rem;
     left: 0;
     right: 0;
     bottom: 0;
+    overflow: hidden;
 
     path {
       fill: none;  
