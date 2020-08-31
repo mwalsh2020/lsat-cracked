@@ -1,19 +1,22 @@
+$line-color: $primary;
+
 @keyframes line-draw {
   from {
     stroke-dasharray: 200, 20, 60, 20, 200;
     stroke-dashoffset: 0;
-    stroke: lighten($primary, 0.5%);
+    stroke: darken($line-color, 2.5%);
   }
   
   50% {
     stroke-dasharray: 150, 70, 60, 70, 150;
     stroke-width: 0.25px;
-    stroke: lighten($primary, 2.5%);
+    stroke: darken($line-color, 4.5%);
   }
 
   to {
     stroke-dasharray: 200, 20, 60, 20, 200;
     stroke-dashoffset: 310;
+    stroke: darken($line-color, 3.5%);
   }
 }
 
@@ -78,7 +81,6 @@
 
     path {
       fill: none;  
-      stroke: lighten($primary, 1%);
       stroke-width: 1px;
       stroke-linecap: round;
       stroke-linejoin: round;
