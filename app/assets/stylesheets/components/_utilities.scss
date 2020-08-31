@@ -1,0 +1,13 @@
+.dark-gray-wrapper {
+  background-color: $dark-gray;
+  background-image: radial-gradient($dark-gray, darken($dark-gray, 4%));
+}
+
+.padded {
+  padding: 10rem 0;
+}
+
+.main-content-text {
+  font-size: 1.375rem;
+  font-weight: 300;
+}
