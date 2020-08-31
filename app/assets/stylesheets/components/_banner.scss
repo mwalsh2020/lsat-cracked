@@ -8,7 +8,7 @@
   50% {
     stroke-dasharray: 150, 70, 60, 70, 150;
     stroke-width: 0.25px;
-    stroke: lighten($primary, 1.5%);
+    stroke: lighten($primary, 2.5%);
   }
 
   to {
@@ -19,15 +19,25 @@
 
 @keyframes shadow-bump {
   0% {
-    transform: scale(1.2) translateY(25%) translateX(-5%);
+    transform: scale(0.80) translateY(35%) translateX(-5%);
   }
 
   50% {
-    transform: scale(1.25) translateY(0%) translateX(0%);
+    transform: scale(0.85) translateY(25%) translateX(0%);
   }
 
   100% {
-    transform: scale(1.2) translateY(25%) translateX(5%);
+    transform: scale(0.80) translateY(35%) translateX(5%);
+  }
+}
+
+@keyframes pulse {
+  to {
+    transform: scale(1);
+  }
+
+  from {
+    transform: scale(0.97);
   }
 }
 
@@ -88,14 +98,18 @@
   .banner-logo {
     position: relative;
     width: 50%;
-    padding: 5vw;
+    padding: 8vw;
+    animation-name: pulse;
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    fill: lighten($primary, 50%);
   }
 
   .banner-shadow {
     position: absolute;
     top: 0;
     left: 0;
-    transform: scale(1.2) translateY(25%) translateX(0%);
     opacity: 0.035;
     animation-name: shadow-bump;
     animation-duration: 7s;
