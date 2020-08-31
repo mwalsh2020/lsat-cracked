@@ -50,7 +50,8 @@ $line-color: $primary;
   background-position: center;
   background-color: $primary;
   background-image: radial-gradient($primary, darken($primary, 13%));
-  height: calc(100vh - 5rem);
+  height: calc(100vh - 14rem);
+  // height: 42rem;
 
   h1 {
     margin: 0;

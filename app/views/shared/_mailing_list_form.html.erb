@@ -1,0 +1,11 @@
+<%= simple_form_for :test do |f| %>
+  <div class="d-flex align-items-center">
+    <h5 class="text-right">Get free updates on mastering the LSAT</h5>
+    <div class="input-group px-5">
+      <%= f.text_field :email, label: "Stay in touch", class: "form-control", placeholder: "Email" %>
+      <div class="input-group-append">
+        <%= f.button :submit, "Yes, please!", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>

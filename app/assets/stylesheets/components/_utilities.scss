@@ -1,10 +1,15 @@
 .dark-gray-wrapper {
+  background-color: lighten($dark-gray, 4%);
+  background-image: radial-gradient(lighten($dark-gray, 4%), darken(lighten($dark-gray, 4%), 4%));
+}
+
+.darker-gray-wrapper {
   background-color: $dark-gray;
   background-image: radial-gradient($dark-gray, darken($dark-gray, 4%));
 }
 
 .padded {
-  padding: 10rem 0;
+  padding: 7rem 0;
 }
 
 .main-content-text {
