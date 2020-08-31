@@ -1,3 +1,36 @@
+@keyframes line-draw {
+  from {
+    stroke-dasharray: 200, 20, 60, 20, 200;
+    stroke-dashoffset: 0;
+    stroke: lighten($primary, 0.5%);
+  }
+  
+  50% {
+    stroke-dasharray: 150, 70, 60, 70, 150;
+    stroke-width: 0.25px;
+    stroke: lighten($primary, 1.5%);
+  }
+
+  to {
+    stroke-dasharray: 200, 20, 60, 20, 200;
+    stroke-dashoffset: 310;
+  }
+}
+
+@keyframes shadow-bump {
+  0% {
+    transform: scale(1.2) translateY(25%) translateX(-5%);
+  }
+
+  50% {
+    transform: scale(1.25) translateY(0%) translateX(0%);
+  }
+
+  100% {
+    transform: scale(1.2) translateY(25%) translateX(5%);
+  }
+}
+
 .banner {
   background-size: cover;
   background-position: center;
@@ -26,6 +59,28 @@
   padding: 0 15vw;
   align-items: center;
 
+  .banner-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    path {
+      fill: none;  
+      stroke: lighten($primary, 1%);
+      stroke-width: 1px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-opacity: 1;
+      animation-name: line-draw;
+      animation-duration: 10s;
+      animation-direction: reverse;
+      animation-iteration-count: infinite;
+      animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+    }
+  }
+
   .banner-text {
     position: relative;
   }
@@ -42,24 +97,10 @@
     left: 0;
     transform: scale(1.2) translateY(25%) translateX(0%);
     opacity: 0.035;
-    animation-name: hello;
-    animation-duration: 5s;
+    animation-name: shadow-bump;
+    animation-duration: 7s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
-  }
-}
-
-@keyframes hello {
-  0% {
-    transform: scale(1.2) translateY(25%) translateX(-5%);
-  }
-
-  50% {
-    transform: scale(1.25) translateY(0%) translateX(0%);
-  }
-
-  100% {
-    transform: scale(1.2) translateY(25%) translateX(5%);
   }
 }
