@@ -24,11 +24,11 @@
   <% end %>
 </div>
 
-<div class="dark-gray-wrapper p-5 main-content-text text-white">
+<div id="mail-lead" class="dark-gray-wrapper p-5 main-content-text text-white">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8">
-        <%= render "shared/mailing_list_form" %>
+        <%= render "mail_leads/form", mail_lead: @mail_lead %>
       </div>
     </div>
   </div>
