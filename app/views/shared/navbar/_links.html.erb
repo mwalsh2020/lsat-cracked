@@ -1,23 +1,22 @@
-
 <% if policy([:course, :dashboard]).show? %>
-  <%= link_to "Learn", course_root_path, class: "btn btn-outline-primary mr-3" %>
+  <li class="nav-item"><%= link_to "Learn", course_root_path, class: "nav-link" %></li>
 <% end %>
 
 <%# TODO: Update to avoid safe navigation %>
 <% if policy([:admin, :dashboard]).show? %>
-  <%= link_to "Admin", admin_root_path, class: "btn btn-outline-primary mr-3" %>
+  <li class="nav-item"><%= link_to "Admin", admin_root_path, class: "nav-link" %></li>
 <% end %>
 
 <% if home_links.present? %>
-  <%= link_to "About", about_path, class: "btn btn-link" %>
-  <%= link_to "Testimonials", testimonials_path, class: "btn btn-link" %>
-  <%= link_to "Coaching", new_coaching_request_path, class: "btn btn-link" %>  
+  <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
+  <li class="nav-item"><%= link_to "Testimonials", testimonials_path, class: "nav-link" %></li>
+  <li class="nav-item"><%= link_to "Coaching", new_coaching_request_path, class: "nav-link" %>  </li>
 <% end %>
 
 <% if current_user.present? %>
-  <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-link text-muted", method: :delete %>
+  <li class="nav-item"><%= link_to "Sign out", destroy_user_session_path, class: "nav-link", method: :delete %></li>
 <% else %>
   <% if current_user.registerable? %>
-    <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
+    <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %></li>
   <% end %>
 <% end %>
