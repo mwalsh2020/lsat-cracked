@@ -7,6 +7,6 @@ class MailLead
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   def submit!
-    User.create!(email: email, password: Random.hex)
+    User.invite!(email: email)
   end
 end
