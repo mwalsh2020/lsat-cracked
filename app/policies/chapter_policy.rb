@@ -18,7 +18,7 @@ class ChapterPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      if user.paying?
+      if user.paying? || user.admin?
         scope.order(position: :asc)
       else
         scope.where(free: true)
