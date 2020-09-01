@@ -1,5 +1,5 @@
 class WebMailer < ApplicationMailer
-  default from: "mattnwalsh@gmail.com", to: "mattnwalsh@gmail.com"
+  default from: "coaching@lsatcracked.com", to: "matt@lsatcracked.com"
 
   def coaching
     mail(subject: "[lsatcracked.com] Coaching Request for #{params[:name]}")
