@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_28_230512) do
+ActiveRecord::Schema.define(version: 2020_09_01_174302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,14 @@ ActiveRecord::Schema.define(version: 2020_08_28_230512) do
     t.integer "position"
   end
 
+  create_table "packages", force: :cascade do |t|
+    t.string "name"
+    t.string "sku"
+    t.integer "price_cents", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "questions", force: :cascade do |t|
     t.bigint "section_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -108,7 +116,19 @@ ActiveRecord::Schema.define(version: 2020_08_28_230512) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "admin", default: false, null: false
     t.boolean "paying", default: false, null: false
+    t.string "invitation_token"
+    t.datetime "invitation_created_at"
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer "invitation_limit"
+    t.string "invited_by_type"
+    t.bigint "invited_by_id"
+    t.integer "invitations_count", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
+    t.index ["invitations_count"], name: "index_users_on_invitations_count"
+    t.index ["invited_by_id"], name: "index_users_on_invited_by_id"
+    t.index ["invited_by_type", "invited_by_id"], name: "index_users_on_invited_by_type_and_invited_by_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
