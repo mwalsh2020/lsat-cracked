@@ -7,7 +7,7 @@ class MailLeadsController < ApplicationController
 
     if @mail_lead.valid?
       User.invite!(mail_lead_params)
-      redirect_to root_path, anchor: "mail-lead", notice: "Mail sent"
+      redirect_to root_path, anchor: "mail-lead", notice: "Thanks for subscribing to our list!"
     else
       redirect_to root_path(invalid_mail: true, anchor: "mail-lead"), notice: "Mail invalid"
     end

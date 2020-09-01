@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_08_31_165003) do
-=======
-ActiveRecord::Schema.define(version: 2020_09_01_191726) do
->>>>>>> feat/products-page
+ActiveRecord::Schema.define(version: 2020_09_01_201852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_09_01_191726) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "position"
+    t.boolean "free", default: false, null: false
   end
 
   create_table "orders", force: :cascade do |t|
