@@ -7,6 +7,8 @@ class Product < ApplicationRecord
 
   has_rich_text :description
 
+  has_many :orders, as: :orderable
+
   def savings
     full_price - price
   end

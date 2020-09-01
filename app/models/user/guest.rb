@@ -1,4 +1,8 @@
 class User::Guest
+  def id
+    nil
+  end
+
   def admin?
     false
   end
