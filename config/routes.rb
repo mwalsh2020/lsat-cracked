@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :coaching_requests, only: [:new, :create]
   resources :products, only: [:index]
+  resources :orders, only: [:create]
 
   namespace :admin do
     root to: "dashboards#show"

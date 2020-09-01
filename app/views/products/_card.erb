@@ -17,6 +17,9 @@
     <%= product.description %>
   </div>
   <div class="card-footer">
-    <button type="button" class="btn btn-lg btn-block btn-link">Buy now</button>
+    <%= form_tag orders_path do |f| %>
+      <%= hidden_field_tag :product_id, product.id %>
+      <%= submit_tag "Buy now", class: "btn btn-lg btn-block btn-link" %>
+    <% end %>
   </div>
 </div>
