@@ -14,7 +14,6 @@
     <%= render "shared/flashes" %>
     <div class="course-layout">
       <div class="course-sidebar">
-        <h1>Course content</h1>
         <%= render "course/chapters/menu", chapters: @chapters %>
       </div>
       <div class="course-container"><%= yield %></div>

@@ -13,6 +13,7 @@ gem "bootsnap", ">= 1.4.2", require: false
 # Support
 gem "money-rails"
 gem "acts_as_list"
+gem 'devise_invitable', '~> 2.0.0'
 
 # Security
 gem "devise"
