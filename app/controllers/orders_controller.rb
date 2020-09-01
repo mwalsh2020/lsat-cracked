@@ -1,19 +1,21 @@
 class OrdersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:create]
+  skip_before_action :authenticate_user!, only: [:create, :show]
 
   def create
     product = Product.find(params[:product_id])
-    order = Order.create!(
+    order = Order.new(
       orderable: product,
       orderable_sku: product.sku,
       amount: product.price,
       state: "pending",
       user_id: current_user.id,
     )
+    authorize order
+    order.save!
 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ["card"],
-      orderables: [{
+      line_items: [{
         name: product.sku,
         amount: product.price_cents,
         currency: "usd",
