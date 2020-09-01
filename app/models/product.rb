@@ -6,4 +6,8 @@ class Product < ApplicationRecord
   monetize :full_price_cents
 
   has_rich_text :description
+
+  def savings
+    full_price - price
+  end
 end
