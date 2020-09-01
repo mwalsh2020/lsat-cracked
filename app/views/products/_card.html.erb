@@ -1,0 +1,25 @@
+<div class="card mb-4 box-shadow">
+  <div class="card-header">
+    <h4 class="my-0 font-weight-normal"><%= product.name %></h4>
+  </div>
+  <div class="card-body">
+    <h1 class="card-title pricing-card-title">
+      <%= humanized_money_with_symbol(product.price) %>
+      <small class="text-muted">/ mo</small>
+    </h1>
+    <p>
+      <strike><%= humanized_money_with_symbol(product.full_price) %></strike>
+      <span class="badge badge-danger">
+        save
+        <%= humanized_money_with_symbol(product.savings) %>
+      </span>
+    </p>
+    <%= product.description %>
+  </div>
+  <div class="card-footer">
+    <a href="mailto:?subject=LSAT Cracked: <%= product.name %> interest&to=matt@lsatcracked.com&body=Hi,I would like to know more about the <%= product.name %> you're offering">
+      Contact Us
+    </a>
+    <%#= render "orders/form", orderable: product %>
+  </div>
+</div>

@@ -8,5 +8,8 @@ class MailLead
 
   def submit!
     User.invite!(email: email)
+
+    user = User.new(email: email)
+    user.save!(validate: false)
   end
 end
