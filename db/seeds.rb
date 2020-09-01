@@ -12,7 +12,7 @@ Rake::Task["db:seed:course_content"].invoke
 puts "Creating products..."
 
 Product.create!(
-  name: "Package 1",
+  name: "Basic",
   sku: "package-1",
   description: "<ul><li>1 Coaching Session</li><li>3 private seminars included</li><li>LSAT Cracked Book</li></ul>",
   price: 700,
@@ -20,7 +20,7 @@ Product.create!(
 )
 
 Product.create!(
-  name: "Package 2",
+  name: "Premium",
   sku: "package-2",
   description: "<ul><li>3 Coaching Sessions</li><li>10 private seminars included</li><li>LSAT Cracked Book</li><li>Customized study plan</li></ul>",
   price: 2400,
@@ -28,7 +28,7 @@ Product.create!(
 )
 
 Product.create!(
-  name: "Package 3",
+  name: "Ultimate",
   sku: "package-3",
   description: "<ul><li>10 Coaching Sessions</li><li>20 private seminars included</li><li>LSAT Cracked Book</li><li>Customized study plan</li></ul>",
   price: 6200,
