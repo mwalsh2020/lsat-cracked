@@ -1,0 +1,407 @@
+# Sections Start
+
+- title: "Causation, Correlation, and Coincidence"
+questions:
+
+  - prompt: "Conclusions that assert that A caused B are sometimes valid."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: false
+      - content: "False"
+        correct: true
+
+  - prompt: "A occurring before B, even with perfect consistency, will never allow you to conclude that A causes B."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "A being correlated with B, even with perfect correlation, will never allow you to conclude that A caused B."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "If all of the countries with the highest saturated fat intake have the highest rates of cancer, then you can conclude that saturated fat causes cancer."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "If you know that A occurred after B then you have effectively disproven the possibility of A having caused B."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "The premise tells you that A and B are correlated. When you see a conclusion that says A causes B, the first step in your mental checklist is to ask if it's possible for B to cause A."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "If A and B are positively correlated and you show that B could not have caused A, then you have shown that A must be the cause of B."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: false
+      - content: "False"
+        correct: true
+
+  - prompt: "If there is a correlation between sleep and illness, it may be because that sick people tend to need more sleep (illness causing sleep), rather than sleep causing the illness."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+
+  - prompt: "The intelligence of dogs increases as brain size increases. The same relationship holds for cats. Therefore, since the average dog has a larger brain than the average cat, we can be sure that dogs are, on average, smarter than cats."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: false
+      - content: "False"
+        correct: true
+
+# non-true-false questions
+
+  - prompt: "Three years ago the city of Smallville added an additional 5,000 police officers. Since that time, crime has decreased by 15%.</br></br>Which one of the following is a valid inference?"
+    explanation: "This is a Coincidence != Causation template. Just because A immediately preceeded B, it does not necessarily mean that A caused B. (Although, since B occured after A, you know that B cannot have caused A.) Still, there is always the possibility that some unkown alternate cause could have caused the observed result, which is why we cannot reach a definitive conclusion regarding causation."
+    answers:
+    - content: "The addition of more police preceeded the decrease in crime, but we cannot say for certain that it caused it."
+      correct: true
+    - content: "The addition of police caused crime to drop."
+      correct: false
+    - content: "Some other factor is actually responsible for the decrease in crime."
+      correct: false
+    - content: "The addition of the police officers cannot be the only factor that caused the decrease in crime."
+      correct: false
+
+  - prompt: "Countries that watch the most YouTube videos per capita tend to have the lowest rates of Alzheimer's disease.</br></br>Which one of the following is a valid inference?"
+    explanation: "This is a Correlation != Causation template. Here, A shares a statistical pattern with B (known as an 'inverse' or 'negative' correlation, and represented as Y↑A↓). This does not necessarily mean that YouTube is certainly the cause of the lower Alzheimer's rates. The other two possibilties are that: 1) Alzheimer's causes less YouTube watching; and 2) YouTube could be positively correlated with some third variable (e.g. youth) and this factor might actually be the true cause. Hence, you can never move from correlation to causation."
+    answers:
+    - content: "YouTube causes Alzheimer's disease."
+      correct: false
+    - content: "YouTube prevents Alzheimer's disease."
+      correct: false
+    - content: "There is a negative correlation between YouTube and Alzheimer's disease, but we cannot say for certain that YouTube prevents Alzheimer's disease."
+      correct: true
+    - content: "Some other correlated factor, such as youth, is certainly the cause of the lower incidence of Alzheimer's disease among the population."
+      correct: false
+
+  - prompt: "The weight of bowling balls increase in direct proportion to their size. The same relationship holds among beach balls.</br></br>If the statements above are true, which of the following is a valid statement?"
+    explanation: "Just because the relationship holds within the bowling ball group and within the beach ball group it doesn’t mean that you can compare across the two groups. Just because a large beach ball is heavier than a small beach ball, it doesn’t necessarily mean that the largest beach ball is heavier than the smallest bowling ball. Perhaps beach balls are far lighter than bowling balls, so it’s actually the case that even the largest beach ball is still lighter than the smallest bowling ball."
+    answers:
+    - content: "If the average beach ball is larger in size than the average bowling ball, then the average beach ball weighs more than the average bowling ball."
+      correct: false
+    - content: "Bowling balls and beach balls each have positive correlations between size and weight but no comparison is possible across categories."
+      correct: true
+    - content: "The largest beach ball is heavier than at least the smallest bowling ball."
+      correct: false
+    - content: "A medium-sized bowling ball might be heavier than a bowling ball that is slightly larger in size."
+      correct: false
+
+
+
+
+#Sections Start
+
+- title: "Surveys and Studies"
+questions:
+  - prompt: "Whenever a study or survey is mentioned, you should become extremely skeptical and be ready to spot methodology flaws."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "If someone tells you something, or remembers something, or reports something, then it's obviously the truth."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: false
+      - content: "False"
+        correct: true
+
+  - prompt: "The way in which you phrase a question doesn't influence the answer that you receive",
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: false
+      - content: "False"
+        correct: true
+
+  - prompt: "A non-representative sample (often self-selecting) is the single biggest issue when conducting a study or survey."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "If a group drinking exclusively Coke performs better than another group drinking exclusively Pepsi, it must be that Pepsi contains an ingredient that hinders performance"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: false
+      - content: "False"
+        correct: true
+
+  - prompt: "If a group drinking exclusviely green tea performs better than another group drinking peppermint tea, it must be that the green tea contains an ingredient that boosts performance."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "Most surveys will fail the following test: 'Did a (1) representative cross-section of people (2) accurately and truthfully answer (3) an unbiased question from the survey maker?"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "Studies in which people choose the group they are in (e.g. vegetarians vs non-vegetarians) almost always lead to flawed conclusions because the argument fails to properly account for self-selection bias."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+
+
+# non-true-false questions
+
+    - prompt: "I asked the first five people I saw outside my local coffee shop if they read books regularly or decided to let their brain die and watch Netflix. Three of the people said they read books. Therefore, more than half of the people in my city read books.</br></br>Which one of the following does NOT describe a flaw in the argument above?"
+      explanation: "Lots of flaws here. People patronizing (or at least near) a coffee shop may be more (or less) likely than the average person in my city to read books. Five people is a clearly inadequate sample. Notice that we did not need a cross-section of all Americans—we just needed people in my city, since that is what the scope of the conclusion is about. The scope of the conclusion determines how “representative” the sampled population needs to be. People may have lied because they wanted to appear a certain way (educated) in front of the pollster. Finally, the question was biased in favor of books and against not reading (the judgmental phrasing of 'let their brain die' may make people more likely to lean in that direction when reporting their answer)."
+      answers:
+      - content: "The argument bases its conclusion on an inadequately small sample."
+        correct: false
+      - content: "The argument bases its conclusion on a sample that may not be representative."
+        correct: false
+      - content: "The argument fails to consider that what someone says may not necessarily be the case."
+        correct: false
+      - content: "The argument fails to establish that John has expertise in interpreting survey data."
+        correct: true
+      - content: "The argument is based on a question whose phrasing may have inclined people to respond in a certain manner."
+        correct: false
+
+
+
+  #Sections Start
+
+  - title: "Descriptive vs. Prescriptive"
+  questions:
+
+    - prompt: "Descriptive claims indicate how things are, while prescriptive claims indicate how things should be."
+      explanation: ""
+      answers:
+        - content: "True"
+          correct: true
+        - content: "False"
+          correct: false
+
+    - prompt: "Every prescriptive conclusion needs at least one prescriptive premise in order to be valid."
+      explanation: ""
+      answers:
+        - content: "True"
+          correct: true
+        - content: "False"
+          correct: false
+
+    - prompt: "It's ok to bring your morals into the LSAT as long as they are reasonable and not specific to any one religion or culture."
+      explanation: ""
+      answers:
+        - content: "True"
+          correct: false
+        - content: "False"
+          correct: true
+
+    - prompt: ""If an argument contains all descriptive premises and then moves to a prescriptive conclusion, it's unlikely—but possible—that the argument is valid.
+      explanation: ""
+      answers:
+        - content: "True"
+          correct: false
+        - content: "False"
+          correct: true
+
+    - prompt: "Prescriptive claims are often introduced by words such as 'should' or 'ought'."
+      explanation: ""
+      answers:
+        - content: "True"
+          correct: true
+        - content: "False"
+          correct: false
+
+  # non-true-false questions
+
+    - prompt: "Rowan was crossing the street and saw an elderly person about to be struck by a large vehicle. Rowan could have guided the person out of the way with no risk or inconvenience to himself. Therefore, Rowan should have helped the elderly person.</br></br>Which one of the following, *if added to the argument*, would make this a valid argument?"
+      explanation: "Don’t assume any moral code. Any argument that reaches a prescriptive (e.g. 'should' or 'ought') conclusion needs a prescriptive premise to support it; otherwise, it is automatcally a bad argument. That's true even when the prescriptive principle that's missing is very 'obvious' to all good, moral people.</br></br>In order to fix this argument and be able to conclude that Rowan 'should' take a given action, we want a premise that places 'should act' in the *necessary* condition of the answer choice (or that places 'should not act' in the sufficient condition, paired with a necessary condition that is negated by our facts)."
+      answers:
+      - content: "One should help elderly people only when such help is riskless to oneself and causes no inconvenience."
+        correct: false
+      - content: "Rowan's failure to act was in violation of his local criminal law code."
+        correct: false
+      - content: "Rowan could tell the truck was certain to hit the old lady if he did not take action."
+        correct: false
+      - content: "One should help people when such help is riskless and causes no inconvenience."
+        correct: true
+
+
+#Sections Start
+
+- title: "Math (Just Breathe...)"
+questions:
+
+  - prompt: "The fact that something increased in absolute amount tells you that it increased by 'some' percentage, but it tells you nothing else about the magnitude of that percentage increase."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: An increase in absolute amount also implies a significant increase in percentage terms."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: false
+      - content: "False"
+        correct: true
+
+  - prompt: "A being superior to B tells you nothing about A's overall ranking except that it's not in last place."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "If you multiply any starting amount (e.g $10) by 3 and then multiply the result of that again by 3, the number of dollars gained in the second increase will be equal to the first increase."
+
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: false
+      - content: "False"
+        correct: true
+
+  - prompt: "Brown dogs would be considered a subset of dogs."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "The superset goes in the sufficient, with the subset in the necessary."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: false
+      - content: "False"
+        correct: true
+
+  - prompt: "If you are not a member of the superset, you are certainly not a member of the subset."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "The fact that something increased in absolute amount tells you that it increased by 'some' percentage, but it tells you nothing else about the magnitude of that percentage increase."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "In order to prove that X is better than Y, the argument simply needs to provide a few good things about X."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+
+# non-true-false questions
+
+  - prompt: "There are three dishonest politicians in 2012. That number triples in 2016 and then triples again in 2020.</br></br>Which of the following is a valid inference?"
+    explanation: "We start with 3 dishonest politicians and triple that amount, resulting in 9. We then triple that amount (9*3), resulting in 27. The key is that the second tripling resulted in the same *percentage* increase (3x) but a significantly larger *numerical* increase (we added 6 politicians the first round, and we added 18 the second round)."
+    answers:
+    - content: "The same number of dishonest politicians were added from 2012-2016 as from 2016-2020."
+      correct: false
+    - content: "The number of dishonest politicians added during 2016-2020 was greater than the number added during 2012-2016"
+      correct: true
+    - content: "The percentage increase of dishonest politicians was less during 2016-2020 than during 2012-2016."
+      correct: false
+    - content: "The percentage increase of dishonest politicians was greater during 2016-2020 than during 2012-2016."
+      correct: false
+
+  - prompt: "John visits a Vegas casino with a fair roulette table (18 red slots, 18 black). He bets on red four consecutive times and wins each bet.</br></br>Which of the following is a valid inference?"
+    explanation: "This is the gambler's fallacy. Assuming a fair coin (or roulette table), prior outcomes have absolutely no effect on the expected value of the next event. Here, the odds are exactly even between red and black despite the fact that the recent history has been more favorable for red."
+    answers:
+    - content: "There is a slightly increased chance of red on the next roll."
+      correct: false
+    - content: "There is a slightly increased chance of black on the next roll."
+      correct: false
+    - content: "There is an equal chance of red versus black on the next roll."
+      correct: true
+    - content: "The next roll cannot be predicted exactly, but there the average of the next four rolls will favor black."
+      correct: false
+
+  - prompt: "Andrea is a faster typer than Felicia.</br></br>Which of the following inferences is merited?"
+    explanation: "Just because A is faster than B, we can’t conclude that A is fast, faster than average, or even anything faster than the second-slowest-person-on-Earth. Here we can conclude that Andrea is faster at typing than at least *some* people, while we can make a claim that Felicia types more slowly than *some* people. They could both be faster or slower than average—we simply have no idea."
+    answers:
+    - content: "Andrea is a faster than average typist."
+      correct: false
+    - content: "Felicia is a slower than average typist."
+      correct: false
+    - content: "If Nathan types faster than Felicia, he types faster than Andrea."
+      correct: false
+    - content: "If Nathan types faster than Andrea, he types faster than Felicia."
+      correct: true
+
+  - prompt: "Place the following four objects in a transitive link to represent their correct subset/superset relationship:</br></br>[Dog, English Bulldog, Mammal, Bulldog]"
+    explanation: "The subset always goes in the sufficient condition; the superset in the necessary. If something is an English bulldog, then it's a bulldog, so it's a dog, so it's a mammal."
+    answers:
+    - content: "EB → B → D → M"
+      correct: true
+    - content: "M → B → D → EB"
+      correct: false
+    - content: "M → D → B → EB"
+      correct: false
+    - content: "B → EB → D → M"
+      correct: false
+
+  - prompt: "2019 saw the largest numerical increase in cyber attacks, compared to the previous year, of any year on record.</br></br>Which of the following is a valid inference?"
+    explanation: "The subset always goes in the sufficient condition; the superset in the necessary. If something is an English bulldog, then it's a bulldog, so it's a dog, so it's a mammal."
+    answers:
+    - content: "2019 saw the largest percentage increase in cyber attacks."
+      correct: false
+    - content: "Most, but not all, previous years saw a positive numerical increase in cyber attacks compared to the previous year."
+      correct: false
+    - content: "If 2017 experienced a positive numerical increase in cyber attacks from the previous year, then 2019 saw at least two additional cases of cyber attack compared to the 2018."
+      correct: true
+    - content: "2018 had the lowest numerical number of cyber attacks on record"
+      correct: false
