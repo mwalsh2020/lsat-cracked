@@ -8,7 +8,7 @@
     <% if @quiz_session.complete? %>
       <%= render "course/quiz_sessions/report", quiz_session: @quiz_session %>
     <% else %>
-      <%= render "course/quiz_sessions/form", quiz_session: @quiz_session %>
+      <%= render "course/quiz_sessions/display", quiz_session: @quiz_session %>
     <% end %>
   </div>
 <% end %>

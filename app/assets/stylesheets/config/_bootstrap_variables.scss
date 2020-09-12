@@ -12,8 +12,8 @@ $font-size-base:         1.125rem;
 // Colors
 $body-color: $gray;
 $primary:    $bordeau;
+$secondary:  darken($light-gray, 5%);
 $success:    $green;
-$info:       $yellow;
 $danger:     $red;
 $warning:    $orange;
 

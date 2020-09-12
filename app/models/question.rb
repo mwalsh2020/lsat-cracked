@@ -10,6 +10,10 @@ class Question < ApplicationRecord
 
   belongs_to :section
 
+  def premium?
+    tags.any?(&:premium?)
+  end
+
   def tag_slugs=(slugs)
     self.tags = slugs.map do |slug|
       Tag.find_or_create_by!(slug: slug)

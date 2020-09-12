@@ -79,7 +79,7 @@
   questions:
     - prompt: "The positive and contrapositive argument structures are both logically valid"
       explanation: ""
-      tag_slugs: [true-false, lsat-premium]
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -88,7 +88,7 @@
 
     - prompt: "If you are given the necessary condition, you can't conclude anything"
       explanation: ""
-      tag_slugs: [true-false, lsat-premium]
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -97,7 +97,7 @@
 
     - prompt: "If the necessary condition fails, the sufficient condition also fails"
       explanation: ""
-      tag_slugs: [true-false, lsat-premium]
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -106,7 +106,7 @@
 
     - prompt: "If you negate the sufficient condition, you can then conclude the negation of the necessary condition."
       explanation: ""
-      tag_slugs: [true-false, lsat-premium]
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -115,7 +115,7 @@
 
     - prompt: "When it comes to conditional statements, you can't reverse and you can't negate, but do both and you're great"
       explanation: ""
-      tag_slugs: [true-false, lsat-premium]
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true

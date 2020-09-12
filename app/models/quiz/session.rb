@@ -41,6 +41,10 @@ class Quiz::Session
     correct_answers_ratio > 0.8
   end
 
+  def premium?
+    @quiz_questions.any?(&:premium?)
+  end
+
   def save
     return false unless valid?
 

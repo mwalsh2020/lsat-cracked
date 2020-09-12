@@ -1,0 +1,9 @@
+<h2>Quiz</h2>
+<hr>
+<% if policy(quiz_session).create? %>
+  <%= render "course/quiz_sessions/form", quiz_session: quiz_session %>
+<% else %>
+  <div class="alert alert-warning">
+    Sorry, this quiz has official LSAT questions and requires a premium account in order to be taken.
+  </div>
+<% end %>

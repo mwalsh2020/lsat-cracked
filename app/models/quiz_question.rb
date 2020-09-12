@@ -11,6 +11,10 @@ class QuizQuestion < ApplicationRecord
     answer&.correct?
   end
 
+  def premium?
+    question.premium?
+  end
+
   def answered?
     if answer.present?
       true
