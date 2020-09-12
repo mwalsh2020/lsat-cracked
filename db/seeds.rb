@@ -6,11 +6,13 @@ user_params = [
 ]
 User.create!(user_params)
 
+puts "Creating premium tags..."
+Tag.create!(slug: "lsat-premium", premium: true)
+
 puts "Importing book content..."
 Rake::Task["db:seed:course_content"].invoke
 
 puts "Creating products..."
-
 Product.create!(
   name: "Basic",
   sku: "package-1",
