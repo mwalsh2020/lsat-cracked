@@ -30,7 +30,7 @@ class Quiz::Session
   end
 
   def correct_answers_ratio
-    correct_answers_count.fdiv(@quiz_questions.count).ceil(2)
+    correct_answers_count.fdiv(@quiz_questions.count)
   end
 
   def correct_answers_count
@@ -39,6 +39,10 @@ class Quiz::Session
 
   def good_correct_ratio?
     correct_answers_ratio > 0.8
+  end
+
+  def premium?
+    @quiz_questions.any?(&:premium?)
   end
 
   def save

@@ -2,6 +2,7 @@
   questions:
     - prompt: "Every logical reasoning stimulus you read will either be an argument or statements."
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -10,6 +11,7 @@
 
     - prompt: "The definition of a conclusion: a claim for which one or more other claims are offered in support."
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -18,6 +20,7 @@
 
     - prompt: "The definition of a premise: a claim made that supports the argument's conclusion."
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -26,6 +29,7 @@
 
     - prompt: "If there is a conclusion, it's an argument. If there's no conclusion, it's not an argument (it's a set of facts)"
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -34,14 +38,16 @@
 
     - prompt: "When something sounds opinionated, you know it has to be a conclusion."
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
         - content: "False"
           correct: true
 
-    - prompt: "Arguments always contain a structural indicator (e.g. 'Therefore')."
+    - prompt: "Arguments always contain a structural indicator (e.g. “Therefore”)."
       explanation: 
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -50,6 +56,7 @@
 
     - prompt: "An argument requires a minimum of one premise and one conclusion."
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -58,6 +65,7 @@
 
     - prompt: "The very act of attempting to justify or support a claim is what turns that claim into a conclusion."
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -101,6 +109,7 @@
   questions:
     - prompt: "Everything in an argument is either a conclusion or a premise."
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -109,6 +118,7 @@
 
     - prompt: "When the argument contains only a structural indicator for a premise, you can work backwards to figure out the conclusion"
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -117,6 +127,7 @@
 
     - prompt: "When something sounds opinionated, you know it has to be a conclusion"
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -125,6 +136,7 @@
 
     - prompt: "A conclusion is occasionally a bald assertion lacking any support"
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -133,6 +145,7 @@
 
     - prompt: "When you admit something that's bad for your argument, that's called a premise"
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -141,13 +154,14 @@
 
     - prompt: "A "
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
         - content: "False"
           correct: true
 
-    - prompt: 'What argument component is introduced by the following: {premise_indicator}?'
+    - prompt: "What argument component is introduced by the following: {premise_indicator}?"
       variables:
         premise_indicator:
           - After all
@@ -247,6 +261,7 @@
   questions:
     - prompt: "A conclusion may actually support another claim in the argument."
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -255,6 +270,7 @@
 
     - prompt: "When the argument responds to another position, the response is usually the argument's main conclusion."
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -263,14 +279,16 @@
 
     - prompt: "When the argument rejects an opposing position, you will usually need to do some amount of synthesis to articulate the argument's conclusion."
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
         - content: "False"
           correct: false
 
-    - prompt: "When you see the word 'should' or 'ought', you know you're looking at the conclusion"
+    - prompt: "When you see the word “should” or “ought”, you know you're looking at the conclusion"
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -279,14 +297,16 @@
 
     - prompt: "Arguments lacking structural indicators generally fall into predictable categories of conclusions that you can learn"
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
         - content: "False"
           correct: false
 
-    - prompt: "Certain key verbs like 'establish' may indicate a conclusion in certain settings (e.g. studies, surveys)."
+    - prompt: "Certain key verbs like “establish” may indicate a conclusion in certain settings (e.g. studies, surveys)."
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -295,6 +315,7 @@
 
     - prompt: "When someone makes a prediction about the future, they usually don't try to support it"
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -303,6 +324,7 @@
 
     - prompt: "When the argument responds to another position, the response is usually in agreement"
       explanation:
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false

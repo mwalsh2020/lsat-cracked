@@ -1,10 +1,11 @@
-<h2>Quiz</h2>
-<hr>
 <ol class="p-0">
   <%= simple_form_for [:course, quiz_session.quiz, quiz_session], html: { class: "quiz-answer" } do |f| %>
     <%= f.simple_fields_for :quiz_questions do |fqq| %>
       <li>
         <%= fqq.object.question.prompt %>
+        <% if fqq.object.question.premium? %>
+          <span class="badge badge-secondary" data-toggle="tooltip" title="This question appeared in a real LSAT exam">LSAT Official</span>
+        <% end %>
         <div class="list-group pt-4">
           <%= fqq.association :answer,
               collection: fqq.object.possible_answers,
