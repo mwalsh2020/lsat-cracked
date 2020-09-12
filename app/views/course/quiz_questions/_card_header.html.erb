@@ -5,11 +5,17 @@
   aria-controls="collapse-<%= quiz_question.id %>">
 
   <div class="btn btn-light bg-transparent border-0">
+    <% if quiz_question.correct? %>
+      <span class="badge badge-success">Correct</span>
+    <% else %>
+      <span class="badge badge-danger">Wrong</span>
+    <% end %>
     <%= quiz_question.question.prompt.to_plain_text.truncate(64) %>
   </div>
-  <% if quiz_question.correct? %>
-    <span class="badge badge-success">Correct</span>
-  <% else %>
-    <span class="badge badge-danger">Wrong</span>
-  <% end %>
+
+  <div>
+    <% quiz_question.question.tags.each do |tag| %>
+      <span class="badge badge-secondary"><%= tag.slug %></span>
+    <% end %>
+  </div>
 </div>
