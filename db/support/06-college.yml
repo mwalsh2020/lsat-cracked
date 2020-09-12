@@ -96,7 +96,7 @@
         correct: false
 
     - prompt: "Countries that watch the most YouTube videos per capita tend to have the lowest rates of Alzheimer's disease.</br></br>Which one of the following is a valid inference?"
-      explanation: "This is a Correlation != Causation template. Here, A shares a statistical pattern with B (known as an 'inverse' or 'negative' correlation, and represented as Y↑A↓). This does not necessarily mean that YouTube is certainly the cause of the lower Alzheimer's rates. The other two possibilties are that: 1) Alzheimer's causes less YouTube watching; and 2) YouTube could be positively correlated with some third variable (e.g. youth) and this factor might actually be the true cause. Hence, you can never move from correlation to causation."
+      explanation: "This is a Correlation != Causation template. Here, A shares a statistical pattern with B (known as an “inverse” or “negative” correlation, and represented as Y↑A↓). This does not necessarily mean that YouTube is certainly the cause of the lower Alzheimer's rates. The other two possibilties are that: 1) Alzheimer's causes less YouTube watching; and 2) YouTube could be positively correlated with some third variable (e.g. youth) and this factor might actually be the true cause. Hence, you can never move from correlation to causation."
       answers:
       - content: "YouTube causes Alzheimer's disease."
         correct: false
@@ -194,7 +194,7 @@
           correct: false
 
     - prompt: "I asked the first five people I saw outside my local coffee shop if they read books regularly or decided to let their brain die and watch Netflix. Three of the people said they read books. Therefore, more than half of the people in my city read books.</br></br>Which one of the following does NOT describe a flaw in the argument above?"
-      explanation: "Lots of flaws here. People patronizing (or at least near) a coffee shop may be more (or less) likely than the average person in my city to read books. Five people is a clearly inadequate sample. Notice that we did not need a cross-section of all Americans—we just needed people in my city, since that is what the scope of the conclusion is about. The scope of the conclusion determines how “representative” the sampled population needs to be. People may have lied because they wanted to appear a certain way (educated) in front of the pollster. Finally, the question was biased in favor of books and against not reading (the judgmental phrasing of 'let their brain die' may make people more likely to lean in that direction when reporting their answer)."
+      explanation: "Lots of flaws here. People patronizing (or at least near) a coffee shop may be more (or less) likely than the average person in my city to read books. Five people is a clearly inadequate sample. Notice that we did not need a cross-section of all Americans—we just needed people in my city, since that is what the scope of the conclusion is about. The scope of the conclusion determines how “representative” the sampled population needs to be. People may have lied because they wanted to appear a certain way (educated) in front of the pollster. Finally, the question was biased in favor of books and against not reading (the judgmental phrasing of “let their brain die” may make people more likely to lean in that direction when reporting their answer)."
       answers:
         - content: "The argument bases its conclusion on an inadequately small sample."
           correct: false
@@ -245,7 +245,7 @@
         - content: "False"
           correct: true
 
-    - prompt: "Prescriptive claims are often introduced by words such as 'should' or 'ought'."
+    - prompt: "Prescriptive claims are often introduced by words such as “should” or “ought”."
       explanation: ""
       tag_slugs: [true-false]
       answers:
@@ -256,7 +256,7 @@
 
 
     - prompt: "Rowan was crossing the street and saw an elderly person about to be struck by a large vehicle. Rowan could have guided the person out of the way with no risk or inconvenience to himself. Therefore, Rowan should have helped the elderly person.</br></br>Which one of the following, *if added to the argument*, would make this a valid argument?"
-      explanation: "Don’t assume any moral code. Any argument that reaches a prescriptive (e.g. 'should' or 'ought') conclusion needs a prescriptive premise to support it; otherwise, it is automatcally a bad argument. That's true even when the prescriptive principle that's missing is very 'obvious' to all good, moral people.</br></br>In order to fix this argument and be able to conclude that Rowan 'should' take a given action, we want a premise that places 'should act' in the *necessary* condition of the answer choice (or that places 'should not act' in the sufficient condition, paired with a necessary condition that is negated by our facts)."
+      explanation: "Don’t assume any moral code. Any argument that reaches a prescriptive (e.g. “should” or “ought”) conclusion needs a prescriptive premise to support it; otherwise, it is automatcally a bad argument. That's true even when the prescriptive principle that's missing is very “obvious” to all good, moral people.</br></br>In order to fix this argument and be able to conclude that Rowan “should” take a given action, we want a premise that places “should act” in the *necessary* condition of the answer choice (or that places “should not act” in the sufficient condition, paired with a necessary condition that is negated by our facts)."
       answers:
       - content: "One should help elderly people only when such help is riskless to oneself and causes no inconvenience."
         correct: false
@@ -269,7 +269,7 @@
 
 - title: "Math (Just Breathe...)"
   questions:
-    - prompt: "The fact that something increased in absolute amount tells you that it increased by 'some' percentage, but it tells you nothing else about the magnitude of that percentage increase."
+    - prompt: "The fact that something increased in absolute amount tells you that it increased by “some” percentage, but it tells you nothing else about the magnitude of that percentage increase."
       explanation: ""
       tag_slugs: [true-false]
       answers:
@@ -333,7 +333,7 @@
         - content: "False"
           correct: false
 
-    - prompt: "The fact that something increased in absolute amount tells you that it increased by 'some' percentage, but it tells you nothing else about the magnitude of that percentage increase."
+    - prompt: "The fact that something increased in absolute amount tells you that it increased by “some” percentage, but it tells you nothing else about the magnitude of that percentage increase."
       explanation: ""
       tag_slugs: [true-false]
       answers:

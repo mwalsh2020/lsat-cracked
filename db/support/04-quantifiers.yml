@@ -2,7 +2,7 @@
 
 - title: "Quantifier Definitions"
   questions:
-    - prompt: "'Some' allows for the possibility of 'most'"
+    - prompt: "“Some” allows for the possibility of “most”"
       explanation: ""
       tag_slugs: [true-false]
       answers:
@@ -11,7 +11,7 @@
         - content: "False"
           correct: false
 
-    - prompt: "'Some' allows for the possibility of 'all'"
+    - prompt: "“Some” allows for the possibility of “all”"
       explanation: ""
       tag_slugs: [true-false]
       answers:
@@ -20,7 +20,7 @@
         - content: "False"
           correct: false
 
-    - prompt: "Every 'not all' claim can be diagrammed as a some statement"
+    - prompt: "Every “not all” claim can be diagrammed as a some statement"
       explanation: ""
       tag_slugs: [true-false]
       answers:
@@ -29,7 +29,7 @@
         - content: "True"
           correct: false
 
-    - prompt: "'Many' is the exact same numerical claim as 'some'"
+    - prompt: "“Many” is the exact same numerical claim as “some”"
       explanation: ""
       tag_slugs: [true-false]
       answers:
@@ -38,7 +38,7 @@
         - content: "False"
           correct: true
 
-    - prompt: "'Many' means a percentage greater than 50%"
+    - prompt: "“Many” means a percentage greater than 50%"
       explanation: ""
       tag_slugs: [true-false]
       answers:
@@ -47,7 +47,7 @@
         - content: "False"
           correct: true
 
-    - prompt: "'Most' means more than half, and less than all"
+    - prompt: "“Most” means more than half, and less than all"
       explanation: ""
       tag_slugs: [true-false]
       answers:
@@ -56,7 +56,7 @@
         - content: "False"
           correct: true
 
-    - prompt: "'Almost all' is identical in meaning to 'most"
+    - prompt: "“Almost all” is identical in meaning to 'most"
       explanation: ""
       tag_slugs: [true-false]
       answers:
@@ -77,7 +77,7 @@
           correct: true
 
     - prompt: "Suppose there is an egg carton capable of holding 12 eggs. The carton has most of the eggs. What is the numerical range of eggs that are possible here?"
-      explanation: "'Most' means more than 50%, possibly up to and including the possibility of all."
+      explanation: "“Most” means more than 50%, possibly up to and including the possibility of all."
       answers:
         - content: "1-6"
           correct: false
@@ -114,7 +114,7 @@
 
 - title: "Quantifier Transitive Templates"
   questions:
-    - prompt: "For the purposes of transitive diagrams, 'many' can be diagrammed as 'some'"
+    - prompt: "For the purposes of transitive diagrams, “many” can be diagrammed as “some”"
       explanation: ""
       tag_slugs: [true-false]
       answers:
@@ -123,7 +123,7 @@
         - content: "False"
           correct: false
 
-    - prompt: "Multiple 'some' claims never allow you to reach a valid conclusion via a transitive link"
+    - prompt: "Multiple “some” claims never allow you to reach a valid conclusion via a transitive link"
       explanation: ""
       tag_slugs: [true-false]
       answers:
@@ -132,7 +132,7 @@
         - content: "False"
           correct: false
 
-    - prompt: "A 'some' and 'most' claim never allow you to reach a valid conclusion via a transitive link"
+    - prompt: "A “some” and “most” claim never allow you to reach a valid conclusion via a transitive link"
       explanation: ""
       tag_slugs: [true-false]
       answers:
@@ -141,7 +141,7 @@
         - content: "False"
           correct: false
 
-    - prompt: "Two 'most' statements always produce a valid conclusion"
+    - prompt: "Two “most” statements always produce a valid conclusion"
       explanation: ""
       tag_slugs: [true-false]
       answers:
@@ -150,7 +150,7 @@
         - content: "False"
           correct: false
 
-    - prompt: "Two 'most' statements never produce a valid conclusion"
+    - prompt: "Two “most” statements never produce a valid conclusion"
       explanation: ""
       tag_slugs: [true-false]
       answers:
@@ -172,7 +172,7 @@
           correct: true
 
     - prompt: "Premise 1: A⎯some⎯B. Premise 2: B⎯most→C. Which of the following inferences is valid?"
-      explanation: "The combination of a 'some' statement and a 'most' statement will never allow you to reach a transitive conclusion."
+      explanation: "The combination of a “some” statement and a “most” statement will never allow you to reach a transitive conclusion."
       answers:
         - content: "A⎯some⎯C"
           correct: false
@@ -184,7 +184,7 @@
           correct: true
 
     - prompt: "Premise 1: A—most→B. Premise 2: B—most→C. Which of the following inferences is valid?"
-      explanation: "Two 'most' statements form a transitive conclusion if but only if the common variable appears at the beginning of each 'most' statement."
+      explanation: "Two “most” statements form a transitive conclusion if but only if the common variable appears at the beginning of each “most” statement."
       answers:
         - content: "A⎯some⎯C"
           correct: false
@@ -196,7 +196,7 @@
           correct: true
 
     - prompt: "Premise 1: A—most→B. Premise 2: C—most→B. Which of the following inferences is valid?"
-      explanation: "Two 'most' statements form a transitive conclusion if but only if the common variable appears at the beginning of each 'most' statement."
+      explanation: "Two “most” statements form a transitive conclusion if but only if the common variable appears at the beginning of each “most” statement."
       answers:
         - content: "A⎯some⎯C"
           correct: false
@@ -208,7 +208,7 @@
           correct: true
 
     - prompt: "Premise 1: A—most→B. Premise 2: A—most→C. Which of the following inferences is valid?"
-      explanation: "When two 'most' statements share a common variable at the beginning of both 'most' statements, they will always form a 'some' overlap between the other two variables. Example: If on most days of the week you wash dishes, and if on most days of the week you go to work, there must be at least one day on which you both wash dishes and go to work."
+      explanation: "When two “most” statements share a common variable at the beginning of both “most” statements, they will always form a “some” overlap between the other two variables. Example: If on most days of the week you wash dishes, and if on most days of the week you go to work, there must be at least one day on which you both wash dishes and go to work."
       answers:
         - content: "B⎯some⎯C"
           correct: true
@@ -220,7 +220,7 @@
           correct: false
 
     - prompt: "Premise 1: A → B. Premise 2: B—some—C. Which of the following inferences is valid?"
-      explanation: "In order for an 'all' and a 'some' statement to form any transitive conclusion, the common variable must occur in the sufficient condition of the 'all' statement. Here, the common variable was in the necessary condition. No conclusion possible."
+      explanation: "In order for an “all” and a “some” statement to form any transitive conclusion, the common variable must occur in the sufficient condition of the “all” statement. Here, the common variable was in the necessary condition. No conclusion possible."
       answers:
         - content: "A⎯some⎯C"
           correct: false
@@ -232,7 +232,7 @@
           correct: true
 
     - prompt: "Premise 1: A → B. Premise 2: A-some—C. Which of the following inferences is valid?"
-      explanation: "When an 'all' statement and a 'some' statement share a common variable that is in the sufficient condition of the 'all' statement, you will always be 'some' overlap between the other two variables."
+      explanation: "When an “all” statement and a “some” statement share a common variable that is in the sufficient condition of the “all” statement, you will always be “some” overlap between the other two variables."
       answers:
         - content: "B⎯some⎯C"
           correct: true
@@ -244,7 +244,7 @@
           correct: false
 
     - prompt: "Premise 1: A → B. Premise 2: B—most→C. Which of the following inferences is valid?"
-      explanation: "In order for an 'all' and a 'most' statement to form any transitive conclusion, the common variable must occur in the sufficient condition of the 'all' statement. Here, the common variable was in the necessary condition. No conclusion possible."
+      explanation: "In order for an “all” and a “most” statement to form any transitive conclusion, the common variable must occur in the sufficient condition of the “all” statement. Here, the common variable was in the necessary condition. No conclusion possible."
       answers:
         - content: "A⎯some⎯C"
           correct: false
@@ -256,7 +256,7 @@
           correct: true
 
     - prompt: "Premise 1: A → B. Premise 2: A—most→C. Which of the following inferences is valid?"
-      explanation: "When an 'all' statement and a 'most' statement share a common variable that is in the sufficient condition of the 'all' statement. There will be at least 'some' overlap between the other two variables. Because this template did not allow you to drag-and-drop the 'A⎯most→C' directly to the left of 'A→B', you have to settle for a 'some' conclusion between the other two variables."
+      explanation: "When an “all” statement and a “most” statement share a common variable that is in the sufficient condition of the “all” statement. There will be at least “some” overlap between the other two variables. Because this template did not allow you to drag-and-drop the “A⎯most→C” directly to the left of “A→B”, you have to settle for a “some” conclusion between the other two variables."
       answers:
         - content: "B⎯some⎯C"
           correct: true
@@ -268,7 +268,7 @@
           correct: false
 
     - prompt: "Premise 1: A → B. Premise 2: C—most→A. Which of the following inferences is valid?"
-      explanation: "When an 'all' statement and a 'most' statement share a common variable that is in the sufficient condition of the 'all' statement. There will be at least 'some' overlap between the other two variables. Because this template did allow you to drag-and-drop the 'A⎯most→C' directly to the left of 'A→B', you are able to conclude that 'most' C's are B's."
+      explanation: "When an “all” statement and a “most” statement share a common variable that is in the sufficient condition of the “all” statement. There will be at least “some” overlap between the other two variables. Because this template did allow you to drag-and-drop the “A⎯most→C” directly to the left of “A→B”, you are able to conclude that “most” C's are B's."
       answers:
         - content: "C—most→B"
           correct: true

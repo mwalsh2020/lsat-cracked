@@ -27,7 +27,7 @@
         - content: "False"
           correct: false
 
-    - prompt: "NNT is a fancy way of saying 'I don't know' and is both your default state when starting a problem as well as the typically correct evaluation of most conclusions you encounter on the LSAT."
+    - prompt: "NNT is a fancy way of saying “I don't know” and is both your default state when starting a problem as well as the typically correct evaluation of most conclusions you encounter on the LSAT."
       explanation: ""
       tag_slugs: [true-false]
       answers:
@@ -103,7 +103,7 @@
         correct: false
 
     - prompt: "All crows are black. Therefore, some birds are black."
-      explanation: "If you know that all of a subset have a certain property, then you know that at least 'some' of the superset also have that property."
+      explanation: "If you know that all of a subset have a certain property, then you know that at least “some” of the superset also have that property."
       answers:
       - content: "MBT"
         correct: true
@@ -153,7 +153,7 @@
         correct: false
 
     - prompt: "All crows are evil. Therefore, most birds are evil."
-      explanation: "If you know that all members of a subset have a certain property, then you know that at least 'some' of the superset also have that property, but you cannot conclude that 'most' or 'all' members have it."
+      explanation: "If you know that all members of a subset have a certain property, then you know that at least “some” of the superset also have that property, but you cannot conclude that “most” or “all” members have it."
       answers:
       - content: "MBT"
         correct: false
@@ -163,7 +163,7 @@
         correct: false
 
     - prompt: "All of the city's purple trash cans are designated for recycling. Therefore, it's possible that none of the city's trash cans are designed for recycling."
-      explanation: "If you know that all members of a subset have a certain property, then you know that at least 'some' of the superset also have that property."
+      explanation: "If you know that all members of a subset have a certain property, then you know that at least “some” of the superset also have that property."
       answers:
       - content: "MBT"
         correct: false
@@ -183,7 +183,7 @@
         - content: "False"
           correct: true
 
-    - prompt: "While reversing a 'most' or 'all' claim is certainly disallowed and therefore 'wrong', the proper evaluation of such an error is NNT."
+    - prompt: "While reversing a “most” or “all” claim is certainly disallowed and therefore “wrong”, the proper evaluation of such an error is NNT."
       explanation: ""
       tag_slugs: [true-false]
       answers:
@@ -210,7 +210,7 @@
         - content: "False"
           correct: false
 
-    - prompt: "All things equal, if a conclusion makes an 'and' claim, it now has to prove two things true, which will increase the probability that the argument will not evaluate to MBT. This does not apply to conclusions that make only an 'or' claim."
+    - prompt: "All things equal, if a conclusion makes an “and” claim, it now has to prove two things true, which will increase the probability that the argument will not evaluate to MBT. This does not apply to conclusions that make only an “or” claim."
       explanation: ""
       tag_slugs: [true-false]
       answers:
@@ -240,7 +240,7 @@
           correct: false
 
     - prompt: "P1: A⎯most→B. P2: A⎯most→C. Conclusion: B → ~C."
-      explanation: "You have a valid overlap between two 'most' statements allowing you to conclude 'B⎯some⎯C', which renders 'B→~C a false statement."
+      explanation: "You have a valid overlap between two “most” statements allowing you to conclude “B⎯some⎯C”, which renders 'B→~C a false statement."
       answers:
         - content: "MBT"
           correct: true
@@ -269,8 +269,8 @@
         - content: "MBF"
           correct: false
 
-    - prompt: "P1: (A). P2: (~B). Conclusion: \"A→B is false\"."
-      explanation: "If you show the sufficient occuring the the absence of the purported 'necessary' condition, then you have proven that if-then statement to be false."
+    - prompt: "P1: (A). P2: (~B). Conclusion: “A→B is false”."
+      explanation: "If you show the sufficient occuring the the absence of the purported “necessary” condition, then you have proven that if-then statement to be false."
       answers:
         - content: "MBT"
           correct: true
@@ -279,7 +279,7 @@
         - content: "MBF"
           correct: false
 
-    - prompt: "P1: (~A). P2: (B). Conclusion: \"A → B is false\"."
+    - prompt: "P1: (~A). P2: (B). Conclusion: “A → B is false”."
       explanation: "The negation of the sufficient condition paired with the necessary condition does not allow us to disprove an if-then statement."
       answers:
         - content: "MBT"
@@ -321,7 +321,7 @@
 
 - title: "Good Argument Templates"
   questions:
-    - prompt: "If you want to disprove the claim 'all A's are B's' you need to show that no A's are B's."
+    - prompt: "If you want to disprove the claim “all A's are B's” you need to show that no A's are B's."
       explanation: ""
       tag_slugs: [true-false]
       answers:
@@ -330,7 +330,7 @@
         - content: "False"
           correct: false
 
-    - prompt: "In order to disprove the claim 'all crocodiles are cranky' it is sufficient to show a single instance of a crocodile that is not cranky."
+    - prompt: "In order to disprove the claim “all crocodiles are cranky” it is sufficient to show a single instance of a crocodile that is not cranky."
       explanation: ""
       tag_slugs: [true-false]
       answers:

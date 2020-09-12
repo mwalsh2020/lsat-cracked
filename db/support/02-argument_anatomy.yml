@@ -45,7 +45,7 @@
         - content: "False"
           correct: true
 
-    - prompt: "Arguments always contain a structural indicator (e.g. 'Therefore')."
+    - prompt: "Arguments always contain a structural indicator (e.g. “Therefore”)."
       explanation: 
       tag_slugs: [true-false]
       answers:
@@ -161,7 +161,7 @@
         - content: "False"
           correct: true
 
-    - prompt: 'What argument component is introduced by the following: {premise_indicator}?'
+    - prompt: "What argument component is introduced by the following: {premise_indicator}?"
       variables:
         premise_indicator:
           - After all
@@ -286,7 +286,7 @@
         - content: "False"
           correct: false
 
-    - prompt: "When you see the word 'should' or 'ought', you know you're looking at the conclusion"
+    - prompt: "When you see the word “should” or “ought”, you know you're looking at the conclusion"
       explanation:
       tag_slugs: [true-false]
       answers:
@@ -304,7 +304,7 @@
         - content: "False"
           correct: false
 
-    - prompt: "Certain key verbs like 'establish' may indicate a conclusion in certain settings (e.g. studies, surveys)."
+    - prompt: "Certain key verbs like “establish” may indicate a conclusion in certain settings (e.g. studies, surveys)."
       explanation:
       tag_slugs: [true-false]
       answers:
