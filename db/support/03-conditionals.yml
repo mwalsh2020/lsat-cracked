@@ -71,7 +71,7 @@
 - title: "Common Traps to Avoid"
   questions:
     - prompt: "The positive and contrapositive argument structures are both logically valid"
-      tags: [lsat-premium]
+      tag_slugs: [lsat-premium]
       explanation: ""
       answers:
         - content: "True"
@@ -80,7 +80,7 @@
           correct: false
 
     - prompt: "If you are given the necessary condition, you can't conclude anything"
-      tags: [lsat-premium]
+      tag_slugs: [lsat-premium]
       explanation: ""
       answers:
         - content: "True"
@@ -89,7 +89,7 @@
           correct: false
 
     - prompt: "If the necessary condition fails, the sufficient condition also fails"
-      tags: [lsat-premium]
+      tag_slugs: [lsat-premium]
       explanation: ""
       answers:
         - content: "True"
@@ -98,7 +98,7 @@
           correct: false
 
     - prompt: "If you negate the sufficient condition, you can then conclude the negation of the necessary condition."
-      tags: [lsat-premium]
+      tag_slugs: [lsat-premium]
       explanation: ""
       answers:
         - content: "True"
@@ -107,7 +107,7 @@
           correct: true
 
     - prompt: "When it comes to conditional statements, you can't reverse and you can't negate, but do both and you're great"
-      tags: [lsat-premium]
+      tag_slugs: [lsat-premium]
       explanation: ""
       answers:
         - content: "True"
@@ -116,7 +116,7 @@
           correct: false
 
     - prompt: "The premise tells you: \"If something is a dog, then it is friendly\". Which piece of information will allow you to conclude that the subject in question is not a dog?"
-      tags: [lsat-premium]
+      tag_slugs: [lsat-premium]
       explanation: "You should have diagrammed this as D → F, and then diagrammed the contrapositive as ~F → ~D. Now you see that the addition of (~F) is what will allow you to reach the conclusion of (~D)."
       answers:
         - content: "It is a dog"
@@ -129,7 +129,7 @@
           correct: false
 
     - prompt: "The premise tells you: \"One deserves the medal of valor only if one has saved another's life\". Which piece of information will allow you to conclude that Sarah deserves the medal of valor?"
-      tags: [lsat-premium]
+      tag_slugs: [lsat-premium]
       explanation: "You should have diagrammed this as DMV → SL, and then diagrammed the contrapositive as ~SL → ~DMV. Now you see that the concept of someone deserving the medal of valor (DMV) is in the sufficient condiiton, which means we will never be able to conclude it."
       answers:
         - content: "Sarah has not saved someone's life"
