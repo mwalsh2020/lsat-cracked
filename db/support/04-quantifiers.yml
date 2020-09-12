@@ -4,6 +4,7 @@
   questions:
     - prompt: "'Some' allows for the possibility of 'most'"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -12,6 +13,7 @@
 
     - prompt: "'Some' allows for the possibility of 'all'"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -20,6 +22,7 @@
 
     - prompt: "Every 'not all' claim can be diagrammed as a some statement"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "False"
           correct: true
@@ -28,6 +31,7 @@
 
     - prompt: "'Many' is the exact same numerical claim as 'some'"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -36,6 +40,7 @@
 
     - prompt: "'Many' means a percentage greater than 50%"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -44,6 +49,7 @@
 
     - prompt: "'Most' means more than half, and less than all"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -52,6 +58,7 @@
 
     - prompt: "'Almost all' is identical in meaning to 'most"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -109,6 +116,7 @@
   questions:
     - prompt: "For the purposes of transitive diagrams, 'many' can be diagrammed as 'some'"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -117,6 +125,7 @@
 
     - prompt: "Multiple 'some' claims never allow you to reach a valid conclusion via a transitive link"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -125,6 +134,7 @@
 
     - prompt: "A 'some' and 'most' claim never allow you to reach a valid conclusion via a transitive link"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -133,6 +143,7 @@
 
     - prompt: "Two 'most' statements always produce a valid conclusion"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -141,6 +152,7 @@
 
     - prompt: "Two 'most' statements never produce a valid conclusion"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true

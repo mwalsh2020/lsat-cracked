@@ -2,6 +2,7 @@
   questions:
     - prompt: "\"Sufficient\" means \"enough\""
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -10,6 +11,7 @@
 
     - prompt: "'Necessary' means 'required'"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -18,6 +20,7 @@
 
     - prompt: "'Sufficient' and 'Necessary' are synonyms that essentially mean the same thing"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "False"
           correct: true
@@ -26,6 +29,7 @@
 
     - prompt: "If you are given the sufficient condition, you can conclude the necessary"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -34,6 +38,7 @@
 
     - prompt: "If you are given the negation of the necessary condition, you can conclude the negation of the sufficient"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -42,6 +47,7 @@
 
     - prompt: "To perform the contrapositive, simply reverse or negate the terms"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "False"
           correct: true
@@ -50,6 +56,7 @@
 
     - prompt: "For the contrapositive, you need to reverse and negate the terms"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -71,8 +78,8 @@
 - title: "Common Traps to Avoid"
   questions:
     - prompt: "The positive and contrapositive argument structures are both logically valid"
-      tag_slugs: [lsat-premium]
       explanation: ""
+      tag_slugs: [true-false, lsat-premium]
       answers:
         - content: "True"
           correct: true
@@ -80,8 +87,8 @@
           correct: false
 
     - prompt: "If you are given the necessary condition, you can't conclude anything"
-      tag_slugs: [lsat-premium]
       explanation: ""
+      tag_slugs: [true-false, lsat-premium]
       answers:
         - content: "True"
           correct: true
@@ -89,8 +96,8 @@
           correct: false
 
     - prompt: "If the necessary condition fails, the sufficient condition also fails"
-      tag_slugs: [lsat-premium]
       explanation: ""
+      tag_slugs: [true-false, lsat-premium]
       answers:
         - content: "True"
           correct: true
@@ -98,8 +105,8 @@
           correct: false
 
     - prompt: "If you negate the sufficient condition, you can then conclude the negation of the necessary condition."
-      tag_slugs: [lsat-premium]
       explanation: ""
+      tag_slugs: [true-false, lsat-premium]
       answers:
         - content: "True"
           correct: false
@@ -107,8 +114,8 @@
           correct: true
 
     - prompt: "When it comes to conditional statements, you can't reverse and you can't negate, but do both and you're great"
-      tag_slugs: [lsat-premium]
       explanation: ""
+      tag_slugs: [true-false, lsat-premium]
       answers:
         - content: "True"
           correct: true
@@ -116,8 +123,8 @@
           correct: false
 
     - prompt: "The premise tells you: \"If something is a dog, then it is friendly\". Which piece of information will allow you to conclude that the subject in question is not a dog?"
-      tag_slugs: [lsat-premium]
       explanation: "You should have diagrammed this as D → F, and then diagrammed the contrapositive as ~F → ~D. Now you see that the addition of (~F) is what will allow you to reach the conclusion of (~D)."
+      tag_slugs: [lsat-premium]
       answers:
         - content: "It is a dog"
           correct: true
@@ -129,8 +136,8 @@
           correct: false
 
     - prompt: "The premise tells you: \"One deserves the medal of valor only if one has saved another's life\". Which piece of information will allow you to conclude that Sarah deserves the medal of valor?"
-      tag_slugs: [lsat-premium]
       explanation: "You should have diagrammed this as DMV → SL, and then diagrammed the contrapositive as ~SL → ~DMV. Now you see that the concept of someone deserving the medal of valor (DMV) is in the sufficient condiiton, which means we will never be able to conclude it."
+      tag_slugs: [lsat-premium]
       answers:
         - content: "Sarah has not saved someone's life"
           correct: false
@@ -145,6 +152,7 @@
   questions:
     - prompt: "'Unless' introduces the necessary condition"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -153,6 +161,7 @@
 
     - prompt: "'All' introduces the sufficient condition"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -161,6 +170,7 @@
 
     - prompt: "'Only', 'Only if' and 'The only' all introduce the necessary condition"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -169,6 +179,7 @@
 
     - prompt: "Even though 'only' always refers to a necessary condition, depending on the sentence structure, it does not always immediately precede the necessary condition."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -251,6 +262,7 @@
   questions:
     - prompt: "With the contrapositive, 'or' changes to 'and' while 'and' changes to 'or'"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -259,6 +271,7 @@
 
     - prompt: "The 'and' operator requires that both terms be present whereas the 'or' operator only requires that one of the two terms be present"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -267,6 +280,7 @@
 
     - prompt: "The word \"or\" means that exactly one of the two terms must occur, and implies that you cannot have both terms."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -275,6 +289,7 @@
 
     - prompt: "With a sufficient condition that contains two terms joined by an 'or' operator, you can still conclude the necessary condition when you are presented with both sufficient terms"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true

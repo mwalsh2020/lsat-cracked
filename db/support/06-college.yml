@@ -2,6 +2,7 @@
   questions:
     - prompt: "Conclusions that assert that A caused B are sometimes valid."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -10,6 +11,7 @@
 
     - prompt: "A occurring before B, even with perfect consistency, will never allow you to conclude that A causes B."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -18,6 +20,7 @@
 
     - prompt: "A being correlated with B, even with perfect correlation, will never allow you to conclude that A caused B."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -26,6 +29,7 @@
 
     - prompt: "If all of the countries with the highest saturated fat intake have the highest rates of cancer, then you can conclude that saturated fat causes cancer."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -34,6 +38,7 @@
 
     - prompt: "If you know that A occurred after B then you have effectively disproven the possibility of A having caused B."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -42,6 +47,7 @@
 
     - prompt: "The premise tells you that A and B are correlated. When you see a conclusion that says A causes B, the first step in your mental checklist is to ask if it's possible for B to cause A."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -50,6 +56,7 @@
 
     - prompt: "If A and B are positively correlated and you show that B could not have caused A, then you have shown that A must be the cause of B."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -58,6 +65,7 @@
 
     - prompt: "If there is a correlation between sleep and illness, it may be because that sick people tend to need more sleep (illness causing sleep), rather than sleep causing the illness."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -67,6 +75,7 @@
 
     - prompt: "The intelligence of dogs increases as brain size increases. The same relationship holds for cats. Therefore, since the average dog has a larger brain than the average cat, we can be sure that dogs are, on average, smarter than cats."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -114,6 +123,7 @@
   questions:
     - prompt: "Whenever a study or survey is mentioned, you should become extremely skeptical and be ready to spot methodology flaws."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -122,6 +132,7 @@
 
     - prompt: "If someone tells you something, or remembers something, or reports something, then it's obviously the truth."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -130,6 +141,7 @@
 
     - prompt: "The way in which you phrase a question doesn't influence the answer that you receive"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -138,6 +150,7 @@
 
     - prompt: "A non-representative sample (often self-selecting) is the single biggest issue when conducting a study or survey."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -146,6 +159,7 @@
 
     - prompt: "If a group drinking exclusively Coke performs better than another group drinking exclusively Pepsi, it must be that Pepsi contains an ingredient that hinders performance"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -154,6 +168,7 @@
 
     - prompt: "If a group drinking exclusviely green tea performs better than another group drinking peppermint tea, it must be that the green tea contains an ingredient that boosts performance."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -162,6 +177,7 @@
 
     - prompt: "Most surveys will fail the following test: 'Did a (1) representative cross-section of people (2) accurately and truthfully answer (3) an unbiased question from the survey maker?"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -170,6 +186,7 @@
 
     - prompt: "Studies in which people choose the group they are in (e.g. vegetarians vs non-vegetarians) almost always lead to flawed conclusions because the argument fails to properly account for self-selection bias."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -194,6 +211,7 @@
   questions:
     - prompt: "Descriptive claims indicate how things are, while prescriptive claims indicate how things should be."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -202,6 +220,7 @@
 
     - prompt: "Every prescriptive conclusion needs at least one prescriptive premise in order to be valid."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -210,6 +229,7 @@
 
     - prompt: "It's ok to bring your morals into the LSAT as long as they are reasonable and not specific to any one religion or culture."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -218,6 +238,7 @@
 
     - prompt: "If an argument contains all descriptive premises and then moves to a prescriptive conclusion, it's unlikely—but possible—that the argument is valid."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -226,6 +247,7 @@
 
     - prompt: "Prescriptive claims are often introduced by words such as 'should' or 'ought'."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -249,6 +271,7 @@
   questions:
     - prompt: "The fact that something increased in absolute amount tells you that it increased by 'some' percentage, but it tells you nothing else about the magnitude of that percentage increase."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -257,6 +280,7 @@
 
     - prompt: An increase in absolute amount also implies a significant increase in percentage terms."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -265,6 +289,7 @@
 
     - prompt: "A being superior to B tells you nothing about A's overall ranking except that it's not in last place."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -274,6 +299,7 @@
     - prompt: "If you multiply any starting amount (e.g $10) by 3 and then multiply the result of that again by 3, the number of dollars gained in the second increase will be equal to the first increase."
 
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -282,6 +308,7 @@
 
     - prompt: "Brown dogs would be considered a subset of dogs."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -290,6 +317,7 @@
 
     - prompt: "The superset goes in the sufficient, with the subset in the necessary."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -298,6 +326,7 @@
 
     - prompt: "If you are not a member of the superset, you are certainly not a member of the subset."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -306,6 +335,7 @@
 
     - prompt: "The fact that something increased in absolute amount tells you that it increased by 'some' percentage, but it tells you nothing else about the magnitude of that percentage increase."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -314,6 +344,7 @@
 
     - prompt: "In order to prove that X is better than Y, the argument simply needs to provide a few good things about X."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true

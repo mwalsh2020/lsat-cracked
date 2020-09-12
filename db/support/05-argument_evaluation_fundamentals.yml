@@ -2,6 +2,7 @@
   questions:
     - prompt: "As a general rule, you start each LR problem as a complete blank slate, knowing nothing."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -10,6 +11,7 @@
 
     - prompt: "When you find a bad argument, the correct evaluation is usually MBF"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -18,6 +20,7 @@
 
     - prompt: "A bad argument is one whose premises do not ensure the truth of its conclusion and may either be NNT, or in some rare cases, MBF"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -26,6 +29,7 @@
 
     - prompt: "NNT is a fancy way of saying 'I don't know' and is both your default state when starting a problem as well as the typically correct evaluation of most conclusions you encounter on the LSAT."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -34,6 +38,7 @@
 
     - prompt: "Most LSAT arguments are an exercise in someone pretending they can conclude (i.e. know) something that they have insufficient evidence for believing. Realizing how little you know is therefore a sort of logical superpower."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -44,6 +49,7 @@
   questions:
     - prompt: "You can draw a weaker claim than the premises support, but you cannot draw a stronger one."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -52,6 +58,7 @@
 
     - prompt: "If a premise asserts that most A's are B's you cannot conclude that some A's are B's because this would be too weak of a conclusion."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -60,6 +67,7 @@
 
     - prompt: "If you a premise asserts that most A's are B's you can conclude that all A's are B's."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -68,6 +76,7 @@
 
     - prompt: "If there are two answer choices: (1) All A's are B's and (2) Some A's are B's, you would be able to logically deduce that Choice 1 cannot possibly be the right answer, since if true, it would imply the truth of Choice 2."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -167,6 +176,7 @@
   questions:
     - prompt: "When an arguemnt commits the Converse Fallacy (treating A→B as B→A), that is properly met with an evalution of MBF"
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -175,6 +185,7 @@
 
     - prompt: "While reversing a 'most' or 'all' claim is certainly disallowed and therefore 'wrong', the proper evaluation of such an error is NNT."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -183,6 +194,7 @@
 
     - prompt: "The necessary condition always equals or exceeds the sufficient condition in the number of occurances."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -191,6 +203,7 @@
 
     - prompt: "When evaluating an argument that makes more than one claim, you always evalute the entire argument to the least true part it contains."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -199,6 +212,7 @@
 
     - prompt: "All things equal, if a conclusion makes an 'and' claim, it now has to prove two things true, which will increase the probability that the argument will not evaluate to MBT. This does not apply to conclusions that make only an 'or' claim."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -309,6 +323,7 @@
   questions:
     - prompt: "If you want to disprove the claim 'all A's are B's' you need to show that no A's are B's."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
@@ -317,6 +332,7 @@
 
     - prompt: "In order to disprove the claim 'all crocodiles are cranky' it is sufficient to show a single instance of a crocodile that is not cranky."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -325,6 +341,7 @@
 
     - prompt: "If two terms possess necessary conditions that are mutually exclusive with one another, it logically follows that those two terms are mutually exclusive from one another as well."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -333,6 +350,7 @@
 
     - prompt: "If a sufficient condition would lead to two mutually exclusive things happening, it means that sufficient condition can never occur."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: false
@@ -341,6 +359,7 @@
 
     - prompt: "Most good argument templates do not involve a conditional statement."
       explanation: ""
+      tag_slugs: [true-false]
       answers:
         - content: "True"
           correct: true
