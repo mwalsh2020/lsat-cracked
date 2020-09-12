@@ -1,3 +1,6 @@
 class Tag < ApplicationRecord
-  validate :slug, uniqueness: true, presence: true
+  has_many :taggings, dependent: :destroy
+  has_many :questions, through: :taggings, source: :taggable, source_type: "Question"
+
+  validates :slug, uniqueness: true, presence: true
 end
