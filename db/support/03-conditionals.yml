@@ -1,24 +1,426 @@
 # Sections Start
+
+- title: "Sufficient and Necessary Conditions"
+questions:
+  - prompt: "'Sufficient' means 'enough'"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "'Necessary' means 'required'"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "'Sufficient' and 'Necessary' are synonyms that essentially mean the same thing"
+    explanation: ""
+    answers:
+      - content: "False"
+        correct: true
+      - content: "True"
+        correct: false
+
+  - prompt: "If you are given the sufficient condition, you can conclude the necessary"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "If you are given the negation of the necessary condition, you can conclude the negation of the sufficient"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "To perform the contrapositive, simply reverse or negate the terms"
+    explanation: ""
+    answers:
+      - content: "False"
+        correct: true
+      - content: "True"
+        correct: false
+
+  - prompt: "For the contrapositive, you need to reverse and negate the terms"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+
+
+# non-true-false questions
+
+
+  - prompt: "How do you diagram "If you want a high LSAT score, you need to study hard""
+    explanation: "If introduces the sufficient condition of high LSAT (HL), while "
+    answers:
+      - content: "HL → SH"
+        correct: true
+      - content: "SH → HL"
+        correct: false
+      - content: "~HL → ~SH"
+        correct: false
+      - content: "HL → ~SH"
+        correct: false
+
+
+# LSAT premium questions
+
+
+
 # Sections Start
-- title: "Basic Math"
+- title: "Common Traps to Avoid"
+questions:
+  - prompt: "The positive and contrapositive argument structures are both logically valid"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "If you are given the necessary condition, you can't conclude anything"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "If the necessary condition fails, the sufficient condition also fails"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "If you negate the sufficient condition, you can then conclude the negation of the necessary condition."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: false
+      - content: "False"
+        correct: true
+
+  - prompt: "When it comes to conditional statements, you can't reverse and you can't negate, but do both and you're great"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+# non-true-false questions
+
+  - prompt: "The premise tells you: 'If something is a dog, then it is friendly'. Which piece of information will allow you to conclude that the subject in question is not a dog?
+    explanation: "You should have diagrammed this as D → F, and then diagrammed the contrapositive as ~F → ~D. Now you see that the addition of (~F) is what will allow you to reach the conclusion of (~D)."
+    answers:
+      - content: "It is a dog"
+        correct: true
+      - content: "It is friendly"
+        correct: false
+      - content: "It is not friendly"
+        correct: false
+      - content: "No information will allow me to reach that conclusion"
+        correct: false
+
+  - prompt: "The premise tells you: 'One deserves the medal of valor only if one has saved another's life'. Which piece of information will allow you to conclude that Sarah deserves the medal of valor?
+    explanation: "You should have diagrammed this as DMV → SL, and then diagrammed the contrapositive as ~SL → ~DMV. Now you see that the concept of someone deserving the medal of valor (DMV) is in the sufficient condiiton, which means we will never be able to conclude it.
+    answers:
+      - content: "Sarah has not saved someone's life"
+        correct: false
+      - content: "Sarah has saved someone's life"
+        correct: false
+      - content: "Sarah has never received the medal of valor"
+        correct: false
+      - content: "No information will allow me to reach that conclusion"
+        correct: true
+
+
+
+
+# Sections Start
+- title: "Basic Diagramming Mastery"
+questions:
+  - prompt: "'Unless' introduces the necessary condition"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "'All' introduces the sufficient condition"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "'Only', 'Only if' and 'The only' all introduce the necessary condition"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: false
+      - content: "False"
+        correct: true
+
+  - prompt: "Even though 'only' always refers to a necessary condition, depending on the sentence structure, it does not always immediately precede the necessary condition."
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+
+# non-true-false questions
+
+  - prompt: "How do you diagram: 'A only if B'?
+    explanation: "'Only if' introduces the necessary condition"
+    answers:
+      - content: "A → B"
+        correct: true
+      - content: "B → A"
+        correct: false
+      - content: "~A → B"
+        correct: false
+      - content: "A → ~B"
+        correct: false
+
+  - prompt: "How do you diagram: 'No A's are B's'?
+    explanation: "'No' introduces the sufficient condition and the other term gets negated and goes in the necessary"
+    answers:
+      - content: "A → B"
+        correct: false
+      - content: "B → A"
+        correct: false
+      - content: "~A → B"
+        correct: false
+      - content: "A → ~B"
+        correct: true
+
+  - prompt: "How do you diagram: 'The only B's are A's'?
+    explanation: "'The only' introduces the sufficient condition; the other term goes in the necessary"
+    answers:
+      - content: "A → B"
+        correct: False
+      - content: "B → A"
+        correct: true
+      - content: "~A → B"
+        correct: false
+      - content: "A → ~B"
+        correct: false
+
+  - prompt: "How do you diagram: 'A is never a B'
+    explanation: "'Never' introduces the necessary condition, and you negate it; the other term goes in the sufficient"
+    answers:
+      - content: "A → B"
+        correct: false
+      - content: "B → A"
+        correct: false
+      - content: "~A → B"
+        correct: false
+      - content: "A → ~B"
+        correct: true
+
+  - prompt: "How do you diagram: 'A only if B'
+    explanation: "'Only if' introduces the necessary condition"
+    answers:
+      - content: "A → B"
+        correct: false
+      - content: "B → A"
+        correct: false
+      - content: "~A → B"
+        correct: false
+      - content: "A → ~B"
+        correct: true
+
+  - prompt: "How do you diagram: 'A only if B'
+    explanation: "'Only if' introduces the necessary condition"
+    answers:
+      - content: "A → B"
+        correct: false
+      - content: "B → A"
+        correct: false
+      - content: "~A → B"
+        correct: false
+      - content: "A → ~B"
+        correct: true
+
+
+
+
+# Sections Start
+- title: "Multiple Conditions"
+questions:
+  - prompt: "With the contrapositive, 'or' changes to 'and' while 'and' changes to 'or'"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "The 'and' operator requires that both terms be present whereas the 'or' operator only requires that one of the two terms be present"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "The word 'or' means that exactly one of the two terms must occur, and implies that you cannot have both terms.
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: false
+      - content: "False"
+        correct: true
+
+  - prompt: "With a sufficient condition that contains two terms joined by an 'or' operator, you can still conclude the necessary condition when you are presented with both sufficient terms"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+
+# non-true-false questions
+
+  - prompt: "How do you diagram: 'A only if B and C'
+    explanation: "'Only if' introduces the necessary condition"
+    answers:
+      - content: "A → B or C"
+        correct: false
+      - content: "B → A and C"
+        correct: false
+      - content: "A → B and C"
+        correct: true
+      - content: "B and C → A"
+        correct: false
+
+  - prompt: "What is the contrapositive of: 'All kangaroos are crabby and dangerous'?"
+    explanation: "This should have been initially diagrammed as K → C and D. The contrapositive involves reversing and negating all terms, with 'and' changing to 'or'"
+    answers:
+      - content: "K → C or D"
+        correct: false
+      - content: "~K → ~C and ~D"
+        correct: false
+      - content: "~C or ~D → ~K"
+        correct: true
+      - content: "~C and ~D → ~K
+        correct: false
+
+
+# Sections Start
+- title: "Advanced Conditional Statements"
   questions:
-    # Question Start
-    - prompt: "What is 2+2?"
-      explanation: "Because xx + xx is xxxx"
-      answers:
-        # Answer start
-        - content: "4"
-          correct: true
-        # Answer start
-        - content: "1"
-          correct: false
-    # Question Start
-    - prompt: "What is my name?"
-      explanation: "...."
-      answers:
-        # Answer start
-        - content: "Caio"
-          correct: true
-        # Answer start
-        - content: "Matt"
-          correct: false
+  - prompt: "The phrase 'if and only if' introduces a two-way arrow relationship"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "The phrase 'if and only if' is logically identical to 'if but only if'"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "'Either...or' establishes a maximum of one"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: false
+      - content: "False"
+        correct: true
+
+  - prompt: "'Not...both' establishes that exactly one must occur and one must not occur"
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+  - prompt: "The phrase 'if and only if' introduces a two-way arrow relationship",
+    explanation: ""
+    answers:
+      - content: "True"
+        correct: true
+      - content: "False"
+        correct: false
+
+# non-true-false questions
+
+  - prompt: "How do you diagram: 'You must select either A or B'?"
+    explanation: "'Either... or' establishes that a minimum of one of the two conditions must occur (you are allowed to have both). Therefore, choose one of the two terms (it doesn’t matter which), negate it, then put it in the sufficient condition. Place the other term in the necessary condition"
+    answers:
+      - content: "A → B"
+        correct: false
+      - content: "A → ~B"
+        correct: false
+      - content: "~A → B"
+        correct: true
+      - content: "~A → ~B"
+        correct: false
+
+  - prompt: "How do you diagram: 'We cannot have both J and K'?"
+    explanation: "'Not... both' establishes that a maximum of one of the two terms can occur (you’re allowed to have none). Therefore, choose one of the two terms (it doesn’t matter which), put it in the sufficient, and put the negation of the other term in the necessary"
+    answers:
+      - content: "J → K"
+        correct: false
+      - content: "J → ~K"
+        correct: true
+      - content: "~J → K"
+        correct: false
+      - content: "~J → ~K"
+        correct: false
+
+  - prompt: "How do you diagram: 'Clara attends if but only if Diana attends?"
+    explanation: "'If and only if' or 'If but only if' contains 'if' (sufficient) and 'only if' (necessary) so it introduces both the sufficient and necessary. The result: you either get: (1) both of them or (2) neither of them. (Having exactly 1 of the 2 is never an option). We use a double arrow to represent this."
+    answers:
+      - content: "A → B"
+        correct: false
+      - content: "A ←→ B"
+        correct: true
+      - content: "~A ←→ B"
+        correct: false
+      - content: "A ←→ ~B"
+        correct: false
+
+  - prompt: "How do you diagram: 'if the stimulus has a conclusion, it is an argument; else it is not'?"
+    explanation: "'If… else' is a somewhat complicated structure. The key is to realize that “else” is pointing back to the sufficient condition and negating it for the second premise that you will then diagram. It therefore divides the universe into one of two possibilities: 1) what happens when you have the sufficient condition and 2) what happens when you don’t have the sufficient condition. Double-arrow."
+    answers:
+      - content: "C ←→ A"
+        correct: true
+      - content: "~C ←→ A"
+        correct: false
+      - content: "C → A"
+        correct: false
+      - content: "C ←→ ~A"
+        correct: false
+
+
+
+# Sections Start
