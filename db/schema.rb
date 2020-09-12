@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_01_201852) do
+ActiveRecord::Schema.define(version: 2020_09_12_161025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -121,6 +121,14 @@ ActiveRecord::Schema.define(version: 2020_09_01_201852) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "position"
     t.index ["chapter_id"], name: "index_sections_on_chapter_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "slug"
+    t.boolean "premium", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["slug"], name: "index_tags_on_slug"
   end
 
   create_table "users", force: :cascade do |t|
