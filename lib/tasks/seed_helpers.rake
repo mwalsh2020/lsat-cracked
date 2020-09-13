@@ -11,7 +11,7 @@ end
 
 def create_answer(answer_data, question)
   puts "      - Creating answer #{answer_data['content']}"
-  question.answers.create!(answer_data)
+  question.answers.create!(answer_data.except("explanation"))
 end
 
 def create_question(question_data, section)
@@ -34,7 +34,7 @@ end
 
 def create_chapter(chapter_data)
   puts "- Creating chapter #{chapter_data[:title]}"
-  chapter = Chapter.create!(title: chapter_data[:title])
+  chapter = Chapter.create!(title: chapter_data[:title], position: chapter_data[:position])
 
   chapter_data[:sections_data].each do |section_data|
     create_section(section_data, chapter)
