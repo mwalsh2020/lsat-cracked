@@ -207,7 +207,7 @@
         - content: "The argument is based on a question whose phrasing may have inclined people to respond in a certain manner."
           correct: false
 
-- title: "Descriptive vs. Prescriptive"
+- title: "Prescriptive vs. Descriptive"
   questions:
     - prompt: "Descriptive claims indicate how things are, while prescriptive claims indicate how things should be."
       explanation: ""
