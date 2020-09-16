@@ -257,7 +257,7 @@
         - content: "another position"
           correct: true
 
-- title: "Advanced Conclusions"
+- title: "\"Hidden\" Conclusions"
   questions:
     - prompt: "A conclusion may actually support another claim in the argument."
       explanation:

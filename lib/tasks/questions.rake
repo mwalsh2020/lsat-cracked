@@ -1,181 +1,24 @@
 namespace :questions do
   desc "Wipes Course Content and feeds it with db/support yaml files"
   task import: :environment do
-    chapters = [
-      "Logical Reasoning Mindset",
-      "Statements vs. Arguments",
-      "Quantifiers and Logical Opposites",
-      "College Supplement",
-      "Conditional Statements",
-      "Master Skill: Argument Evaluation",
-      "Inference Family Stems",
-      "Argument Anatomy Stems",
-      "Argument Evaluation Stems",
-      "Argument Manipulation Stems",
-      "Logic Games: Mindset & Approach",
-      "Reading Comp: Mindset (The 3 C's)",
-      "Reading Comp: Eliminating Answers",
-      "Reading Comp: Passage Types",
-      "Execution: Timing Improvements",
-      "Execution: Study Plan",
-      "Execution: Avoid These Mistakes",
-      "Execution: Your Best Brain",
-      "Logic Games: Question Stem Skills",
-      "Logic Games: Skills For All Seasons",
-      "Logic Games: Rare Games",
-      "Logic Games: Sequencing Skills",
-      "Logic Games: Grouping Skills",
-      "Logic Games: Hybrid Skills",
-      "Logic Games: Association Skills",
-      "Reading Comp: Mastering the Passage",
-      "Execution: Rapid Improvement"
-    ]
-
-    sections = [
-      "Study Schedule (Phase I)",
-      "Attack Plan",
-      "Easy as 1-2-3",
-      "The Deduction Checklist",
-      "Moving Between \"True\" and \"False\"",
-      "Scenario Mapping",
-      "Interchangability",
-      "Intro to Game Types",
-      "Slotted Sequencing",
-      "Stacked Sequencing",
-      "Pro Guessing (Last Resort)",
-      "Full Selection Skills",
-      "Full Selection: Advanced Skills",
-      "Partial Selection: Basics",
-      "Partial Selection: Advanced",
-      "The Final Three Days",
-      "Hybrid Games Overview",
-      "Avoiding Errors",
-      "Your Prime Directive: Ask \"Why?\"",
-      "The Failure Checklist",
-      "Notice Highly Testable Components",
-      "Who is Talking?",
-      "Elimination Mindset",
-      "Elimination Technique",
-      "Stem-Specific Strategies",
-      "Vocabulary Building",
-      "Overview: Types are Overhyped",
-      "The Small Details",
-      "Make Your Brain Healthier",
-      "Deep Reading Over Shallow Scrolling",
-      "One Final Piece of Advice",
-      "Good Luck!",
-      "3-Step Checklist",
-      "Object Classes",
-      "Claims About Object Classes",
-      "Four Wrong Answers",
-      "Hard, But Perfectible",
-      "Argument Components",
-      "Basic Argument Anatomy & Recognition",
-      "\"Hidden\" Conclusions",
-      "Advanced Conditional Statements",
-      "Multiple Conditions",
-      "Sufficient and Necessary Conditions",
-      "Common Traps To Avoid",
-      "Basic Diagramming Mastery",
-      "Quantifier Definitions",
-      "Quantifier Transitive Templates",
-      "Logical Opposites",
-      "Interlude: Diagramming",
-      "Introduction",
-      "Surveys and Studies",
-      "Mindset & Approach",
-      "Role Stems",
-      "Main Conclusion Stems",
-      "Method of Argument (1-Player)",
-      "Method of Argument (2-Player)",
-      "Parallel Reasoning",
-      "Principle (Apply) Stems",
-      "Principle (Violate) Stems",
-      "Complete the Argument (Premise)",
-      "Strengthening Stems",
-      "Weakning Stems",
-      "Most Helpful in Evaluating",
-      "Sufficient Assumption Stems",
-      "Necessary Assumption Stems",
-      "Principle (Strengthen) Stems",
-      "Strongest Counter Stems",
-      "Resolve the Discrepancy Stems",
-      "\"Basic\" Math",
-      "Mindset & Definitions",
-      "Flaw Family #4: Overgeneralization",
-      "Flaw Family #5: Possible Explanation or Cause ≠ Certainty",
-      "Introduction",
-      "Flaw Family #6: False Dichotomy",
-      "Parallel Flaws",
-      "Flaw Question Stems",
-      "Flaw Family #1: Sufficient ≠ Necessary",
-      "Flaw Family #2: Circular Reasoning",
-      "Flaw Family #3: Ambiguous Word Usage",
-      "Flaw Family #16: Absence of Evidence ≠ Evidence of Absence",
-      "Flaw Family #9: Unrepresentative Sample ≠ Actual Population",
-      "Flaw Family #10: Improper Appeal to Authority",
-      "Flaw Family #11: Opinion or Emotion ≠ Fact",
-      "Flaw Family #12: Proponent ≠ Claim",
-      "Flaw Family #13: Part ≠ Whole",
-      "Flaw Family #15: Past ≠ Present ≠ Future",
-      "Flaw Family #14: Strawman ≠ Opponent’s Argument",
-      "Complete the Argument (Conclusion)",
-      "Causation, Correlation, and Coincidence",
-      "General Sequencing Advice",
-      "Mindset & Approach",
-      "Flaw Family #7: Illegal Quantifier Shift",
-      "Flaw Family #8: Contradictions",
-      "Must Be False (MBF) Stems",
-      "Must Be True (MBT) Stems",
-      "Most Strongly Supported (MSS) Stems",
-      "Precise Evaluation",
-      "The Strength of Claims",
-      "Good Argument Templates",
-      "Disagree & Agree Stems",
-      "Pure Sequencing",
-      "Prescriptive vs. Descriptive",
-      "\"Math\" Concepts",
-      "LG Approach",
-      "Conditional Statements",
-      "Mindset: Remain Calm",
-      "Mastery Mindset",
-      "General Grouping Advice",
-      "Master Skill: Numerical Distribution",
-      "Choosing Your Base",
-      "The Correct Order",
-      "Stem Types and Strategies",
-      "Comparative Reading Passages",
-      "Comprehension",
-      "Learning from Every Mistake",
-      "Reading Comp Timing",
-      "Overview",
-      "Avoid Fake Shortcuts",
-      "LR Timing",
-      "LG Timing",
-      "Study Schedule (Phase II)",
-      "Study Schedule (Phase III)"
-    ].map(&:downcase)
-
     yaml_file_paths = Dir.glob("db/support/*.yml")
-    section_titles = yaml_file_paths.map do |yaml_file_path|
-      chapter_data = chapter_naming_data(yaml_file_path)
-      chapter_data = yaml_file_path.match(/\/(?<position>\d+)-(?<title>\w+)/)
+    sections_data = yaml_file_paths.map do |yaml_file_path|
       file_string = File.open(yaml_file_path).read
-
       sections_data = YAML.safe_load(file_string)
-
-      sections_data.map { |data| data["title"] }
+      sections_data
     end.flatten
 
-    matching_section_titles = section_titles.select do |section_title|
-      sections.include?(section_title.downcase)
-    end
+    sections_data.each do |section_data|
+      section_data["questions"].map! do |question_data|
+        question_data["answers"].map! do |answer_data|
+          Answer.new(answer_data.except("explanation"))
+        end
+        Question.new(question_data.except("variables"))
+      end
 
-    not_matching_section_titles = section_titles.reject do |section_title|
-      sections.include?(section_title.downcase)
+      Section
+        .find_by(title: section_data["title"])
+        .update(questions: section_data["questions"])
     end
-
-    puts "Non matching titles"
-    puts not_matching_section_titles
   end
 end
