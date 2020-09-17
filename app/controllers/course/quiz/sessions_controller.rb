@@ -6,9 +6,9 @@ class Course::Quiz::SessionsController < Course::ApplicationController
     authorize @quiz_session
 
     if @quiz_session.save
-      redirect_to course_section_path(@quiz.section, anchor: "quiz")
+      redirect_to course_section_path(@quiz.quizable, anchor: "quiz")
     else
-      @section = @quiz_session.quiz.section
+      @section = @quiz_session.quiz.quizable
       render "course/sections/show"
     end
   end

@@ -7,7 +7,7 @@ class QuizBuilder
   end
 
   def new_quiz
-    Quiz.new(user: user, section: section, questions: @section.questions)
+    Quiz.new(user: user, quizable: section, questions: @section.questions)
   end
 
   def build
