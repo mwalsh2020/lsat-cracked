@@ -20,11 +20,6 @@ RSpec.describe QuizBuilder, type: :model do
         expect(quiz_builder.build).to be_a(Quiz)
         expect(quiz_builder.build).to_not be_persisted
       end
-
-      it "returns a quiz with questions" do
-        section.questions = [Question.new]
-        expect(quiz_builder.build.questions).to be_any
-      end
     end
 
     context "user has A PENDING quiz for given section" do
