@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_16_193829) do
+ActiveRecord::Schema.define(version: 2020_09_17_190506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -104,6 +104,15 @@ ActiveRecord::Schema.define(version: 2020_09_16_193829) do
     t.index ["quiz_id"], name: "index_quiz_questions_on_quiz_id"
   end
 
+  create_table "quiz_template_questions", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.bigint "quiz_template_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_quiz_template_questions_on_question_id"
+    t.index ["quiz_template_id"], name: "index_quiz_template_questions_on_quiz_template_id"
+  end
+
   create_table "quiz_templates", force: :cascade do |t|
     t.string "quizable_type", null: false
     t.bigint "quizable_id", null: false
@@ -182,6 +191,8 @@ ActiveRecord::Schema.define(version: 2020_09_16_193829) do
   add_foreign_key "quiz_questions", "answers"
   add_foreign_key "quiz_questions", "questions"
   add_foreign_key "quiz_questions", "quizzes"
+  add_foreign_key "quiz_template_questions", "questions"
+  add_foreign_key "quiz_template_questions", "quiz_templates"
   add_foreign_key "quizzes", "sections"
   add_foreign_key "quizzes", "users"
   add_foreign_key "sections", "chapters"
