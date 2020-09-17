@@ -16,7 +16,8 @@ end
 
 def create_question(question_data, section)
   puts "    - Creating question #{question_data['prompt']}"
-  question = section.questions.create!(question_data.except("answers", "variables"))
+  quiz_template = section.quiz_template || section.create_quiz_template
+  question = quiz_template.questions.create!(question_data.except("answers", "variables"))
 
   question_data["answers"].each do |answer_data|
     create_answer(answer_data, question)
