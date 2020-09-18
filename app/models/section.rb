@@ -6,7 +6,7 @@ class Section < ApplicationRecord
   has_one :quiz_template, as: :quizable, dependent: :destroy
   has_many :questions, through: :quiz_template
 
-  has_many :quizzes, dependent: :destroy
+  has_many :quizzes, as: :quizable, dependent: :destroy
 
   acts_as_list scope: :chapter
 end

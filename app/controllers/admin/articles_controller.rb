@@ -1,4 +1,4 @@
-class Admin::ArticlesController < ApplicationController
+class Admin::ArticlesController < Admin::ApplicationController
   before_action :set_article, only: %i[edit update destroy]
 
   def index
