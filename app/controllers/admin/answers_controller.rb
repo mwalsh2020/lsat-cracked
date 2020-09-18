@@ -1,15 +1,15 @@
 class Admin::AnswersController < Admin::ApplicationController
+  before_action :set_question, only: %i[new create]
+
   def new
-    @question = Question.find(params[:question_id])
     @answer = Answer.new
-    authorize @answer
+    authorize [:admin, @answer]
   end
 
   def create
-    @question = Question.find(params[:question_id])
     @answer = Answer.new(answer_params)
     @answer.question = @question
-    authorize @answer
+    authorize [:admin, @answer]
 
     if @answer.save
       redirect_to admin_questions_path
@@ -18,7 +18,19 @@ class Admin::AnswersController < Admin::ApplicationController
     end
   end
 
+  def destroy
+    @answer = Answer.find(params[:id])
+    authorize [:admin, @answer]
+    @answer.destroy!
+
+    redirect_to [:admin, :questions]
+  end
+
   private
+
+  def set_question
+    @question = Question.find(params[:question_id])
+  end
 
   def answer_params
     params.require(:answer).permit(:content, :correct)
