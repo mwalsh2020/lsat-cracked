@@ -1,7 +1,7 @@
 <div class="container pt-5">
-  <h1>Questions for <%= @section.title %></h1>
+  <h1>Questions</h1>
   <ol class="mb-3">
-    <% @section.questions.each do |question| %>
+    <% @questions.each do |question| %>
       <%= render "admin/questions/list_item", question: question %>
     <% end %>
     <li><%= link_to "Add question", new_admin_question_path(section_id: @section), class: "btn btn-sm btn-outline-primary" %></li>

@@ -27,15 +27,14 @@ class Admin::QuestionsController < Admin::ApplicationController
     authorize @question
 
     if @question.update(question_params)
-      redirect_to [:admin, @question.section, :questions]
+      redirect_to [:admin, :questions]
     else
       render :edit
     end
   end
 
   def index
-    @section  = Section.find(params[:section_id])
-    @questions = policy_scope(@section.questions)
+    @questions = policy_scope(Question)
   end
 
   def destroy
@@ -49,6 +48,6 @@ class Admin::QuestionsController < Admin::ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:prompt, :explanation)
+    params.require(:question).permit(:prompt, :explanation, article_ids: [], section_ids: [])
   end
 end

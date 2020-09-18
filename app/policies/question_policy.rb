@@ -13,7 +13,7 @@ class QuestionPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      scope.all
+      scope.order(:created_at)
     end
   end
 end

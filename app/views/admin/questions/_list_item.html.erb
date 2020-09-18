@@ -1,4 +1,4 @@
-<li>
+<li class="mb-5">
   <%= question.prompt %>
   <small>
     (
@@ -12,7 +12,7 @@
     <% question.answers.each do |answer| %>
       <li>
         <%= answer.correct? ? "✅" : "🟥" %>
-        <%= answer.content %>
+        <%= answer.content.to_plain_text %>
       </li>
     <% end %>
     <li><%= link_to "Add answer", new_admin_question_answer_path(question) %></li>
