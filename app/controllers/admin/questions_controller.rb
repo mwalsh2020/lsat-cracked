@@ -8,11 +8,10 @@ class Admin::QuestionsController < Admin::ApplicationController
   def create
     @section  = Section.find(params[:section_id])
     @question = Question.new(question_params)
-    @question.section = @section
     authorize @question
 
-    if @question.save
-      redirect_to [:admin, @question.section, :questions]
+    if @section.add_question(@question)
+      redirect_to [:admin, @section, :questions]
     else
       render :new
     end
@@ -50,6 +49,6 @@ class Admin::QuestionsController < Admin::ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:content, :explanation)
+    params.require(:question).permit(:prompt, :explanation)
   end
 end

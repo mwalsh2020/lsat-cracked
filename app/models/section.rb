@@ -9,4 +9,17 @@ class Section < ApplicationRecord
   has_many :quizzes, as: :quizable, dependent: :destroy
 
   acts_as_list scope: :chapter
+
+  def add_question(question)
+    find_or_create_quiz_template
+      .quiz_template_questions
+      .create(question: question)
+      .persisted?
+  end
+
+  private
+
+  def find_or_create_quiz_template
+    quiz_template || create_quiz_template
+  end
 end

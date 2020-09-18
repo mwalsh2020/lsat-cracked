@@ -1,7 +1,8 @@
-<%= simple_form_for [:admin, section, question] do |f| %>
+<%= simple_form_for [:admin, question] do |f| %>
   <%= f.label :prompt %>
   <%= f.rich_text_area :prompt %>
   <%= f.label :explanation %>
   <%= f.rich_text_area :explanation %>
+  <%= f.input :quizable_params %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>

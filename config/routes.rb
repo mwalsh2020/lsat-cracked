@@ -21,9 +21,9 @@ Rails.application.routes.draw do
       resources :sections, only: [:new, :create]
     end
 
-    resources :sections, only: [:edit, :update, :destroy] do
-      resources :questions, only: [:new, :create, :index]
-    end
+    resources :sections, only: [:edit, :update, :destroy]
+
+    resources :questions, only: [:new, :create, :index]
 
     resources :questions, only: [:edit, :update, :destroy] do
       resources :answers, only: [:new, :create]

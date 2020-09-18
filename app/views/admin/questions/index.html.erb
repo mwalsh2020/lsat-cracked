@@ -4,7 +4,7 @@
     <% @section.questions.each do |question| %>
       <%= render "admin/questions/list_item", question: question %>
     <% end %>
-    <li><%= link_to "Add question", new_admin_section_question_path(@section), class: "btn btn-sm btn-outline-primary" %></li>
+    <li><%= link_to "Add question", new_admin_question_path(section_id: @section), class: "btn btn-sm btn-outline-primary" %></li>
   </ol>
 </div>
 

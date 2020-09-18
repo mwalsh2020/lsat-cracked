@@ -12,7 +12,7 @@ class Admin::AnswersController < Admin::ApplicationController
     authorize @answer
 
     if @answer.save
-      redirect_to admin_section_questions_path(@question.section)
+      redirect_to admin_questions_path(quizable: @question.section)
     else
       render :new
     end
