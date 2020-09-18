@@ -1,0 +1,9 @@
+<%= simple_form_for [:admin, article] do |f| %>
+  <%= f.input :title %>
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.rich_text_area :content %>
+  </div>
+
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
