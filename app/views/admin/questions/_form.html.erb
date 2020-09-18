@@ -3,6 +3,7 @@
   <%= f.rich_text_area :prompt %>
   <%= f.label :explanation %>
   <%= f.rich_text_area :explanation %>
-  <%= f.input :quizable_params %>
+  <%= f.association :sections %>
+  <%= f.association :articles %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
