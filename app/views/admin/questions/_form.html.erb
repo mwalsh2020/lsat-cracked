@@ -1,8 +1,12 @@
 <%= simple_form_for [:admin, question] do |f| %>
-  <%= f.label :prompt %>
-  <%= f.rich_text_area :prompt %>
-  <%= f.label :explanation %>
-  <%= f.rich_text_area :explanation %>
+  <div class="form-group">
+    <%= f.label :prompt %>
+    <%= f.rich_text_area :prompt %>
+  </div>
+  <div class="form-group">
+    <%= f.label :explanation %>
+    <%= f.rich_text_area :explanation %>
+  </div>
   <%= f.association :sections %>
   <%= f.association :articles %>
   <%= f.button :submit, class: "btn btn-primary" %>
