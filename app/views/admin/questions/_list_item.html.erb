@@ -1,5 +1,7 @@
 <li class="mb-5">
   <%= question.prompt %>
+  <%= render "questions/tags", question: question %>
+  <br>
   <small>
     (
     <%= link_to "Edit", edit_admin_question_path(question), class: "text-muted" %>

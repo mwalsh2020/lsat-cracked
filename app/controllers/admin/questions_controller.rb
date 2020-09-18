@@ -48,6 +48,6 @@ class Admin::QuestionsController < Admin::ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:prompt, :explanation, article_ids: [], section_ids: [])
+    params.require(:question).permit(:prompt, :explanation, article_ids: [], section_ids: [], tag_ids: [])
   end
 end

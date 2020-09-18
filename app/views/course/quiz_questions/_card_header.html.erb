@@ -14,8 +14,6 @@
   </div>
 
   <div>
-    <% quiz_question.question.tags.each do |tag| %>
-      <span class="badge badge-secondary"><%= tag.slug %></span>
-    <% end %>
+    <%= render "questions/tags", question: quiz_question.question %>
   </div>
 </div>
