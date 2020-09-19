@@ -8,10 +8,6 @@ class Question < ApplicationRecord
   has_many :taggings, as: :taggable, dependent: :destroy
   has_many :tags, through: :taggings
 
-  has_many :quizable_questions
-  has_many :sections, source: :quizable, source_type: "Section", through: :quizable_questions
-  has_many :articles, source: :quizable, source_type: "Article", through: :quizable_questions
-
   def premium?
     tags.any?(&:premium?)
   end
