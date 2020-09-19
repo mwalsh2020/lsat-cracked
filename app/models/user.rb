@@ -6,7 +6,7 @@ class User < ApplicationRecord
   scope :admin, -> { where(admin: true) }
 
   def last_quiz_for(section)
-    quizzes.order(created_at: :desc).find_by(user: self, section: section)
+    quizzes.order(created_at: :desc).find_by(user: self, quizable: section)
   end
 
   def name

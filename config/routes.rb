@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'articles/index'
+  end
   devise_for :users
   root                  to: "pages#home"
   get  "/about",        to: "pages#about"
@@ -13,13 +16,16 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: "dashboards#show"
+    resources :articles, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :chapters, only: [:index, :new, :create, :edit, :update, :destroy] do
       resources :sections, only: [:new, :create]
     end
 
-    resources :sections, only: [:edit, :update, :destroy] do
-      resources :questions, only: [:new, :create, :index]
-    end
+    resources :sections, only: [:edit, :update, :destroy]
+
+    resources :questions, only: [:new, :create, :index]
+
+    resources :answers, only: [:destroy]
 
     resources :questions, only: [:edit, :update, :destroy] do
       resources :answers, only: [:new, :create]

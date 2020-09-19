@@ -1,4 +1,4 @@
-class QuestionPolicy < ApplicationPolicy
+class Admin::ArticlePolicy < ApplicationPolicy
   def create?
     user.admin?
   end
@@ -13,7 +13,7 @@ class QuestionPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      scope.order(:created_at)
+      scope.all
     end
   end
 end

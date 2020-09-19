@@ -1,5 +1,5 @@
 <li>
-  <%= link_to section.title, admin_section_questions_path(section) %>
+  <%= link_to section.title, admin_questions_path(section_id: section) %>
   <small>
     (
     <%= link_to "Edit", edit_admin_section_path(section), class: "text-muted" %>

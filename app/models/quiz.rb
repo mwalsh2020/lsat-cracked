@@ -1,6 +1,6 @@
 class Quiz < ApplicationRecord
   belongs_to :user
-  belongs_to :section
+  belongs_to :quizable, polymorphic: true
 
   has_many :quiz_questions, dependent: :destroy
   has_many :questions, through: :quiz_questions

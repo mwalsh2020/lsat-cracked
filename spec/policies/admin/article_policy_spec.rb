@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe OrderPolicy, type: :policy do
+RSpec.describe Admin::ArticlePolicy, type: :policy do
   let(:user) { User.new }
 
   subject { described_class }

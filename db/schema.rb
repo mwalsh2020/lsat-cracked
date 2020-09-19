@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_12_161334) do
+ActiveRecord::Schema.define(version: 2020_09_18_185441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,13 @@ ActiveRecord::Schema.define(version: 2020_09_12_161334) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.boolean "published", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "chapters", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
@@ -87,10 +94,8 @@ ActiveRecord::Schema.define(version: 2020_09_12_161334) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.bigint "section_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["section_id"], name: "index_questions_on_section_id"
   end
 
   create_table "quiz_questions", force: :cascade do |t|
@@ -104,13 +109,24 @@ ActiveRecord::Schema.define(version: 2020_09_12_161334) do
     t.index ["quiz_id"], name: "index_quiz_questions_on_quiz_id"
   end
 
+  create_table "quizable_questions", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.string "quizable_type", null: false
+    t.bigint "quizable_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_quizable_questions_on_question_id"
+    t.index ["quizable_type", "quizable_id"], name: "index_quizable_questions_on_quizable_type_and_quizable_id"
+  end
+
   create_table "quizzes", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "section_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "complete", default: false, null: false
-    t.index ["section_id"], name: "index_quizzes_on_section_id"
+    t.string "quizable_type"
+    t.bigint "quizable_id"
+    t.index ["quizable_type", "quizable_id"], name: "index_quizzes_on_quizable_type_and_quizable_id"
     t.index ["user_id"], name: "index_quizzes_on_user_id"
   end
 
@@ -170,11 +186,10 @@ ActiveRecord::Schema.define(version: 2020_09_12_161334) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "questions"
   add_foreign_key "orders", "users"
-  add_foreign_key "questions", "sections"
   add_foreign_key "quiz_questions", "answers"
   add_foreign_key "quiz_questions", "questions"
   add_foreign_key "quiz_questions", "quizzes"
-  add_foreign_key "quizzes", "sections"
+  add_foreign_key "quizable_questions", "questions"
   add_foreign_key "quizzes", "users"
   add_foreign_key "sections", "chapters"
   add_foreign_key "taggings", "tags"

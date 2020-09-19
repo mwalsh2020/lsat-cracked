@@ -1,0 +1,11 @@
+<div class="list-group-item style-none">
+  <div class="d-flex justify-content-between">
+    <h5><%= article.title %></h5>
+
+    <div class="btn-group" role="group" aria-label="article actions">
+      <%= link_to "Edit", edit_admin_article_path(article), class: "btn btn-sm btn-secondary" %>
+      <%= link_to "Delete", admin_article_path(article), method: :delete, 'data-confirm': "Are you sure?", class: "btn btn-sm btn-danger" %>
+    </div>
+  </div>
+  <p><%= article.content.to_plain_text.truncate(100) %></p>
+</div>

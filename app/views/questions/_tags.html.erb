@@ -1,0 +1,7 @@
+<% question.tags.each do |tag| %>
+  <span class="badge badge-secondary"><%= tag.slug %></span>
+<% end %>
+
+<% if question.tags.empty? %>
+  <div class="badge badge-danger">No Tags</div>
+<% end %>
