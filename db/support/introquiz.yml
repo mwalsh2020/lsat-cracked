@@ -1,0 +1,241 @@
+
+  - prompt: "Recent studies establish that most people are willing to skydive. In these studies, 70% of people told the researcher they were willing to skydive." Identify the conclusion.
+    explanation: The key verb is “establish.” That is a very strong verb. It’s short for “establishes as a fact.” That’s saying that the studies (which are a premise of the argument) conclusively prove the conclusion (which is the latter part of the sentence). Other strong verbs that could have been used here (non-exhaustive): shows, proves, indicates, suggests, supports, etc. All of these provide connective tissue between the observable fact (premise) and the claim being made (conclusion).
+    answer_choices:
+      - answer: "Most people are willing to skydive"
+        correct: true
+      - answer: "In these studies"
+        correct: false
+      - answer: "70% of people told the researcher they were willing to skydive"
+        correct: false
+
+  - prompt: "How do you diagram "If you want a high LSAT score, you need to study hard""
+    explanation: "If introduces the sufficient condition of high LSAT (HL), while "
+    answers:
+      - content: "HL → SH"
+        correct: true
+      - content: "SH → HL"
+        correct: false
+      - content: "~HL → ~SH"
+        correct: false
+      - content: "HL → ~SH"
+        correct: false
+
+  - prompt: "The premise tells you: 'One deserves the medal of valor only if one has saved another's life'. Which piece of information will allow you to conclude that Sarah deserves the medal of valor?
+    explanation: "You should have diagrammed this as DMV → SL, and then diagrammed the contrapositive as ~SL → ~DMV. Now you see that the concept of someone deserving the medal of valor (DMV) is in the sufficient condiiton, which means we will never be able to conclude it.
+    answers:
+      - content: "Sarah has not saved someone's life"
+        correct: false
+      - content: "Sarah has saved someone's life"
+        correct: false
+      - content: "Sarah has never received the medal of valor"
+        correct: false
+      - content: "No information will allow me to reach that conclusion"
+        correct: true
+
+  - prompt: "What is the contrapositive of: 'All kangaroos are crabby and dangerous'?"
+    explanation: "This should have been initially diagrammed as K → C and D. The contrapositive involves reversing and negating all terms, with 'and' changing to 'or'"
+    answers:
+      - content: "K → C or D"
+        correct: false
+      - content: "~K → ~C and ~D"
+        correct: false
+      - content: "~C or ~D → ~K"
+        correct: true
+      - content: "~C and ~D → ~K
+        correct: false
+
+  - prompt: "How do you diagram: 'Clara attends if but only if Diana attends?"
+    explanation: "'If and only if' or 'If but only if' contains 'if' (sufficient) and 'only if' (necessary) so it introduces both the sufficient and necessary. The result: you either get: (1) both of them or (2) neither of them. (Having exactly 1 of the 2 is never an option). We use a double arrow to represent this."
+    answers:
+      - content: "A → B"
+        correct: false
+      - content: "A ←→ B"
+        correct: true
+      - content: "~A ←→ B"
+        correct: false
+      - content: "A ←→ ~B"
+        correct: false
+
+  - prompt: "How do you diagram: 'if the stimulus has a conclusion, it is an argument; else it is not'?"
+    explanation: "'If… else' is a somewhat complicated structure. The key is to realize that “else” is pointing back to the sufficient condition and negating it for the second premise that you will then diagram. It therefore divides the universe into one of two possibilities: 1) what happens when you have the sufficient condition and 2) what happens when you don’t have the sufficient condition. Double-arrow."
+    answers:
+      - content: "C ←→ A"
+        correct: true
+      - content: "~C ←→ A"
+        correct: false
+      - content: "C → A"
+        correct: false
+      - content: "C ←→ ~A"
+        correct: false
+
+  - prompt: "Premise 1: A → B. Premise 2: B—most→C. Which of the following inferences is valid?"
+    explanation: "In order for an 'all' and a 'most' statement to form any transitive conclusion, the common variable must occur in the sufficient condition of the 'all' statement. Here, the common variable was in the necessary condition. No conclusion possible."
+    answers:
+      - content: "A⎯some⎯C"
+        correct: false
+      - content: "A⎯most→C"
+        correct: false
+      - content: "C⎯most→A"
+        correct: false
+      - content: "No valid conclusion"
+        correct: true
+
+  - prompt: "Premise 1: A → B. Premise 2: A—most→C. Which of the following inferences is valid?"
+    explanation: "When an 'all' statement and a 'most' statement share a common variable that is in the sufficient condition of the 'all' statement. There will be at least 'some' overlap between the other two variables. Because this template did not allow you to drag-and-drop the 'A⎯most→C' directly to the left of 'A→B', you have to settle for a 'some' conclusion between the other two variables."
+    answers:
+      - content: "B⎯some⎯C"
+        correct: true
+      - content: "B⎯most→C"
+        correct: false
+      - content: "C⎯most→B"
+        correct: false
+      - content: "No valid conclusion"
+        correct: false
+
+  - prompt: "All parrots can talk. Therefore, all blue parrots can talk."
+    explanation: "If all members of the superset have a certain property, then that all claim will also be true of the subset."
+    answers:
+    - content: "MBT"
+      correct: true
+    - content: "NNT"
+      correct: false
+    - content: "MBF"
+      correct: false
+
+- prompt: P1: (~A). P2: (B). Conclusion: "A → B is false".
+  explanation: "The negation of the sufficient condition paired with the necessary condition does not allow us to disprove an if-then statement."
+  answers:
+    - content: "MBT"
+      correct: false
+    - content: "NNT"
+      correct: true
+    - content: "MBF"
+      correct: false
+
+  - prompt: "Three years ago the city of Smallville added an additional 5,000 police officers. Since that time, crime has decreased by 15%.</br></br>Which one of the following is a valid inference?"
+    explanation: "This is a Coincidence != Causation template. Just because A immediately preceeded B, it does not necessarily mean that A caused B. (Although, since B occured after A, you know that B cannot have caused A.) Still, there is always the possibility that some unkown alternate cause could have caused the observed result, which is why we cannot reach a definitive conclusion regarding causation."
+    answers:
+    - content: "The addition of more police preceeded the decrease in crime, but we cannot say for certain that it caused it."
+      correct: true
+    - content: "The addition of police caused crime to drop."
+      correct: false
+    - content: "Some other factor is actually responsible for the decrease in crime."
+      correct: false
+    - content: "The addition of the police officers cannot be the only factor that caused the decrease in crime."
+      correct: false
+
+  - prompt: "Countries that watch the most YouTube videos per capita tend to have the lowest rates of Alzheimer's disease.</br></br>Which one of the following is a valid inference?"
+    explanation: "This is a Correlation != Causation template. Here, A shares a statistical pattern with B (known as an 'inverse' or 'negative' correlation, and represented as Y↑A↓). This does not necessarily mean that YouTube is certainly the cause of the lower Alzheimer's rates. The other two possibilties are that: 1) Alzheimer's causes less YouTube watching; and 2) YouTube could be positively correlated with some third variable (e.g. youth) and this factor might actually be the true cause. Hence, you can never move from correlation to causation."
+    answers:
+    - content: "YouTube causes Alzheimer's disease."
+      correct: false
+    - content: "YouTube prevents Alzheimer's disease."
+      correct: false
+    - content: "There is a negative correlation between YouTube and Alzheimer's disease, but we cannot say for certain that YouTube prevents Alzheimer's disease."
+      correct: true
+    - content: "Some other correlated factor, such as youth, is certainly the cause of the lower incidence of Alzheimer's disease among the population."
+      correct: false
+
+  - prompt: "The weight of bowling balls increase in direct proportion to their size. The same relationship holds among beach balls.</br></br>If the statements above are true, which of the following is a valid statement?"
+    explanation: "Just because the relationship holds within the bowling ball group and within the beach ball group it doesn’t mean that you can compare across the two groups. Just because a large beach ball is heavier than a small beach ball, it doesn’t necessarily mean that the largest beach ball is heavier than the smallest bowling ball. Perhaps beach balls are far lighter than bowling balls, so it’s actually the case that even the largest beach ball is still lighter than the smallest bowling ball."
+    answers:
+    - content: "If the average beach ball is larger in size than the average bowling ball, then the average beach ball weighs more than the average bowling ball."
+      correct: false
+    - content: "Bowling balls and beach balls each have positive correlations between size and weight but no comparison is possible across categories."
+      correct: true
+    - content: "The largest beach ball is heavier than at least the smallest bowling ball."
+      correct: false
+    - content: "A medium-sized bowling ball might be heavier than a bowling ball that is slightly larger in size."
+      correct: false
+
+    - prompt: "I asked the first five people I saw outside my local coffee shop if they read books regularly or decided to let their brain die and watch Netflix. Three of the people said they read books. Therefore, more than half of the people in my city read books.</br></br>Which one of the following does NOT describe a flaw in the argument above?"
+      explanation: "Lots of flaws here. People patronizing (or at least near) a coffee shop may be more (or less) likely than the average person in my city to read books. Five people is a clearly inadequate sample. Notice that we did not need a cross-section of all Americans—we just needed people in my city, since that is what the scope of the conclusion is about. The scope of the conclusion determines how “representative” the sampled population needs to be. People may have lied because they wanted to appear a certain way (educated) in front of the pollster. Finally, the question was biased in favor of books and against not reading (the judgmental phrasing of 'let their brain die' may make people more likely to lean in that direction when reporting their answer)."
+      answers:
+      - content: "The argument bases its conclusion on an inadequately small sample."
+        correct: false
+      - content: "The argument bases its conclusion on a sample that may not be representative."
+        correct: false
+      - content: "The argument fails to consider that what someone says may not necessarily be the case."
+        correct: false
+      - content: "The argument fails to establish that John has expertise in interpreting survey data."
+        correct: true
+      - content: "The argument is based on a question whose phrasing may have inclined people to respond in a certain manner."
+        correct: false
+
+    - prompt: "Rowan was crossing the street and saw an elderly person about to be struck by a large vehicle. Rowan could have guided the person out of the way with no risk or inconvenience to himself. Therefore, Rowan should have helped the elderly person.</br></br>Which one of the following, *if added to the argument*, would make this a valid argument?"
+      explanation: "Don’t assume any moral code. Any argument that reaches a prescriptive (e.g. 'should' or 'ought') conclusion needs a prescriptive premise to support it; otherwise, it is automatcally a bad argument. That's true even when the prescriptive principle that's missing is very 'obvious' to all good, moral people.</br></br>In order to fix this argument and be able to conclude that Rowan 'should' take a given action, we want a premise that places 'should act' in the *necessary* condition of the answer choice (or that places 'should not act' in the sufficient condition, paired with a necessary condition that is negated by our facts)."
+      answers:
+      - content: "One should help elderly people only when such help is riskless to oneself and causes no inconvenience."
+        correct: false
+      - content: "Rowan's failure to act was in violation of his local criminal law code."
+        correct: false
+      - content: "Rowan could tell the truck was certain to hit the old lady if he did not take action."
+        correct: false
+      - content: "One should help people when such help is riskless and causes no inconvenience."
+        correct: true
+
+  - prompt: "There are three dishonest politicians in 2012. That number triples in 2016 and then triples again in 2020.</br></br>Which of the following is a valid inference?"
+    explanation: "We start with 3 dishonest politicians and triple that amount, resulting in 9. We then triple that amount (9*3), resulting in 27. The key is that the second tripling resulted in the same *percentage* increase (3x) but a significantly larger *numerical* increase (we added 6 politicians the first round, and we added 18 the second round)."
+    answers:
+    - content: "The same number of dishonest politicians were added from 2012-2016 as from 2016-2020."
+      correct: false
+    - content: "The number of dishonest politicians added during 2016-2020 was greater than the number added during 2012-2016"
+      correct: true
+    - content: "The percentage increase of dishonest politicians was less during 2016-2020 than during 2012-2016."
+      correct: false
+    - content: "The percentage increase of dishonest politicians was greater during 2016-2020 than during 2012-2016."
+      correct: false
+
+  - prompt: "John visits a Vegas casino with a fair roulette table (18 red slots, 18 black). He bets on red four consecutive times and wins each bet.</br></br>Which of the following is a valid inference?"
+    explanation: "This is the gambler's fallacy. Assuming a fair coin (or roulette table), prior outcomes have absolutely no effect on the expected value of the next event. Here, the odds are exactly even between red and black despite the fact that the recent history has been more favorable for red."
+    answers:
+    - content: "There is a slightly increased chance of red on the next roll."
+      correct: false
+    - content: "There is a slightly increased chance of black on the next roll."
+      correct: false
+    - content: "There is an equal chance of red versus black on the next roll."
+      correct: true
+    - content: "The next roll cannot be predicted exactly, but there the average of the next four rolls will favor black."
+      correct: false
+
+  - prompt: "Andrea is a faster typer than Felicia.</br></br>Which of the following inferences is merited?"
+    explanation: "Just because A is faster than B, we can’t conclude that A is fast, faster than average, or even anything faster than the second-slowest-person-on-Earth. Here we can conclude that Andrea is faster at typing than at least *some* people, while we can make a claim that Felicia types more slowly than *some* people. They could both be faster or slower than average—we simply have no idea."
+    answers:
+    - content: "Andrea is a faster than average typist."
+      correct: false
+    - content: "Felicia is a slower than average typist."
+      correct: false
+    - content: "If Nathan types faster than Felicia, he types faster than Andrea."
+      correct: false
+    - content: "If Nathan types faster than Andrea, he types faster than Felicia."
+      correct: true
+
+  - prompt: "Place the following four objects in a transitive link to represent their correct subset/superset relationship:</br></br>[Dog, English Bulldog, Mammal, Bulldog]"
+    explanation: "The subset always goes in the sufficient condition; the superset in the necessary. If something is an English bulldog, then it's a bulldog, so it's a dog, so it's a mammal."
+    answers:
+    - content: "EB → B → D → M"
+      correct: true
+    - content: "M → B → D → EB"
+      correct: false
+    - content: "M → D → B → EB"
+      correct: false
+    - content: "B → EB → D → M"
+      correct: false
+
+  - prompt: "2019 saw the largest numerical increase in cyber attacks, compared to the previous year, of any year on record.</br></br>Which of the following is a valid inference?"
+    explanation: "The subset always goes in the sufficient condition; the superset in the necessary. If something is an English bulldog, then it's a bulldog, so it's a dog, so it's a mammal."
+    answers:
+    - content: "2019 saw the largest percentage increase in cyber attacks."
+      correct: false
+    - content: "Most, but not all, previous years saw a positive numerical increase in cyber attacks compared to the previous year."
+      correct: false
+    - content: "If 2017 experienced a positive numerical increase in cyber attacks from the previous year, then 2019 saw at least two additional cases of cyber attack compared to the 2018."
+      correct: true
+    - content: "2018 had the lowest numerical number of cyber attacks on record"
+      correct: false
+
+
+
+
+#section end
