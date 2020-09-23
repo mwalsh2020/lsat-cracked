@@ -34,7 +34,7 @@ class Admin::QuestionsController < Admin::ApplicationController
   end
 
   def index
-    @questions = policy_scope(Question)
+    @questions = policy_scope(Question.with_questions_and_answers)
   end
 
   def destroy

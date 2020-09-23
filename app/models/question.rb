@@ -8,6 +8,8 @@ class Question < ApplicationRecord
   has_many :taggings, as: :taggable, dependent: :destroy
   has_many :tags, through: :taggings
 
+  scope :with_questions_and_answers, -> { includes(:rich_text_prompt, :taggings, :tags, answers: [:rich_text_content ]) }
+
   def premium?
     tags.any?(&:premium?)
   end
