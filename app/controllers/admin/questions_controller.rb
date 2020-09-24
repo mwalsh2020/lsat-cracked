@@ -35,6 +35,7 @@ class Admin::QuestionsController < Admin::ApplicationController
 
   def index
     @questions = policy_scope(Question.with_questions_and_answers)
+    filter_by_quizable if quizable_present?
   end
 
   def destroy
@@ -46,6 +47,15 @@ class Admin::QuestionsController < Admin::ApplicationController
   end
 
   private
+
+  def filter_by_quizable
+    @quizable = Section.find(params[:section_id])
+    @questions = @questions.where_quizable(@quizable)
+  end
+
+  def quizable_present?
+    params[:section_id].present?
+  end
 
   def question_params
     params.require(:question).permit(:prompt, :explanation, article_ids: [], section_ids: [], tag_ids: [])
