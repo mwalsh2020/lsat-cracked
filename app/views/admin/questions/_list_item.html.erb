@@ -3,7 +3,7 @@
   <%= render "questions/tags", question: question %>
   <br>
   <small>
-    <%= link_to "Edit", edit_admin_question_path(question), class: "text-muted" if policy(question).edit?  %>
+    <%= link_to "Edit", edit_admin_question_path(question, section_id: @section), class: "text-muted" if policy(question).edit?  %>
     <%= link_to "Remove", admin_question_path(question), method: :delete, class: "text-danger"  if policy(question).destroy? %>
   </small>
 

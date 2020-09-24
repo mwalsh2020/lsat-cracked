@@ -1,17 +1,16 @@
 class Admin::QuestionsController < Admin::ApplicationController
+  before_action :set_section, only: [:new, :create, :update, :destroy]
+
   def new
-    @section  = Section.find(params[:section_id])
-    @question = Question.new
+    @question = Question.new(sections: [@section])
     authorize @question
   end
 
   def create
-    @section  = Section.find(params[:section_id])
     @question = Question.new(question_params)
     authorize @question
-
-    if @section.add_question(@question)
-      redirect_to [:admin, @section, :questions]
+    if @question.save
+      redirect_to admin_questions_path(section_id: @section.id)
     else
       render :new
     end
@@ -27,7 +26,7 @@ class Admin::QuestionsController < Admin::ApplicationController
     authorize @question
 
     if @question.update(question_params)
-      redirect_to [:admin, :questions]
+      redirect_to admin_questions_path(section_id: @section.id)
     else
       render :edit
     end
@@ -43,14 +42,18 @@ class Admin::QuestionsController < Admin::ApplicationController
     authorize @question
 
     @question.destroy
-    redirect_to [:admin, @question.section, :questions]
+    redirect_to admin_questions_path(section_id: @section.id)
   end
 
   private
 
+  def set_section
+    @section = Section.find_or_initialize_by(id: referrer_params[:section_id])
+  end
+
   def filter_by_quizable
-    @quizable = Section.find(params[:section_id])
-    @questions = @questions.where_quizable(@quizable)
+    @section = Section.find(params[:section_id])
+    @questions = @questions.where_quizable(@section)
   end
 
   def quizable_present?

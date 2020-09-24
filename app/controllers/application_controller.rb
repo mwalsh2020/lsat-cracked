@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
   def current_user
     super || User::Guest.new
   end
+
+  def referrer_params
+    Rack::Utils.parse_query(request.referer.match(/\?(.*)/)&.to_a&.first)&.symbolize_keys
+  end
 end
