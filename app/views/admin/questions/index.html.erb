@@ -2,9 +2,9 @@
   <h1>Questions</h1>
   <%= link_to "Add question", new_admin_question_path(section_id: @section&.id), class: "btn btn-sm btn-outline-primary" %>
   <hr>
-  <ol class="mb-3">
+  <u class="mb-3">
     <% @questions.each do |question| %>
       <%= render "admin/questions/list_item", question: question %>
     <% end %>
-  </ol>
+  </ul>
 </div>
