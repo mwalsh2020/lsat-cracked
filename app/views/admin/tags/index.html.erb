@@ -1,0 +1,6 @@
+<div class="container pt-5">
+  <h1>Tags</h1>
+  <%= link_to "Add tag", new_admin_tag_path, class: "btn btn-sm btn-outline-primary" %>
+  <hr>
+  <ol class="mb-3"><%= render @tags %></ol>
+</div>
