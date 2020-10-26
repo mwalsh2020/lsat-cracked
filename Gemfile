@@ -20,14 +20,15 @@ gem "devise"
 gem "pundit"
 
 # Front-end
+gem "jbuilder", "~> 2.7"
+gem "sass-rails", ">= 6"
 gem "simple_form"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
-gem "jbuilder", "~> 2.7"
-gem "sass-rails", ">= 6"
 
 # External services
 gem "postmark-rails"
+gem "recaptcha"
 gem "stripe"
 
 group :development, :test do
