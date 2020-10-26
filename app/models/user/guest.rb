@@ -22,4 +22,8 @@ class User::Guest
   def registerable?
     User.new.registerable?
   end
+
+  def errors
+    ActiveModel::Errors.new(self)
+  end
 end
