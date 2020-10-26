@@ -4,6 +4,11 @@
   <%= f.input :target_law_school, label: "Target Law School", required: false %>
   <%= f.input :target_lsat_score, label: "Target LSAT Score", required: false %>
   <%= f.input :message, as: :text, required: false %>
-  <%= recaptcha_tags %>
+
+  <div class="mb-3">
+    <%= recaptcha_tags %>
+    <%= f.error :base, class: "text-danger small" %>
+  </div>
+
   <%= f.button :submit, "Send Coaching Request", class: "btn btn-primary" %>
 <% end %>
