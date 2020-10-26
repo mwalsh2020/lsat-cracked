@@ -8,7 +8,7 @@ class CoachingRequestsController < ApplicationController
 
   def create
     @coaching_request = CoachingRequest.new(coaching_request_params)
-    if @coaching_request.submit && verify_recaptcha(model: current_user)
+    if @coaching_request.submit && verify_recaptcha(model: @coaching_request)
       flash[:notice] = "Mail sent successfully!"
       redirect_to new_coaching_request_path
     else
