@@ -1,0 +1,20 @@
+<div class="bg-primary text-white py-5">
+  <div class="pt-5 container">
+    <div class="row">
+      <div class="col-lg-4">
+        <h2 class="font-weight-bolder">Recent Results</h2>
+      </div>
+      <div class="col-lg-8 d-flex justify-content-between">
+        <% 3.times do %>
+          <div class="testimonial-card mb-4">
+            <div class="text-center mb-3">
+              <%= image_tag "testimonials/cattarina.jpg", width: 150, class: "img-fluid rounded-circle border border-light mb-2", style: "border-width: 0.25rem !important" %>
+              <p class="font-weight-bold mb-0" style="font-size: 3rem; line-height: 1">210</p>
+              <p class="">+15 points</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
