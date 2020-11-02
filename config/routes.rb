@@ -22,7 +22,7 @@ Rails.application.routes.draw do  devise_for :users
 
     resources :answers, only: [:destroy]
     resources :articles, only: [:index, :new, :create, :edit, :update, :destroy]
-    resources :products, only: [:index]
+    resources :products, only: [:index, :edit, :update]
     resources :questions, only: [:new, :create, :index]
     resources :sections, only: [:edit, :update, :destroy]
     resources :tags, only: [:index, :new, :create, :edit, :update, :destroy]
