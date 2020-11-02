@@ -3,9 +3,6 @@
   <%= f.input :sku %>
   <%= f.input :price, label: "Price $" %>
   <%= f.input :full_price, label: "Full_price $" %>
-  <div class="form-group">
-    <%= f.label :description %>
-    <%= f.rich_text_area :description %>
-  </div>
+  <%= f.input :description, as: :rich_text_area %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
