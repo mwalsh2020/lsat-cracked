@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:create, :show]
 
   def create
-    product = Product.find(params[:product_id])
+    product = Product.find(params[:orderable_id])
     order = Order.new(
       orderable: product,
       orderable_sku: product.sku,
