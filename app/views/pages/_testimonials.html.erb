@@ -10,18 +10,22 @@
   <div class="pt-5 container">
     <div class="row">
       <div class="col-lg-4">
-        <h2 class="font-weight-bolder">Recent Results</h2>
+        <h2 class="font-weight-bolder mb-5">Recent Results</h2>
       </div>
-      <div class="col-lg-8 d-flex justify-content-between">
-        <% testimonials.each do |testimonial| %>
-          <div class="testimonial-card mb-4">
-            <div class="text-center mb-3">
-              <%= image_tag "testimonials/#{testimonial.name.downcase}.jpg", width: 175, class: "img-fluid rounded-circle border border-primary  mb-2", style: "border-width: 0.25rem !important" %>
-              <p class="font-weight-bold mb-0" style="font-size: 3rem; line-height: 1"><%= testimonial.score %></p>
-              <p class="">+<%= testimonial.improvement %> points</p>
+      <div class="col-lg-8">
+        <div class="row">
+          <% testimonials.each do |testimonial| %>
+            <div class="col-12 col-md-4">
+              <div class="testimonial-card mb-4">
+                <div class="text-center mb-3">
+                  <%= image_tag "testimonials/#{testimonial.name.downcase}.jpg", width: 175, class: "img-fluid rounded-circle border border-primary  mb-2", style: "border-width: 0.25rem !important" %>
+                  <p class="font-weight-bold mb-0" style="font-size: 3rem; line-height: 1"><%= testimonial.score %></p>
+                  <p class="">+<%= testimonial.improvement %> points</p>
+                </div>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
