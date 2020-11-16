@@ -1,8 +1,6 @@
 <div class="container py-5">
   <h1>Products</h1>
   <div class="card-deck mb-3 text-center">
-    <% @products.each do |product| %>
-      <%= render "products/card", product: product %>
-    <% end %>
+    <%= render @products %>
   </div>
 </div>
