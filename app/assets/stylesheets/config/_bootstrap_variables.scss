@@ -30,3 +30,12 @@ $border-radius-sm: 2px;
 .alert {
   z-index: 9999;
 }
+
+.btn {
+  text-transform: uppercase;
+}
+
+.testimonial-card .rounded-circle {
+  object-fit: cover;
+  height: 175px;
+}

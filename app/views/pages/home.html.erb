@@ -1,40 +1,12 @@
 <%= render "banner" %>
 <div class="bg-primary p-3 text-center"></div>
 
-<div id="mail-lead" class="dark-gray-wrapper p-5 main-content-text text-white">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <%= render "mail_leads/form", mail_lead: @mail_lead %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<%= render "testimonials" %>
-<div class="bg-primary py-5">
+<div id="results"><%= render "testimonials" %></div>
+<div id="packages" class="bg-primary py-5">
   <div class="container py-5">
     <h1 class="text-center mb-5 text-white font-weight-bold">Plans & Pricing</h1>
     <div class="card-deck mb-3 text-center">
       <%= render @products %>
-    </div>
-  </div>
-</div>
-
-<div class="darker-gray-wrapper padded main-content-text">
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <h2 class="text-white text-right border-top border-bottom py-3">
-          About
-          <br>
-          LSAT Cracked
-        </h2>
-      </div>
-      <div class="col-6 text-white">
-        <p>I started LSAT Cracked to scale the impact of my 1-on-1 private coaching. I know 90% of the pre-law market can’t afford private sessions, and mass-market LSAT providers vary widely in quality. Even the relatively good ones are still less than completely rigorous in how they teach the underlying logic and reading skills that the LSAT demands.</p>
-        <p>I love teaching. And I really love teaching students to reason logically, think critically, and read intelligently. I also love the freedom, leanness, and total responsibility that running my own business entails.</p>
-      </div>
     </div>
   </div>
 </div>

@@ -6,7 +6,11 @@
     background-color: rgba(255, 255, 255, 0);
 
     .navbar-brand {
-      opacity: 0;
+      display: none;
+    }
+
+    .navbar-brand-white {
+      display: inline-block;
     }
 
     .nav-link {

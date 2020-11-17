@@ -1,18 +1,19 @@
 <%
   testimonials = [
-    OpenStruct.new(name: "ariana", score: rand(150..200), improvement: rand(10..20)),
-    OpenStruct.new(name: "cattarina", score: rand(150..200), improvement: rand(10..20)),
-    OpenStruct.new(name: "jaime", score: rand(150..200), improvement: rand(10..20)),
+    OpenStruct.new(name: "alberto",   score: 176, improvement: 9 , quote: "By nurturing a more effective thought process and providing  a structured methodology, Matt helped me to improve my score."),
+    OpenStruct.new(name: "gaby",      score: 172, improvement: 12, quote: "Within a few weeks of tutoring I achieved my goal of getting into a top 10 school with a scholarship."),
+    OpenStruct.new(name: "payton",    score: 175, improvement: 15, quote: "Matt's tutorials were personalized to my own strengths and weaknesses, and compared to the surface-level methods of some of the textbooks I used before."),
+    OpenStruct.new(name: "cattarina", score: 164, improvement: 26, quote: "Matt’s approach completely shifted my mindset. I wish I had started with Matt and his prep method before using other test prep methods."),
+    OpenStruct.new(name: "sean",      score: 172, improvement: 23, quote: "The LSAT Cracked process helped me understand my mistakes rather than be frustrated by them."),
+    OpenStruct.new(name: "tatiana",   score: 173, improvement: 8 , quote: "We focused on Logical Reasoning, Matt had a way of showing me how to simplify the content of questions so I could understand them clearly."),
   ]
 %>
 
 <div class="py-5">
   <div class="pt-5 container">
+    <h2 class="font-weight-bolder mb-5 text-center">Recent Results</h2>
     <div class="row">
-      <div class="col-lg-4">
-        <h2 class="font-weight-bolder mb-5">Recent Results</h2>
-      </div>
-      <div class="col-lg-8">
+      <div class="col-lg-12">
         <div class="row">
           <% testimonials.each do |testimonial| %>
             <div class="col-12 col-md-4">
@@ -20,7 +21,8 @@
                 <div class="text-center mb-3">
                   <%= image_tag "testimonials/#{testimonial.name.downcase}.jpg", width: 175, class: "img-fluid rounded-circle border border-primary  mb-2", style: "border-width: 0.25rem !important" %>
                   <p class="font-weight-bold mb-0" style="font-size: 3rem; line-height: 1"><%= testimonial.score %></p>
-                  <p class="">+<%= testimonial.improvement %> points</p>
+                  <p class="mb-2 text-primary font-weight-bold">+<%= testimonial.improvement %> points</p>
+                  <p class="mb-5" style="font-size: 1rem"><i><%= testimonial.quote %></i></p>
                 </div>
               </div>
             </div>
