@@ -4,8 +4,8 @@
 <% end %>
 
 <% if home_links.present? %>
-  <li class="nav-item"><%= link_to "Plans & Pricing", "#packages", class: "nav-link btn btn-link px-2" %></li>
-  <li class="nav-item"><%= link_to "Results", "#results", class: "nav-link btn btn-link px-2" %></li>
+  <li class="nav-item"><%= link_to "Plans & Pricing", root_path(anchor: "packages"), class: "nav-link btn btn-link px-2" %></li>
+  <li class="nav-item"><%= link_to "Results", root_path(anchor: "results"), class: "nav-link btn btn-link px-2" %></li>
 <% end %>
 
 <% if current_user.present? %>
@@ -19,5 +19,5 @@
 <% if policy([:course, :dashboard]).show? %>
   <li class="nav-item"><%= link_to "Learn", course_root_path, class: "nav-link btn btn-outline-light px-2 mr-3" %></li>
 <% else %>
-  <li class="nav-item"><%= link_to "Sign up", "#packages", class: "nav-link btn btn-outline-light px-3 ml-3 bg-white text-primary" %></li>
+  <li class="nav-item"><%= link_to "Sign up", root_path(anchor: "packages"), class: "nav-link btn btn-outline-light px-3 ml-3 bg-white text-primary" %></li>
 <% end %>

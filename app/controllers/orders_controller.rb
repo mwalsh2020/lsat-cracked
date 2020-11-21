@@ -2,7 +2,8 @@ class OrdersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:create, :show]
 
   def show
-
+    @order = Order.find(params[:id])
+    authorize @order
   end
 
   def create
