@@ -2,6 +2,10 @@
   background-color: rgba(255, 255, 255, 1);
   transition: background-color 0.34s;
 
+  .navbar-brand-white {
+    display: none;
+  }
+
   &.nav-transparent {
     background-color: rgba(255, 255, 255, 0);
 
@@ -11,6 +15,15 @@
 
     .navbar-brand-white {
       display: inline-block;
+      position: relative;
+      height: 45px;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 70px;
+      }
     }
 
     .nav-link {
