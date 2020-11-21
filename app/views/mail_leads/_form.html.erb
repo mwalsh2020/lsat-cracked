@@ -1,14 +1,11 @@
 <%= simple_form_for mail_lead do |f| %>
-  <div class="d-flex align-items-center">
-    <%= f.label :email, "Get free updates on mastering the LSAT", class: "h5 text-right" %>
-    <div class="input-group px-5 is-invalid">
-      <%= f.text_field :email, label: "Stay in touch", class: "form-control #{params[:invalid_mail].present? ? "is-invalid" : ""}", placeholder: "Email" %>
-      <div class="input-group-append">
-        <%= f.button :submit, "Yes, please!", class: "btn btn-primary" %>
-      </div>
-      <div class="invalid-feedback">
-        Please provide a valid email.
-      </div>
+  <div class="input-group is-invalid">
+    <%= f.text_field :email, label: "Stay in touch", class: "form-control #{params[:invalid_mail].present? ? "is-invalid" : ""}", placeholder: "Email" %>
+    <div class="input-group-append">
+      <%= f.button :submit, "Learn about the course", class: "btn btn-primary" %>
+    </div>
+    <div class="invalid-feedback">
+      Please provide a valid email.
     </div>
   </div>
 <% end %>

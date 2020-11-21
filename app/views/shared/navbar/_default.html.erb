@@ -1,5 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light <%= current_page?(root_path) ? "fixed-top nav-transparent" : "" %>">
   <div class="container">
+    <%= link_to root_path, class: "navbar-brand-white" do %>
+      <%= image_tag "logo.svg", height: 48, alt: "LSAT Cracked Logo" %>
+    <% end %>
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png", height: 48, alt: "LSAT Cracked Logo" %>
     <% end %>

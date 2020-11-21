@@ -47,11 +47,11 @@ $line-color: $primary;
 .banner {
   position: relative;
   background-size: cover;
-  background-position: center;
+  background-position: center -3rem;
   background-color: $primary;
   background-image: asset-url("banner.jpg");
   background-blend-mode: multiply;
-  height: calc(100vh - 9rem);
+  height: calc(100vh - 2rem);
   // height: 42rem;
 
   h1 {

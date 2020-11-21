@@ -1,18 +1,11 @@
-<% if policy([:course, :dashboard]).show? %>
-  <li class="nav-item"><%= link_to "Learn", course_root_path, class: "nav-link btn btn-outline-light px-3 mr-3" %></li>
-<% else %>
-  <li class="nav-item"><%= link_to "Sign in", course_root_path, class: "nav-link btn btn-outline-light px-3 mr-3" %></li>
-<% end %>
-
 <%# TODO: Update to avoid safe navigation %>
 <% if policy([:admin, :dashboard]).show? %>
   <li class="nav-item"><%= link_to "Admin", admin_root_path, class: "nav-link" %></li>
 <% end %>
 
 <% if home_links.present? %>
-  <li class="nav-item"><%= link_to "About", about_path, class: "nav-link" %></li>
-  <li class="nav-item"><%= link_to "Testimonials", testimonials_path, class: "nav-link" %></li>
-  <li class="nav-item"><%= link_to "Coaching", new_coaching_request_path, class: "nav-link" %>  </li>
+  <li class="nav-item"><%= link_to "Plans & Pricing", "#packages", class: "nav-link btn btn-link px-2" %></li>
+  <li class="nav-item"><%= link_to "Results", "#results", class: "nav-link btn btn-link px-2" %></li>
 <% end %>
 
 <% if current_user.present? %>
@@ -21,4 +14,10 @@
   <% if current_user.registerable? %>
     <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %></li>
   <% end %>
+<% end %>
+
+<% if policy([:course, :dashboard]).show? %>
+  <li class="nav-item"><%= link_to "Learn", course_root_path, class: "nav-link btn btn-outline-light px-2 mr-3" %></li>
+<% else %>
+  <li class="nav-item"><%= link_to "Sign up", "#packages", class: "nav-link btn btn-outline-light px-3 ml-3 bg-white text-primary" %></li>
 <% end %>

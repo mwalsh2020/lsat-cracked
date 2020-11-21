@@ -4,6 +4,7 @@ class PagesController < ApplicationController
 
   def home
     @mail_lead = MailLead.new
+    @products = policy_scope(Product).order(:id)
   end
 
   def about; end
