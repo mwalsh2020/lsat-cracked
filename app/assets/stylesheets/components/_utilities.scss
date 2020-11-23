@@ -1,3 +1,7 @@
+.bg-primary-dark {
+  background-color: darken($primary, 7%);
+}
+
 .dark-gray-wrapper {
   background-color: lighten($dark-gray, 6%);
   background-image: radial-gradient(lighten($dark-gray, 6%), darken(lighten($dark-gray, 6%), 4%));
