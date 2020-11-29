@@ -22,6 +22,6 @@ class Admin::UsersController < Admin::ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:paying)
+    params.require(:user).permit(:paying, :prep_plus)
   end
 end
