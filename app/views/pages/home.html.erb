@@ -42,10 +42,10 @@
   <div class="container py-5">
     <h2 class="text-center h1 mb-5 text-white font-weight-bold">Plans & Pricing</h2>
     <div class="card-deck mb-3 text-center">
-      <%= render @products.first(3) %>
+      <%= render @products.highlight, highlight: false %>
     </div>
     <div class="card-deck mb-3 text-center">
-      <%= render @products.last(3) %>
+      <%= render @products.not_highlight, highlight: false %>
     </div>
   </div>
 </div>

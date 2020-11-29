@@ -9,6 +9,9 @@ class Product < ApplicationRecord
 
   has_many :orders, as: :orderable
 
+  scope :highlight, -> { where(highlight: true) }
+  scope :not_highlight, -> { where(highlight: false) }
+
   def savings
     full_price - price
   end
