@@ -5,7 +5,7 @@ class ChapterPolicy < ApplicationPolicy
 
   # TODO: update this, makes no sense
   def show?
-    user.admin?
+    user.admin? || record.free? || user.paying?
   end
 
   def update?
@@ -18,11 +18,7 @@ class ChapterPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      if user.paying? || user.admin?
-        scope.order(position: :asc)
-      else
-        scope.where(free: true)
-      end
+      scope.order(position: :asc)
     end
   end
 end

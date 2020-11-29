@@ -1,7 +1,7 @@
 class SectionPolicy < ApplicationPolicy
   def show?
     # TODO: update to see only sections from free chapters if not paying
-    user.present?
+    user.admin? || record.chapter.free? || user.paying?
   end
 
   def create?
