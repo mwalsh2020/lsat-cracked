@@ -1,13 +1,13 @@
 <div class="card mb-4 box-shadow <%= product.highlight? ? "" : "bg-primary text-white" %>">
   <div class="card-header">
-    <h4 class="my-0 font-weight-normal"><%= product.name %></h4>
+    <h4 class="my-0 font-weight-normal <%= product.highlight? ? "h4" : "h6" %>"><%= product.name %></h4>
   </div>
   <div class="card-body">
-    <h1 class="card-title pricing-card-title">
+    <h1 class="card-title pricing-card-title <%= product.highlight? ? "h1" : "h3 mb-3" %>">
       <%= humanized_money_with_symbol(product.price) %>
     </h1>
     <% if product.highlight? %>
-      <p>
+      <p class="<%= product.highlight? ? "" : "h6" %>">
         <strike><%= humanized_money_with_symbol(product.full_price) %></strike>
         <span class="badge badge-danger">
           save
@@ -15,7 +15,7 @@
         </span>
       </p>
     <% end %>
-    <%= product.description %>
+    <div class="text-left"><%= product.description %></div>
   </div>
   <div class="card-footer">
     <%= render "orders/form", orderable: product %>
