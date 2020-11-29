@@ -15,7 +15,8 @@
         </span>
       </p>
     <% end %>
-    <div class="text-left"><%= product.description %></div>
+
+    <div class="text-left" style="<%= product.highlight? ? "" : "font-size: 0.875rem" %>"><%= product.description %></div>
   </div>
   <div class="card-footer">
     <%= render "orders/form", orderable: product %>
