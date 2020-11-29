@@ -54,10 +54,14 @@ $line-color: $primary;
   height: calc(100vh - 2rem);
   // height: 42rem;
 
+  @media (max-width: 600px) {
+    background-position: 75% -3rem;
+  }
+
   .caption {
     position: absolute;
     bottom: 4rem;
-    right: 8rem;
+    right: 4rem;
   }
 
   h1 {
