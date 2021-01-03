@@ -32,6 +32,7 @@ class Admin::AnswersController < Admin::ApplicationController
     @question = Question.find(params[:question_id])
   end
 
+  
   def answer_params
     params.require(:answer).permit(:content, :correct)
   end
