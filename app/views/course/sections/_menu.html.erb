@@ -6,7 +6,11 @@
       </li>
     <% else %>
       <li>
-        <%= link_to section.title, course_section_path(section) %>
+        <% if policy(section).show? %>
+          <%= link_to section.title, course_section_path(section) %>
+        <% else %>
+          <%= link_to section.title, course_section_path(section), data: { toggle: "modal", target: "#exampleModal" } %>
+        <% end %>
       </li>
     <% end %>
   <% end %>

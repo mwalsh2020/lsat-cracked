@@ -7,7 +7,7 @@ class Quiz::SessionPolicy < ApplicationPolicy
 
   def create?
     if record.premium?
-      quiz_owner? && user.paying?
+      quiz_owner? && user.prep_plus?
     else
       quiz_owner?
     end
