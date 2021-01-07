@@ -4,13 +4,13 @@
   data-target="#collapse-<%= quiz_question.id %>"
   aria-controls="collapse-<%= quiz_question.id %>">
 
-  <div class="btn btn-light bg-transparent border-0 text-left">
+  <div class="btn-light bg-transparent border-0 text-left">
     <% if quiz_question.correct? %>
       <span class="badge badge-success mr-2">Correct</span>
     <% else %>
       <span class="badge badge-danger mr-2">Wrong</span>
     <% end %>
-    <span class="text-capitalize"> <%= quiz_question.question.prompt.to_plain_text.truncate(60) %></span>
+    <%= quiz_question.question.prompt.to_plain_text.truncate(60) %>
   </div>
 
   <div>
