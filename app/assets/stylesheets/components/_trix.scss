@@ -73,9 +73,14 @@ trix-editor {
 }
 
 .card .trix-content {
-  display: inline;
   ul {
     list-style-type: none;
     font-size: 1rem;
+  }
+}
+
+.inline-trix-content {
+  .trix-content {
+    display: inline;
   }
 }
