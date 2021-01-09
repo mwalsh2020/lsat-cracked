@@ -1,4 +1,11 @@
 <ul>
+  <% current_user.course_status.chapter_statuses.each do |chapter_status| %>
+    <li>
+      <%= chapter_status.title %>
+      <%= chapter_status.completed? %>
+    </li>
+  <% end %>
+
   <% chapters.each do |chapter| %>
     <li>
       <% if policy(chapter).show? %>
