@@ -32,6 +32,8 @@ $course-font-size: 1.25rem;
     list-style: disclosure-closed;
     color: $primary;
     font-weight: bold;
+    border-left: 5px solid $bordeau;
+    padding-left: 5px;
   }
 
   .actions {
