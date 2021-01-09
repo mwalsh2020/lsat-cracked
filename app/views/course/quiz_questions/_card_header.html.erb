@@ -1,16 +1,16 @@
-<div class="<%= quiz_question.correct? ? "border-success" : "border-danger" %> link border-top-0 border-bottom-0 border-right-0 card-header border d-flex justify-content-between align-items-center"
+<div class="<%= quiz_question.correct? ? "border-success" : "border-danger" %> link border-top-0 border-bottom-0 border-right-0 card-header border d-flex justify-content-between align-items-center cursor-pointer"
   id="heading-<%= quiz_question.id %>"
   data-toggle="collapse"
   data-target="#collapse-<%= quiz_question.id %>"
   aria-controls="collapse-<%= quiz_question.id %>">
 
-  <div class="btn btn-light bg-transparent border-0">
+  <div class="text-left">
     <% if quiz_question.correct? %>
-      <span class="badge badge-success">Correct</span>
+      <span class="badge badge-success mr-2">Correct</span>
     <% else %>
-      <span class="badge badge-danger">Wrong</span>
+      <span class="badge badge-danger mr-2">Wrong</span>
     <% end %>
-    <%= quiz_question.question.prompt.to_plain_text.truncate(64) %>
+    <%= quiz_question.question.prompt.to_plain_text.truncate(60) %>
   </div>
 
   <div>
