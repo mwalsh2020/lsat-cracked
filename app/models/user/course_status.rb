@@ -30,7 +30,7 @@ class User::CourseStatus
 
   class SectionStatus
     attr_reader :section
-    delegate :title, :position, to: :section
+    delegate :title, :position, :quiz_score, to: :section
 
     def initialize(params)
       @section = params[:section]
@@ -39,6 +39,14 @@ class User::CourseStatus
 
     def completed?
       @completed
+    end
+
+    def quiz_score
+      correct_answers.size.fdiv(section.quizzes.last.answers.size)
+    end
+
+    def correct_answers
+      section.quizzes.last.answers.correct
     end
 
     def position

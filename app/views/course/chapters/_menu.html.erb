@@ -2,16 +2,40 @@
   <% current_user.course_status.chapter_statuses.each do |chapter_status| %>
     <li>
       <% if policy(chapter_status.chapter).show? %>
-        <h2><%= chapter_status.title %></h2>
+        <h2 class="mt-4"><%= chapter_status.title %> <small class="badge badge-dark" style="font-size: 0.775rem"><%= number_to_percentage(chapter_status.completion_rate * 100, precision: 0) %></small></h2>
       <% else %>
         <h2>
           <%= chapter_status.title %>
           <small class="badge badge-primary" style="font-size: 0.875rem">Premium</small>
         </h2>
       <% end %>
+
       <% chapter_status.section_statuses.each do |section_status| %>
-        <%= render "course/chapters/menu", quiz_question: section_status %>
-      <%  end %>
+         <% if current_page?(course_section_path(section_status.section)) %>
+          <li class="active">
+            <div class="d-flex justify-content-start align-items-center">
+              <% if section_status.completed? %>
+                <%= render "course/sections/marker", section_status: section_status  %>
+              <% end %>
+              <%= section_status.title %>
+            </div>
+          </li>
+          <% else %>
+            <li>
+              <div class="d-flex justify-content-start align-items-center">
+                <% if section_status.completed? %>
+                   <%= render "course/sections/marker", section_status: section_status  %>
+                <% end %>
+                <% if policy(section_status.section).show? %>
+                  <%= link_to section_status.title, course_section_path(section_status.section) %>
+                <% else %>
+                  <%= link_to section_status.title, course_section_path(section_status.section), data: { toggle: "modal", target: "#exampleModal" } %>
+                <% end %>
+              </div>
+            </li>
+          <% end %>
+      <% end %>
+
     </li>
   <% end %>
 </ul>

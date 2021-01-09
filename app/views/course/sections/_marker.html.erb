@@ -1,3 +1,6 @@
- <% if !@section.quizzes.nil? && @section.quizzes.last.complete %>
-  <div class="marker mr-2"></div>
-<% end %>
+<div class="marker mr-2">
+  <div class="marker-popup">
+    <div>Quiz Completed</div>
+    <div>Score: <%= number_to_percentage(section_status.quiz_score * 100, precision: 0)  %></div>
+  </div>
+</div>

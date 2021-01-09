@@ -1,18 +1,28 @@
 .marker {
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background-color: green;
+  background-color: $green;
   position: relative;
-  &:hover {
-    color: black;
+  border: 2px solid $bordeau;
+  &:hover .marker-popup {
+    display: flex;
   }
 }
 
 .marker-popup {
-  position: absolute;
   display: none;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: $bordeau;
-  width: 100px;
-  height: 20px;
+  color: white;
+  font-size: 12px;
+  margin: 0;
+  padding: 5px 10px;
+  left: 15px;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  width: 200px;
 }
