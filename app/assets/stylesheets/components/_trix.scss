@@ -78,3 +78,9 @@ trix-editor {
     font-size: 1rem;
   }
 }
+
+.inline-trix-content {
+  .trix-content {
+    display: inline;
+  }
+}
