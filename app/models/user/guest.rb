@@ -1,3 +1,4 @@
+# Null object
 class User::Guest
   def id
     nil
