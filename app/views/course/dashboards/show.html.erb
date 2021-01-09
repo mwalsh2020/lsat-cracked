@@ -1,2 +1,13 @@
-<h1 class="mb-3">Hi, <%= current_user.email %></h1>
-<%= link_to "Learn", course_section_path(@section), class: "btn btn-primary" %>
+<h1 class="mb-3">Welcome Back!</h1>
+
+<h2>Please Review</h2>
+<p>Here are your missed questions for the last three days.</p>
+<div class="mb-3">
+  <% current_user.answers.wrong.each do |answer| %>
+  <% if answer.quiz_questions.last.created_at > 3.days.ago %>
+      <%= render "course/quiz_questions/card", quiz_question: answer.quiz_questions.last %>
+  <% end %>
+<% end %>
+</div>
+
+<%= link_to "Learn", course_section_path(@section), class: "btn btn-primary mb-3" %>

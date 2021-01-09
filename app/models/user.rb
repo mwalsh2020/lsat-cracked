@@ -2,6 +2,8 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :recoverable, :rememberable, :validatable
 
   has_many :quizzes, dependent: :destroy
+  has_many :quiz_questions, through: :quizzes
+  has_many :answers, through: :quiz_questions
 
   scope :admin, -> { where(admin: true) }
 
