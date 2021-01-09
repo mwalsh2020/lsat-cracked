@@ -1,22 +1,17 @@
 <ul>
   <% current_user.course_status.chapter_statuses.each do |chapter_status| %>
     <li>
-      <%= chapter_status.title %>
-      <%= chapter_status.completed? %>
-    </li>
-  <% end %>
-
-  <% chapters.each do |chapter| %>
-    <li>
-      <% if policy(chapter).show? %>
-        <h2><%= chapter.title %></h2>
+      <% if policy(chapter_status.chapter).show? %>
+        <h2><%= chapter_status.title %></h2>
       <% else %>
         <h2>
-          <%= chapter.title %>
+          <%= chapter_status.title %>
           <small class="badge badge-primary" style="font-size: 0.875rem">Premium</small>
         </h2>
       <% end %>
-      <%= render "course/sections/menu", sections: chapter.sections %>
+      <% chapter_status.section_statuses.each do |section_status| %>
+        <%= render "course/chapters/menu", quiz_question: section_status %>
+      <%  end %>
     </li>
   <% end %>
 </ul>

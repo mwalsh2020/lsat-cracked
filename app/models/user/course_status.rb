@@ -2,16 +2,16 @@ class User::CourseStatus
   # Completed chapters
   # Completed sections
   class ChapterStatus
-    attr_reader :chapter, :sections_statuses
+    attr_reader :chapter, :section_statuses
     delegate :title, :position, to: :chapter
 
     def initialize(params)
       @chapter = params[:chapter]
-      @sections_statuses = params[:sections_statuses]
+      @section_statuses = params[:section_statuses]
     end
 
     def completion_rate
-      sections_statuses.count(&:completed?).fdiv(all_sections.size)
+      section_statuses.count(&:completed?).fdiv(all_sections.size)
     end
 
     def all_sections
@@ -19,7 +19,7 @@ class User::CourseStatus
     end
 
     def completed?
-      sections_statuses.all?(&:completed?)
+      section_statuses.all?(&:completed?)
     end
 
     include Comparable
@@ -30,6 +30,7 @@ class User::CourseStatus
 
   class SectionStatus
     attr_reader :section
+    delegate :title, :position, to: :section
 
     def initialize(params)
       @section = params[:section]
@@ -65,14 +66,14 @@ class User::CourseStatus
   end
 
   def chapter_statuses
-    Chapter.all.map { |chapter| ChapterStatus.new(chapter: chapter, sections_statuses: section_statuses_for(chapter)) }
+    Chapter.all.map { |chapter| ChapterStatus.new(chapter: chapter, section_statuses: section_statuses_for(chapter)) }
   end
 
-  def sections_statuses
-    @sections_statuses ||= (user.completed_sections.includes(:chapter).map { |section| SectionStatus.new(completed: true, section: section) } + missing_sections.map { |section| SectionStatus.new(completed: false, section: section) }).sort
+  def section_statuses
+    @section_statuses ||= (user.completed_sections.includes(:chapter).map { |section| SectionStatus.new(completed: true, section: section) } + missing_sections.map { |section| SectionStatus.new(completed: false, section: section) }).sort
   end
 
   def section_statuses_for(chapter)
-    sections_statuses.select { |section_status| section_status.section.chapter == chapter }
+    section_statuses.select { |section_status| section_status.section.chapter == chapter }
   end
 end
