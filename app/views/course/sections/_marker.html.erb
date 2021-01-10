@@ -1,6 +1,8 @@
-<div class="marker mr-2">
+<% score = section_status.quiz_score * 100 %>
+
+<div class=<%= score < 90 ? "marker-partial" : "marker" %>>
   <div class="marker-popup">
     <div>Quiz Completed</div>
-    <div>Score: <%= number_to_percentage(section_status.quiz_score * 100, precision: 0)  %></div>
+    <div>Score: <%= number_to_percentage(score, precision: 0)  %></div>
   </div>
 </div>

@@ -2,9 +2,10 @@
   <% current_user.course_status.chapter_statuses.each do |chapter_status| %>
     <li>
       <% if policy(chapter_status.chapter).show? %>
-        <h2 class="mt-4"><%= chapter_status.title %> <small class="badge badge-dark" style="font-size: 0.775rem"><%= number_to_percentage(chapter_status.completion_rate * 100, precision: 0) %></small></h2>
+        <h2 class="mt-2"><%= chapter_status.title %> </h2>
+         <%= render "course/chapters/progress", chapter_status: chapter_status %>
       <% else %>
-        <h2>
+        <h2 class="mt-2">
           <%= chapter_status.title %>
           <small class="badge badge-primary" style="font-size: 0.875rem">Premium</small>
         </h2>

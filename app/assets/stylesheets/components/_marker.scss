@@ -5,6 +5,19 @@
   background-color: $green;
   position: relative;
   border: 2px solid $bordeau;
+  margin-right: 10px;
+  &-partial {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: yellow;
+    position: relative;
+    border: 2px solid $bordeau;
+    margin-right: 5px;
+    &:hover .marker-popup {
+      display: flex;
+    }
+  }
   &:hover .marker-popup {
     display: flex;
   }
