@@ -12,31 +12,8 @@
       <% end %>
 
       <% chapter_status.section_statuses.each do |section_status| %>
-         <% if current_page?(course_section_path(section_status.section)) %>
-          <li class="active">
-            <div class="d-flex justify-content-start align-items-center">
-              <% if section_status.completed? %>
-                <%= render "course/sections/marker", section_status: section_status  %>
-              <% end %>
-              <%= section_status.title %>
-            </div>
-          </li>
-          <% else %>
-            <li>
-              <div class="d-flex justify-content-start align-items-center">
-                <% if section_status.completed? %>
-                   <%= render "course/sections/marker", section_status: section_status  %>
-                <% end %>
-                <% if policy(section_status.section).show? %>
-                  <%= link_to section_status.title, course_section_path(section_status.section) %>
-                <% else %>
-                  <%= link_to section_status.title, course_section_path(section_status.section), data: { toggle: "modal", target: "#exampleModal" } %>
-                <% end %>
-              </div>
-            </li>
-          <% end %>
+         <%= render "course/sections/menu", section_status: section_status %>
       <% end %>
-
     </li>
   <% end %>
 </ul>

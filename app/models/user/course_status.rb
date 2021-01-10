@@ -1,6 +1,7 @@
 class User::CourseStatus
   # Completed chapters
   # Completed sections
+  
   class ChapterStatus
     attr_reader :chapter, :section_statuses
     delegate :title, :position, to: :chapter
