@@ -4,10 +4,8 @@
 <p>Here are your missed questions for the last three days. Spend some time reviewing them before retaking the quiz.</p>
 <div class="mb-3">
   <ol>
-    <% current_user.answers.wrong.each do |answer| %>
-      <% if answer.quiz_questions.last.created_at > 3.days.ago %>
+    <% current_user.answers.recently_answered.wrong.each do |answer| %>
         <li><%= answer.quiz_questions.last.question.prompt %></li>
-      <% end %>
     <% end %>
   </ul>
 </div>

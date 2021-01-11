@@ -6,6 +6,7 @@ class Answer < ApplicationRecord
 
   scope :correct, -> { where(correct: true) }
   scope :wrong, -> { where(correct: false) }
+  scope :recently_answered, -> { where("quiz_questions.updated_at > ?", 3.days.ago )}
 
   def name
     content
