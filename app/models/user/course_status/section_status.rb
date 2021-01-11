@@ -1,24 +1,27 @@
-require_relative "course_status"
-
-class User::SectionStatus < User::CourseStatus
-  attr_reader :section
-  delegate :title, :position, :quiz_score, to: :section
+class User::CourseStatus::SectionStatus
+  attr_reader :section, :user
+  delegate :title, :position, to: :section
 
   def initialize(params)
     @section = params[:section]
     @completed = params[:completed]
+    @user = params[:user]
   end
 
   def completed?
     @completed
   end
 
+  def recent_quiz
+    user.last_quiz_for(section)
+  end
+
   def quiz_score
-    correct_answers.size.fdiv(section.quizzes.last.answers.size)
+    recent_quiz.answers.correct.size.fdiv(recent_quiz.questions.size)
   end
 
   def correct_answers
-    section.quizzes.last.answers.correct
+    recent_quiz.answers.correct
   end
 
   def position
