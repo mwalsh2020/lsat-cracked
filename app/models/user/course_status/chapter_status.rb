@@ -1,6 +1,4 @@
-require_relative "course_status"
-
-class User::ChapterStatus < User::CourseStatus
+class User::CourseStatus::ChapterStatus
   attr_reader :chapter, :section_statuses
   delegate :title, :position, to: :chapter
 
