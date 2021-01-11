@@ -17,11 +17,9 @@ class User::CourseStatus::SectionStatus
   end
 
   def quiz_score
-    # FIXME: correct_answers probably is a quiz relation
-    correct_answers.size.fdiv(recent_quiz.questions.size)
+    recent_quiz.answers.correct.size.fdiv(recent_quiz.questions.size)
   end
 
-  # FIXME: probably is a quiz relation
   def correct_answers
     recent_quiz.answers.correct
   end
