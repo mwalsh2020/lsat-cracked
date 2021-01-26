@@ -1,2 +1,13 @@
-<h1 class="mb-3">Hi, <%= current_user.email %></h1>
-<%= link_to "Learn", course_section_path(@section), class: "btn btn-primary" %>
+<h1 class="mb-3">Welcome Back!</h1>
+
+<h2>Time For A Review</h2>
+<p>Here are your missed questions for the last three days. Spend some time reviewing them before retaking the quiz.</p>
+<div class="mb-3">
+  <ul style="list-style: none; padding: 0;">
+    <% current_user.answers.recently_answered.distinct.wrong.each do |answer| %>
+       <%= render "course/dashboards/answer", answer: answer %>
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to "Learn", course_section_path(@section), class: "btn btn-primary mb-3" %>
