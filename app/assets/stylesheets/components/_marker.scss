@@ -1,0 +1,34 @@
+.marker {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: $green;
+  position: relative;
+  border: 2px solid $bordeau;
+  margin-right: 10px;
+
+  &.partial {
+    background-color: yellow;
+  }
+
+  &:hover .marker-popup {
+    display: flex;
+  }
+}
+
+.marker-popup {
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $bordeau;
+  color: white;
+  font-size: 12px;
+  margin: 0;
+  padding: 5px 10px;
+  left: 15px;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  width: 200px;
+}
