@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  devise :invitable, :database_authenticatable, :recoverable, :rememberable, :validatable
+  devise :invitable, :database_authenticatable, :recoverable, :rememberable, :validatable, :trackable
 
   has_many :quizzes, dependent: :destroy
   has_many :completed_quizzes, -> { where(complete: true) }, class_name: "Quiz"
