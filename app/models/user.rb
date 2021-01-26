@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :quizzes, dependent: :destroy
   has_many :completed_quizzes, -> { where(complete: true) }, class_name: "Quiz"
   has_many :completed_sections, -> { distinct }, through: :completed_quizzes, source: :quizable, source_type: "Section"
+  has_many :quiz_questions, through: :quizzes
+  has_many :answers, through: :quiz_questions
 
   scope :admin, -> { where(admin: true) }
 
