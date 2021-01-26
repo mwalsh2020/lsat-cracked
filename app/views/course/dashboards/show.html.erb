@@ -1,13 +1,20 @@
 <h1 class="mb-3">Welcome Back!</h1>
-
-<h2>Time For A Review</h2>
-<p>Here are your missed questions for the last three days. Spend some time reviewing them before retaking the quiz.</p>
-<div class="mb-3">
-  <ul style="list-style: none; padding: 0;">
-    <% current_user.answers.recently_answered.distinct.wrong.each do |answer| %>
-       <%= render "course/dashboards/answer", answer: answer %>
-    <% end %>
-  </ul>
+<div class="mb-4">
+  <div class="mb-3">
+    <p>You've completed <%= number_to_percentage(current_user.course_status.completion_rate * 100, precision: 0) %> of the sections in the course.</p>
+    <%= render "course/progress", course_status: current_user.course_status %>
+  </div>
 </div>
 
-<%= link_to "Learn", course_section_path(@section), class: "btn btn-primary mb-3" %>
+<ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="true">Review</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="next-section-tab" data-toggle="tab" href="#next-section" role="tab" aria-controls="next-section" aria-selected="false">Suggested</a>
+  </li>
+</ul>
+
+<%= render "course/review" %>
+<%= render "course/suggested" %>
+</div>
