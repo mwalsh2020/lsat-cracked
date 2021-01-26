@@ -27,6 +27,7 @@ $course-font-size: 1.25rem;
 .course-sidebar {
   padding: 1.5rem 2rem;
   border-right: 1px solid darken($light-gray, 5%);
+  max-width: 32%;
 
   li.active {
     list-style: disclosure-closed;
