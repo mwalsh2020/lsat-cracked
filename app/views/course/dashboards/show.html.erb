@@ -2,7 +2,7 @@
 <div class="mb-4">
   <div class="mb-3">
     <p>You've completed <%= number_to_percentage(current_user.course_status.completion_rate * 100, precision: 0) %> of the sections in the course.</p>
-    <%= render "course/progress", course_status: current_user.course_status %>
+    <%= render "status/progress", status: current_user.course_status %>
   </div>
 </div>
 
