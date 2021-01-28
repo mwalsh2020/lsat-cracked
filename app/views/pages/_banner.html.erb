@@ -6,6 +6,7 @@
           <h1 class="mb-2">Master the Skills,<br>Master the LSAT</h1>
           <p class="d-none d-md-block">LSAT Cracked is the only LSAT course that directly identifies the exact skills you're currently missing that an LSAT writer cares about. Stop wasting time repeating the same mistakes, and start unlocking your future career.</p>
           <%= render "mail_leads/form", mail_lead: @mail_lead %>
+          <%= link_to "Test Your Skills", root_path(anchor: "intro-quiz"), class: "btn btn-primary mt-3" %>
         </div>
       </div>
     </div>
