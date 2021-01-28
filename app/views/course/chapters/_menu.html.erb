@@ -3,7 +3,7 @@
     <li>
       <% if policy(chapter_status.chapter).show? %>
         <h2 class="mt-2"><%= chapter_status.title %> </h2>
-         <%= render "course/chapters/progress", chapter_status: chapter_status %>
+         <%= render "status/progress", status: chapter_status %>
       <% else %>
         <h2 class="mt-2">
           <%= chapter_status.title %>
