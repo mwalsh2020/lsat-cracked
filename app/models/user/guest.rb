@@ -27,4 +27,8 @@ class User::Guest
   def errors
     ActiveModel::Errors.new(self)
   end
+
+  def last_quiz_for(_quizable)
+    nil
+  end
 end

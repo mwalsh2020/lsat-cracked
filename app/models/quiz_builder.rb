@@ -1,9 +1,10 @@
 class QuizBuilder
-  attr_accessor :user, :section
+  attr_accessor :user, :section, :quizable
 
   def initialize(params = {})
-    @user    = params[:user]
-    @section = params[:section]
+    @user     = params[:user]
+    @section  = params[:section]
+    @quizable = params[:quizable]
   end
 
   def new_quiz
