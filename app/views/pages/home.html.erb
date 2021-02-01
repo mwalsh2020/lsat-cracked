@@ -16,7 +16,10 @@
   </div>
 </div>
 
-<%= render "guest/quiz_sessions/form", quiz_session: @intro_quiz_session %>
+<% if policy([:guest, @intro_quiz_session]).create? %>
+  <%= render "guest/quiz_sessions/form", quiz_session: @intro_quiz_session %>
+<% end %>
+
 
 <div id="results"><%= render "testimonials" %></div>
 
