@@ -8,6 +8,10 @@ class User::Guest
     false
   end
 
+  def persisted?
+    false
+  end
+
   def present?
     false
   end
