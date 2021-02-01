@@ -5,6 +5,8 @@ class PagesController < ApplicationController
   def home
     @mail_lead = MailLead.new
     @products = policy_scope(Product).order(:id)
+
+    @intro_quiz_session = QuizBuilder.new(user: current_user, quizable: Article.last).build.session
   end
 
   def about; end

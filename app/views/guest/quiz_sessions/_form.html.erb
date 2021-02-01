@@ -1,5 +1,5 @@
 <ol class="p-0">
-  <%= simple_form_for [:course, quiz_session.quiz, quiz_session], html: { class: "quiz-answer" } do |f| %>
+  <%= simple_form_for [:guest, quiz_session], html: { class: "quiz-answer" } do |f| %>
     <%= render "quiz_questions/fields", form: f %>
     <div class="text-right"><%= f.button :submit, "Finish quiz", class: "btn-primary btn-lg" %></div>
   <% end %>

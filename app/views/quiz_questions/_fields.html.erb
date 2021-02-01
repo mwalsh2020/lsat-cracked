@@ -1,0 +1,16 @@
+<%= form.simple_fields_for :quiz_questions do |fqq| %>
+  <li>
+    <%= fqq.object.question.prompt %>
+    <% if fqq.object.question.premium? %>
+      <span class="badge badge-secondary" data-toggle="tooltip" title="This question appeared in a real LSAT exam">LSAT Official</span>
+    <% end %>
+    <div class="list-group pt-4">
+      <%= fqq.association :answer,
+          collection: fqq.object.possible_answers,
+          wrapper: :radio_list_group,
+          as: :radio_buttons,
+          label: false %>
+    </div>
+  </li>
+  <hr class="mb-4">
+<% end %>
