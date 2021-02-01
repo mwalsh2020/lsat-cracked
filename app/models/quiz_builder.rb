@@ -7,8 +7,13 @@ class QuizBuilder
     @quizable = params[:quizable]
   end
 
+  def quiz
+    @quiz ||= Quiz.new(quizable: section, questions: section.questions)
+  end
+
   def new_quiz
-    Quiz.new(user: user, quizable: section, questions: @section.questions)
+    quiz.user = user.persisted? ? user : User.new
+    quiz
   end
 
   def build
