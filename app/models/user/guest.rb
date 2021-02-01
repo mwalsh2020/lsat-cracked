@@ -8,6 +8,10 @@ class User::Guest
     false
   end
 
+  def persisted?
+    false
+  end
+
   def present?
     false
   end
@@ -26,5 +30,9 @@ class User::Guest
 
   def errors
     ActiveModel::Errors.new(self)
+  end
+
+  def last_quiz_for(_quizable)
+    nil
   end
 end
