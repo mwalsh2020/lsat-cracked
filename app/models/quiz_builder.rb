@@ -35,7 +35,7 @@ class QuizBuilder
 
   def build_and_save
     quiz = build
-    quiz.save
+    quiz.save!
     quiz
   end
 end
