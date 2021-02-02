@@ -1,6 +1,7 @@
 <div class="py-5">
   <div class="pt-5 container">
     <% if policy([:guest, @intro_quiz_session]).create? %>
+      <h2 class="h1 font-weight-bolder mb-5 text-center">Test Your Understanding</h2>
       <%= render "guest/quiz_sessions/form", quiz_session: @intro_quiz_session %>
     <% end %>
   </div>

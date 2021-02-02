@@ -1,4 +1,4 @@
-<%= f.simple_fields_for :quiz_questions do |fqq| %>
+<%= form.simple_fields_for :quiz_questions do |fqq| %>
   <li>
     <%= fqq.object.question.prompt %>
     <% if fqq.object.question.premium? %>
