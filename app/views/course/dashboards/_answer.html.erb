@@ -9,5 +9,10 @@
     <div>Section: <%= answer.quiz_questions.last.quiz.quizable.title %></div>
     <div class="inline-trix-content">Question: <%= answer.quiz_questions.last.question.prompt %></div>
     <div class="inline-trix-content">You answered: <%= answer.content %></div>
+    <% answer.quiz_questions.last.question.answers.each do |answer| %>
+      <% if answer.correct %>
+        <div class="inline-trix-content">Correct answer: <%= answer.content %></div>
+      <% end %>
+    <% end %>
   </div>
 </li>

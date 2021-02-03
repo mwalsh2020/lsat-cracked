@@ -2,10 +2,12 @@
   <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
     <h2>Time For A Review</h2>
     <p>Here are your missed questions for the last three days. Spend some time reviewing them before retaking the quiz.</p>
+    <hr>
     <div class="mb-3">
       <ul style="list-style: none; padding: 0;">
         <% current_user.answers.recently_answered.distinct.wrong.each do |answer| %>
           <%= render "course/dashboards/answer", answer: answer %>
+          <hr>
         <% end %>
       </ul>
     </div>
