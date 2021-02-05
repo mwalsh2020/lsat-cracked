@@ -19,7 +19,7 @@ class Lawhub::Authentication
   end
 
   def access_token
-    request['access_token']
+    Rails.cache.fetch(lawhub: :access_token) { request["access_token"] }
   end
 
   private
