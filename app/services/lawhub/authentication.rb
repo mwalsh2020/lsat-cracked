@@ -4,10 +4,9 @@ class Lawhub::Authentication
   def initialize
     @credentials = Lawhub.credentials
     @url = "https://login.microsoftonline.com/#{Lawhub.config.tenant_id}/oauth2/v2.0/token"
-    @scope = "https://lawpathb2b.onmicrosoft.com/06b7d783-8a46-43de-a375-07059967cb3b/.default"
     @body = {
       grant_type: "client_credentials",
-      scope: @scope
+      scope: Lawhub.scope
     }
     @headers = {
       "Authorization" => "Basic #{credentials}",
@@ -20,7 +19,12 @@ class Lawhub::Authentication
   end
 
   def access_token
-    r = HTTParty.post(url, body: body, headers: headers)
-    {response: r, token: JSON.parse(r.body)['access_token']}
+    request['access_token']
+  end
+
+  private
+
+  def request
+    @request ||= HTTParty.post(url, body: body, headers: headers)
   end
 end
