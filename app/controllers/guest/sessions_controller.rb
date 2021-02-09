@@ -6,9 +6,8 @@ class Guest::SessionsController < ApplicationController
     @quiz = QuizBuilder.new(user: current_user, quizable: @quizable).build
     @quiz_session = Quiz::Session.new(quiz_session_params.merge(quiz: @quiz))
 
-    if @quiz_session.save
-      redirect_to root_path(anchor: "intro-quiz")
-    end
+    authorize [:guest, @quiz_session]
+    render :show
   end
 
   private
