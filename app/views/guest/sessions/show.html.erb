@@ -1,1 +1,11 @@
-<%= render "course/quiz_sessions/report", quiz_session: @quiz_session %>
+<div class="container py-5">
+  <%= render "course/quiz_sessions/report", quiz_session: @quiz_session %>
+  <div class="cta mt-3 d-flex justify-content-center align-items-center">
+    <div class="card px-3 py-3">
+      <h3 class="text-center">Enjoyed testing your skills?</h3>
+      <%= link_to "See our plans & pricing for full access.", root_path(anchor: "packages"), class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+
+<%= render "pages/footer" %>
