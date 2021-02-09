@@ -8,13 +8,15 @@ class CheckLoginTimesJob < ApplicationJob
       sign_in_date = user.last_sign_in_at ? user.last_sign_in_at.to_date : nil
       week_ago = 7.days.ago.to_date
       if sign_in_date && sign_in_date < week_ago
-        logged_in << user.email
         p "#{user.email} logged in this week."
-        service = Lawhub::User.new(user)
-        service.login
-        return user
+        login(user)
       end
     end
     p "We pinged LSAC for these users: #{logged_in}"
+  end
+
+  def login(user)
+    service = Lawhub::User.new(user)
+    service.login
   end
 end

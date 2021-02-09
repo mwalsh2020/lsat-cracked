@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+config.active_job.queue_adapter = :sidekiq
+
 module LsatCracked
   class Application < Rails::Application
     config.load_defaults 6.0
