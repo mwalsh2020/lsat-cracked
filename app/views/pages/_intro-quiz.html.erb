@@ -19,10 +19,7 @@ const showQuiz = () => {
   const button = document.getElementById("quiz-toggle")
   if (quiz.style.display === "none") {
     quiz.style.display = "block";
-    button.innerHTML = "Hide Quiz"
-  } else {
-    quiz.style.display = "none";
-    button.innerHTML = "Start Quiz"
+    button.style.display = "none"
   }
 };
 </script>
