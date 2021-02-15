@@ -9,9 +9,9 @@
 <% end %>
 
 <% if current_user.present? %>
-  <li class="nav-item"><%= link_to "Sign out", destroy_user_session_path, class: "nav-link", method: :delete %></li>
+  <li class="nav-item"><%= link_to "Sign out", destroy_user_session_path, class: "nav-link btn btn-link", method: :delete %></li>
 <% else %>
-  <li class="nav-item"><%= link_to "Sign up", root_path(anchor: "packages"), class: "nav-link btn btn-outline-light px-3 ml-3 bg-white text-primary" %></li>
+  <li class="nav-item"><%= link_to "Sign up", root_path(anchor: "packages"), class: "nav-link btn btn-link px-2" %></li>
 <% end %>
 
-<li class="nav-item"><%= link_to "Learn", course_root_path, class: "nav-link btn btn-outline-light px-2 mr-3" %></li>
+<li class="nav-item"><%= link_to "Learn", course_root_path, class: "nav-link btn btn-outline-light px-2 mr-3 ml-3" %></li>
