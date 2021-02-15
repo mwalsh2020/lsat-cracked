@@ -2,7 +2,6 @@ Rails.application.routes.draw do  devise_for :users
   root                  to: "pages#home"
   get  "/about",        to: "pages#about"
   get  "/testimonials", to: "pages#testimonials"
-  get "/guest/sessions", to: "pages#home"
 
   resources :coaching_requests, only: [:new, :create]
   resources :mail_leads, only: [:create]
@@ -13,6 +12,7 @@ Rails.application.routes.draw do  devise_for :users
 
   namespace :guest do
     resources :sessions, only: :create
+    get "/sessions", to: "pages#home"
   end
 
   namespace :admin do
