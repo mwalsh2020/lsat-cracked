@@ -2,6 +2,7 @@ Rails.application.routes.draw do  devise_for :users
   root                  to: "pages#home"
   get  "/about",        to: "pages#about"
   get  "/testimonials", to: "pages#testimonials"
+  get "/guest/sessions", to: "pages#home"
 
   resources :coaching_requests, only: [:new, :create]
   resources :mail_leads, only: [:create]
