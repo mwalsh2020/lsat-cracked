@@ -11,13 +11,7 @@
 <% if current_user.present? %>
   <li class="nav-item"><%= link_to "Sign out", destroy_user_session_path, class: "nav-link", method: :delete %></li>
 <% else %>
-  <% if current_user.registerable? %>
-    <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %></li>
-  <% end %>
-<% end %>
-
-<% if policy([:course, :dashboard]).show? %>
-  <li class="nav-item"><%= link_to "Learn", course_root_path, class: "nav-link btn btn-outline-light px-2 mr-3" %></li>
-<% else %>
   <li class="nav-item"><%= link_to "Sign up", root_path(anchor: "packages"), class: "nav-link btn btn-outline-light px-3 ml-3 bg-white text-primary" %></li>
 <% end %>
+
+<li class="nav-item"><%= link_to "Learn", course_root_path, class: "nav-link btn btn-outline-light px-2 mr-3" %></li>
