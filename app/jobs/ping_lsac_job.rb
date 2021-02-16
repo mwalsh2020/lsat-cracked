@@ -1,8 +1,9 @@
 class PingLsacJob < ApplicationJob
   queue_as :default
 
-  def perform(user)
-    p "#{user.email} logged in this week."
+  def perform(user_id)
+    user = User.find(user_id)
+    puts "#{user.email} logged in this week."
     ping_lsac(user)
   end
 
