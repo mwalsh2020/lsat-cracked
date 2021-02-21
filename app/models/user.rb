@@ -28,6 +28,6 @@ class User < ApplicationRecord
   end
 
   def enqueue_ping_lsac
-    PingLsacJob.perform_now(self.id)
+    PingLsacJob.perform_later(self.id)
   end
 end
