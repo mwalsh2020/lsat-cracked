@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :quiz_questions, through: :quizzes
   has_many :answers, through: :quiz_questions
 
+  after_save :enqueue_ping_lsac if :prep_plus_changed?
+
   scope :admin, -> { where(admin: true) }
 
   def last_quiz_for(quizable)
@@ -23,5 +25,9 @@ class User < ApplicationRecord
 
   def course_status
     @course_status ||= User::CourseStatus.new(self)
+  end
+
+  def enqueue_ping_lsac
+    PingLsacJob.perform_later(self.id)
   end
 end

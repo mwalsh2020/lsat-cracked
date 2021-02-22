@@ -3,6 +3,11 @@ Rails.application.routes.draw do  devise_for :users
   get  "/about",        to: "pages#about"
   get  "/testimonials", to: "pages#testimonials"
 
+  require "sidekiq/web"
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   resources :coaching_requests, only: [:new, :create]
   resources :mail_leads, only: [:create]
   resources :products, only: [:index]
