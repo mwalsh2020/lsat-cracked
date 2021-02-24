@@ -1,0 +1,28 @@
+<div class="py-5">
+  <div class="pt-5 container">
+    <% if policy([:guest, @intro_quiz_session]).create? %>
+      <div class="text-center mb-5">
+        <h2 class="h1 font-weight-bolder">Where Do You Stand?</h5>
+        <h5>Let's find out with a short intro quiz.</p>
+        <button id="quiz-toggle" onclick="showQuiz()" class="btn btn-primary mb-3">Start Quiz</button>
+      </div>
+      <div id="quiz" style="display: none;">
+        <%= render "guest/quiz_sessions/form", quiz_session: @intro_quiz_session %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+const showQuiz = () => {
+  const quiz = document.getElementById("quiz");
+  const button = document.getElementById("quiz-toggle")
+  if (quiz.style.display === "none") {
+    quiz.style.display = "block";
+    button.innerHTML = "Hide Quiz"
+  } else {
+    quiz.style.display = "none";
+    button.innerHTML = "Start Quiz"
+  }
+};
+</script>

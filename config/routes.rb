@@ -15,6 +15,10 @@ Rails.application.routes.draw do  devise_for :users
     resources :payments, only: :new
   end
 
+  namespace :guest do
+    resources :sessions, only: :create
+  end
+
   namespace :admin do
     root to: "dashboards#show"
     resources :chapters, only: [:index, :new, :create, :edit, :update, :destroy] do
