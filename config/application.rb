@@ -10,6 +10,8 @@ module LsatCracked
   class Application < Rails::Application
     config.load_defaults 6.0
 
+    config.active_job.queue_adapter = :sidekiq
+
     config.generators do |generate|
       generate.helper false
       generate.javascripts false
