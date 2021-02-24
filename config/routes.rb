@@ -17,6 +17,7 @@ Rails.application.routes.draw do  devise_for :users
 
   namespace :guest do
     resources :sessions, only: :create
+    get "/sessions", to: "pages#home"
   end
 
   namespace :admin do
