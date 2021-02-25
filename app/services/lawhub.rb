@@ -15,10 +15,6 @@ module Lawhub
     @credentials ||= Base64.encode64("#{config.client_id}:#{config.client_secret}").gsub("\n", '')
   end
 
-  def self.scope
-    "https://lawpathb2b.onmicrosoft.com/06b7d783-8a46-43de-a375-07059967cb3b/.default"
-  end
-
   class Configuration
     def method_missing(method_name, *args)
       ivar_name = "@#{method_name}"

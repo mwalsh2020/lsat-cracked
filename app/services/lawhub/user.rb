@@ -1,6 +1,6 @@
 class Lawhub::User
   include HTTParty
-  base_uri "https://lsac-apim.azure-api.net/LHIntegrationvendor/api/vendor/CRK2020"
+  base_uri "https://lsac-apim.azure-api.net/#{Lawhub.config.endpoint_vendor}/api/vendor/#{Lawhub.config.vendor}"
 
   attr_reader :user
 
@@ -26,7 +26,7 @@ class Lawhub::User
   end
 
   def default_body(params = {})
-    {"source": "CRK2020"}.merge(params).to_json
+    {"source": Lawhub.config.vendor}.merge(params).to_json
   end
 
   def access_token

@@ -6,7 +6,7 @@ class Lawhub::Authentication
     @url = "https://login.microsoftonline.com/#{Lawhub.config.tenant_id}/oauth2/v2.0/token"
     @body = {
       grant_type: "client_credentials",
-      scope: Lawhub.scope
+      scope: Lawhub.config.scope
     }
     @headers = {
       "Authorization" => "Basic #{credentials}",
