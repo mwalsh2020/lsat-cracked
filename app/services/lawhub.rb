@@ -32,7 +32,7 @@ module Lawhub
     end
 
     def get_value(key)
-      Rails.application.credentials.lawhub[key.to_sym]
+      Rails.application.credentials[Rails.env.to_sym][:lawhub][key.to_sym]
     end
   end
 end
