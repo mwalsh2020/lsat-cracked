@@ -18,3 +18,5 @@ document.addEventListener("turbolinks:load", (event) => {
   initQuizQuestions();
   initCustomSelect();
 })
+
+import "controllers"
