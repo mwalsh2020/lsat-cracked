@@ -1,7 +1,7 @@
 <div class="py-5">
   <div class="pt-5 container">
     <% if policy([:guest, @intro_quiz_session]).create? %>
-      <div class="text-center mb-5">
+      <div data-controller="intro-quiz" class="text-center mb-5">
         <h2 class="h1 font-weight-bolder">Where Do You Stand?</h5>
         <h5>Let's find out with a short intro quiz.</p>
         <button id="quiz-toggle" onclick="showQuiz()" class="btn btn-primary mb-3">Start Quiz</button>
