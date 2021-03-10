@@ -15,6 +15,7 @@
     <div class="course-layout">
       <div class="course-sidebar">
         <%= render "course/chapters/menu", chapters: @chapters %>
+        <div class="course-sidebar-overlay"></div>
       </div>
       <div class="course-container"><%= yield %></div>
     </div>

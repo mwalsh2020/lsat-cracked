@@ -27,7 +27,8 @@ $course-font-size: 1.25rem;
 .course-sidebar {
   padding: 1.5rem 2rem;
   border-right: 1px solid darken($light-gray, 5%);
-  max-width: 32%;
+  max-width: 25%;
+  position: relative;
 
   li.active {
     list-style: disclosure-closed;
@@ -57,6 +58,26 @@ $course-font-size: 1.25rem;
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  &:hover &-overlay {
+    display: none;
+  }
+
+  &-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $gray;
+    opacity: 0.3;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .course-sidebar {
+    max-width: 35%;
   }
 }
