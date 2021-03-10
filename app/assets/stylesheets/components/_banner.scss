@@ -141,4 +141,29 @@ $line-color: $primary;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
   }
+
+  .banner-leads-form {
+    position: absolute;
+    left: 50%;
+    bottom: 75px;
+    transform: translateX(-50%);
+    z-index: 5;
+  }
+
+  .banner-cta {
+    animation: pulse 2.5s 6;
+    animation-delay: 3s;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 244, 244, 0.7)
+  }
+  90% {
+    box-shadow: 0 0 0 7px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
 }

@@ -4,12 +4,14 @@
       <div class="col-12 col-lg-6">
         <div class="banner-text-main position-relative" style="z-index: 9">
           <h1 class="mb-2">Master the Skills,<br>Master the LSAT</h1>
-          <p class="d-none d-md-block">LSAT Cracked is the only LSAT course that directly identifies the exact skills you're currently missing that an LSAT writer cares about. Stop wasting time repeating the same mistakes, and start unlocking your future career.</p>
-          <%= render "mail_leads/form", mail_lead: @mail_lead %>
-          <%= link_to "Test Your Skills With A Quiz", root_path(anchor: "intro-quiz"), class: "btn btn-primary mt-3" %>
+          <p class="d-none d-md-block">Try this intro quiz to get an evaluation of your current understanding and where you might need to improve. Then let the LSAT Cracked curriculum show you the way.</p>
+          <%= link_to "Take the Quiz", root_path(anchor: "intro-quiz"), class: "btn btn-primary btn-lg banner-cta" %>
         </div>
       </div>
     </div>
+  </div>
+  <div class="banner-leads-form">
+    <%= render "mail_leads/form", mail_lead: @mail_lead %>
   </div>
   <div class="banner-line"><%= render "shared/line" %></div>
   <div class="caption text-right text-white">
