@@ -4,8 +4,13 @@
       <div class="col-12 col-lg-6">
         <div class="banner-text-main position-relative" style="z-index: 9">
           <h1 class="mb-2">Master the Skills,<br>Master the LSAT</h1>
-          <p class="d-none d-md-block">Try this intro quiz to get an evaluation of your current understanding and where you might need to improve. Then let the LSAT Cracked curriculum show you the way.</p>
-          <%= link_to "Take the Quiz", root_path(anchor: "intro-quiz"), class: "btn btn-primary btn-lg banner-cta" %>
+          <% if @current_user.nil? %>
+            <p class="d-none d-md-block">Try this intro quiz to get an evaluation of your current understanding and where you might need to improve. Then let the LSAT Cracked curriculum show you the way.</p>
+            <%= link_to "Take the Quiz", root_path(anchor: "intro-quiz"), class: "btn btn-primary btn-lg banner-cta" %>
+          <% else %>
+            <p class="d-none d-md-block">Head over to your course dashboard to keep learning.</p>
+            <%= link_to "My Dashboard", course_root_path(current_user), class: "btn btn-primary btn-lg banner-cta" %>
+          <% end %>
         </div>
       </div>
     </div>
