@@ -31,9 +31,12 @@ $course-font-size: 1.25rem;
 
   li.active {
     list-style: disclosure-closed;
-    color: $primary;
-    border-left: 5px solid $bordeau;
-    padding-left: 5px;
+  }
+
+  li.active span {
+    color: $light-gray;
+    background-color: $bordeau;
+    padding: 0 5px;
   }
 
   .actions {
