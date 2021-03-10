@@ -19,10 +19,6 @@
 
 <div id="results"><%= render "testimonials" %></div>
 
-<% if policy([:guest, @intro_quiz_session]).create? %>
-  <div id="intro-quiz"><%= render "intro-quiz" %></div>
-<% end %>
-
 <div id="packages" class="bg-primary py-5">
   <div class="container py-5">
     <h2 class="text-center h1 mb-5 text-white font-weight-bold">Plans & Pricing</h2>
@@ -34,5 +30,9 @@
     </div>
   </div>
 </div>
+
+<% if policy([:guest, @intro_quiz_session]).create? %>
+  <div id="intro-quiz"><%= render "intro-quiz" %></div>
+<% end %>
 
 <%= render "footer" %>
