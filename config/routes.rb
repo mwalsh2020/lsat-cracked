@@ -8,6 +8,24 @@ Rails.application.routes.draw do  devise_for :users
     mount Sidekiq::Web => '/sidekiq'
   end
 
+  namespace :admin do
+    resources :users
+    # resources :quizable_questions
+    # resources :quiz_questions
+    # resources :articles
+    # resources :quizzes
+    # resources :questions
+    # resources :orders
+    # resources :taggings
+    # resources :tags
+    # resources :answers
+    # resources :chapters
+    # resources :products
+    # resources :sections
+
+    root to: "users#index"
+  end
+
   resources :coaching_requests, only: [:new, :create]
   resources :mail_leads, only: [:create]
   resources :products, only: [:index]
