@@ -13,7 +13,7 @@ class Manage::TagsController < Manage::ApplicationController
     authorize [:manage, @tag]
 
     if @tag.save
-      redirect_to [:admin, :tags]
+      redirect_to [:manage, :tags]
     else
       render :new
     end
@@ -29,7 +29,7 @@ class Manage::TagsController < Manage::ApplicationController
     authorize [:manage, @tag]
 
     if @tag.update(tag_params)
-      redirect_to [:admin, :tags]
+      redirect_to [:manage, :tags]
     else
       render :edit
     end
@@ -41,7 +41,7 @@ class Manage::TagsController < Manage::ApplicationController
 
     @tag.destroy
 
-    redirect_to [:admin, :tags]
+    redirect_to [:manage, :tags]
   end
 
   private

@@ -13,7 +13,7 @@ class Manage::ProductsController < Manage::ApplicationController
     authorize [:manage, @product]
 
     if @product.update(product_params)
-      redirect_to [:admin, :products]
+      redirect_to [:manage, :products]
     else
       render :edit
     end

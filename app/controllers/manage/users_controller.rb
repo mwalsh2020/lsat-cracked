@@ -13,7 +13,7 @@ class Manage::UsersController < Manage::ApplicationController
     authorize [:manage, @user]
 
     if @user.update(user_params)
-      redirect_to [:admin, :users]
+      redirect_to [:manage, :users]
     else
       render :edits
     end

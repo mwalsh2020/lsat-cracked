@@ -15,7 +15,7 @@ class Manage::ArticlesController < Manage::ApplicationController
     authorize [:manage, @article]
 
     if @article.save
-      redirect_to [:admin, :articles]
+      redirect_to [:manage, :articles]
     else
       render :new
     end
@@ -25,7 +25,7 @@ class Manage::ArticlesController < Manage::ApplicationController
 
   def update
     if @article.update(article_params)
-      redirect_to [:admin, :articles]
+      redirect_to [:manage, :articles]
     else
       render :edit
     end
@@ -33,7 +33,7 @@ class Manage::ArticlesController < Manage::ApplicationController
 
   def destroy
     @article.destroy
-    redirect_to [:admin, :articles]
+    redirect_to [:manage, :articles]
   end
 
   private

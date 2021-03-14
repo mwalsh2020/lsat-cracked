@@ -9,7 +9,7 @@ class Manage::ChaptersController < Manage::ApplicationController
     @chapter = Chapter.new(chapter_params)
     authorize @chapter
     if @chapter.save
-      redirect_to [:admin, :chapters]
+      redirect_to [:manage, :chapters]
     else
       render :new
     end
@@ -29,7 +29,7 @@ class Manage::ChaptersController < Manage::ApplicationController
     @chapter = Chapter.find(params[:id])
     authorize @chapter
     if @chapter.update(chapter_params)
-      redirect_to [:admin, :chapters]
+      redirect_to [:manage, :chapters]
     else
       render :edit
     end

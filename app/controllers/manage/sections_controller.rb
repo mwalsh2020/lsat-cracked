@@ -13,7 +13,7 @@ class Manage::SectionsController < Manage::ApplicationController
 
     authorize @section
     if @section.save
-      redirect_to [:admin, :chapters]
+      redirect_to [:manage, :chapters]
     else
       render :new
     end
@@ -28,7 +28,7 @@ class Manage::SectionsController < Manage::ApplicationController
     @section = Section.find(params[:id])
     authorize @section
     if @section.update(section_params)
-      redirect_to [:admin, :chapters]
+      redirect_to [:manage, :chapters]
     else
       render :edit
     end
@@ -39,7 +39,7 @@ class Manage::SectionsController < Manage::ApplicationController
     authorize @section
     @section.destroy
 
-    redirect_to [:admin, :chapters]
+    redirect_to [:manage, :chapters]
   end
 
   private

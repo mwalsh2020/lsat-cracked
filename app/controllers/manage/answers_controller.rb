@@ -23,7 +23,7 @@ class Manage::AnswersController < Manage::ApplicationController
     authorize [:manage, @answer]
     @answer.destroy!
 
-    redirect_to [:admin, :questions]
+    redirect_to [:manage, :questions]
   end
 
   private
