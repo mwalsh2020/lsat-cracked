@@ -1,4 +1,4 @@
-class Admin::DashboardsController < ApplicationController
+class Manage::DashboardsController < ApplicationController
   def show
     authorize [:admin, :dashboard]
 

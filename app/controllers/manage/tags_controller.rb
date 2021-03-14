@@ -1,4 +1,4 @@
-class Admin::TagsController < Admin::ApplicationController
+class Manage::TagsController < Manage::ApplicationController
   def index
     @tags = policy_scope([:admin, Tag])
   end

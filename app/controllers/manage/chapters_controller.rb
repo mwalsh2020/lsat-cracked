@@ -1,4 +1,4 @@
-class Admin::ChaptersController < Admin::ApplicationController
+class Manage::ChaptersController < Manage::ApplicationController
   def new
     @chapters = policy_scope(Chapter)
     @chapter = Chapter.new

@@ -1,4 +1,4 @@
-class Admin::UsersController < Admin::ApplicationController
+class Manage::UsersController < Manage::ApplicationController
   def index
     @users = policy_scope([:admin, User])
   end

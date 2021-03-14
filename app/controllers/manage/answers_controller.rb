@@ -1,4 +1,4 @@
-class Admin::AnswersController < Admin::ApplicationController
+class Manage::AnswersController < Manage::ApplicationController
   before_action :set_question, only: %i[new create]
 
   def new

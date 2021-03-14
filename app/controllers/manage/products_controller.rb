@@ -1,4 +1,4 @@
-class Admin::ProductsController < Admin::ApplicationController
+class Manage::ProductsController < Manage::ApplicationController
   def index
     @products = policy_scope([:admin, Product])
   end

@@ -1,4 +1,4 @@
-class Admin::QuestionsController < Admin::ApplicationController
+class Manage::QuestionsController < Manage::ApplicationController
   before_action :set_section, only: [:new, :create, :update, :destroy]
 
   def new
