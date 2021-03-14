@@ -13,7 +13,7 @@
       <li>
         <%= answer.correct? ? "✅" : "🟥" %>
         <%= answer.content.to_plain_text %>
-        <%= link_to "x", manage_answer_path(answer), method: :delete, class: "text-light bg-danger py-1 px-2"  if policy([:admin, answer]).destroy? %>
+        <%= link_to "x", manage_answer_path(answer), method: :delete, class: "text-light bg-danger py-1 px-2"  if policy([:manage, answer]).destroy? %>
       </li>
     <% end %>
     <li><%= link_to "Add answer", new_manage_question_answer_path(question) %></li>

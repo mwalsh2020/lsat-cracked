@@ -1,5 +1,5 @@
 <%# TODO: Update to avoid safe navigation %>
-<% if policy([:admin, :dashboard]).show? %>
+<% if policy([:manage, :dashboard]).show? %>
   <li class="nav-item"><%= link_to "Admin", manage_root_path, class: "nav-link" %></li>
 <% end %>
 

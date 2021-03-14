@@ -1,7 +1,7 @@
 <li>
   <%= tag.slug %>
   <small>
-    <%= link_to "Edit", edit_manage_tag_path(tag), class: "text-muted" if policy([:admin, tag]).edit?  %>
-    <%= link_to "Remove", manage_tag_path(tag), method: :delete, class: "text-danger"  if policy([:admin, tag]).destroy? %>
+    <%= link_to "Edit", edit_manage_tag_path(tag), class: "text-muted" if policy([:manage, tag]).edit?  %>
+    <%= link_to "Remove", manage_tag_path(tag), method: :delete, class: "text-danger"  if policy([:manage, tag]).destroy? %>
   </small>
 </li>
