@@ -9,7 +9,7 @@
   </div>
   <ul class="pl-4">
     <% chapter.sections.each do |section| %>
-      <%= render "admin/sections/list_item", section: section %>
+      <%= render "manage/sections/list_item", section: section %>
     <% end %>
     <li><%= link_to "Add section", new_manage_chapter_section_path(chapter), class: "btn btn-primary btn-sm" %></li>
   </ul>
