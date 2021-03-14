@@ -8,13 +8,13 @@ class QuestionDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    id: Field::Number,
     prompt: RichTextField,
     explanation: RichTextField,
     answers: Field::HasMany,
     tags: Field::HasMany,
     sections: Field::HasMany,
     articles: Field::HasMany,
-    id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -50,8 +50,6 @@ class QuestionDashboard < Administrate::BaseDashboard
     explanation
     answers
     tags
-    sections
-    articles
   ].freeze
 
   # COLLECTION_FILTERS
