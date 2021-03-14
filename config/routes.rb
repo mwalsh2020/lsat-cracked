@@ -10,11 +10,11 @@ Rails.application.routes.draw do  devise_for :users
 
   namespace :admin do
     resources :users
+    resources :questions
+    # resources :quizzes
     # resources :quizable_questions
     # resources :quiz_questions
     # resources :articles
-    # resources :quizzes
-    # resources :questions
     # resources :orders
     # resources :taggings
     # resources :tags
