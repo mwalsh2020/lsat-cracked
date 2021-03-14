@@ -3,13 +3,13 @@ class Manage::AnswersController < Manage::ApplicationController
 
   def new
     @answer = Answer.new
-    authorize [:admin, @answer]
+    authorize [:manage, @answer]
   end
 
   def create
     @answer = Answer.new(answer_params)
     @answer.question = @question
-    authorize [:admin, @answer]
+    authorize [:manage, @answer]
 
     if @answer.save
       redirect_to manage_questions_path
@@ -20,7 +20,7 @@ class Manage::AnswersController < Manage::ApplicationController
 
   def destroy
     @answer = Answer.find(params[:id])
-    authorize [:admin, @answer]
+    authorize [:manage, @answer]
     @answer.destroy!
 
     redirect_to [:admin, :questions]

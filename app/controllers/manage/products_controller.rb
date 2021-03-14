@@ -5,12 +5,12 @@ class Manage::ProductsController < Manage::ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    authorize [:admin, @product]
+    authorize [:manage, @product]
   end
 
   def update
     @product = Product.find(params[:id])
-    authorize [:admin, @product]
+    authorize [:manage, @product]
 
     if @product.update(product_params)
       redirect_to [:admin, :products]

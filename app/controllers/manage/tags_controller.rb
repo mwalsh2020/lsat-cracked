@@ -5,12 +5,12 @@ class Manage::TagsController < Manage::ApplicationController
 
   def new
     @tag = Tag.new
-    authorize [:admin, @tag]
+    authorize [:manage, @tag]
   end
 
   def create
     @tag = Tag.new(tag_params)
-    authorize [:admin, @tag]
+    authorize [:manage, @tag]
 
     if @tag.save
       redirect_to [:admin, :tags]
@@ -21,12 +21,12 @@ class Manage::TagsController < Manage::ApplicationController
 
   def edit
     @tag = Tag.find(params[:id])
-    authorize [:admin, @tag]
+    authorize [:manage, @tag]
   end
 
   def update
     @tag = Tag.find(params[:id])
-    authorize [:admin, @tag]
+    authorize [:manage, @tag]
 
     if @tag.update(tag_params)
       redirect_to [:admin, :tags]
@@ -37,7 +37,7 @@ class Manage::TagsController < Manage::ApplicationController
 
   def destroy
     @tag = Tag.find(params[:id])
-    authorize [:admin, @tag]
+    authorize [:manage, @tag]
 
     @tag.destroy
 

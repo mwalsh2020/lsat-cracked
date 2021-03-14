@@ -5,12 +5,12 @@ class Manage::UsersController < Manage::ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    authorize [:admin, @user]
+    authorize [:manage, @user]
   end
 
   def update
     @user = User.find(params[:id])
-    authorize [:admin, @user]
+    authorize [:manage, @user]
 
     if @user.update(user_params)
       redirect_to [:admin, :users]

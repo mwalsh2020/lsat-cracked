@@ -7,12 +7,12 @@ class Manage::ArticlesController < Manage::ApplicationController
 
   def new
     @article = Article.new
-    authorize [:admin, @article]
+    authorize [:manage, @article]
   end
 
   def create
     @article = Article.new(article_params)
-    authorize [:admin, @article]
+    authorize [:manage, @article]
 
     if @article.save
       redirect_to [:admin, :articles]
@@ -40,7 +40,7 @@ class Manage::ArticlesController < Manage::ApplicationController
 
   def set_article
     @article = Article.find(params[:id])
-    authorize [:admin, @article]
+    authorize [:manage, @article]
   end
 
   def article_params

@@ -1,6 +1,6 @@
 class Manage::DashboardsController < ApplicationController
   def show
-    authorize [:admin, :dashboard]
+    authorize [:manage, :dashboard]
 
     redirect_to [:admin, :chapters]
   end
