@@ -20,7 +20,7 @@ Rails.application.routes.draw do  devise_for :users
     get "/sessions", to: "pages#home"
   end
 
-  namespace :admin do
+  namespace :manage do
     root to: "dashboards#show"
     resources :chapters, only: [:index, :new, :create, :edit, :update, :destroy] do
       resources :sections, only: [:new, :create]
