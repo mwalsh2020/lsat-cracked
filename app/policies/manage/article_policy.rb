@@ -1,4 +1,4 @@
-class Admin::ArticlePolicy < ApplicationPolicy
+class Manage::ArticlePolicy < ApplicationPolicy
   def create?
     user.admin?
   end

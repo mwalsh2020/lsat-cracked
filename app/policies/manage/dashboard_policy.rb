@@ -1,4 +1,4 @@
-class Admin::DashboardPolicy < ApplicationPolicy
+class Manage::DashboardPolicy < ApplicationPolicy
   def show?
     user.admin?
   end

@@ -1,4 +1,4 @@
-class Admin::TagPolicy < ApplicationPolicy
+class Manage::TagPolicy < ApplicationPolicy
   def create?
     user.admin?
   end

@@ -1,4 +1,4 @@
-class Admin::ProductPolicy < ApplicationPolicy
+class Manage::ProductPolicy < ApplicationPolicy
   def update?
     user.admin?
   end
