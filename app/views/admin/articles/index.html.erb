@@ -4,6 +4,6 @@
     <% @articles.each do |article| %>
       <%= render "list_item", article: article %>
     <% end %>
-    <li class="list-group-item"><%= link_to "Add article", new_admin_article_path, class: "btn btn-primary btn-block" %></li>
+    <li class="list-group-item"><%= link_to "Add article", new_manage_article_path, class: "btn btn-primary btn-block" %></li>
   </ul>
 </div>

@@ -4,6 +4,6 @@
     <% @chapters.each do |chapter| %>
       <%= render "list_item", chapter: chapter %>
     <% end %>
-    <li class="list-group-item"><%= link_to "Add chapter", new_admin_chapter_path, class: "btn btn-primary btn-block" %></li>
+    <li class="list-group-item"><%= link_to "Add chapter", new_manage_chapter_path, class: "btn btn-primary btn-block" %></li>
   </ul>
 </div>

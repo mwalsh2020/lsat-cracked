@@ -40,7 +40,7 @@ class Manage::ChaptersController < Manage::ApplicationController
     authorize @chapter
 
     @chapter.destroy
-    redirect_to admin_chapters_path
+    redirect_to manage_chapters_path
   end
 
   private

@@ -12,7 +12,7 @@ class Manage::AnswersController < Manage::ApplicationController
     authorize [:admin, @answer]
 
     if @answer.save
-      redirect_to admin_questions_path
+      redirect_to manage_questions_path
     else
       render :new
     end

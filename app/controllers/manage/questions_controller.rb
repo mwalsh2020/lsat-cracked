@@ -10,7 +10,7 @@ class Manage::QuestionsController < Manage::ApplicationController
     @question = Question.new(question_params)
     authorize @question
     if @question.save
-      redirect_to admin_questions_path(section_id: @section.id)
+      redirect_to manage_questions_path(section_id: @section.id)
     else
       render :new
     end
@@ -26,7 +26,7 @@ class Manage::QuestionsController < Manage::ApplicationController
     authorize @question
 
     if @question.update(question_params)
-      redirect_to admin_questions_path(section_id: @section.id)
+      redirect_to manage_questions_path(section_id: @section.id)
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class Manage::QuestionsController < Manage::ApplicationController
     authorize @question
 
     @question.destroy
-    redirect_to admin_questions_path(section_id: @section.id)
+    redirect_to manage_questions_path(section_id: @section.id)
   end
 
   private

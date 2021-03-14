@@ -1,6 +1,6 @@
 <div class="container pt-5">
   <h1>Questions</h1>
-  <%= link_to "Add question", new_admin_question_path(section_id: @section&.id), class: "btn btn-sm btn-outline-primary" %>
+  <%= link_to "Add question", new_manage_question_path(section_id: @section&.id), class: "btn btn-sm btn-outline-primary" %>
   <hr>
   <u class="mb-3">
     <% @questions.each do |question| %>
