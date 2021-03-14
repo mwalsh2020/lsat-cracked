@@ -1,6 +1,6 @@
 class Manage::UsersController < Manage::ApplicationController
   def index
-    @users = policy_scope([:admin, User])
+    @users = policy_scope([:manage, User])
   end
 
   def edit

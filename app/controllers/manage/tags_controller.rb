@@ -1,6 +1,6 @@
 class Manage::TagsController < Manage::ApplicationController
   def index
-    @tags = policy_scope([:admin, Tag])
+    @tags = policy_scope([:manage, Tag])
   end
 
   def new

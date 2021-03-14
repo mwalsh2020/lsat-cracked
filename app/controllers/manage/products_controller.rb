@@ -1,6 +1,6 @@
 class Manage::ProductsController < Manage::ApplicationController
   def index
-    @products = policy_scope([:admin, Product])
+    @products = policy_scope([:manage, Product])
   end
 
   def edit

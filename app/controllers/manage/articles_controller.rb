@@ -2,7 +2,7 @@ class Manage::ArticlesController < Manage::ApplicationController
   before_action :set_article, only: %i[edit update destroy]
 
   def index
-    @articles = policy_scope([:admin, Article])
+    @articles = policy_scope([:manage, Article])
   end
 
   def new
