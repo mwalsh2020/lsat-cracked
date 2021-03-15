@@ -6,22 +6,23 @@ Rails.application.routes.draw do  devise_for :users
   require "sidekiq/web"
   authenticate :user, ->(user) { user.admin? } do
     mount Sidekiq::Web => '/sidekiq'
-  end
 
-  namespace :admin do
-    resources :answers, except: %i[new create]
-    resources :articles
-    resources :chapters
-    resources :products
-    resources :questions do
-      resources :answers, only: %i[new create]
+    namespace :admin do
+      resources :answers, except: %i[new create]
+      resources :articles
+      resources :chapters
+      resources :products
+      resources :questions do
+        resources :answers, only: %i[new create]
+      end
+      resources :sections
+      resources :tags
+      resources :users
+
+      root to: "chapters#index"
     end
-    resources :sections
-    resources :tags
-    resources :users
-
-    root to: "chapters#index"
   end
+
 
   resources :coaching_requests, only: [:new, :create]
   resources :mail_leads, only: [:create]
