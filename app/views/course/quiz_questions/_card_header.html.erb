@@ -10,7 +10,7 @@
     <% else %>
       <span class="badge badge-danger mr-2">Wrong</span>
     <% end %>
-    <%= quiz_question.question.prompt.to_plain_text.truncate(60) %>
+    <%= quiz_question.question.prompt.to_plain_text %>
   </div>
 
   <div>
