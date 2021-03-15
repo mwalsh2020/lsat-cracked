@@ -1,6 +1,6 @@
 <%# TODO: Update to avoid safe navigation %>
-<% if policy([:admin, :dashboard]).show? %>
-  <li class="nav-item"><%= link_to "Admin", admin_root_path, class: "nav-link" %></li>
+<% if policy([:manage, :dashboard]).show? %>
+  <li class="nav-item"><%= link_to "Admin", manage_root_path, class: "nav-link" %></li>
 <% end %>
 
 <% if home_links.present? %>

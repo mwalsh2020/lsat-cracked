@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Email</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.each do |user| %>
+      <tr>
+        <td>
+          <%= user.email %>
+          <small>
+            (
+            <%= link_to "Edit", edit_manage_user_path(user), class: "text-muted" %>
+            )
+          </small>
+        </td>
+        <td><%= render "manage/users/badges", user: user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
