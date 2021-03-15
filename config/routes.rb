@@ -11,8 +11,10 @@ Rails.application.routes.draw do  devise_for :users
   namespace :admin do
     resources :chapters
     resources :sections
-    resources :questions
-    resources :answers, except: :index
+    resources :questions do
+      resources :answers, only: %i[new create]
+    end
+    resources :answers, except: %i[new create]
     resources :tags
     resources :users
     # resources :quizzes

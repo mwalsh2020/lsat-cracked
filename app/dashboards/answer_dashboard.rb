@@ -12,8 +12,6 @@ class AnswerDashboard < Administrate::BaseDashboard
     content: RichTextField,
     id: Field::Number,
     correct: Field::Boolean,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -33,15 +31,12 @@ class AnswerDashboard < Administrate::BaseDashboard
     question
     content
     correct
-    created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    question
     content
     correct
   ].freeze

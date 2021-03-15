@@ -34,8 +34,8 @@ class QuestionDashboard < Administrate::BaseDashboard
     id
     prompt
     explanation
-    answers
     tags
+    answers
   ].freeze
 
   # FORM_ATTRIBUTES

@@ -8,14 +8,11 @@ class SectionDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    quizzes: Field::HasMany,
+    id: Field::Number,
+    title: Field::String,
     questions: Field::HasMany,
     content: RichTextField,
     chapter: Field::BelongsTo,
-    id: Field::Number,
-    title: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
     position: Field::Number,
   }.freeze
 
@@ -32,15 +29,12 @@ class SectionDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    quizzes
-    questions
-    content
-    chapter
     id
     title
-    created_at
-    updated_at
     position
+    chapter
+    content
+    questions
   ].freeze
 
   # FORM_ATTRIBUTES
