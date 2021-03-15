@@ -9,9 +9,8 @@ class SectionDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     quizzes: Field::HasMany,
-    quizable_questions: Field::HasMany,
     questions: Field::HasMany,
-    rich_text_content: Field::HasOne,
+    content: RichTextField,
     chapter: Field::BelongsTo,
     id: Field::Number,
     title: Field::String,
@@ -26,19 +25,16 @@ class SectionDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    quizzes
-    quizable_questions
-    questions
-    rich_text_content
+    chapter
+    title
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     quizzes
-    quizable_questions
     questions
-    rich_text_content
+    content
     chapter
     id
     title
@@ -51,13 +47,11 @@ class SectionDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    quizzes
-    quizable_questions
-    questions
-    rich_text_content
     chapter
-    title
     position
+    title
+    content
+    questions
   ].freeze
 
   # COLLECTION_FILTERS
@@ -75,7 +69,7 @@ class SectionDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how sections are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(section)
-  #   "Section ##{section.id}"
-  # end
+  def display_resource(section)
+    "#{section.chapter.position}.#{section.position}. #{section.title}"
+  end
 end

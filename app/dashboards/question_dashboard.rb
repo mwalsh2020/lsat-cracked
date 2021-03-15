@@ -10,13 +10,12 @@ class QuestionDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     prompt: RichTextField,
+    rich_text_prompt: Field::HasOne,
     explanation: RichTextField,
     answers: Field::HasMany,
     tags: Field::HasMany,
     sections: Field::HasMany,
     articles: Field::HasMany,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -26,20 +25,17 @@ class QuestionDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     prompt
-    answers
     tags
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
+    id
+    prompt
+    explanation
     answers
     tags
-    sections
-    articles
-    id
-    created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -48,7 +44,6 @@ class QuestionDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     prompt
     explanation
-    answers
     tags
   ].freeze
 
@@ -67,7 +62,7 @@ class QuestionDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how questions are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(question)
-  #   "Question ##{question.id}"
-  # end
+  def display_resource(question)
+    question.prompt.to_plain_text
+  end
 end

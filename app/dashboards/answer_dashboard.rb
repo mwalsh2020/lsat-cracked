@@ -9,8 +9,7 @@ class AnswerDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     question: Field::BelongsTo,
-    rich_text_content: Field::HasOne,
-    quiz_questions: Field::HasMany,
+    content: RichTextField,
     id: Field::Number,
     correct: Field::Boolean,
     created_at: Field::DateTime,
@@ -23,19 +22,16 @@ class AnswerDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    question
-    rich_text_content
-    quiz_questions
-    id
+    content
+    correct
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    question
-    rich_text_content
-    quiz_questions
     id
+    question
+    content
     correct
     created_at
     updated_at
@@ -46,8 +42,7 @@ class AnswerDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     question
-    rich_text_content
-    quiz_questions
+    content
     correct
   ].freeze
 
@@ -66,7 +61,7 @@ class AnswerDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how answers are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(answer)
-  #   "Answer ##{answer.id}"
-  # end
+  def display_resource(answer)
+    answer.content.to_plain_text
+  end
 end

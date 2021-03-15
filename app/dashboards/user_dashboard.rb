@@ -15,7 +15,6 @@ class UserDashboard < Administrate::BaseDashboard
     id: Field::Number,
     email: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
     admin: Field::Boolean,
     paying: Field::Boolean,
     prep_plus: Field::Boolean,
@@ -47,7 +46,6 @@ class UserDashboard < Administrate::BaseDashboard
     completed_sections
     email
     created_at
-    updated_at
     admin
     paying
     prep_plus

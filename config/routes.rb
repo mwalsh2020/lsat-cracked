@@ -9,21 +9,21 @@ Rails.application.routes.draw do  devise_for :users
   end
 
   namespace :admin do
-    resources :users
+    resources :chapters
+    resources :sections
     resources :questions
+    resources :answers, except: :index
+    resources :tags
+    resources :users
     # resources :quizzes
     # resources :quizable_questions
     # resources :quiz_questions
     # resources :articles
     # resources :orders
     # resources :taggings
-    # resources :tags
-    # resources :answers
-    # resources :chapters
     # resources :products
-    # resources :sections
 
-    root to: "users#index"
+    root to: "chapters#index"
   end
 
   resources :coaching_requests, only: [:new, :create]
