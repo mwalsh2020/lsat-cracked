@@ -29,6 +29,12 @@ $course-font-size: 1.25rem;
   border-right: 1px solid darken($light-gray, 5%);
   max-width: 25%;
   position: relative;
+  opacity: 0.2;
+  transition: opacity 0.25s;
+
+  &:hover {
+    opacity: 1;
+  }
 
   li.active {
     list-style: disclosure-closed;
@@ -59,20 +65,6 @@ $course-font-size: 1.25rem;
 
   h2 {
     font-size: 1.25rem;
-  }
-
-  &:hover &-overlay {
-    display: none;
-  }
-
-  &-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $gray;
-    opacity: 0.3;
   }
 }
 
