@@ -4,7 +4,7 @@
       <% if section_status.completed? %>
         <%= render "course/sections/marker", section_status: section_status  %>
       <% end %>
-      <%= section_status.title %>
+      <span><%= section_status.title %></span>
     </div>
   </li>
 <% else %>
