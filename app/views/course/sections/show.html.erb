@@ -4,7 +4,7 @@
   <% if @quiz_session && @quiz_session.complete? %>
   <% quiz_score = number_to_percentage(@quiz_session.correct_answers_ratio * 100, precision: 0) %>
   <p>You scored <%= quiz_score %> on this section's quiz.</p>
-  <%= link_to "See Quiz Report", course_section_path(@section, anchor: "quiz"), class: "btn btn-primary" %>
+  <%= link_to "See Quiz Report", course_section_path(@section, anchor: "quiz"), class: "btn btn-primary mb-3" %>
   <% end %>
   <div class="course-content"><%= @section.content %></div>
 </div>
