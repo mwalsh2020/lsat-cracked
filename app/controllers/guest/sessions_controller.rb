@@ -2,9 +2,10 @@ class Guest::SessionsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def create
-    @quizable = Article.last
+    @quizable = Article.where(intro: true).first
     @quiz = QuizBuilder.new(user: current_user, quizable: @quizable).build
     @quiz_session = Quiz::Session.new(quiz_session_params.merge(quiz: @quiz))
+    @mail_lead = MailLead.new
 
     authorize [:guest, @quiz_session]
     render :show

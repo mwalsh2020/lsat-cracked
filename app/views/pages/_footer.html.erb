@@ -1,6 +1,7 @@
 <footer class="main-content-text">
   <div class="footer-logo"><%= render "shared/logo" %></div>
   <p class="border-top mt-3 pt-3 w-100 text-center">
-    © 2020 lsatcracked.com
+    <% current_year = Time.new.year %>
+    © <%= current_year %> lsatcracked.com
   </p>
 </footer>
