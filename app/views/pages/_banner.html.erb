@@ -21,7 +21,7 @@
               </div>
             <% else %>
               <p class="d-none d-md-block">Head over to your course dashboard to keep learning.</p>
-              <%= link_to "My Dashboard", course_root_path(current_user), class: "btn btn-primary btn-lg banner-cta mb-4" %>
+              <%= link_to "My Dashboard", course_root_path(current_user), class: "btn btn-primary btn-lg banner-cta mb-4", style: "z-index: 10" %>
             <% end %>
           </div>
         </div>
