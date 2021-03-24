@@ -8,8 +8,6 @@ class Quiz < ApplicationRecord
 
   accepts_nested_attributes_for :quiz_questions
 
-  validates :questions, presence: true
-
   scope :complete, -> { where(complete: true) }
   scope :pending, -> { where.not(complete: true) }
 
