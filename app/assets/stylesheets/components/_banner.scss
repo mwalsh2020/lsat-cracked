@@ -93,10 +93,10 @@ $line-color: $primary;
   }
 
   &-matt {
-    margin: 0px 5px 0px 5px;
+    margin: 20px 5px 0;
     
     @media (max-width: 1100px) {
-      margin-bottom: 16px;
+      margin: 32px 5px;
     }
   }
 
