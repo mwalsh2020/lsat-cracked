@@ -93,7 +93,15 @@ $line-color: $primary;
   }
 
   &-matt {
-    margin: 20px 5px 0;
+    margin: 24px 5px 0;
+
+    &-image {
+      margin: 0 16px;
+      border-radius: 50%;
+      border: 0.25rem solid white;
+      object-position: center;
+      object-fit: cover;
+    }
     
     @media (max-width: 1100px) {
       margin: 32px 5px;
