@@ -1,6 +1,6 @@
 <%= simple_form_for mail_lead do |f| %>
   <div class="input-group is-invalid">
-    <%= f.text_field :email, label: "Stay in touch", class: "form-control #{params[:invalid_mail].present? ? "is-invalid" : ""}", placeholder: "Enter Your Email" %>
+    <%= f.text_field :email, label: "Stay in touch", class: "form-control #{params[:invalid_mail].present? ? "is-invalid" : ""}", placeholder: "Email" %>
     <div class="input-group-append">
       <%= f.button :submit, "Create a Free Account", class: current_page?(root_path) ? "btn btn-outline-primary text-white" : "btn btn-primary" %>
     </div>
