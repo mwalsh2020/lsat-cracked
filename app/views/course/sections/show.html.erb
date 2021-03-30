@@ -18,9 +18,11 @@
   </div>
 <% end %>
 <div class="d-flex justify-content-center my-5">
-  <%= link_to "<<", course_section_path(@section), class: "btn btn-outline-primary" %>
-  <%# fix link to next section %>
+  <% if @section.previous.present? %>
+    <%= link_to "<<", course_section_path(@section.previous), class: "btn btn-outline-primary" %>
+  <% end %>
   <%= link_to "Dashboard", course_root_path, class: "btn btn-primary mx-3" %>
-   <%= link_to ">>", course_section_path(@section), class: "btn btn-outline-primary" %>
-   <%# fix link to previous section %>
+  <% if @section.next.present? %>
+    <%= link_to ">>", course_section_path(@section.next), class: "btn btn-outline-primary" %>
+  <% end %>
 </div>
