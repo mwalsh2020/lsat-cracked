@@ -17,3 +17,10 @@
     <% end %>
   </div>
 <% end %>
+<div class="d-flex justify-content-center my-5">
+  <%= link_to "<<", course_section_path(@section), class: "btn btn-outline-primary" %>
+  <%# fix link to next section %>
+  <%= link_to "Dashboard", course_root_path, class: "btn btn-primary mx-3" %>
+   <%= link_to ">>", course_section_path(@section), class: "btn btn-outline-primary" %>
+   <%# fix link to previous section %>
+</div>
