@@ -5,12 +5,14 @@ class QuizQuestion::PerformanceQuery
     @quiz_questions = quiz_questions
   end
 
+  def tag_performances
+    data_attributes.map {|attrs| Tag::Performance.new(attrs)}.force
+  end
+
   private
 
-  def resolve
-    total_data.map {|data|
-      Tag::Performance.new data.attributes.merge(correct_count: correct_data[data.id])
-    }
+  def data_attributes
+    total_data.lazy.map {|data| data.attributes.merge(correct_count: correct_data[data.id]) }
   end
 
   def relation
