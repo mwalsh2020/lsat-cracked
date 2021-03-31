@@ -1,0 +1,7 @@
+<% if section.previous.present? %>
+  <%= link_to "<< Prev", course_section_path(section.previous), class: "btn btn-outline-primary tooltips", title: section.previous.title, data: { toggle: "tooltip", placement: "bottom" } %>
+<% end %>
+<%= link_to "Dashboard", course_root_path, class: "btn btn-outline-primary mx-3" %>
+<% if section.next.present? %>
+  <%= link_to "Next >>", course_section_path(section.next), class: "btn btn-outline-primary tooltips", title: section.next.title, data: { toggle: 'tooltip', placement: 'bottom' } %>
+<% end %>
