@@ -7,6 +7,6 @@ class Tag::Performance
   end
 
   def value
-    Rational(correct_count, total_count).to_f
+    Rational(correct_count.to_i, total_count.to_i).to_f
   end
 end
