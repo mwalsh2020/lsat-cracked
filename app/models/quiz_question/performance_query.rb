@@ -5,8 +5,8 @@ class QuizQuestion::PerformanceQuery
     @quiz_questions = quiz_questions
   end
 
-  def tag_performances
-    data_attributes.map {|attrs| Tag::Performance.new(attrs)}.force
+  def tags
+    @tags ||= data_attributes.map {|attrs| Tag::Performance.new(attrs)}.force
   end
 
   private
