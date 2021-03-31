@@ -1,13 +1,13 @@
 require "rails_helper"
 
-RSpec.describe Query::QuestionsTagData do
+RSpec.describe Query::QuizQuestionsTagData do
   describe ".new" do
     it "raises error unless given a question relation" do
-      questions = Question.all
+      quiz_questions = QuizQuestion.none
 
       expect { described_class.new }.to raise_error(ArgumentError)
       expect { described_class.new([]) }.to raise_error(ArgumentError)
-      expect { described_class.new(questions) }.to_not raise_error
+      expect { described_class.new(quiz_questions) }.to_not raise_error
     end
   end
 end
