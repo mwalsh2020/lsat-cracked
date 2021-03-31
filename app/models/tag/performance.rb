@@ -2,8 +2,8 @@ class Tag::Performance
   include ActiveModel::Model
   attr_accessor :id, :slug, :total_count, :correct_count
 
-  def tag
-    @tag ||= Tag.find(id)
+  def object
+    @object ||= Tag.find(id)
   end
 
   def value
