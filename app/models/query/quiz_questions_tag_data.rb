@@ -1,14 +1,4 @@
 class Query::QuizQuestionsTagData
-  class TagData < OpenStruct
-    def tag
-      @tag ||= Tag.find(id)
-    end
-
-    def performance
-      Rational(correct_count, total_count).to_f
-    end
-  end
-
   def initialize(quiz_questions)
     raise ArgumentError, "an ActiveRecord Relation must be passed" unless quiz_questions.is_a?(ActiveRecord::Relation)
 
@@ -17,7 +7,7 @@ class Query::QuizQuestionsTagData
 
   def resolve
     total_data.map {|data|
-      TagData.new data.attributes.merge(correct_count: correct_data[data.id])
+      Tag::Data.new data.attributes.merge(correct_count: correct_data[data.id])
     }
   end
 
@@ -32,6 +22,10 @@ class Query::QuizQuestionsTagData
   end
 
   def total_data
-    @total_data ||= relation.select("tags.*, count(quiz_questions.id) AS total_count")
+    @total_data ||= relation.select(
+      "tags.id",
+      "tags.slug",
+      "count(quiz_questions.id) AS total_count",
+    )
   end
 end
