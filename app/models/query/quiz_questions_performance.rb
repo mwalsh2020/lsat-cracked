@@ -5,13 +5,13 @@ class Query::QuizQuestionsPerformance
     @quiz_questions = quiz_questions
   end
 
+  private
+
   def resolve
     total_data.map {|data|
-      Tag::Data.new data.attributes.merge(correct_count: correct_data[data.id])
+      Tag::Performance.new data.attributes.merge(correct_count: correct_data[data.id])
     }
   end
-
-  private
 
   def relation
     @relation ||= @quiz_questions.joins(:tags, :answer).group("tags.id")
