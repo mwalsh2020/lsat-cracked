@@ -1,4 +1,4 @@
-class Query::QuizQuestionsPerformance
+class QuizQuestion::PerformanceQuery
   def initialize(quiz_questions)
     raise ArgumentError, "an ActiveRecord Relation must be passed" unless quiz_questions.is_a?(ActiveRecord::Relation)
 

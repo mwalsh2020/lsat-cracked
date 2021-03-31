@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Query::QuizQuestionsTagData do
+RSpec.describe QuizQuestion::PerformanceQuery do
   describe ".new" do
     it "raises error unless given a question relation" do
       quiz_questions = QuizQuestion.none
