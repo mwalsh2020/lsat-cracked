@@ -36,6 +36,9 @@ gem "stripe"
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 
+# CMS
+gem "administrate", "0.15"
+
 group :development, :test do
   gem "pry-byebug"
   gem "rspec-rails", "~> 4.0.1"

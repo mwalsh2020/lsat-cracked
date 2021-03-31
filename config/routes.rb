@@ -7,7 +7,23 @@ Rails.application.routes.draw do  devise_for :users
   require "sidekiq/web"
   authenticate :user, ->(user) { user.admin? } do
     mount Sidekiq::Web => '/sidekiq'
+
+    namespace :admin do
+      resources :answers, except: %i[new create]
+      resources :articles
+      resources :chapters
+      resources :products
+      resources :questions do
+        resources :answers, only: %i[new create]
+      end
+      resources :sections
+      resources :tags
+      resources :users
+
+      root to: "chapters#index"
+    end
   end
+
 
   resources :coaching_requests, only: [:new, :create]
   resources :mail_leads, only: [:create]
@@ -20,7 +36,7 @@ Rails.application.routes.draw do  devise_for :users
     resources :sessions, only: :create
   end
 
-  namespace :admin do
+  namespace :manage do
     root to: "dashboards#show"
     resources :chapters, only: [:index, :new, :create, :edit, :update, :destroy] do
       resources :sections, only: [:new, :create]

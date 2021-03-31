@@ -1,4 +1,5 @@
 import TrixEmbedController from "../controllers/trix_embed_controller"
+import "trix/dist/trix.css"
 
 const embedBtnSnippet = (element) => {
   return `

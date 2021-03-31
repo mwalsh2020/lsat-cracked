@@ -6,6 +6,8 @@ class Tag < ApplicationRecord
 
   before_save :sanitize_slug, if: :slug_will_change!
 
+  delegate :count, to: :questions, prefix: :questions
+
   def to_label
     slug
   end

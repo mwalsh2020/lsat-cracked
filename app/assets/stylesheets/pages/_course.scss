@@ -27,13 +27,23 @@ $course-font-size: 1.25rem;
 .course-sidebar {
   padding: 1.5rem 2rem;
   border-right: 1px solid darken($light-gray, 5%);
-  max-width: 32%;
+  max-width: 25%;
+  position: relative;
+  opacity: 0.2;
+  transition: opacity 0.25s;
+
+  &:hover {
+    opacity: 1;
+  }
 
   li.active {
     list-style: disclosure-closed;
-    color: $primary;
-    border-left: 5px solid $bordeau;
-    padding-left: 5px;
+  }
+
+  li.active span {
+    color: $light-gray;
+    background-color: $bordeau;
+    padding: 0 5px;
   }
 
   .actions {
@@ -57,6 +67,12 @@ $course-font-size: 1.25rem;
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .course-sidebar {
+    max-width: 35%;
   }
 }

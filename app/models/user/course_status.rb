@@ -18,7 +18,7 @@ class User::CourseStatus
   end
 
   def chapter_statuses
-    Chapter.all.map { |chapter| ChapterStatus.new(chapter: chapter, section_statuses: section_statuses_for(chapter)) }
+    Chapter.order(position: :asc).map { |chapter| ChapterStatus.new(chapter: chapter, section_statuses: section_statuses_for(chapter)) }
   end
 
   def section_statuses
