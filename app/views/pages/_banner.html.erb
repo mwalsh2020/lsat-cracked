@@ -15,13 +15,13 @@
           </div>
           <div class="d-flex flex-column">
             <% if @current_user.nil? %>
-              <%= link_to "Skills Assessment Quiz", root_path(anchor: "intro-quiz"), class: "btn btn-primary btn-lg banner-cta mb-4", style: "z-index: 20" %>
+              <%= link_to "Take Skill Assessment", root_path(anchor: "intro-quiz"), class: "btn btn-primary btn-lg banner-cta mb-4", style: "z-index: 20" %>
               <div class="banner-leads-form">
                 <%= render "mail_leads/form", mail_lead: @mail_lead %>
               </div>
             <% else %>
               <p class="d-none d-md-block">Head over to your course dashboard to keep learning.</p>
-              <%= link_to "My Dashboard", course_root_path(current_user), class: "btn btn-primary btn-lg banner-cta mb-4", style: "z-index: 10" %>
+              <%= link_to "My Dashboard", course_root_path, class: "btn btn-primary btn-lg banner-cta mb-4", style: "z-index: 10" %>
             <% end %>
           </div>
         </div>
