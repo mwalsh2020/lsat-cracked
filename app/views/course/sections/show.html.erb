@@ -8,21 +8,18 @@
   <% end %>
   <div class="course-content"><%= @section.content %></div>
 </div>
+<div class="d-flex justify-content-center my-5">
+  <%= render "course/sections/nav_footer", section: @section %>
+</div>
 <% if @quiz_session.present? %>
   <div class="shadow-sm course-page" id="quiz">
     <% if @quiz_session.complete? %>
       <%= render "course/quiz_sessions/report", quiz_session: @quiz_session %>
+      <div class="d-flex justify-content-center mt-5">
+        <%= render "course/sections/nav_footer", section: @section %>
+      </div>
     <% else %>
       <%= render "course/quiz_sessions/display", quiz_session: @quiz_session %>
     <% end %>
   </div>
 <% end %>
-<div class="d-flex justify-content-center my-5">
-  <% if @section.previous.present? %>
-    <%= link_to "<<", course_section_path(@section.previous), class: "btn btn-outline-primary" %>
-  <% end %>
-  <%= link_to "Dashboard", course_root_path, class: "btn btn-primary mx-3" %>
-  <% if @section.next.present? %>
-    <%= link_to ">>", course_section_path(@section.next), class: "btn btn-outline-primary" %>
-  <% end %>
-</div>
