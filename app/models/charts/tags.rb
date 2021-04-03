@@ -46,6 +46,10 @@ class Charts::Tags
         categories: categories,
         max: full_angle,
       },
+      tooltip: {
+        valueDecimals: 0,
+        valueSuffix: "%",
+      },
       yAxis: {
         max: 100,
         labels: {
