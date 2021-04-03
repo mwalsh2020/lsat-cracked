@@ -1,8 +1,30 @@
 class User::CourseStatus
+  class NextInLine
+    def initialize(course_status)
+      @course_status = course_status
+    end
+
+    def next_from_top
+      @course_status.missing_sections.order("chapters.position ASC, sections.position ASC").first
+    end
+
+    def last_section
+      user.quizzes.where(quizable_type: "Section").order(created_at: :desc).first
+    end
+
+    def next_from_last_section
+      last_section.quizable.next
+    end
+  end
+
   attr_reader :user
 
   def initialize(user)
     @user = user
+  end
+
+  def next_in_line
+    @next_in_line ||= NextInLine.new(self)
   end
 
   def completion_rate
