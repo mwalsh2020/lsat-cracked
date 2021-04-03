@@ -5,15 +5,11 @@ class QuizQuestion::PerformanceQuery
     @quiz_questions = quiz_questions
   end
 
-  def tags_attributes
+  def result
     present_tags_attributes + missing_tags_attributes
   end
 
-  def charts
-    OpenStruct.new(
-      tags: Charts::Tags.new(tags)
-    )
-  end
+  private
 
   def missing_tags
     Tag.where.not(id: Tag.joins(:questions).where(questions: {quiz_questions: @quiz_questions}).distinct)
