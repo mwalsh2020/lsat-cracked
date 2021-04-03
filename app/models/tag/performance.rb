@@ -7,6 +7,10 @@ class Tag::Performance
   end
 
   def value
-    Rational(correct_count.to_i, total_count.to_i).to_f
+    Rational(correct_count.to_i, denominator).to_f
+  end
+
+  def denominator
+    correct_count.to_i.zero? ? 1 : total_count.to_i
   end
 end

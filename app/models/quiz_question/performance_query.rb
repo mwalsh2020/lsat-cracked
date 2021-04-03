@@ -6,7 +6,7 @@ class QuizQuestion::PerformanceQuery
   end
 
   def tags
-    @tags ||= data_attributes.map {|attrs| Tag::Performance.new(attrs)}.force
+    @tags ||= (data_attributes.map {|attrs| Tag::Performance.new(attrs)}.force + missing_tags)
   end
 
   def charts
@@ -16,6 +16,10 @@ class QuizQuestion::PerformanceQuery
   end
 
   private
+
+  def missing_tags
+    Tag.where.not(id: Tag.joins(:questions).where(questions: {quiz_questions: @quiz_questions}).distinct).pluck(:id, :slug).map {|id, slug| Tag::Performance.new(slug: slug, id: id)}
+  end
 
   def data_attributes
     total_data.lazy.map {|data| data.attributes.merge(correct_count: correct_data[data.id]) }
