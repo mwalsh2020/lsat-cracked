@@ -39,7 +39,7 @@ class Charts::Tags
         text: "Skills Performance"
       },
       subtitle: {
-        text: "Based on you last quizes"
+        text: "Based on your quiz answers"
       },
       xAxis: {
         tickInterval: interval,
