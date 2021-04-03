@@ -32,7 +32,8 @@ class Charts::Tags
   def params
     {
       chart: {
-        polar: true
+        polar: true,
+        backgroundColor: "transparent"
       },
       legend: false,
       title: {
