@@ -15,7 +15,7 @@
   </li>
 </ul>
 
-<div data-controller="charts" data-params="<%= Charts::Skills.new.params.to_json %>">
+<div data-controller="charts" data-params="<%= @performance.charts.tags.to_json %>">
   <figure class="highcharts-figure">
       <div data-charts-target="graph"></div>
       <p class="highcharts-description">

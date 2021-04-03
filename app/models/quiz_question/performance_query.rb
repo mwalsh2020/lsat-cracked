@@ -9,6 +9,12 @@ class QuizQuestion::PerformanceQuery
     @tags ||= data_attributes.map {|attrs| Tag::Performance.new(attrs)}.force
   end
 
+  def charts
+    OpenStruct.new(
+      tags: Charts::Tags.new(tags)
+    )
+  end
+
   private
 
   def data_attributes

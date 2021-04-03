@@ -1,6 +1,6 @@
-class Charts::Skills
-  def initialize
-
+class Charts::Tags
+  def initialize(tags)
+    @tags = tags
   end
 
   def tag_slugs
@@ -21,6 +21,10 @@ class Charts::Skills
 
   def full_angle
     interval * tags_count
+  end
+
+  def to_json
+    params.to_json
   end
 
   def params
