@@ -1,10 +1,12 @@
 class Charts::Tags
-  def initialize(tags)
-    @tags = tags
+  attr_reader :tags_performances
+
+  def initialize(tags_performances)
+    @tags_performances = tags_performances
   end
 
   def tag_slugs
-    @tag_slugs ||= Tag.pluck(:slug)
+    tags_performances.map(&:slug)
   end
 
   def tags_count
@@ -57,7 +59,7 @@ class Charts::Tags
       },
       series: [{
         type: "area",
-        data: Array.new(tags_count) { rand(7..10) * rand(7..10) },
+        data: tags_performances.map { |performance| performance.value * 100 },
         color: "rgb(200, 100, 100)"
       }]
     }
