@@ -63,6 +63,7 @@ class Charts::Tags
       },
       series: [{
         type: "area",
+        name: "Performance",
         data: tags_performances.map { |performance| performance.value * 100 },
         color: "rgb(200, 100, 100)"
       }]
