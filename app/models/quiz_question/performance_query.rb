@@ -30,7 +30,7 @@ class QuizQuestion::PerformanceQuery
   def correct_count_query
     <<~SQL
       SELECT COUNT(*)
-      FROM quiz_questions
+      FROM (#{@quiz_questions.to_sql}) quiz_questions
         INNER JOIN questions ON questions.id = quiz_questions.question_id
         INNER JOIN taggings ON taggings.taggable_type = 'Question' AND taggings.taggable_id = questions.id
         INNER JOIN answers ON answers.id = quiz_questions.answer_id
