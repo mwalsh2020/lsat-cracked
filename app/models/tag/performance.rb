@@ -3,12 +3,16 @@ class Tag::Performance
   include ActiveModel::Model
   attr_accessor :id, :slug, :total_count, :correct_count
 
-  def object
-    @object ||= Tag.find(id)
+  def tag
+    @tag ||= Tag.find(id)
   end
 
   def value
     Rational(correct_count.to_i, denominator).to_f
+  end
+
+  def good?
+    value > 0.7
   end
 
   def denominator

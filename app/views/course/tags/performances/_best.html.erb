@@ -1,0 +1,7 @@
+You scored <%= number_to_percentage(best.value * 100, precision: 0) %>
+on questions relating to <%= render best.tag, class: best.good? ? "success" : "info" %>.
+<% if best.good? %>
+  <strong>Congratulations on your performance!</strong>
+<% else %>
+  <span>That's not yet great, but <strong>we can improve it</strong> with some dedication.</span>
+<% end %>

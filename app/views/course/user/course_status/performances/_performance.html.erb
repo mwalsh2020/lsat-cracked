@@ -1,2 +1,8 @@
+<h2 class="h4">General Performance</h2>
 <div data-controller="charts" data-params="<%= performance.tags.chart.to_json %>"></div>
-<%= performance.tags.min.slug %>
+<hr>
+
+<p>
+  <%= render object: performance.tags.max, partial: "course/tags/performances/best" %>
+  <%= render object: performance.tags.min, partial: "course/tags/performances/worst" %>
+</p>
