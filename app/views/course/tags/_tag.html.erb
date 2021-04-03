@@ -1,1 +1,3 @@
-<span class="badge badge-secondary"><%= tag.slug %></span>
+<% badge_class = local_assigns[:class] || "secondary" %>
+
+<span class="badge badge-<%= badge_class %>"><%= tag.slug %></span>
