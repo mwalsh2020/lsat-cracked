@@ -7,8 +7,8 @@ class User::CourseStatus::Performance
     @tags ||= Tag::PerformanceCollection.new(performance_data)
   end
 
-  def missing_tags
-    @missing_tags ||= Tag.count - user.tags.count
+  def missing_tags_count
+    @missing_tags_count ||= Tag.count - course_status.user.tags.count
   end
 
   private
