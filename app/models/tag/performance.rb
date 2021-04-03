@@ -1,4 +1,5 @@
 class Tag::Performance
+  include Comparable
   include ActiveModel::Model
   attr_accessor :id, :slug, :total_count, :correct_count
 
@@ -12,5 +13,9 @@ class Tag::Performance
 
   def denominator
     correct_count.to_i.zero? ? 1 : total_count.to_i
+  end
+
+  def <=>(other)
+    value <=> other.value
   end
 end
