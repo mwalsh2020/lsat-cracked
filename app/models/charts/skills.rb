@@ -16,7 +16,11 @@ class Charts::Skills
   end
 
   def interval
-    360 / tags_count
+    360 / (tags_count + 1)
+  end
+
+  def full_angle
+    interval * tags_count
   end
 
   def params
@@ -25,40 +29,31 @@ class Charts::Skills
         polar: true
       },
       title: {
-        text: 'Highcharts Polar Chart'
+        text: "Skills Performance"
       },
       subtitle: {
-        text: 'Also known as Radar Chart'
-      },
-      pane: {
-        startAngle: 0,
-        endAngle: 360
+        text: "Based on you last quizes"
       },
       xAxis: {
-        tickInterval: 45,
-        min: 0,
-        max: 360,
-        labels: {
-          format: '{value}°'
-        },
-        categories: categories
+        tickInterval: interval,
+        categories: categories,
+        max: full_angle,
       },
       yAxis: {
-        min: 0
+        max: 100,
+        labels: {
+          format: '{value}%'
+        }
       },
       plotOptions: {
         series: {
-          pointStart: 0,
-          pointInterval: 45
-        },
-        column: {
-          pointPadding: 0,
-          groupPadding: 0
+          pointInterval: interval
         }
       },
       series: [{
-        type: 'area',
-        data: [8, 7, 6, 5, 4, 3, 2, 1],
+        type: "area",
+        name: "",
+        data: Array.new(tags_count) { rand(7..10) * rand(7..10) },
       }]
     }
   end
