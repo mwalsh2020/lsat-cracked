@@ -1,3 +1,5 @@
+require "faker"
+
 puts "Creating users..."
 user_params = [
   { email: "user@user.com",   password: "123456", paying: true,  admin: false },
@@ -37,3 +39,11 @@ Product.create!(
   price: 6295,
   full_price: 8550,
 )
+
+puts "Creating extra random seeds..."
+tags = 8.times.map do
+  Tag.create!(slug: Faker::Games::DnD.unique.language.parameterize)
+end
+
+puts "Assigning extra tags..."
+Question.find_each { |question| question.tags << tags.sample(3) }
