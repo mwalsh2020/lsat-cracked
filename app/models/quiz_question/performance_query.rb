@@ -6,20 +6,12 @@ class QuizQuestion::PerformanceQuery
   end
 
   def result
-    present_tags_attributes + missing_tags_attributes
+    performances_attributes
   end
 
   private
 
-  def missing_tags
-    Tag.where.not(id: Tag.joins(:questions).where(questions: {quiz_questions: @quiz_questions}).distinct)
-  end
-
-  def missing_tags_attributes
-    missing_tags.select(:id, :slug, "0 AS correct_count, 0 AS total_count").as_json
-  end
-
-  def present_tags_attributes
+  def performances_attributes
     data.as_json
   end
 
