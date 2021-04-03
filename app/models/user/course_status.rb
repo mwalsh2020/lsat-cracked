@@ -6,9 +6,7 @@ class User::CourseStatus
   end
 
   def performance
-    OpenStruct.new(
-      tags: Tag::PerformanceCollection.new(performance_data)
-    )
+    Performance.new(course_status: self)
   end
 
   def completion_rate
@@ -33,11 +31,5 @@ class User::CourseStatus
 
   def section_statuses_for(chapter)
     section_statuses.select { |section_status| section_status.section.chapter == chapter }
-  end
-
-  private
-
-  def performance_data
-    @performance_data ||= QuizQuestion::PerformanceQuery.new(user.quiz_questions).result
   end
 end
