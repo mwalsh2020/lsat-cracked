@@ -28,6 +28,7 @@ class Charts::Skills
       chart: {
         polar: true
       },
+      legend: false,
       title: {
         text: "Skills Performance"
       },
@@ -52,8 +53,8 @@ class Charts::Skills
       },
       series: [{
         type: "area",
-        name: "",
         data: Array.new(tags_count) { rand(7..10) * rand(7..10) },
+        color: "rgb(200, 100, 100)"
       }]
     }
   end
