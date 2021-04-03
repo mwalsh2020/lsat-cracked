@@ -36,12 +36,8 @@ class Charts::Tags
         backgroundColor: "transparent"
       },
       legend: false,
-      title: {
-        text: "Skills Performance"
-      },
-      subtitle: {
-        text: "Based on your quiz answers"
-      },
+      title: { text: false },
+      subtitle: { text: false },
       xAxis: {
         tickInterval: interval,
         categories: categories,
