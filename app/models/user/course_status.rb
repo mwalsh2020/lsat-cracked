@@ -5,6 +5,10 @@ class User::CourseStatus
     @user = user
   end
 
+  def next_in_line
+    @next_in_line ||= NextInLine.new(user: user, course_status: self)
+  end
+  
   def performance
     Performance.new(course_status: self)
   end
