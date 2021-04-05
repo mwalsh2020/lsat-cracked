@@ -1,0 +1,11 @@
+We recommend you
+<span class="text-danger">work more on your</span>
+<%= render worst.tag, class: "danger" %>.
+<% if worst.good? %>
+  Hey, it's still a great result!
+  <strong>But we can get it even better!</strong>
+<% else %>
+  Don't feel down,
+  <strong>we can improve it</strong>
+  with some dedication.
+<% end %>

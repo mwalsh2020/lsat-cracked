@@ -52,6 +52,7 @@ group :development do
   gem "web-console", ">= 3.3.0"
 
   gem "dotenv-rails"
+  gem "faker", require: false
 
   gem "rubocop"
   gem "rubocop-rails"

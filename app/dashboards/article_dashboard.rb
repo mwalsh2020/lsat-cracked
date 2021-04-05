@@ -13,6 +13,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     published: Field::Boolean,
+    intro: Field::Boolean
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -24,6 +25,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     title
     questions
     published
+    intro
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -31,6 +33,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     published
+    intro
     title
     questions
   ].freeze
@@ -41,6 +44,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     title
     published
+    intro
     content
     questions
   ].freeze
