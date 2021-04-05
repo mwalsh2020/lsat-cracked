@@ -10,3 +10,7 @@
 @import "components/index";
 @import "pages/index";
 @import "plugins/index";
+
+html {
+  scroll-behavior: smooth;
+}

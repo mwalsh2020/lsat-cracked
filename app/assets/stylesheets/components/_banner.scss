@@ -47,16 +47,12 @@ $line-color: $primary;
 .banner {
   position: relative;
   background-size: cover;
-  background-position: center -3rem;
+  background-position: center;
   background-color: $primary;
-  background-image: asset-url("banner.jpg");
+  background-image: asset-url("banner_1.jpg");
   background-blend-mode: multiply;
   height: calc(100vh - 2rem);
   // height: 42rem;
-
-  @media (max-width: 600px) {
-    background-position: 75% -3rem;
-  }
 
   .caption {
     position: absolute;
@@ -85,6 +81,32 @@ $line-color: $primary;
   justify-content: space-between;
   align-items: center;
   min-height: 500px;
+
+  &-text-main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    @media (max-width: 1100px) {
+      flex-direction: column;
+    }
+  }
+
+  &-matt {
+    margin: 24px 5px 0;
+
+    &-image {
+      margin: 0 16px;
+      border-radius: 50%;
+      border: 0.25rem solid white;
+      object-position: center;
+      object-fit: cover;
+    }
+    
+    @media (max-width: 1100px) {
+      margin: 32px 5px;
+    }
+  }
 
   h1 {
     font-size: 2.5rem;
@@ -140,5 +162,26 @@ $line-color: $primary;
     animation-direction: alternate;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+  }
+
+  .banner-leads-form {
+    z-index: 5;
+  }
+
+  .banner-cta {
+    animation: pulse 2.5s infinite;
+    animation-delay: 3s;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 244, 244, 0.7)
+  }
+  90% {
+    box-shadow: 0 0 0 7px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
 }

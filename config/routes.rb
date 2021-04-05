@@ -2,6 +2,7 @@ Rails.application.routes.draw do  devise_for :users
   root                  to: "pages#home"
   get  "/about",        to: "pages#about"
   get  "/testimonials", to: "pages#testimonials"
+  get "/guest/sessions", to: "pages#home"
 
   require "sidekiq/web"
   authenticate :user, ->(user) { user.admin? } do
@@ -33,7 +34,6 @@ Rails.application.routes.draw do  devise_for :users
 
   namespace :guest do
     resources :sessions, only: :create
-    get "/sessions", to: "pages#home"
   end
 
   namespace :manage do

@@ -1,9 +1,30 @@
 <div class="container py-5">
   <%= render "course/quiz_sessions/report", quiz_session: @quiz_session %>
   <div class="cta mt-3 d-flex justify-content-center align-items-center">
-    <div class="card px-3 py-3">
-      <h3 class="text-center">Enjoyed testing your skills?</h3>
-      <%= link_to "See our plans & pricing for full access.", root_path(anchor: "packages"), class: "btn btn-primary" %>
+    <div class="card px-3 py-3" style="width: 70%;">
+      <h3 class="text-center mb-3">Enjoyed testing your skills?</h3>
+      <%= render "mail_leads/form", mail_lead: @mail_lead %>
+      <p class="mt-3">With a free account, you'll get an enhanced skills report and a preview of lots of the content in the LSAT CRACKED curriculum.</p>
+      <div class="row">
+        <div class="col-lg-4 col-md-12">
+          <div class="card text-center py-2 px-2 border-0">
+            <h4 class="mb-3">Curated Content</h4>
+            <%= image_tag "progress-example.jpg", class: "border border-primary", height: "200px", style: "object-fit: cover" %>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <div class="card text-center py-2 px-2 border-0">
+            <h4 class="mb-3">Skills Based Quizzes</h4>
+            <%= image_tag "quiz-example.jpg", class: "border border-primary", height: "200px", style: "object-fit: cover" %>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <div class="card text-center py-2 px-2 border-0">
+            <h4 class="mb-3">Detailed Skill Assessment</h4>
+            <%= image_tag "dashboard-example.jpg", class: "border border-primary", height: "200px", style: "object-fit: cover" %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

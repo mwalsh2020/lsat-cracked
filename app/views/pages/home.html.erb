@@ -2,6 +2,7 @@
 <div id="differencial" class="bg-primary text-white py-5">
   <div class="container py-5">
     <h2 class="h1 mb-5 text-center font-weight-bold">The LSAT Cracked Difference</h2>
+    <p>LSAT Cracked is the only LSAT course that directly identifies the exact skills you're currently missing that an LSAT writer cares about. Stop wasting time repeating the same mistakes, and start unlocking your future career.</p>
     <p>Mass-market LSAT courses operate on a standard business model: license 8,000 questions, overwhelm you with hundreds of hours of videos, and expect you to see the patterns for yourself. <strong>LSAT Cracked is different:</strong></p>
     <ol>
       <li class="bg-primary-dark p-3 mb-3"><strong>LSAT Cracked saves you time by identifying and teaching you the exact skills that LSAT writers care about.</strong> Once you master these skills, you will “see” LSAT problems differently, and your score will improve dramatically.</li>
@@ -18,10 +19,6 @@
 
 <div id="results"><%= render "testimonials" %></div>
 
-<% if policy([:guest, @intro_quiz_session]).create? %>
-  <div id="intro-quiz"><%= render "intro-quiz" %></div>
-<% end %>
-
 <div id="packages" class="bg-primary py-5">
   <div class="container py-5">
     <h2 class="text-center h1 mb-5 text-white font-weight-bold">Plans & Pricing</h2>
@@ -33,5 +30,9 @@
     </div>
   </div>
 </div>
+
+<% if policy([:guest, @intro_quiz_session]).create? %>
+  <div id="intro-quiz"><%= render "intro-quiz" %></div>
+<% end %>
 
 <%= render "footer" %>
