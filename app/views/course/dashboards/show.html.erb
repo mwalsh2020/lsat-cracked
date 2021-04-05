@@ -1,9 +1,16 @@
-<h1 class="mb-3">Welcome Back!</h1>
+<h1 class="mb-4 text-center">Welcome Back!</h1>
 <div class="row">
   <div class="col-lg-6 col-12">
-    <%= render "course/suggested"  %>
+    <div class="card p-3 text-center">
+      <%= render current_user.course_status.performance %>
+    </div>
   </div>
   <div class="col-lg-6 col-12">
-    <%= render current_user.course_status.performance %>
+    <div class="card p-3 text-center mb-4">
+      "<%= QuoteFetcher.execute.sample["text"] %>"<br><hr>-<%= QuoteFetcher.execute.sample["author"] %>
+    </div>
+    <div class="card p-3 text-center">
+      <%= render "course/suggested"  %>
+    </div>
   </div>
 </div>
