@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :completed_sections, -> { distinct }, through: :completed_quizzes, source: :quizable, source_type: "Section"
   has_many :quiz_questions, through: :quizzes
   has_many :answers, through: :quiz_questions
+  has_many :tags, ->{distinct}, through: :quiz_questions
 
   after_save :enqueue_ping_lsac if :prep_plus_changed?
 

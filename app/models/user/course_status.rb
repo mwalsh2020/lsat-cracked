@@ -5,6 +5,10 @@ class User::CourseStatus
     @user = user
   end
 
+  def performance
+    Performance.new(course_status: self)
+  end
+
   def completion_rate
     completed_sections.count.fdiv(section_statuses.size)
   end
