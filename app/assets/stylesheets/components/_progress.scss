@@ -1,7 +1,8 @@
 .progress {
   border-radius: 10px;
+  border: 1px solid $bordeau;
   height: 20px;
-  width: 70%;
+  width: 100%;
   position: relative;
   &:hover .progress-popup {
     display: flex;
@@ -15,12 +16,12 @@
   justify-content: center;
   align-items: center;
   background-color: $bordeau;
-  border-radius: 10px;
+  border-radius: 10px 0 0 10px;
   color: white;
   font-size: 16px;
   margin: 0;
   padding: 5px 10px;
   left: 0;
-  width: 80px;
+  min-width: 50px;
   height: 20px;
 }
