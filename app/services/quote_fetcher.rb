@@ -9,13 +9,15 @@ class QuoteFetcher
 
   def self.quote_of_the_day
     data = Rails.cache.fetch(:cached_quote, expires_in: 24.hours) do
-      execute.sample
+      execute
     end
     Quote.new(data)
   end
 
   def execute
-    JSON.parse(fetch_quotes)
+    JSON.parse(fetch_quotes).sample
+  rescue
+    default_quote_data
   end
 
   private
