@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_11_200258) do
+ActiveRecord::Schema.define(version: 2021_04_08_202554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -128,6 +128,7 @@ ActiveRecord::Schema.define(version: 2021_03_11_200258) do
     t.boolean "complete", default: false, null: false
     t.string "quizable_type"
     t.bigint "quizable_id"
+    t.boolean "ignored", default: false, null: false
     t.index ["quizable_type", "quizable_id"], name: "index_quizzes_on_quizable_type_and_quizable_id"
     t.index ["user_id"], name: "index_quizzes_on_user_id"
   end
