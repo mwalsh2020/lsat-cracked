@@ -8,9 +8,10 @@ class QuoteFetcher
   end
 
   def self.quote_of_the_day
-    Rails.cache.fetch(:cached_quote, expires_in: 24.hours) do
-      Quote.new(execute.sample)
+    data = Rails.cache.fetch(:cached_quote, expires_in: 24.hours) do
+      execute.sample
     end
+    Quote.new(data)
   end
 
   def execute
@@ -23,10 +24,10 @@ class QuoteFetcher
     HTTParty.get("https://type.fit/api/quotes")
   end
 
-  def default_quote
-    Quote.new(
+  def default_quote_data
+    {
       text: "The truest wisdom is a resolute determination.",
       author: "Napoleon Bonaparte"
-    )
+    }
   end
 end
