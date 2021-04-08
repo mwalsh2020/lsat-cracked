@@ -44,7 +44,9 @@ class Quiz::Session
   end
 
   def correct_answers_ratio
-    correct_answers_count.fdiv(@quiz_questions.size)
+    quiz_size = @quiz_questions.size
+    rational_params = quiz_size.zero? ? [1, 1] : [correct_answers_count, quiz_size]
+    Rational(*rational_params).to_f
   end
 
   def correct_answers_count

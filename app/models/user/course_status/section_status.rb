@@ -17,7 +17,9 @@ class User::CourseStatus::SectionStatus
   end
 
   def quiz_score
-    recent_quiz.answers.correct.size.fdiv(recent_quiz.questions.size)
+    quiz_size = recent_quiz.questions.size
+    rational_params = quiz_size.zero? ? [1, 1] : [recent_quiz.answers.correct.size, quiz_size]
+    Rational(*rational_params).to_f
   end
 
   def correct_answers

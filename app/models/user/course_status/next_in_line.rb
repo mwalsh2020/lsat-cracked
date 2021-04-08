@@ -11,11 +11,11 @@ class User::CourseStatus::NextInLine
   end
 
   def last_section
-    user.quizzes.reportable.where(quizable_type: "Section").order(created_at: :desc).first.quizable
+    last_quiz.quizable
   end
 
   def last_quiz
-    user.quizzes.where(quizable_type: "Section").order(updated_at: :desc).first
+    user.quizzes.reportable.where(quizable_type: "Section").order(updated_at: :desc).first
   end
 
   def next_from_last_section
