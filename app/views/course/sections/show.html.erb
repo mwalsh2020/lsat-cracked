@@ -11,15 +11,24 @@
 <div class="d-flex justify-content-center my-5">
   <%= render "course/sections/nav_footer", section: @section %>
 </div>
+
 <% if @quiz_session.present? %>
-  <div class="shadow-sm course-page" id="quiz">
-    <% if @quiz_session.complete? %>
+  <% if @quiz_session.reportable? %>
+    <div class="shadow-sm course-page" id="quiz">
       <%= render "course/quiz_sessions/report", quiz_session: @quiz_session %>
       <div class="d-flex justify-content-center mt-5">
         <%= render "course/sections/nav_footer", section: @section %>
       </div>
-    <% else %>
-      <%= render "course/quiz_sessions/display", quiz_session: @quiz_session %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+
+  <% unless @quiz_session.complete? %>
+    <div class="shadow-sm course-page" id="quiz">
+      <% if @quiz_session.ignored? %>
+        <%= render "course/quiz_sessions/ignored", quiz_session: @quiz_session %>
+      <% else %>
+        <%= render "course/quiz_sessions/display", quiz_session: @quiz_session %>
+      <% end %>
+    </div>
+  <% end %>
 <% end %>

@@ -1,0 +1,6 @@
+<h2>Hooray!, no Quiz this time!</h2>
+<hr>
+<%= simple_form_for [:course, quiz_session.quiz, quiz_session], html: { class: "quiz-answer" } do |f| %>
+  <%= render "quiz_questions/fields", form: f %>
+  <div class="text-right"><%= f.button :submit, "Finish Section", class: "btn-primary btn-lg btn-block" %></div>
+<% end %>

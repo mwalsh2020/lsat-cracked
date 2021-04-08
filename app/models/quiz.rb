@@ -10,6 +10,7 @@ class Quiz < ApplicationRecord
 
   scope :complete, -> { where(complete: true) }
   scope :pending, -> { where.not(complete: true) }
+  scope :reportable, -> { where.not(ignored: true) }
 
   def session
     Quiz::Session.new(quiz: self)

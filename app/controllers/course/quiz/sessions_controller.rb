@@ -16,6 +16,6 @@ class Course::Quiz::SessionsController < Course::ApplicationController
   private
 
   def quiz_session_params
-    params.require(:quiz_session).permit(quiz_questions_attributes: [:id, :answer_id])
+    params.fetch(:quiz_session, {}).permit(quiz_questions_attributes: [:id, :answer_id])
   end
 end

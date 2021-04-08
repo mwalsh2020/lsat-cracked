@@ -31,12 +31,16 @@ class Quiz::Session
     @quiz_questions = quiz.quiz_questions
   end
 
+  def reportable?
+    complete? && !ignored?
+  end
+
   def valid?
     @quiz_questions.map(&:answered?).all?
   end
 
-  def present?
-    @quiz_questions.any?
+  def ignored?
+    @quiz_questions.empty?
   end
 
   def correct_answers_ratio
@@ -59,13 +63,7 @@ class Quiz::Session
     return false unless valid?
 
     @quiz_questions.all?(&:save!)
-    quiz.update(complete: true, ignored: ignored_quizable?)
+    quiz.update(complete: true, ignored: ignored?)
     true
-  end
-
-  private
-
-  def ignored_quizable?
-    quiz.quizable.questions.empty?
   end
 end
