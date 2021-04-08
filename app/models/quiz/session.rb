@@ -59,7 +59,13 @@ class Quiz::Session
     return false unless valid?
 
     @quiz_questions.all?(&:save!)
-    quiz.update(complete: true)
+    quiz.update(complete: true, ignored: ignored_quizable?)
     true
+  end
+
+  private
+
+  def ignored_quizable?
+    quiz.quizable.questions.empty?
   end
 end
