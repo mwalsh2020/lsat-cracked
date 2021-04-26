@@ -171,6 +171,11 @@ $line-color: $primary;
   .banner-cta {
     animation: pulse 2.5s infinite;
     animation-delay: 3s;
+    width: 420px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
