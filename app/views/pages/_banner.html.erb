@@ -15,9 +15,8 @@
           </div>
           <div class="d-flex flex-column">
             <% if @current_user.nil? %>
-              <%= link_to "Take Skill Assessment", root_path(anchor: "intro-quiz"), class: "btn btn-primary btn-lg banner-cta mb-4", style: "z-index: 20" %>
               <div class="banner-leads-form">
-                <%= render "mail_leads/form", mail_lead: @mail_lead %>
+                <%= link_to "Take Skill Assessment", root_path(anchor: "intro-quiz"), class: "btn btn-primary btn-lg banner-cta", style: "z-index: 20" %>
               </div>
             <% else %>
               <p class="d-none d-md-block">Head over to your course dashboard to keep learning.</p>
