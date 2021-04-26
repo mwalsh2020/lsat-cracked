@@ -1,10 +1,11 @@
 <h2 class="h3">General Performance</h2>
 <hr>
-<h3 class="h4">Skills performance <small class="h6">Based on your quiz answers</small></h3>
+<h3 class="h4">Skills performance <br><small class="h6">Based on your quiz answers</small></h3>
 <div data-controller="charts" data-params="<%= performance.tags.chart.to_json %>"></div>
 
 <p>
   <%= render object: performance.tags.max, partial: "course/tags/performances/best" %>
+  <br><br>
   <%= render object: performance.tags.min, partial: "course/tags/performances/worst" %>
 </p>
 

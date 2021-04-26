@@ -1,0 +1,29 @@
+<% last_quiz_score = last_quiz.answers.correct.size.fdiv(last_quiz.questions.size) %>
+
+<div class="card d-flex flex-column align-items-center mb-3 p-2">
+  <div class="text-center">
+    Last Quiz Taken:
+    <br>
+    <%= link_to "#{last_quiz.quizable.title}", course_section_path(last_quiz) %>
+  </div>
+   <hr width="90%">
+  <div class="d-flex flex-row justify-content-around align-items-center" width="100%">
+    <% if last_quiz_score <= 0.9 %>
+      <div class="scorecard bad">
+        <%= number_to_percentage(last_quiz_score * 100, precision: 0 ) %>
+      </div>
+      <div class="mx-3"><%= link_to "Retake", course_section_path(last_quiz), class: "btn btn-primary" %></div>
+    <% else %>
+      <div class="scorecard good">
+        <%= number_to_percentage(last_quiz_score * 100, precision: 0 ) %>
+      </div>
+      <div class="ml-3">Great Job!</div>
+    <% end %>
+  </div>
+</div>
+
+<div class="card d-flex align-items-center mb-3 p-2">
+  Next Section:
+  <%= link_to "#{next_section.title}", course_section_path(next_section) %>
+  </div>
+</div>

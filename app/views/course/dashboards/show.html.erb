@@ -1,21 +1,16 @@
-<h1 class="mb-3">Welcome Back!</h1>
-<div class="mb-4">
-  <div class="mb-3">
-    <p>You've completed <%= number_to_percentage(current_user.course_status.completion_rate * 100, precision: 0) %> of the sections in the course.</p>
-    <%= render "status/progress", status: current_user.course_status %>
+<h1 class="mb-4 text-center">Welcome Back!</h1>
+<div class="row">
+  <div class="col-lg-6 col-12">
+    <div class="card border-0 shadow-sm p-3 text-center">
+      <%= render current_user.course_status.performance %>
+    </div>
+  </div>
+  <div class="col-lg-6 col-12">
+    <div class="card border-0 shadow-sm p-3 text-center mb-4">
+      "<%= quote_of_the_day.text %>"<br><hr>-<%= quote_of_the_day.author %>
+    </div>
+    <div class="card border-0 shadow-sm p-3 text-center">
+      <%= render "course/dashboards/suggested"  %>
+    </div>
   </div>
 </div>
-
-<ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="true">Review</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="next-section-tab" data-toggle="tab" href="#next-section" role="tab" aria-controls="next-section" aria-selected="false">Suggested</a>
-  </li>
-</ul>
-
-<%= render current_user.course_status.performance %>
-
-<%= render "course/review" %>
-<%= render "course/suggested" %>

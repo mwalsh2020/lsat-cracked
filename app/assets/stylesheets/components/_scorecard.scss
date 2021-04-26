@@ -1,0 +1,14 @@
+.scorecard {
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+
+  &.good {
+    background-color: green;
+  }
+
+  &.bad {
+    background-color: yellow;
+    color: black;
+  }
+}

@@ -35,4 +35,8 @@
   <div id="intro-quiz"><%= render "intro-quiz" %></div>
 <% end %>
 
+<% if current_user.guest? %>
+<div id="sign-up"><%= render "sign-up" %></div>
+<% end %>
+
 <%= render "footer" %>

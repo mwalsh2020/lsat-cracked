@@ -1,0 +1,12 @@
+<div>
+ <h2 class="h3">Course Progress</h2>
+<hr>
+
+<div class="mb-4">
+  <div class="mb-3">
+    <p>You've completed <%= number_to_percentage(current_user.course_status.completion_rate * 100, precision: 0) %> of the sections in the course.</p>
+    <%= render "status/progress", status: current_user.course_status %>
+  </div>
+</div>
+
+<%= render "course/dashboards/next-in-line", last_quiz: current_user.course_status.next_in_line.last_quiz, next_section: current_user.course_status.next_in_line.next_from_top %>

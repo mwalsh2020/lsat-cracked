@@ -8,16 +8,15 @@
               <h1>Master the Skills,<br>Master the LSAT</h1>
               <div class="banner-matt d-flex justify-content-between align-items-center">
                 <div class="text-center">Matt Walsh,<br /> Founder</div>
-                <%= image_tag "matt.jpg", width: 125, class: "img-fluid banner-matt-image" %>
+                <%= image_tag "matt-headshot.png", class: "img-fluid banner-matt-image" %>
                 <div class="text-center">Harvard Law, <br />179 LSAT</div>
               </div>
             </div>
           </div>
           <div class="d-flex flex-column">
             <% if @current_user.nil? %>
-              <%= link_to "Take Skill Assessment", root_path(anchor: "intro-quiz"), class: "btn btn-primary btn-lg banner-cta mb-4", style: "z-index: 20" %>
               <div class="banner-leads-form">
-                <%= render "mail_leads/form", mail_lead: @mail_lead %>
+                <%= link_to "Take Skill Assessment", root_path(anchor: "intro-quiz"), class: "btn btn-primary btn-lg banner-cta", style: "z-index: 20" %>
               </div>
             <% else %>
               <p class="d-none d-md-block">Head over to your course dashboard to keep learning.</p>

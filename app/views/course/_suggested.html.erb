@@ -1,9 +1,0 @@
-<div class="tab-pane fade" id="next-section" role="tabpanel" aria-labelledby="next-section-tab">
-  <h2>Check Out This Section Next</h2>
-  <ul>
-    <% suggested = current_user.course_status.missing_sections.first %>
-    <li>
-      <%= link_to suggested.title, course_section_path(suggested) %>
-    </li>
-  </ul>
-</div>
