@@ -11,7 +11,7 @@
 <% if current_user.present? %>
   <li class="nav-item"><%= link_to "Sign out", destroy_user_session_path, class: "nav-link btn btn-link", method: :delete %></li>
 <% else %>
-  <li class="nav-item"><%= link_to "Sign up", root_path(anchor: "packages"), class: "nav-link btn btn-link px-2" %></li>
+  <li class="nav-item"><%= link_to "Sign up", root_path(anchor: "sign-up"), class: "nav-link btn btn-primary text-white px-2" %></li>
 <% end %>
 
 <li class="nav-item"><%= link_to "Learn", course_root_path, class: "nav-link btn btn-outline-light px-2 mr-3 ml-3" %></li>
