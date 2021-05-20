@@ -3,11 +3,15 @@
 <h3 class="h4">Skills performance <br><small class="h6">Based on your quiz answers</small></h3>
 <div data-controller="charts" data-params="<%= performance.tags.chart.to_json %>"></div>
 
-<p>
-  <%= render object: performance.tags.max, partial: "course/tags/performances/best" %>
-  <br><br>
-  <%= render object: performance.tags.min, partial: "course/tags/performances/worst" %>
-</p>
+<% if performance.tags.any? %>
+  <p>
+    <%= render object: performance.tags.max, partial: "course/tags/performances/best" %>
+    <br><br>
+    <%= render object: performance.tags.min, partial: "course/tags/performances/worst" %>
+  </p>
+<% else %>
+  <p>You're just starting! As you progress through the topics, we'll show your progress and performance above.</p>
+<% end %>
 
 <% performance.missing_tags_count.tap do |tag_count| %>
   <% if tag_count.positive? %>
