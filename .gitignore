@@ -42,3 +42,4 @@ yarn-debug.log*
 
 # Ignore env keys
 .env
+.env*
