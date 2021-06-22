@@ -1,4 +1,16 @@
 class Manage::UsersController < Manage::ApplicationController
+  def create
+    # Create the user from params
+    @user = User.new(user_params)
+    if @user.save
+      # Deliver the signup email
+      UserNotifierMailer.send_signup_email(@user).deliver
+      redirect_to(@user, :notice => 'User created')
+    else
+      render :action => 'new'
+    end
+  end
+
   def index
     @users = policy_scope([:manage, User])
   end
