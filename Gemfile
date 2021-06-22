@@ -45,6 +45,10 @@ group :development, :test do
 end
 
 group :development, :staging do
+  gem "faker", require: false
+end
+
+group :development do
   gem "bullet"
   gem "listen", "~> 3.2"
   gem "spring"
@@ -52,7 +56,6 @@ group :development, :staging do
   gem "web-console", ">= 3.3.0"
 
   gem "dotenv-rails"
-  gem "faker", require: false
 
   gem "rubocop"
   gem "rubocop-rails"
