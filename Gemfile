@@ -6,15 +6,16 @@ ruby "2.7.1"
 gem "rails", "~> 6.0.3", ">= 6.0.3.2"
 
 # System
+gem "bootsnap", ">= 1.4.2", require: false
 gem "pg"
 gem "puma", "~> 4.1"
-gem "bootsnap", ">= 1.4.2", require: false
 
 # Support
 gem "acts_as_list"
-gem 'devise_invitable', '~> 2.0.0'
-gem "money-rails"
+gem "devise_invitable", "~> 2.0.0"
+gem "faker"
 gem "httparty"
+gem "money-rails"
 
 # Security
 gem "devise"
@@ -33,8 +34,8 @@ gem "recaptcha"
 gem "stripe"
 
 # Jobs
-gem 'sidekiq'
-gem 'sidekiq-failures', '~> 1.0'
+gem "sidekiq"
+gem "sidekiq-failures", "~> 1.0"
 
 # CMS
 gem "administrate", "0.15"
