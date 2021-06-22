@@ -13,7 +13,6 @@ gem "puma", "~> 4.1"
 # Support
 gem "acts_as_list"
 gem "devise_invitable", "~> 2.0.0"
-gem "faker"
 gem "httparty"
 gem "money-rails"
 
@@ -45,7 +44,7 @@ group :development, :test do
   gem "rspec-rails", "~> 4.0.1"
 end
 
-group :development do
+group :development, :staging do
   gem "bullet"
   gem "listen", "~> 3.2"
   gem "spring"
