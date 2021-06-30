@@ -1,9 +1,9 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.1"
+ruby '3.0.0'
 
-gem "rails", "~> 6.0.3", ">= 6.0.3.2"
+gem 'rails', '6.1.3.2'
 
 # System
 gem "bootsnap", ">= 1.4.2", require: false
@@ -26,6 +26,8 @@ gem "sass-rails", ">= 6"
 gem "simple_form"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
+gem 'image_processing', '~> 1.2'
+gem "tailwindcss-rails", "~> 0.3.3"
 
 # External services
 gem "postmark-rails"
@@ -37,7 +39,10 @@ gem "sidekiq"
 gem "sidekiq-failures", "~> 1.0"
 
 # CMS
-gem "administrate", "0.15"
+gem "administrate", "~> 0.16.0"
+gem 'administrate-field-active_storage', '~> 0.3.7'
+gem "administrate-field-nested_has_many"
+gem "cocoon"
 
 group :development, :test do
   gem "pry-byebug"
