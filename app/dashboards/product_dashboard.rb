@@ -27,7 +27,7 @@ class ProductDashboard < Administrate::BaseDashboard
     name
     sku
     price
-    highlight    
+    highlight
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
