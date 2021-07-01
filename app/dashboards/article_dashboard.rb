@@ -23,9 +23,10 @@ class ArticleDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     title
-    questions
-    published
+    content
     intro
+    published
+    questions
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
