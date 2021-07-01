@@ -33,8 +33,10 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     email
     admin
-    prep_plus
     paying
+    prep_plus
+    last_sign_in_at
+    completed_quizzes
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
