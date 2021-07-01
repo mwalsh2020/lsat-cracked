@@ -8,12 +8,12 @@ class TagDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    # bars: Field::NestedHasMany.with_options(skip: :questions),
     id: Field::Number,
     slug: Field::String,
     premium: Field::Boolean,
     questions: Field::HasMany,
     questions_count: Field::Number,
+    # questions: Field::NestedHasMany.with_options(skip: :questions),
   }.freeze
 
   # COLLECTION_ATTRIBUTES

@@ -26,6 +26,7 @@ class ChapterDashboard < Administrate::BaseDashboard
     position
     title
     sections
+    free
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
