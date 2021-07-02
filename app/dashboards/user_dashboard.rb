@@ -23,6 +23,7 @@ class UserDashboard < Administrate::BaseDashboard
     last_sign_in_at: Field::DateTime,
     current_sign_in_ip: Field::String.with_options(searchable: false),
     last_sign_in_ip: Field::String.with_options(searchable: false),
+    tags: Field::HasMany,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -37,6 +38,7 @@ class UserDashboard < Administrate::BaseDashboard
     prep_plus
     last_sign_in_at
     completed_quizzes
+    tags
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
