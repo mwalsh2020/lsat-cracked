@@ -15,11 +15,12 @@ Rails.application.routes.draw do  devise_for :users
       resources :products
       resources :orders
       resources :questions do
-        resources :answers, only: %i[new create]
+        resources :answers
       end
       resources :sections
       resources :tags
       resources :users
+      resources :quizzes
 
       root to: "chapters#index"
     end

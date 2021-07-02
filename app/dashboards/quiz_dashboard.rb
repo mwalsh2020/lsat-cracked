@@ -26,9 +26,10 @@ class QuizDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     user
+    complete
     quizable
-    quiz_questions
     questions
+    answers
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
