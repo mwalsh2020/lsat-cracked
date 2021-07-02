@@ -13,6 +13,7 @@ Rails.application.routes.draw do  devise_for :users
       resources :articles
       resources :chapters
       resources :products
+      resources :orders
       resources :questions do
         resources :answers, only: %i[new create]
       end
