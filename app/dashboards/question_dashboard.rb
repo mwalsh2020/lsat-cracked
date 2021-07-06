@@ -15,7 +15,8 @@ class QuestionDashboard < Administrate::BaseDashboard
     answers: Field::HasMany,
     tags: Field::HasMany,
     sections: Field::HasMany,
-    articles: Field::HasMany,
+    # articles: Field::HasMany,
+    articles: Field::BelongsTo,
   }.freeze
 
   # COLLECTION_ATTRIBUTES

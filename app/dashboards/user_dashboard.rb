@@ -58,6 +58,7 @@ class UserDashboard < Administrate::BaseDashboard
     last_sign_in_at
     current_sign_in_ip
     last_sign_in_ip
+    tags
   ].freeze
 
   # FORM_ATTRIBUTES
