@@ -13,6 +13,7 @@ class TagDashboard < Administrate::BaseDashboard
     premium: Field::Boolean,
     questions: Field::HasMany,
     questions_count: Field::Number,
+    user: Field::BelongsTo,
     # questions: Field::NestedHasMany.with_options(skip: :questions),
   }.freeze
 
@@ -42,6 +43,7 @@ class TagDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     slug
     premium
+    user
   ].freeze
 
   # COLLECTION_FILTERS

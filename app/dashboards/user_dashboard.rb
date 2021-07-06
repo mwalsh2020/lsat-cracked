@@ -24,7 +24,7 @@ class UserDashboard < Administrate::BaseDashboard
     last_sign_in_at: Field::DateTime,
     current_sign_in_ip: Field::String.with_options(searchable: false),
     last_sign_in_ip: Field::String.with_options(searchable: false),
-    tags: Field::HasMany,
+    tags: Field::NestedHasMany.with_options(skip: :user),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
