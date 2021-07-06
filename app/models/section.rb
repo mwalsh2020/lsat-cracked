@@ -3,7 +3,10 @@ class Section < ApplicationRecord
 
   has_rich_text :content
 
+  has_many :question
+
   belongs_to :chapter
+  belongs_to :question
 
   acts_as_list scope: :chapter
 

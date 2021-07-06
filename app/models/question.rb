@@ -13,8 +13,8 @@ class Question < ApplicationRecord
   has_many :sections, through: :quizable_questions, source: :quizable, source_type: "Section"
   has_many :articles, through: :quizable_questions, source: :quizable, source_type: "Article"
 
-  #nesting implementation
   belongs_to :article
+  belongs_to :section
 
   # https://githubmemory.com/repo/nickcharlton/administrate-field-nested_has_many/issues
   # accepts_nested_attributes_for(

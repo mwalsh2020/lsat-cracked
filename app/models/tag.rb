@@ -4,6 +4,7 @@ class Tag < ApplicationRecord
   has_many :quiz_questions, through: :questions
 
   belongs_to :user
+  belongs_to :question
 
   validates :slug, uniqueness: true, presence: true
 

@@ -10,7 +10,7 @@ class SectionDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     title: Field::String,
-    questions: Field::HasMany,
+    questions: Field::NestedHasMany.with_options(skip: :section),
     content: RichTextField,
     chapter: Field::BelongsTo,
     position: Field::Number,

@@ -42,6 +42,7 @@ gem "sidekiq-failures", "~> 1.0"
 gem "administrate", "~> 0.16.0"
 gem 'administrate-field-active_storage', '~> 0.3.7'
 gem "administrate-field-nested_has_many"
+gem 'administrate-field-belongs_to_search'
 gem "cocoon"
 
 group :development, :test do
