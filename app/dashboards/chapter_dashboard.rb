@@ -8,7 +8,8 @@ class ChapterDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    sections: Field::HasMany,
+    # sections: Field::HasMany,
+    sections: Field::NestedHasMany.with_options(skip: :chapter),
     id: Field::Number,
     title: Field::String,
     created_at: Field::DateTime,
