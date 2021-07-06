@@ -9,7 +9,8 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     invited_by: Field::Polymorphic,
-    completed_quizzes: Field::HasMany,
+    # completed_quizzes: Field::HasMany,
+    completed_quizzes: Field::NestedHasMany.with_options(skip: :user),
     completed_sections: Field::HasMany,
     quiz_questions: Field::HasMany,
     id: Field::Number,
