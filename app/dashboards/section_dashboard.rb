@@ -12,7 +12,7 @@ class SectionDashboard < Administrate::BaseDashboard
     title: Field::String,
     questions: Field::NestedHasMany.with_options(skip: :section),
     content: RichTextField,
-    chapter: Field::BelongsTo,
+    chapter: Field::BelongsToSearch.with_options(class_name: :Chapter),
     position: Field::Number,
   }.freeze
 
