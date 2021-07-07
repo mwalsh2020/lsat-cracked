@@ -8,7 +8,8 @@ class AnswerDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    question: Field::BelongsTo,
+    # question: Field::BelongsTo,
+    question: Field::BelongsToSearch.with_options(class_name: :Question),
     content: RichTextField,
     id: Field::Number,
     correct: Field::Boolean,
