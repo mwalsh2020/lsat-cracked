@@ -4,9 +4,6 @@ class Tag < ApplicationRecord
                        source_type: "Question"
   has_many :quiz_questions, through: :questions
 
-  belongs_to :user, optional: true
-  belongs_to :question, optional: true
-
   validates :slug, uniqueness: true, presence: true
 
   before_save :sanitize_slug, if: :slug_will_change!

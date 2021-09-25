@@ -13,7 +13,6 @@ class OrderDashboard < Administrate::BaseDashboard
     amount: Field::Number,
     user: Field::BelongsTo,
     checkout_session_id: Field::Number,
-    orderable_sku: Field::String,
     orderable: Field::Polymorphic.with_options(classes: [Product]),
   }.freeze
 
@@ -27,7 +26,6 @@ class OrderDashboard < Administrate::BaseDashboard
     amount
     user
     checkout_session_id
-    orderable_sku
     orderable
   ].freeze
 
@@ -39,7 +37,6 @@ class OrderDashboard < Administrate::BaseDashboard
     amount
     user
     checkout_session_id
-    orderable_sku
     orderable
   ].freeze
 
@@ -51,7 +48,6 @@ class OrderDashboard < Administrate::BaseDashboard
     amount
     user
     checkout_session_id
-    orderable_sku
     orderable
   ].freeze
 
