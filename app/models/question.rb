@@ -4,6 +4,8 @@ class Question < ApplicationRecord
 
   has_many :answers, dependent: :destroy
   has_many :quiz_questions, dependent: :destroy
+  accepts_nested_attributes_for :answers, reject_if: :all_blank,
+                                          allow_destroy: true
 
   has_many :taggings, as: :taggable, dependent: :destroy
   has_many :tags, through: :taggings

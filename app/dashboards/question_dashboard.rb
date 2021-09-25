@@ -12,7 +12,7 @@ class QuestionDashboard < Administrate::BaseDashboard
     prompt: RichTextField,
     rich_text_prompt: Field::HasOne,
     explanation: RichTextField,
-    answers: Field::HasMany,
+    answers: Field::NestedHasMany.with_options(skip: :question),
     tags: Field::HasMany,
     sections: Field::HasMany,
     articles: Field::HasMany,
@@ -28,8 +28,6 @@ class QuestionDashboard < Administrate::BaseDashboard
     explanation
     answers
     tags
-    sections
-    articles
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -40,6 +38,8 @@ class QuestionDashboard < Administrate::BaseDashboard
     explanation
     tags
     answers
+    sections
+    articles
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -49,6 +49,7 @@ class QuestionDashboard < Administrate::BaseDashboard
     prompt
     explanation
     tags
+    answers
   ].freeze
 
   # COLLECTION_FILTERS

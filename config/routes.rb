@@ -12,19 +12,19 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => "/sidekiq"
 
     namespace :admin do
-      resources :answers, except: %i[new create]
       resources :articles
       resources :chapters
-      resources :products
-      resources :orders
+      resources :sections
       resources :questions do
         resources :answers
       end
-      resources :sections
+      resources :answers
       resources :tags
-      resources :users
+      resources :users, except: [:create, :new]
       resources :quizzes
       resources :quiz_questions
+      resources :products
+      resources :orders
 
       root to: "chapters#index"
     end

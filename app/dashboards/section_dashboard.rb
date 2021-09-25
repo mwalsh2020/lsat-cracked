@@ -12,7 +12,7 @@ class SectionDashboard < Administrate::BaseDashboard
     title: Field::String,
     questions: Field::NestedHasMany.with_options(skip: :section),
     content: RichTextField,
-    chapter: Field::BelongsToSearch.with_options(class_name: :Chapter),
+    chapter: Field::BelongsTo,
     position: Field::Number,
   }.freeze
 
@@ -33,8 +33,8 @@ class SectionDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     title
-    position
     chapter
+    position
     content
     questions
   ].freeze

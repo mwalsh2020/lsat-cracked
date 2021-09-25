@@ -8,8 +8,7 @@ class AnswerDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    # question: Field::BelongsTo,
-    question: Field::BelongsToSearch.with_options(class_name: :Question),
+    question: Field::BelongsTo,
     content: RichTextField,
     id: Field::Number,
     correct: Field::Boolean,
@@ -21,9 +20,9 @@ class AnswerDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    correct
-    content
     question
+    content
+    correct
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

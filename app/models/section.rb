@@ -7,6 +7,8 @@ class Section < ApplicationRecord
 
   acts_as_list scope: :chapter
 
+  validates :title, presence: true
+
   def previous
     higher_item || chapter.higher_item&.sections&.last
   end
