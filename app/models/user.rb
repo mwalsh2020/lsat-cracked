@@ -7,7 +7,8 @@ class User < ApplicationRecord
   has_many :quiz_questions, through: :quizzes
   has_many :answers, through: :quiz_questions
   has_many :tags, ->{distinct}, through: :quiz_questions
-
+  has_many :orders, dependent: :destroy
+  
   after_save :enqueue_ping_lsac if :prep_plus_changed?
 
   scope :admin, -> { where(admin: true) }

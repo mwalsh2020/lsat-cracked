@@ -1,0 +1,33 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400&family=Material+Icons+Outlined&family=Work+Sans&display=swap');
+@import "administrate/reset/normalize";
+@import "administrate/library/clearfix";
+@import "administrate/library/data-label";
+@import "administrate/library/variables";
+@import "administrate/base/forms";
+@import "administrate/base/layout";
+@import "administrate/base/lists";
+@import "administrate/base/tables";
+@import "administrate/base/typography";
+@import "administrate/components/app-container";
+@import "administrate/components/attributes";
+@import "administrate/components/buttons";
+@import "administrate/components/cells";
+@import "administrate/components/field-unit";
+@import "administrate/components/flashes";
+@import "administrate/components/form-actions";
+@import "administrate/components/main-content";
+@import "administrate/components/navigation";
+@import "administrate/components/pagination";
+@import "administrate/components/search";
+@import "administrate/utilities/text-color";
+@import "trix/dist/trix";
+@import "selectize";
+@import "../libs/upload";
+@import "../libs/actiontext";
+@import "flatpickr/dist/flatpickr.min";
+.field-unit--rich-text-area-field {
+    .field-unit__field {
+        width: 80%;
+    }
+}

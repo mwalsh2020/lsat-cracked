@@ -13,6 +13,7 @@ class TagDashboard < Administrate::BaseDashboard
     premium: Field::Boolean,
     questions: Field::HasMany,
     questions_count: Field::Number,
+    # questions: Field::NestedHasMany.with_options(skip: :questions),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -22,6 +23,8 @@ class TagDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     slug
+    premium
+    questions
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

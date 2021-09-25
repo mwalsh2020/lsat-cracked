@@ -9,7 +9,8 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     invited_by: Field::Polymorphic,
-    completed_quizzes: Field::HasMany,
+    # completed_quizzes: Field::HasMany,
+    completed_quizzes: Field::NestedHasMany.with_options(skip: :user),
     completed_sections: Field::HasMany,
     quiz_questions: Field::HasMany,
     id: Field::Number,
@@ -23,6 +24,7 @@ class UserDashboard < Administrate::BaseDashboard
     last_sign_in_at: Field::DateTime,
     current_sign_in_ip: Field::String.with_options(searchable: false),
     last_sign_in_ip: Field::String.with_options(searchable: false),
+    tags: Field::NestedHasMany.with_options(skip: :user),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -33,8 +35,11 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     email
     admin
-    prep_plus
     paying
+    prep_plus
+    last_sign_in_at
+    completed_quizzes
+    tags
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -54,13 +59,13 @@ class UserDashboard < Administrate::BaseDashboard
     last_sign_in_at
     current_sign_in_ip
     last_sign_in_ip
+    tags
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    email
     admin
     paying
     prep_plus
@@ -81,7 +86,7 @@ class UserDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(user)
-  #   "User ##{user.id}"
-  # end
+  def display_resource(user)
+    user.email
+  end
 end

@@ -1,6 +1,7 @@
 class Tag < ApplicationRecord
   has_many :taggings, dependent: :destroy
-  has_many :questions, through: :taggings, source: :taggable, source_type: "Question"
+  has_many :questions, through: :taggings, source: :taggable,
+                       source_type: "Question"
   has_many :quiz_questions, through: :questions
 
   validates :slug, uniqueness: true, presence: true

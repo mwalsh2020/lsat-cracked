@@ -5,8 +5,12 @@ class QuizQuestion < ApplicationRecord
 
   has_many :possible_answers, through: :question, source: :answers
   has_many :tags, through: :question
+  accepts_nested_attributes_for :tags, reject_if: :all_blank,
+                                       allow_destroy: true
 
-  scope :correctly_answered, -> { joins(:answer).where(answers: { correct: true }) }
+  scope :correctly_answered, -> {
+                               joins(:answer).where(answers: { correct: true })
+                             }
 
   def correct?
     answer&.correct?
