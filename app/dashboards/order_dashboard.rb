@@ -9,12 +9,12 @@ class OrderDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    state: Field::String,
+    state: Field::Select.with_options(collection: ["pending", "paid"]),
     amount: Field::Number,
-    user: Field::String,
+    user: Field::BelongsTo,
     checkout_session_id: Field::Number,
-    orederable_sku: Field::String,
-    orderable: Field::Boolean,
+    orderable_sku: Field::String,
+    orderable: Field::Polymorphic.with_options(classes: [Product]),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -27,7 +27,7 @@ class OrderDashboard < Administrate::BaseDashboard
     amount
     user
     checkout_session_id
-    orederable_sku
+    orderable_sku
     orderable
   ].freeze
 
@@ -39,7 +39,7 @@ class OrderDashboard < Administrate::BaseDashboard
     amount
     user
     checkout_session_id
-    orederable_sku
+    orderable_sku
     orderable
   ].freeze
 
@@ -47,12 +47,11 @@ class OrderDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    id
     state
     amount
     user
     checkout_session_id
-    orederable_sku
+    orderable_sku
     orderable
   ].freeze
 

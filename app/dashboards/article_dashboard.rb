@@ -8,13 +8,12 @@ class ArticleDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    # questions: Field::HasMany,
     questions: Field::NestedHasMany.with_options(skip: :article),
     content: RichTextField,
     id: Field::Number,
     title: Field::String,
     published: Field::Boolean,
-    intro: Field::Boolean
+    intro: Field::Boolean,
   }.freeze
 
   # COLLECTION_ATTRIBUTES

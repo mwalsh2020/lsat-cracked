@@ -6,7 +6,12 @@ class Quiz < ApplicationRecord
   has_many :questions, through: :quiz_questions
   has_many :answers, through: :quiz_questions
 
-  accepts_nested_attributes_for :quiz_questions
+  accepts_nested_attributes_for :quiz_questions, reject_if: :all_blank,
+                                                 allow_destroy: true
+  accepts_nested_attributes_for :questions, reject_if: :all_blank,
+                                            allow_destroy: true
+  accepts_nested_attributes_for :answers, reject_if: :all_blank,
+                                          allow_destroy: true
 
   scope :complete, -> { where(complete: true) }
   scope :pending, -> { where.not(complete: true) }

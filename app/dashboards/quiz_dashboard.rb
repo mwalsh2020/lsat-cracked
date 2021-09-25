@@ -9,10 +9,9 @@ class QuizDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     user: Field::BelongsTo,
-    quizable: Field::Polymorphic,
-    quiz_questions: Field::HasMany,
-    questions: Field::HasMany,
-    answers: Field::HasMany,
+    quizable: Field::Polymorphic.with_options(classes: [Article, Section]),
+    questions: Field::NestedHasMany,
+    answers: Field::NestedHasMany,
     id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -37,7 +36,6 @@ class QuizDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     user
     quizable
-    quiz_questions
     questions
     answers
     id
@@ -52,7 +50,6 @@ class QuizDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     user
     quizable
-    quiz_questions
     questions
     answers
     complete

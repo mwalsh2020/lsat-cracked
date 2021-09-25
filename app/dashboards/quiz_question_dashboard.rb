@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class TagDashboard < Administrate::BaseDashboard
+class QuizQuestionDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,11 +9,10 @@ class TagDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    slug: Field::String,
-    premium: Field::Boolean,
-    questions: Field::HasMany,
-    questions_count: Field::Number,
-    # questions: Field::NestedHasMany.with_options(skip: :questions),
+    quiz: Field::BelongsTo,
+    question: Field::BelongsTo,
+    tags: Field::NestedHasMany,
+    answer: Field::BelongsTo,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -22,26 +21,27 @@ class TagDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    questions
-    slug
-    premium
+    question
+    quiz
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    slug
-    premium
-    questions_count
+    question
+    quiz
+    tags
+    answer
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    slug
-    premium
+    question
+    quiz
+    answer
   ].freeze
 
   # COLLECTION_FILTERS
@@ -56,10 +56,10 @@ class TagDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how tags are displayed
+  # Overwrite this method to customize how quizzes are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(tag)
-    tag.slug
-  end
+  # def display_resource(quiz)
+  #   "Quiz ##{quiz.id}"
+  # end
 end
