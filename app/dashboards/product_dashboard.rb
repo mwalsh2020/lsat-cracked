@@ -50,6 +50,8 @@ class ProductDashboard < Administrate::BaseDashboard
     sku
     highlight
     description
+    price
+    full_price
   ].freeze
 
   # COLLECTION_FILTERS
