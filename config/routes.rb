@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root                  to: "pages#home"
+  root                  to: "course/dashboards#show"
   get  "/about",        to: "pages#about"
   get  "/testimonials", to: "pages#testimonials"
   get "/guest/sessions", to: "pages#home"
