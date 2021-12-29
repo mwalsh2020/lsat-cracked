@@ -34,7 +34,7 @@ Rails.application.routes.draw do
             only: [:new, :create]
   resources :mail_leads, only: [:create]
   resources :products, only: [:index]
-  resources :orders, only: [:create, :show] do
+  resources :orders, only: [:create, :show, :new] do
     resources :payments, only: :new
   end
 
